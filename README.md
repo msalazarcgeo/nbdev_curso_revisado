@@ -1,76 +1,69 @@
-# Quarto template for university courses
+# Quarto 
 
-<figure>
-    <img src="./figures/icons/course_favicon.png" alt="Image Created with DALL·E. Prompt: 'octopus-like alien futuristic teacher, abstract award-winning material design favicon blue flat colours'"  role="presentation" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;">
-    <figcaption>
-        <span style="display:inline-block;font-size:0.3em;width:30%;">
-        Image created with DALL·E. Prompt: 'octopus-like alien futuristic teacher, abstract award-winning material design favicon blue flat colours'
-        </span>
-    </figcaption>
+The following project is for a course of [nbdev](https://nbdev.fast.ai/). 
 
-</figure>
+**Nbdev**
+
+Is a notebook-driven plataform to develop software. It allows to create hig-quality documentation, testm and continuous integration. 
+
+Nbdev makes debugging and refactoring code in a simpler manner. 
 
 
-A template for developing university courses using Quarto.
+* Documentation is automatically generated using [Quarto](https://quarto.org/) and allows to be hosted using [Github Pages](https://pages.github.com/). The use of notebooks allow the usage of Latex inside the documentation and easy explanation of the code developed.
 
-**Real Examples:**
 
-- <img src="https://lse-dsi.github.io/DS105/figures/icons/DS105L_favicon.png" style="object-fit: cover;width:1em;height:1em;border-radius: 50%;" /> [LSE DS105](https://lse-dsi.github.io/DS105/) - Data for Data Science
-- <img src="https://lse-dsi.github.io/DS101/figures/DS101_favicon.png" style="object-fit: cover;width:1em;height:1em;border-radius: 50%;" /> [LSE DS101](https://lse-dsi.github.io/DS101/) - Fundamentals of Data Science
+# 🔦 What is inside this repository 
 
-**New to <img src="https://quarto.org/favicon.png" style="object-fit: cover;width:1em;height:1em;" /> Quarto?**
+This repository contains a course of Nbdev
 
-You will need to understand the basics of the following features of Quarto to make the most of this template. It's worth it!
+<details><summary><strong>Installation:</strong></summary>
 
-- Check [their initial tutorial](https://quarto.org/docs/get-started/)
-- Then read about [Quarto websites](https://quarto.org/docs/websites/)
-- Check out also [Revealjs tutorial](https://quarto.org/docs/presentations/revealjs/) to learn how to create modern slides
-- Then move on to learn about [Quarto projects](https://quarto.org/docs/projects/quarto-projects.html)
+1. Installation anaconda 
 
-There you go. You might be wondering how to put all of this to work. That is precisely why this template exists!
+2. Installation JupyterLab
 
-# 💡 How to use this template
+3. Installation nbdev
 
-<details><summary><strong>On GitHub:</strong></summary>
+4. Install Quarto
 
-1. Click on the green button **Use this template** then **Create a new repository**.
-
-2. Wait for GitHub to copy the files and run the initial setup (you will see this on the **Actions** tab).
+5. Install JupyterLab extension
 </details>
 
-<details><summary><strong>Locally in your computer:</strong></summary>
+<details><summary><strong> How to:</strong></summary>
 
-3. Clone your newly created repository to your computer.
+6. Create a repository.
 
-4. Follow the instructions written below in the 🧰 [Dev Setup](#dev-setup) section.
+7. Build the library.
 
-5. Skip the R or Python setup if you do not plan on working in one of these languages.
+8. Create documentation.  
 
+9. Install package.
 </details>
 
-<details><summary><strong>Start editing the files:</strong></summary>
+<details><summary><strong>Generate the course:</strong></summary>
 
-Here is a guide of the initial files you might want to modify to remove the sections that refer to the template, leaving only what is relevant to developing/updating the material of your course.
+Here is a guide of the initial files you want to modify to remove the sections that refer to the template, leaving only what is relevant to developing/updating the material of your course.
 
-6. Start by editing the `README.md` file carefully. 
+1. Start by editing the `README.md` file carefully. 
     - Change the title
     - Remove some of the sections
     - Edit the Dev Setup instructions to cater to your needs.
-7. Add your **course code** and **course name** to the web pages
 
+2. Add your the **course code** and **course name** to the web pages
+    - Using the 
     - If you are using VSCode, you can Ctrl + Shift + F (or ⌘ + Shift + F if you are on Mac) and replace all occurrences of `MY_COURSE_CODE` and `MY_COURSE_NAME` to the code and name of your course, respectively.
     - Or, you can manually edit those in the following files:
         - `_quarto.yml`
         - `2023/index.qmd`
         - `helpers/remove-nav.html`
 
-8. Then move on to `_quarto.yml`. Scan through this file to spot what you want to change. What pages do you want to keep or remove from your website?
+3. Then move on to `_quarto.yml`. Scan through this file to spot what you want to change. What pages do you want to keep or remove from your website?
 
-9. Next, modify the content of `index.qmd` and start working properly on your content pages under `2023/*`
+4. Next, modify the content of `index.qmd` and start working properly on your content pages under `2023/*`
 
-10. Visualise your changes by running the Quarto website locally:
+5. To generate all the files:
 
-    ```bash
+    ```
     quarto preview . --render all --no-browser
     ```
 </details>

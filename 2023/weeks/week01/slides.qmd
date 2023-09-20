@@ -1,14 +1,14 @@
 ---
-subtitle: "MY_COURSE_CODE -- MY_COURSE_NAME"
-title: "<font style='font-size:1em;'>🗓️ Week 01<br/> Introduction</font>"
-author: Prof. [Octopian](#)
-institute: '[University of Octopus Studies](#)'
+subtitle: "Desarrollo de software \n a través de la programación literal -- Curso nbdev"
+title: "<font style='font-size:1em;'>Curso Nbdev<br/>Introducción </font>"
+author:   '[J. Miguel Salazar](#)'
+institute: '[CentroGeo](#)'
 date: 14 March 2023
 date-meta: 14 March 2023
 date-format: "DD MMM YYYY"
 toc: true
 toc-depth: 1
-toc-title: "What we will cover today:"
+toc-title: "Contenido del curso:"
 center-title-slide: false
 from: markdown+emoji
 format:
@@ -20,7 +20,7 @@ format:
     preview-links: auto
     logo: /figures/icons/course_favicon.png
     css: /css/styles_slides.css
-    footer: 'MY_COURSE_CODE -- MY_COURSE_NAME'
+    footer: 'Curso Nbdev -- Introducción'
 ---
 
 # Who are we

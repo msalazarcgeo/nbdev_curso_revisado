@@ -1,5 +1,5 @@
 ---
-title: "MY COURSE CODE - MY COURSE NAME"
+title: "Curso Nbdev"
 format:
   html:
     include-before-body: helpers/remove-nav.html

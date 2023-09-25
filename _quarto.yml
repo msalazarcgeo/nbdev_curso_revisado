@@ -6,6 +6,8 @@ project:
     - "index.qmd"
     - "2023/*.qmd"
     - "2023/weeks/week01/*.qmd"
+    - "2023/weeks/week02/*.qmd"
+    - "2023/weeks/week03/*.qmd"
 
 website:
   title: "Curso Nbdeb 2022/23"

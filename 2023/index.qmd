@@ -7,9 +7,11 @@ format: html
 ::: {.callout-important collapse=false}
 ## 📢 Important
 
-(12/03/2023)
 
-- [🗓️ Week 01 lecture material](/2023/weeks/week01/page.qmd) is now available!
+
+- [🎺 Introducción](/2023/weeks/week01/page.qmd) Introducción 
+
+- [👣 Week 01 lecture material](/2023/weeks/week03/page_1pasos.qmd) Primeros pasos
 
 :::
 

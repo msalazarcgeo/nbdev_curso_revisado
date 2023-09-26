@@ -1,0 +1,107 @@
+---
+title: "Curso Nbdev--Primeros pasos"
+subtitle: "Poniendo las cosas en orden para trabajar"
+---
+
+## ¿Cómo me organizo ?
+
+A continuación vamos a poner las cosas para crear un hambiente de desarrollo para automatizar todos los procesos.
+
+* Iniciar un repositorio con nbdev
+* Activar GithubPages
+* Ver los flujos de trabajo
+* Ver la documentación
+* Hacer la primera edición
+* Construir e instalar la paquetería. 
+
+
+
+## Generar un repositorio
+
+Los repositorios nos permiten mantener un orden en el código y un control de cambios, por la simpleza usaremos [Github](https://github.com) donde alojaremos el repositorio. 
+
+<img src="/figures/Screen_shots/New_repository.png" alt="image" width="500" height="auto">
+
+Como prueba generamos el repositorio `nbdev_prueba`. Al clonar el repositorio 
+
+```
+git clone git@github.com:msalazarcgeo/Curso_nbdev.git
+```
+
+podemos observar que no hay nada dentro del repositorio, incluso cuando se ejecuta el código anterior nos muestra una advertencia que estamos clonando un repositorio vacio. 
+```
+warning: You appear to have cloned an empty repository.
+```
+
+Nbdev contiene un comando para añadir toda la estructura necesaria para poder generar nuestro paquete junto con su documentación y que estan de acuerdo 
+
+```
+nbdev_new
+```
+
+Este comando debera ejecutarse dentro del directorio del repositorio. El comando genera tres subdirectorios
+
+* Un subdirectorio con el nombre del repositorio (nbdev_prueba)
+* nbs
+* `_proc` 
+
+Y unos archivos 
+
+* License 
+* MANIFEST.in
+* README.md
+* settings.ini
+* setup.py
+
+
+De los anteriores, el que nos interesa es el `settings.ini` en el cual se controla la mayoría de las cosas dentro de nuestro paquete.  
+
+
+Vamos a modificar nuestro repositorio en github para ver que todo se sincronize funcione. 
+```
+git add .
+git commit -m 'Primer commit'
+git push
+```
+
+Si vamos a nuestro repositorio podemos observaer que ya tenemos los archivos y los subdirectorios en github igual que lo tenemos dentro de nuestros archivos locales. 
+
+<img src="/figures/Screen_shots/nbdev_prueba_modificado.png" alt="image" width="500" height="auto">
+
+
+## Habilitar Github Pages 
+
+Una de cosa que nos promete **nbdev** es la generación de documentación, pero es necesario tener un lugar donde se encuentre esta. Un lugar donde podemos tener alojada la documentación es en [Github Pages](https://pages.github.com/) la cual nos permite generar un sitio web con la documentación desde el repositorio. 
+
+::: {.callout-note}
+Aunque **nbdev** tiene por defecto el uso de Github Pages esto puede ser modificado y tener alojada la documentación en otra parte. 
+:::
+
+Para habilitar en el repositorio hay que ir a la parte de "Settings" del repositorio y en el menu (Izquierda) en "Pages". En esta sección se cambia de “Branch” a “gh-pages” y se da click en "Save". 
+
+
+<img src="/figures/Screen_shots/nbdev_prueba_pages.png" alt="image" width="500" height="auto">
+
+## Más en Github
+
+Una de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.
+
+
+Cuando nuestra pagina de documentación se encuentre disponible en la pestaña de "Acctions" del repositorio podremos ver (✅) en "pages build and deployment". En caso de que se vea (❌) significa que algo a salido mal. 
+
+<img src="/figures/Screen_shots/nbdev_prueba_depoy.png" alt="image" width="500" height="auto">
+
+Para poder ver la documentación que se creo nos podemos dirigir a la la cual estará alojada en algo similar a 'https://msalazarcgeo.github.io/nbdev_prueba/'
+
+<img src="/figures/Screen_shots/Primer_documentacion.png" alt="image" width="500" height="auto">
+
+
+### Integración continua
+
+Al tener todo integrado facilitamos el trabajo del desarrollador, aprovechando el tiempo y librando de tareas que pueden resultar engorrosas y que lleva tiempo realizar. 
+
+
+
+
+
+

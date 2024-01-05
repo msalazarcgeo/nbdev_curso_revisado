@@ -11,7 +11,12 @@ format: html
 
 - [🎺 Introducción](/2023/weeks/week01/page.qmd) Introducción 
 
-- [👣 Week 01 lecture material](/2023/weeks/week03/page_1pasos.qmd) Primeros pasos
+- [👣 Week 01 lecture material](/2023/weeks/week03/page_1pasos.qmd) 
+
+- [👣 Week 02 ](/2023/weeks/week03/page_1pasos.qmd) 
+
+
+Primeros pasos
 
 :::
 

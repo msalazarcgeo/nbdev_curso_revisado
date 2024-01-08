@@ -1,0 +1,9 @@
+---
+title: "Primeros pasos"
+---
+
+En esta parte se muestra los primeros pasos de como construir todo el ambiente para desarrollar paquetes con nbdev. 
+
+## Presentación 
+
+Para ir a la presentación haga chick [aquí](1_pasos.qmd) use las flechas navegar en la presentación. 

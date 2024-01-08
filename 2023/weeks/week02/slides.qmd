@@ -1,0 +1,96 @@
+---
+subtitle: "Instalación -- Curso nbdev"
+title: "<font style='font-size:1em;'>Curso Nbdev<br/>Introducción </font>"
+author:   '[J. Miguel Salazar](#)'
+institute: '[CentroGeo](#)'
+date: 14 March 2023
+date-meta: 14 March 2023
+date-format: "DD MMM YYYY"
+toc: true
+toc-depth: 1
+toc-title: "Contenido del curso:"
+center-title-slide: false
+from: markdown+emoji
+format:
+  revealjs: 
+    fig-responsive: true
+    theme: simple
+    slide-number: true
+    mouse-wheel: false
+    preview-links: auto
+    logo: /figures/icons/course_favicon.png
+    css: /css/styles_slides.css
+    footer: 'Curso Nbdev -- Introducción'
+---
+
+## Instalación 
+
+Para hacer uso de nbdev es necesario los siguientes softwares:
+
+
+* Python (Python o [conda](https://www.anaconda.com/))
+* Jupyter Notebooks
+* Quarto
+* Github
+* nbdev
+
+
+## Instalación conda
+
+Para la instalación de conda lo más sencillo es seguie el este [manual](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) aqui sólo se hace un esbozo de la instalación.
+
+1. Bajar el instalador:
+
+
+    * [Anaconda](https://www.anaconda.com/download/) para windows.
+
+2. Verificar que se ha bajano correctamente ([ver](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#hash-verification) ).
+
+3.  Hacer doble click en el archivo `.exe` (similar a `Anaconda3-######-Windows-x86_64.exe`).
+
+* 4. Seguir las instrucciones en la pantalla.
+
+5. Para probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando `conda list`. Una lista de paquetes aparecera si se instaló de forma correcta. 
+
+
+## Instalar Jupyter Notebook 
+
+La instalación de Jupyter para h
+
+```
+conda install -c conda-forge -y jupyterlab
+```
+O con pip
+
+```
+pip install jupyterlab
+```
+
+
+## Instalación rápida
+
+Se puede instalar a través de pip usando:
+
+```
+pip install nbdev
+```
+
+o instalar con conda:
+
+```
+conda install -c fastai nbdev
+```
+
+### Instalar Quarto 
+
+Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto
+
+```
+nbdev_install_quarto
+```
+
+Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. 
+
+
+
+

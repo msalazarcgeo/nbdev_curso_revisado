@@ -56,8 +56,7 @@ Here is a guide of the initial files you want to modify to remove the sections t
         - `_quarto.yml`
         - `2023/index.qmd`
         - `helpers/remove-nav.html`
-
-3. Then move on to `_quarto.yml`. Scan through this file to spot what you want to change. What pages do you want to keep or remove from your website?
+3 To add files to render it has to be on the `_quarto.yml` file. This allows a global control on which files sould be render on the site.
 
 4. Next, modify the content of `index.qmd` and start working properly on your content pages under `2023/*`
 
@@ -107,19 +106,6 @@ Now, whenever you open a Jupyter Notebook, you should see the `venv-my-course` k
 </details>
 
 <details><summary>📊 The R setup</summary>
-
-## 📊 The R setup
-
-1. Open a terminal and navigate to the root of this repository.
-2. Ensure you have **R version 4.2.2** or higher
-3. Open the R console in this same directory and install `renv` package:
-    ```r
-    install.packages("renv")
-    ```
-4. Run `renv::restore()` to install all the packages needed for this project
-5. Whenever you install a new R package, run `renv::snapshot()` to save it on your renv.
-
-</details>
 
 <details><summary><img src="https://quarto.org/favicon.png" style="object-fit: cover;width:1em;height:1em;" /> The Quarto setup</summary>
 

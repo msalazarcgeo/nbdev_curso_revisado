@@ -10,7 +10,7 @@ project:
     - "2023/weeks/week03/*.qmd"
 
 website:
-  title: "Curso Nbdeb 2022/23"
+  title: "Curso Nbdeb"
   page-navigation: true
   reader-mode: true
   open-graph: true

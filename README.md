@@ -1,15 +1,14 @@
 # Quarto 
 
-The following project is for a course of [nbdev](https://nbdev.fast.ai/). 
+El siguiente proyecto es un curso de [nbdev](https://nbdev.fast.ai/). 
 
 **Nbdev**
 
-Is a notebook-driven plataform to develop software. It allows to create hig-quality documentation, testm and continuous integration. 
-
-Nbdev makes debugging and refactoring code in a simpler manner. 
+Es una plataforma de desarrollo de software basado en notebooks que nos permite desarrollar software, hacer limpieza de errores, rehacer código,  generar documentacón de alto nivel, hacer pruebas y mantener una integración continua de forma simple usando notebooks. 
 
 
-* Documentation is automatically generated using [Quarto](https://quarto.org/) and allows to be hosted using [Github Pages](https://pages.github.com/). The use of notebooks allow the usage of Latex inside the documentation and easy explanation of the code developed.
+* La documentación del software puede ser generada a partir de simples comandos y puede ser integrada dentro de [Github Pages](https://pages.github.com/). El uso de los notebooks de Markdown nos permite integrar el uso de Latex, esto nos permite generar documentación especializada y hermosa () simples y con el uso 
+Documentation is automatically generated using [Quarto](https://quarto.org/) and allows to be hosted using [Github Pages](https://pages.github.com/). The use of notebooks allow the usage of Latex inside the documentation and easy explanation of the code developed.
 
 
 # 🔦 What is inside this repository 

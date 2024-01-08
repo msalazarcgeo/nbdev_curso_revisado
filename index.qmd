@@ -8,9 +8,10 @@ format:
 
 # 📑 Course Brief
 
-**Focus:** the focus of this course is to learn stuff
+**Enfoque:** El objetivo de este curso es la enseñanza de ***nbdev***  para hacer desarrollo de software usando el concepto de programación literal (*Literal Programing*)
 
-**How:** hands-on learning
+
+**¿Cómo ?:** Se muestran brevemente las capacidades de ***nbdev*** y se hacen ejemplos para que todo el desarrollo de software se encuentre contenido en notebooks.  
 
 # 🎯 Learning Objectives
 

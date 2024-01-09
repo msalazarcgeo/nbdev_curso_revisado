@@ -326,7 +326,7 @@ Ya podemos hacer los 'commits' y 'push' a los cambios en el repositorio para que
 ```
 $ nbdev_prepare 
 ```
-el cual exporta prueba, limpia los notebooks y modifica el `README` del repositorio
+el cual exporta, prueba, limpia los notebooks y modifica el `README` del repositorio
 
 ```console
 $ git add .

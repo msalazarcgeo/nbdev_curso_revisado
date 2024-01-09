@@ -4,19 +4,19 @@ project:
   output-dir: _output
   render:
     - "index.qmd"
-    - "2023/*.qmd"
-    - "2023/weeks/week01/*.qmd"
-    - "2023/weeks/week02/*.qmd"
-    - "2023/weeks/week03/*.qmd"
+    - "contenido/*.qmd"
+    - "contenido/weeks/week01/*.qmd"
+    - "contenido/weeks/week02/*.qmd"
+    - "contenido/weeks/week03/*.qmd"
+    - "contenido/weeks/week04/*.qmd"
 
+execute:
+  freeze: auto
 website:
   title: "Curso Nbdeb"
   page-navigation: true
   reader-mode: true
   open-graph: true
-  twitter-card: 
-    creator: "@<twitter-handle>"
-    site: "\\@<twitter-handle>"
   favicon: "figures/icons/course_favicon.png"
   search:
     location: navbar
@@ -24,38 +24,24 @@ website:
   sidebar:
     style: docked
     contents:
-      - href: 2023/index.qmd
+      - href: contenido/index.qmd
         text: "🏠 Home"
-      # - href: 2023/syllabus.qmd
-      #   text: "📓 Syllabus"
-      # - href: 2023/communication.qmd
-      #   text: "📟 Communication"
-      # - href: 2023/assignments.qmd
-      #   text: "✍️ Assignments"
-      #   contents:
-      #     - href: 2023/assignments/assignment01.qmd
-      #       text: "📝 Assignment 01"
-      #     - href: 2023/assignments/assignment02.qmd
-      #       text: "📝 Assignment 02"
-      #     - href: 2023/assignments/group_project.qmd
-      #       text: "👥 Group Project"
-      - section: "🗓️ Weeks"
+      
+      - section: "Contenido"
         contents:
-         - href: 2023/weeks/week01/page.qmd
-           text: Week 01
-           contents:
-             - href: 2023/weeks/week01/page.qmd
-               text: 👨‍🏫 Lecture Material
-            #  - href: 2023/weeks/week01/lab.qmd
-            #    text: 💻 Lab Roadmap
-            #  - href: 2023/weeks/week01/appendix.qmd
-            #    text: 🔖 Appendix
-
+        - href: contenido/weeks/week01/page.qmd
+          text: Presentación del concepto 
+        - href: contenido/weeks/week02/slides.qmd
+          text: Instalación prerequisitos
+        - href: contenido/weeks/week03/1_pasos.qmd
+          text: Generar biblioteca
+        - href: contenido/weeks/week04/mas_modulos.qmd
+          text: Más módulos
   navbar:
     background: primary
   page-footer:
     background: light
-    left: "Copyright 2023, CentroGeo" 
+    left: "Copyright 2024, CentroGeo" 
 
 
 

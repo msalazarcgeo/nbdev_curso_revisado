@@ -347,7 +347,7 @@ pip install "Nombre" @ git+"URL del repositorio"
 En nuestro caso 
 
 ```
-pip install nbdev-prueba@git+https://github.com/msalazarcgeo/nbdev_prueba
+pip install nbdev-prueba@git+https://github.com/"Nombre_usuario_github"/nbdev_prueba
 ```
 
 De esta forma ya tenemos la biblioteca instalada dentro de python. 

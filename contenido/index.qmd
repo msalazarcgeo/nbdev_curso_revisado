@@ -1,0 +1,41 @@
+---
+title: "Curso Nbdev -- Programación Literal"
+subtitle: "Como "
+format: html
+---
+
+::: {.callout-important collapse=false}
+## 📢 Important
+
+
+
+- [🎺 Presentacion concepto](/contenido/weeks/week01/page.qmd) Introducción 
+
+- [👣 Instalación de prerequisitos  ](/contenido/weeks/week02/slides.qmd) 
+
+- [👣 Instalación ](/contenido/weeks/week02/slides.qmd) 
+
+- [🎺 Primer biblioteca](/contenido/weeks/week03/1_pasos.qmd) 
+
+- [🎺 Mas modulos](/contenido/weeks/week04/mas_modulos.qmd) 
+:::
+
+
+# 🧑🏻‍🏫 
+
+::: {.panel-tabset}
+## Course Convenor
+
+
+
+**[MY_NAME](#J. Miguel Salazar)** <br/>
+Profesor <br/>
+[CentroGeo](#)</a><br/>
+📧 [MY_EMAIL](mailto: msalazar@centrogeo.edu.mx)
+
+
+
+# 📍 Cuando se imparte La clase magistral
+
+  En linea
+

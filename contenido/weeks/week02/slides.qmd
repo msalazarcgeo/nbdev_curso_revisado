@@ -3,8 +3,8 @@ subtitle: "Instalación -- Curso nbdev"
 title: "<font style='font-size:1em;'>Curso Nbdev<br/>Introducción </font>"
 author:   '[J. Miguel Salazar](#)'
 institute: '[CentroGeo](#)'
-date: 14 March 2023
-date-meta: 14 March 2023
+date: 01 Enero 2024
+date-meta: 01 Enero 2024
 date-format: "DD MMM YYYY"
 toc: true
 toc-depth: 1

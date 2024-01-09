@@ -1,7 +1,0 @@
----
-title: "Curso Nbdev -- Instalación del módulo"
-subtitle: "Como generar e instalar un modulo usando nbdev"
----
-
-# Construir la biblioteca 
-

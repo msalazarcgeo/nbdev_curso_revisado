@@ -1,0 +1,10 @@
+---
+title: "Curso Nbdev -- Hacer mas cosas"
+subtitle: "Hacer todo el desarrollo"
+---
+
+# 
+
+
+Ya sabemos los pasos básicos para la construccion de bibliotecas a partir de 
+

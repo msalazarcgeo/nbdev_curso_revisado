@@ -21,10 +21,6 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Install rmarkdown
-        run: install.packages("rmarkdown");install.packages("ggplot2")
-        shell: Rscript {0}
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 

@@ -8,11 +8,11 @@
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.36">
+  <meta name="generator" content="quarto-1.1.179">
 
   <meta name="author" content="J. Miguel Salazar">
   <meta name="dcterms.date" content="14 March 2023">
-  <title>Curso Nbdeb 2022/23 - Curso NbdevIntroducción </title>
+  <title>Curso Nbdeb - Curso NbdevIntroducción </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -21,10 +21,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="../../../css/styles_slides.css">
@@ -316,13 +321,9 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Curso Nbdeb 2022/23 - Curso NbdevIntroducción ">
+<meta property="og:title" content="Curso Nbdeb - Curso NbdevIntroducción ">
 <meta property="og:description" content="Instalación – Curso nbdev">
-<meta property="og:site-name" content="Curso Nbdeb 2022/23">
-<meta name="twitter:title" content="Curso Nbdeb 2022/23 - Curso NbdevIntroducción ">
-<meta name="twitter:description" content="Instalación – Curso nbdev">
-<meta name="twitter:creator" content="@<twitter-handle>">
-<meta name="twitter:card" content="summary">
+<meta property="og:site-name" content="Curso Nbdeb">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -669,7 +670,8 @@
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);

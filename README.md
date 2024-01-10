@@ -8,40 +8,35 @@ Es una plataforma de desarrollo de software basado en notebooks que nos permite 
 
 
 * La documentación del software puede ser generada a partir de simples comandos y puede ser integrada dentro de [Github Pages](https://pages.github.com/). El uso de los notebooks de Markdown nos permite integrar el uso de Latex, esto nos permite generar documentación especializada y hermosa () simples y con el uso 
-Documentation is automatically generated using [Quarto](https://quarto.org/) and allows to be hosted using [Github Pages](https://pages.github.com/). The use of notebooks allow the usage of Latex inside the documentation and easy explanation of the code developed.
+
+# 🔦 Lo que se encuentra dentro del curso  
 
 
-# 🔦 What is inside this repository 
+<details><summary><strong>Instalación:</strong></summary>
 
-This repository contains a course of Nbdev
+1. Instalación anaconda 
 
-<details><summary><strong>Installation:</strong></summary>
+2. Instalación JupyterLab
 
-1. Installation anaconda 
+3. Instalación nbdev
 
-2. Installation JupyterLab
+4. Instalación Quarto
 
-3. Installation nbdev
+5. Instalación JupyterLab extension
 
-4. Install Quarto
-
-5. Install JupyterLab extension
 </details>
 
 <details><summary><strong> How to:</strong></summary>
 
-6. Create a repository.
+6. Crear un repositorio.
 
-7. Build the library.
+7. Construir una biblioteca.
 
-8. Create documentation.  
+8. Crear la documentación.  
 
-9. Install package.
+9. Instalación de la biblioteca.
 </details>
 
-<details><summary><strong>Generate the course:</strong></summary>
-
-Here is a guide of the initial files you want to modify to remove the sections that refer to the template, leaving only what is relevant to developing/updating the material of your course.
 
 1. Start by editing the `README.md` file carefully. 
     - Change the title

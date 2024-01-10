@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr.&nbsp;J. Miguel Salazar">
 
-<title>Curso Nbdeb - Curso Nbdev – Hacer mas cosas</title>
+<title>Curso Nbdeb - Curso Nbdev – Hacer más cosas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -66,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Curso Nbdeb - Curso Nbdev – Hacer mas cosas">
+<meta property="og:title" content="Curso Nbdeb - Curso Nbdev – Hacer más cosas">
 <meta property="og:description" content="Hacer todo el desarrollo">
 <meta property="og:site-name" content="Curso Nbdeb">
 </head>
@@ -160,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#más-módulos" id="toc-más-módulos" class="nav-link active" data-scroll-target="#más-módulos">Más módulos</a></li>
   </ul>
 </nav>
     </div>
@@ -169,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curso Nbdev – Hacer mas cosas</h1>
+<h1 class="title">Curso Nbdev – Hacer más cosas</h1>
 <p class="subtitle lead">Hacer todo el desarrollo</p>
 </div>
 
@@ -191,9 +225,22 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="section" class="level1">
-<h1></h1>
-<p>Ya sabemos los pasos básicos para la construccion de bibliotecas a partir de</p>
+<section id="más-módulos" class="level1">
+<h1>Más módulos</h1>
+<p>Ya sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de <em>nbdev</em>. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo.</p>
+<p>Para la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior</p>
+<p>Dentro del directorio <code>nbs</code> del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo <em>arbol</em> el cual contendrá el ejemplo para hacer. El nombre del notebook sera ‘01_arbol.ipynb’.</p>
+<p>En la primera celda tenemos para importar las dependencias del modulo</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La segunda celda de código definimos una clase simple donde se utiliza la directriz de Quarto <code>#| export</code> al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Towdas las celdas que contengan esta</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| export</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> nodo(): </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Esta clase es un nodo con dos hijos"""</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.der <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.izq <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nodo_basico <span class="op">=</span> nodo()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nodo_basico.der)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

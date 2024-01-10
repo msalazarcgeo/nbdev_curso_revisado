@@ -2,9 +2,9 @@
   {
     "objectID": "contenido/weeks/week04/mas_modulos.html",
     "href": "contenido/weeks/week04/mas_modulos.html",
-    "title": "Curso Nbdev – Hacer mas cosas",
+    "title": "Curso Nbdev – Hacer más cosas",
     "section": "",
-    "text": "Ya sabemos los pasos básicos para la construccion de bibliotecas a partir de"
+    "text": "Más módulos\nYa sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de nbdev. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo.\nPara la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior\nDentro del directorio nbs del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo arbol el cual contendrá el ejemplo para hacer. El nombre del notebook sera ‘01_arbol.ipynb’.\nEn la primera celda tenemos para importar las dependencias del modulo\n\nLa segunda celda de código definimos una clase simple donde se utiliza la directriz de Quarto #| export al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Towdas las celdas que contengan esta\n#| export\nclass nodo(): \n    \"\"\" Esta clase es un nodo con dos hijos\"\"\"\n    def __init__(self):\n        self.der = None\n        self.izq = None\nnodo_basico = nodo()\nprint(nodo_basico.der)"
   },
   {
     "objectID": "contenido/weeks/week03/1_pasos.html",
@@ -74,7 +74,7 @@
     "href": "contenido/weeks/week03/1_pasos.html#instalación-de-la-biblioteca",
     "title": "Curso Nbdev- Primeros pasos",
     "section": "Instalación de la biblioteca",
-    "text": "Instalación de la biblioteca\nLa biblioteca se puede añadir a PIP o Anaconda en cualquiera de los casos es necesario tener una cuenta para hacer estas acciones.\nEn este caso se dan los pasos para hacer las instalación desde github usando pip install.\npip install \"Nombre\" @ git+\"URL del repositorio\"\nEn nuestro caso\npip install nbdev-prueba@git+https://github.com/\"Nombre_usuario_github\"/nbdev_prueba\nDe esta forma ya tenemos la biblioteca instalada dentro de python."
+    "text": "Instalación de la biblioteca\nLa biblioteca se puede añadir a PIP o Anaconda en cualquiera de los casos es necesario tener una cuenta para hacer estas acciones.\nEn este caso se dan los pasos para hacer las instalación desde github usando pip install.\npip install \"Nombre\" @ git+\"URL del repositorio\"\nEn nuestro caso\npip install nbdev-prueba@git+https://github.com/\"Nombre_usuario_github\"/nbdev_prueba\nDe esta forma ya tenemos la biblioteca instalada dentro de nuestro ambiente de python. Para ver esto podemos abrir una terminal de python e importar el módulo core de nuestra biblioteca.\nfrom nbdev_prueba import core\ncore.saludo_a('Juan')\nY obtenemos como resultado\nHola! Juan\nEspero que te encuentres bien"
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#qué-es-nbdev",

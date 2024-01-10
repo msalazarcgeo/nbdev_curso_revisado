@@ -480,7 +480,12 @@ $ git push</code></pre>
 <pre><code>pip install "Nombre" @ git+"URL del repositorio"</code></pre>
 <p>En nuestro caso</p>
 <pre><code>pip install nbdev-prueba@git+https://github.com/"Nombre_usuario_github"/nbdev_prueba</code></pre>
-<p>De esta forma ya tenemos la biblioteca instalada dentro de python.</p>
+<p>De esta forma ya tenemos la biblioteca instalada dentro de nuestro ambiente de python. Para ver esto podemos abrir una terminal de python e importar el módulo core de nuestra biblioteca.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nbdev_prueba <span class="im">import</span> core</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>core.saludo_a(<span class="st">'Juan'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y obtenemos como resultado</p>
+<pre><code>Hola! Juan
+Espero que te encuentres bien</code></pre>
 
 
 </section>

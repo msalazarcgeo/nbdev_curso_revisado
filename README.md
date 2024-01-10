@@ -15,7 +15,6 @@ La documentación del software puede ser generada a partir de simples comandos y
 # 🔦 Lo que se encuentra dentro del curso  
 
 
-<<<<<<< HEAD
 <details><summary><strong>Instalación:</strong></summary>
 
 1. Instalación de cosas básicas. 
@@ -41,3 +40,7 @@ La documentación del software puede ser generada a partir de simples comandos y
 10. Crear la documentación.  
 
 11. Instalación de la biblioteca.
+
+
+
+[Link al curso en linea](https://msalazarcgeo.github.io/Curso_nbdev/) 

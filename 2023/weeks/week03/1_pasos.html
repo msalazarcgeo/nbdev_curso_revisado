@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr.&nbsp;J. Miguel Salazar">
 
-<title>Curso Nbdeb - Curso Nbdev- Primeros pasos</title>
+<title>Curso Nbdeb 2022/23 - Curso Nbdev- Primeros pasos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,8 +89,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../contenido/weeks/week04/mas_modulos.html" rel="next">
-<link href="../../../contenido/weeks/week02/slides.html" rel="prev">
 <link href="../../../figures/icons/course_favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -124,9 +122,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Curso Nbdeb - Curso Nbdev- Primeros pasos">
+<meta property="og:title" content="Curso Nbdeb 2022/23 - Curso Nbdev- Primeros pasos">
 <meta property="og:description" content="Poniendo las cosas en orden para trabajar">
-<meta property="og:site-name" content="Curso Nbdeb">
+<meta property="og:site-name" content="Curso Nbdeb 2022/23">
+<meta name="twitter:title" content="Curso Nbdeb 2022/23 - Curso Nbdev- Primeros pasos">
+<meta name="twitter:description" content="Poniendo las cosas en orden para trabajar">
+<meta name="twitter:creator" content="@<twitter-handle>">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -136,7 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">Curso Nbdeb</span>
+    <span class="navbar-title">Curso Nbdeb 2022/23</span>
   </a>
           <div class="quarto-toggle-container ms-auto">
               <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -165,37 +167,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/index.html" class="sidebar-item-text sidebar-link">🏠 Home</a>
+  <a href="../../../2023/index.html" class="sidebar-item-text sidebar-link">🏠 Home</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Contenido</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">🗓️ Weeks</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../2023/weeks/week01/page.html" class="sidebar-item-text sidebar-link">Week 01</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week01/page.html" class="sidebar-item-text sidebar-link">Presentación del concepto</a>
+  <a href="../../../2023/weeks/week01/page.html" class="sidebar-item-text sidebar-link">👨‍🏫 Lecture Material</a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week02/slides.html" class="sidebar-item-text sidebar-link">Instalación prerequisitos</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week03/1_pasos.html" class="sidebar-item-text sidebar-link active">Generar biblioteca</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week04/mas_modulos.html" class="sidebar-item-text sidebar-link">Más módulos</a>
-  </div>
-</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -475,7 +472,7 @@ Tip
 <h3 class="anchored" data-anchor-id="subir-los-cambios-al-repositorio-de-github">Subir los cambios al repositorio de github</h3>
 <p>Ya podemos hacer los ‘commits’ y ‘push’ a los cambios en el repositorio para que estos se actualizen en Github. Nbdev nos da un comando para hacer todo para disminuir el tiempo para los cambios. Esto se puede hacer usando</p>
 <pre><code>$ nbdev_prepare </code></pre>
-<p>el cual exporta, prueba, limpia los notebooks y modifica el <code>README</code> del repositorio</p>
+<p>el cual exporta prueba, limpia los notebooks y modifica el <code>README</code> del repositorio</p>
 <pre class="console"><code>$ git add .
 $ git commit -m 'El primer commit con modificaciones' # Cambie el texto por el que se desee
 $ git push</code></pre>
@@ -487,13 +484,8 @@ $ git push</code></pre>
 <p>En este caso se dan los pasos para hacer las instalación desde github usando pip install.</p>
 <pre><code>pip install "Nombre" @ git+"URL del repositorio"</code></pre>
 <p>En nuestro caso</p>
-<pre><code>pip install nbdev-prueba@git+https://github.com/"Nombre_usuario_github"/nbdev_prueba</code></pre>
-<p>De esta forma ya tenemos la biblioteca instalada dentro de nuestro ambiente de python. Para ver esto podemos abrir una terminal de python e importar el módulo core de nuestra biblioteca.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nbdev_prueba <span class="im">import</span> core</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>core.saludo_a(<span class="st">'Juan'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y obtenemos como resultado</p>
-<pre><code>Hola! Juan
-Espero que te encuentres bien</code></pre>
+<pre><code>pip install nbdev-prueba@git+https://github.com/msalazarcgeo/nbdev_prueba</code></pre>
+<p>De esta forma ya tenemos la biblioteca instalada dentro de python.</p>
 
 
 </section>
@@ -612,22 +604,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../contenido/weeks/week02/slides.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Instalación prerequisitos</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../contenido/weeks/week04/mas_modulos.html" class="pagination-link">
-        <span class="nav-page-text">Más módulos</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2024, CentroGeo</div>   
+    <div class="nav-footer-left">Copyright 2023, CentroGeo</div>   
   </div>
 </footer>
 

@@ -1,80 +1,31 @@
 [
   {
-    "objectID": "contenido/weeks/week04/mas_modulos.html",
-    "href": "contenido/weeks/week04/mas_modulos.html",
-    "title": "Curso Nbdev – Hacer más cosas",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Curso Nbdev",
     "section": "",
-    "text": "Más módulos\nYa sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de nbdev. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo.\nPara la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior\nDentro del directorio nbs del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo arbol el cual contendrá el ejemplo para hacer. El nombre del notebook sera ‘01_arbol.ipynb’.\nEn la primera celda tenemos para importar las dependencias del modulo\n\nLa segunda celda de código definimos una clase simple donde se utiliza la directriz de Quarto #| export al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Towdas las celdas que contengan esta\n#| export\nclass nodo(): \n    \"\"\" Esta clase es un nodo con dos hijos\"\"\"\n    def __init__(self):\n        self.der = None\n        self.izq = None\nnodo_basico = nodo()\nprint(nodo_basico.der)"
+    "text": "🎯 Objetivos de aprendizaje\n\nComo hacer uso de la plataforma de Nbdev\nInstalación de cosas básicas\nGeneración de bibliotecas\nGeneración de documentación especializada\ntemas avanzados\n\n\n Contenido"
   },
   {
-    "objectID": "contenido/weeks/week03/1_pasos.html",
-    "href": "contenido/weeks/week03/1_pasos.html",
-    "title": "Curso Nbdev- Primeros pasos",
+    "objectID": "contenido/index.html",
+    "href": "contenido/index.html",
+    "title": "Curso Nbdev – Programación Literal",
     "section": "",
-    "text": "A continuación vamos a poner las cosas para crear un ambiente de desarrollo para automatizar todos los procesos.\n\nGenerar un repositorio.\nHabilitar Github Pages.\nHacer la primera edición.\nVer la documnetación local\nConstruir módulos.\nAñadir cambios Github"
+    "text": "MY_NAME  Profesor  CentroGeo 📧 MY_EMAIL (%20msalazar at centrogeo dot edu dot mx)\n\n📍 Cuando se imparte La clase magistral\nEn linea"
   },
   {
-    "objectID": "contenido/weeks/week03/1_pasos.html#cómo-me-organizo",
-    "href": "contenido/weeks/week03/1_pasos.html#cómo-me-organizo",
-    "title": "Curso Nbdev- Primeros pasos",
+    "objectID": "contenido/weeks/week01/page.html",
+    "href": "contenido/weeks/week01/page.html",
+    "title": "Introducción, Presentacion y conceptos",
     "section": "",
-    "text": "A continuación vamos a poner las cosas para crear un ambiente de desarrollo para automatizar todos los procesos.\n\nGenerar un repositorio.\nHabilitar Github Pages.\nHacer la primera edición.\nVer la documnetación local\nConstruir módulos.\nAñadir cambios Github"
+    "text": "Se cubre la presentación de la idea sobre la cual se construye Nbdev"
   },
   {
-    "objectID": "contenido/weeks/week03/1_pasos.html#generar-un-repositorio",
-    "href": "contenido/weeks/week03/1_pasos.html#generar-un-repositorio",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Generar un repositorio",
-    "text": "Generar un repositorio\nLos repositorios nos permiten mantener un orden en el código y un control de cambios, por la simpleza usaremos Github donde alojaremos el repositorio de nuestro desarrollo.\n\nSe utiliza el siguiente comando para clonar el repositorio y poder modificarlo de forma local.\ngit clone git@github.com:%nombreusuario/nbdev_prueba.git\nPodemos observar que no hay nada dentro del repositorio, incluso cuando se ejecuta el código anterior nos muestra una advertencia que estamos clonando un repositorio vacio.\nwarning: You appear to have cloned an empty repository.\nNbdev contiene un comando para añadir toda la estructura necesaria para poder generar nuestro paquete junto con su documentación.\nnbdev_new\nEste comando debera ejecutarse dentro del directorio del repositorio. El comando genera tres subdirectorios\n\nUn subdirectorio con el nombre del repositorio (nbdev_prueba)\nnbs\n_proc\n\nY unos archivos\n\nLicense\nMANIFEST.in\nREADME.md\nsettings.ini\nsetup.py\n\nDe los anteriores, el que nos interesa es el settings.ini en el cual se controla la mayoría de las cosas dentro de nuestro paquete.\nVamos a modificar nuestro repositorio en github para ver que todo se sincronize y funcione.\n$ git add .\n$ git commit -m 'Primer commit'\n$ git push\nSi vamos a nuestro repositorio podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales."
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo",
-    "href": "contenido/weeks/week03/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Habilitar Github Pages y flujos de trabajo",
-    "text": "Habilitar Github Pages y flujos de trabajo\nUna de cosa que nos promete nbdev es la generación de documentación, pero es necesario tener un lugar donde se pueda consultar. Un lugar donde podemos tener alojada la documentación es en Github Pages la cual nos permite generar un sitio web con la documentación desde el repositorio.\n\n\n\n\n\n\nNote\n\n\n\nAunque nbdev tiene por defecto el uso de Github Pages esto puede ser modificado y tener alojada la documentación en otra parte.\n\n\nPara habilitar en el repositorio hay que ir a la parte de “Settings” del repositorio y en el menu (Izquierda) en “Pages”. En esta sección se cambia de “Branch” a “gh-pages” y se da click en “Save”.\n\nLa página se encuentra alojada en una dirección similar a https://%nombreusuario.github.io/nbdev_prueba/. Pero primero esta debe ser generada por Github.\nUna de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.\nCuando nuestra pagina de documentación se encuentre disponible en la pestaña de “Actions” del repositorio podremos ver (✅) en “pages build and deployment”. En caso de que se vea (❌) significa que algo a salido mal.\n\nPara poder ver la documentación que se creo nos podemos dirigir a la la cual estará alojada en algo similar a https://%nombreusuario.github.io/nbdev_prueba/\n\n\n\n\n\n\n\nIntegración continua\nAl tener todo integrado facilitamos el trabajo del desarrollador, aprovechando el tiempo y librando de tareas que pueden resultar engorrosas y que lleva tiempo realizar."
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#hacer-la-primera-edición",
-    "href": "contenido/weeks/week03/1_pasos.html#hacer-la-primera-edición",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Hacer la primera edición",
-    "text": "Hacer la primera edición\nYa que hemos generado un repositorio y hemos modificado las configuraciones para tener la documentación alojada de forma automatica vamos a hacer la primera edición a nuestro paquete.\n\nAntes de editar\nAntes de esto vamos a ejecutar el siguiente comando\n$ nbdev_install_hooks\nEste comando nos permite instalar ciertas extensiones en jupyter Notebook y JupyterLab, las cuales nos permitiran limpiar los notebooks de metadatos que no son necesarios en los repositorios. Y arreglar ciertos elementos de los notebooks los cuales pueden llegar a causar conflictos cuando se hace uso de las acciones de git.\nEsto nos ayuda, pues es común que ciertos datos se modifiquen sin haber editato el notebook, esto sucede por el simple hecho de hacer su ejecución o abrir el notebook.\n\nnbdev_merge Nos ayuda a poner los notebooks de forma que al hacer el uso de acciones de pull merge, rebase o stash dentro de git, no modifiquen los notebooks y estos se puedan ejecutar entre los colaboradores del repositorio.\nnbdev_clean Los notebooks de Jupyter incluyen muchos metadatos que no se llevan bien con sistemas de control como git. Por tal motivo nbdev installa un “hook” el cual elimina estos metadatos o los remplaza por versiones genéricas que no afectan la ejecución o visualizaciones dentro del notebook.\nnbdev_trust Un efecto secundario que se tiene al hacer uso de los notebooks de Jupiter es que estos no funcionan dentro de repositorios compartidos. La razón es que estos pueden ejecutar código HTML o código de JavaScript el cual puede llegar a contener codigo malicioso. Por tal motivo el comportamiento por defecto de los notebooks de Jupyter es preguntar si se puede confiar en el notebook cada vez que se abre esto puede ser una problemática en el flujo de trabajo por tal motivo se puede correr nbdev_trust para evitar que cada vez que se abre un notebook pregunte si es de confianza.\n\n\n\n\n\n\n\nAdvertencia\n\n\n\nNo se debe de usar los hooks de nbdev dentro de un repositorio que no se confie.\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nLos hook de nbdev funcionan para cualquier repositorio, sin importar si se usa nbdev o no para generar un paquete o biblioteca.\n\n\n\n\n\nConfigurar\nNbdev es muy modificable, esto se encuentra dentro del archivo settings.ini. Para crear el archivo se puede ejecutar nbdev_create_config.\n\n\nEditamos\nAbrimos el archivo nbs/00_core.ipynb, el cual se generó cuando ejecutamos nbdev_new. Dentro de éste se pueden observar las directrizes más importantes para generar un documento que nos servira para poder hacer tanto nuestro paquete, la documentación y su empaquetado.\nExpliquemos el comportamiento de las celdas que se encuentran dentro de este notebook.\nLa primera celda contiene\n# core\n\n&gt; Fill in a module description here\naquí definimos que el módulo a crear se llamara core y la descripción del mismo. La celda contiene un encabezado H1 de Markdown #y una cita de Markdown donde se describe el módulo.\nLa segunda celda\n#| default_exp core\nes una directriz en la cual se decide el módulo al cual el notebook exportará lo que se desee. Como se encuentra se exporta al módulo core.\nEn la siguiente celda\n#| hide\nfrom nbdev.showdoc import *\nla directriz #| hide nos dice que esta celda no parecerá y tampoco la salida de la misma. Esto nos sirve para poder hacer ciertas pruebas pero que no se desean que sean exportadas ni que sean parte de la documentación.\nEn la celda siguiente\n#| export\ndef foo(): pass\nla directriz #| export exportará el contenido de la celda al módulo.\nLa última celda\n#| hide\nimport nbdev; nbdev.nbdev_export()\nusa la directriz #| hide para ocultar el código y la salida de la celda, lo que se ejecuta dentro de la celda es lo que permite exportar lo que se indicó dentro del notebook al módulo.\nVamos a modificar este notebook para hacer un módulo con funciones sencillas.\nAgregamos la siguiente celdas antes de la última celda en el notebook sin editar.\n#| export\ndef saludo():\n    \"\"\"Imprime Hola\"\"\"\n    print('Hola!')\n    return\nsaludo()\n#| export\ndef saludo_a(to):\n    \"\"\"Imprime hola a un nombre\"\"\"\n    print('Hola!', to)\n    \n    print('Espero que te encuentres bien')\n    return\nsaludo_a('Raul')\nshow_doc(saludo_a)\nLas celdas sin la directriz #| export nos pueden servir para probar las funcionalidades dentro del módulo o bien para ser parte de la documentación como ejemplos. En la celda se utiliza la función show_doc nos sirve para mostrar el uso de la cocumentación iterna de la función saludo_a esta nos sirve para generar una documentación precisa.\nAhora podemos executar todo el notebook usando el boton ⏩ dentro de jupyterlab. Si todo funciona correctamente podemos generar la documentación, hacer pruebas y exportar a un módulo."
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#ver-la-documentación",
-    "href": "contenido/weeks/week03/1_pasos.html#ver-la-documentación",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Ver la documentación",
-    "text": "Ver la documentación\nPara poder ver la documentación de forma local se executa el siguiente comando desde el folder del repositorio\n$ nbdev_preview\nEl comando construye la documentación usando los noteboooks que se encuentran dentro del directorio ‘nbs/’. Y genera un servicio de pagina web de forma local a la cual podemos acceder desde nuestro navegador.\nLa configuración se puede controlar desde el archivo settings.ini y por defecto toma a ‘nbs/index.ipynb’ como la pagina principal. A la izquierda nos muestra una columna donde podemos ir a la documentación del modulo “core”. Podremos observar que se encuentran las modificaciónes que se hicieron al módulo.\nSi se mantiene en servicio la página es posible ver los cambios que se hacen con cierto retraso."
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#probar-el-módulo",
-    "href": "contenido/weeks/week03/1_pasos.html#probar-el-módulo",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Probar el módulo",
-    "text": "Probar el módulo\nPara probar que el todos los elementos del módulo funciona de forma correcta y si alguna modificación hecha no afecta en el desempeño de los componentes de los módulos en nuestro proyecto se utiliza el siguiente comando\n$ nbdev_test\nSi todo esta correcto en la consola se desplegara\nSuccess.\nEn caso contrario se muestran los errores y se especifica los notebook en donde se encuentran.\nnbdev_test puede usarse para probar de manera individual los notebooks\n$ nbdev_test --path notebook.ipynb\nO para todo un directorio\n$ nbdev_test --path tests/"
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#generar-el-módulo",
-    "href": "contenido/weeks/week03/1_pasos.html#generar-el-módulo",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Generar el módulo",
-    "text": "Generar el módulo\nPara generar la documentación, desde la linea de comandos en el directorio de nuestro repositorio se llama el comando:\n$ nbdev_export\nEste comando genera nuestro módulo ‘core’ el cual se encontrará dentro del directorio ‘nbdev_prueba’. Si se desea se pueda abrir el archivo core.py el cual contiene una leyenda\n&gt;  # AUTOGENERATED! DO NOT EDIT! File to edit: ../nbs/00_core.ipynb.\ninformando que el archivo fue autogenerado y que cualquier modificación debe de hacerse dentro del notebook nbs/00_core.ipynb.\nEn core.py podemos ver que se encuentran las funciones definidas dentro del notebook en las celdas con la directriz #| export.\nEl módulo generado forma parte de la nuestro proyecto.\nPor defecto al ejecutar nbdev_export se puede hacer sobre todos los notebooks del projecto. También se puede hacer sobre un notebook en específico.\nnbdev_export --path notebook.ipynb\no un directorio\nnbdev_export --path dir/\nEsto solo sucedera si al principio del notebook se añade la directriz #| default_exp core al principio del notebook."
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#añadir-los-cambios-en-github",
-    "href": "contenido/weeks/week03/1_pasos.html#añadir-los-cambios-en-github",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Añadir los cambios en Github",
-    "text": "Añadir los cambios en Github\nPara mantener el código usando Github limpiamos los notebooks con\n$ nbdev_clean\nEl comportamiento usual es limpiar todos los notebook que se encuentran en el directorio declarado en el archivo settings.ini en la parte de nbdev nbs_path = nbs pero también puede se puede limpiar un solo notebook\n$ nbdev_clean --fname notebook.ipynb\nTambien podemos ejecutar\n$ nbdev_readme \nel cual actualiza el Readme.md del repositorio.\n\nSubir los cambios al repositorio de github\nYa podemos hacer los ‘commits’ y ‘push’ a los cambios en el repositorio para que estos se actualizen en Github. Nbdev nos da un comando para hacer todo para disminuir el tiempo para los cambios. Esto se puede hacer usando\n$ nbdev_prepare \nel cual exporta, prueba, limpia los notebooks y modifica el README del repositorio\n$ git add .\n$ git commit -m 'El primer commit con modificaciones' # Cambie el texto por el que se desee\n$ git push"
-  },
-  {
-    "objectID": "contenido/weeks/week03/1_pasos.html#instalación-de-la-biblioteca",
-    "href": "contenido/weeks/week03/1_pasos.html#instalación-de-la-biblioteca",
-    "title": "Curso Nbdev- Primeros pasos",
-    "section": "Instalación de la biblioteca",
-    "text": "Instalación de la biblioteca\nLa biblioteca se puede añadir a PIP o Anaconda en cualquiera de los casos es necesario tener una cuenta para hacer estas acciones.\nEn este caso se dan los pasos para hacer las instalación desde github usando pip install.\npip install \"Nombre\" @ git+\"URL del repositorio\"\nEn nuestro caso\npip install nbdev-prueba@git+https://github.com/\"Nombre_usuario_github\"/nbdev_prueba\nDe esta forma ya tenemos la biblioteca instalada dentro de nuestro ambiente de python. Para ver esto podemos abrir una terminal de python e importar el módulo core de nuestra biblioteca.\nfrom nbdev_prueba import core\ncore.saludo_a('Juan')\nY obtenemos como resultado\nHola! Juan\nEspero que te encuentres bien"
+    "objectID": "contenido/weeks/week01/page.html#presentación",
+    "href": "contenido/weeks/week01/page.html#presentación",
+    "title": "Introducción, Presentacion y conceptos",
+    "section": "👨‍🏫 Presentación",
+    "text": "👨‍🏫 Presentación\nEn la area de abajo se muestra una pequeña presentación del concepto y la historia en la que se basa Nbdev. Aquí se muestra en un formato grande. Use your keypad to navigate the slides."
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#qué-es-nbdev",
@@ -109,77 +60,28 @@
     "href": "contenido/weeks/week01/slides.html#cómo-usar-nbdev",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cómo usar nbdev ?",
-    "text": "¿ Cómo usar nbdev ?\nEl desarrollo de nbdev esta ligado a su uso con herramientas sowtware especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software.\nHerramientas ligadas a nbdev:\n\nPython (Python o conda)\nManejador de paquetes de Python (pip o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev"
+    "text": "¿ Cómo usar nbdev ?\nEl desarrollo de nbdev esta ligado a su uso con herramientas software especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software.\nHerramientas ligadas a nbdev:\n\nPython (Python o conda)\nManejador de paquetes de Python (pip o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev"
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
     "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cómo funciona nbdev ?",
-    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook podemos nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitara copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la docimentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios del código pueden reproducir de forma sencilla los ejemplos y resultados."
+    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados."
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
     "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cómo funciona nbdev en su segunda versión ?",
-    "text": "¿ Cómo funciona nbdev en su segunda versión ?\nEn sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de Quarto.\nQuarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema."
+    "text": "¿ Cómo funciona nbdev en su segunda versión ?\nEn sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de Quarto. Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema."
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
     "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cómo funciona nbdev en los notebooks ?",
-    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.\n\n\n\nCurso Nbdev – Introducción"
-  },
-  {
-    "objectID": "contenido/index.html",
-    "href": "contenido/index.html",
-    "title": "Curso Nbdev – Programación Literal",
-    "section": "",
-    "text": "📢 Important\n\n\n\n\n\n\n🎺 Presentacion concepto Introducción\n👣 Instalación de prerequisitos\n👣 Instalación\n🎺 Primer biblioteca\n🎺 Mas modulos\n\n\n\n\n\n🧑🏻‍🏫\n::: {.panel-tabset} ## Course Convenor\nMY_NAME  Profesor  CentroGeo 📧 MY_EMAIL (%20msalazar at centrogeo dot edu dot mx)\n\n\n📍 Cuando se imparte La clase magistral\nEn linea"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Curso Nbdev",
-    "section": "",
-    "text": "📑 Course Brief\nEnfoque: El objetivo de este curso es la enseñanza de nbdev para hacer desarrollo de software usando el concepto de programación literal (Literal Programing)\n¿Cómo ?: Se muestran brevemente las capacidades de nbdev y se hacen ejemplos para que todo el desarrollo de software se encuentre contenido en notebooks.\n\n\n🎯 Learning Objectives\n\nYou will discover how to do X\nDistinguish X from X\nPractice how to put things in italic\nDiscover how to highlight code inline\nProceed to learn stuff\n\n\nSelect Academic Year/Term:\n Contenido"
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html",
-    "href": "contenido/weeks/week01/page.html",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "",
-    "text": "In this first week, we will cover what you can expect to learn from this course and the course logistics: all you need to know about the structure of the lectures, classes, assessments, and how we will interact throughout this course."
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html#lecture-slides",
-    "href": "contenido/weeks/week01/page.html#lecture-slides",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "👨‍🏫 Lecture Slides",
-    "text": "👨‍🏫 Lecture Slides\nEither click on the slide area below or click here to view it in fullscreen. Use your keypad to navigate the slides.\n\n\n\n\n🎥 Looking for lecture recordings? You can only find those on Moodle."
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html#coursework",
-    "href": "contenido/weeks/week01/page.html#coursework",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "✍️ Coursework",
-    "text": "✍️ Coursework\n🚧 Come back after the lecture to read the coursework instructions for the week 🚧"
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html#recommended-reading",
-    "href": "contenido/weeks/week01/page.html#recommended-reading",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "📚 Recommended Reading",
-    "text": "📚 Recommended Reading\n\nCheck the end of slides for the list of references cited in the lecture."
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html#communication",
-    "href": "contenido/weeks/week01/page.html#communication",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "📟 Communication",
-    "text": "📟 Communication\n\nIf you feel like it, introduce yourself in the #introductions channel on Slack"
+    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.\n\n\n\nCurso Nbdev – Introducción"
   },
   {
     "objectID": "contenido/weeks/week02/slides.html#instalación",
@@ -193,7 +95,7 @@
     "href": "contenido/weeks/week02/slides.html#instalación-conda",
     "title": "Curso NbdevIntroducción ",
     "section": "Instalación conda",
-    "text": "Instalación conda\nPara la instalación de conda lo más sencillo es seguie el este manual aqui sólo se hace un esbozo de la instalación.\n\nBajar el instalador:\n\nAnaconda para windows.\n\nVerificar que se ha bajano correctamente (ver ).\nHacer doble click en el archivo .exe (similar a Anaconda3-######-Windows-x86_64.exe).\n\n\n\nSeguir las instrucciones en la pantalla.\n\n\n\nPara probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando conda list. Una lista de paquetes aparecera si se instaló de forma correcta."
+    "text": "Instalación conda\nPara la instalación de conda lo más sencillo es seguir el este manual aquí sólo se hace un esbozo de la instalación.\n\nBajar el instalador:\n\nAnaconda para windows.\n\nVerificar que se ha bajano correctamente (ver ).\nHacer doble click en el archivo .exe (similar a Anaconda3-######-Windows-x86_64.exe).\n\n\n\nSeguir las instrucciones en la pantalla.\n\n\n\nPara probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando conda list. Una lista de paquetes aparecera si se instaló de forma correcta."
   },
   {
     "objectID": "contenido/weeks/week02/slides.html#instalar-jupyter-notebook",
@@ -210,6 +112,69 @@
     "text": "Instalación rápida\nSe puede instalar a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev\nInstalar Quarto\nYa con la instalación de nbdev un comando del mismo nos permite instalar Quarto\nnbdev_install_quarto\nSi se desea se puede instalar siguiendo los siguientes pasos para usar con el IDE de preferencia.\n\n\n\nCurso Nbdev – Introducción"
   },
   {
+    "objectID": "contenido/weeks/week03/1_pasos.html",
+    "href": "contenido/weeks/week03/1_pasos.html",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "",
+    "text": "A continuación vamos a poner las cosas para crear un ambiente de desarrollo para automatizar todos los procesos.\n\nGenerar un repositorio.\nHabilitar Github Pages.\nHacer la primera edición.\nVer la documnetación local\nConstruir módulos.\nAñadir cambios Github"
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#generar-un-repositorio",
+    "href": "contenido/weeks/week03/1_pasos.html#generar-un-repositorio",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Generar un repositorio",
+    "text": "Generar un repositorio\nLos repositorios nos permiten mantener un orden en el código y un control de cambios, por la simpleza usaremos Github donde alojaremos el repositorio de nuestro desarrollo.\n\nSe utiliza el siguiente comando para clonar el repositorio y poder modificarlo de forma local.\ngit clone git@github.com:%nombreusuario/nbdev_prueba.git\nPodemos observar que no hay nada dentro del repositorio, incluso cuando se ejecuta el código anterior nos muestra una advertencia que estamos clonando un repositorio vacio.\nwarning: You appear to have cloned an empty repository.\nNbdev contiene un comando para añadir toda la estructura necesaria para poder generar nuestro paquete junto con su documentación.\nnbdev_new\nEste comando debera ejecutarse dentro del directorio del repositorio. El comando genera tres subdirectorios\n\nUn subdirectorio con el nombre del repositorio (nbdev_prueba)\nnbs\n_proc\n\nY unos archivos\n\nLicense\nMANIFEST.in\nREADME.md\nsettings.ini\nsetup.py\n\nDe los anteriores, el que nos interesa es el settings.ini en el cual se controla la mayoría de las cosas dentro de nuestro paquete.\nVamos a modificar nuestro repositorio en github para ver que todo se sincronize y funcione.\n$ git add .\n$ git commit -m 'Primer commit'\n$ git push\nSi vamos a nuestro repositorio podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales."
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo",
+    "href": "contenido/weeks/week03/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Habilitar Github Pages y flujos de trabajo",
+    "text": "Habilitar Github Pages y flujos de trabajo\nUna de cosa que nos promete nbdev es la generación de documentación, pero es necesario tener un lugar donde se pueda consultar. Un lugar donde podemos tener alojada la documentación es en Github Pages la cual nos permite generar un sitio web con la documentación desde el repositorio.\n\n\n\n\n\n\nNote\n\n\n\nAunque nbdev tiene por defecto el uso de Github Pages esto puede ser modificado y tener alojada la documentación en otra parte.\n\n\nPara habilitar en el repositorio hay que ir a la parte de “Settings” del repositorio y en el menu (Izquierda) en “Pages”. En esta sección se cambia de “Branch” a “gh-pages” y se da click en “Save”.\n\nLa página se encuentra alojada en una dirección similar a https://%nombreusuario.github.io/nbdev_prueba/. Pero primero esta debe ser generada por Github.\nUna de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.\nCuando nuestra pagina de documentación se encuentre disponible en la pestaña de “Actions” del repositorio podremos ver (✅) en “pages build and deployment”. En caso de que se vea (❌) significa que algo a salido mal.\n\nPara poder ver la documentación que se creo nos podemos dirigir a la la cual estará alojada en algo similar a https://%nombreusuario.github.io/nbdev_prueba/\n\n\n\n\n\n\n\nIntegración continua\nAl tener todo integrado facilitamos el trabajo del desarrollador, aprovechando el tiempo y librando de tareas que pueden resultar engorrosas y que lleva tiempo realizar."
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#hacer-la-primera-edición",
+    "href": "contenido/weeks/week03/1_pasos.html#hacer-la-primera-edición",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Hacer la primera edición",
+    "text": "Hacer la primera edición\nYa que hemos generado un repositorio y hemos modificado las configuraciones para tener la documentación alojada de forma automatica vamos a hacer la primera edición a nuestro paquete.\n\nAntes de editar\nAntes de esto vamos a ejecutar el siguiente comando\n$ nbdev_install_hooks\nEste comando nos permite instalar ciertas extensiones en jupyter Notebook y JupyterLab, las cuales nos permitiran limpiar los notebooks de metadatos que no son necesarios en los repositorios. Y arreglar ciertos elementos de los notebooks los cuales pueden llegar a causar conflictos cuando se hace uso de las acciones de git.\nEsto nos ayuda, pues es común que ciertos datos se modifiquen sin haber editato el notebook, esto sucede por el simple hecho de hacer su ejecución o abrir el notebook.\n\nnbdev_merge Nos ayuda a poner los notebooks de forma que al hacer el uso de acciones de pull merge, rebase o stash dentro de git, no modifiquen los notebooks y estos se puedan ejecutar entre los colaboradores del repositorio.\nnbdev_clean Los notebooks de Jupyter incluyen muchos metadatos que no se llevan bien con sistemas de control como git. Por tal motivo nbdev installa un “hook” el cual elimina estos metadatos o los remplaza por versiones genéricas que no afectan la ejecución o visualizaciones dentro del notebook.\nnbdev_trust Un efecto secundario que se tiene al hacer uso de los notebooks de Jupiter es que estos no funcionan dentro de repositorios compartidos. La razón es que estos pueden ejecutar código HTML o código de JavaScript el cual puede llegar a contener codigo malicioso. Por tal motivo el comportamiento por defecto de los notebooks de Jupyter es preguntar si se puede confiar en el notebook cada vez que se abre esto puede ser una problemática en el flujo de trabajo por tal motivo se puede correr nbdev_trust para evitar que cada vez que se abre un notebook pregunte si es de confianza.\n\n\n\n\n\n\n\nAdvertencia\n\n\n\nNo se debe de usar los hooks de nbdev dentro de un repositorio que no se confie.\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nLos hook de nbdev funcionan para cualquier repositorio, sin importar si se usa nbdev o no para generar un paquete o biblioteca.\n\n\n\n\n\nConfigurar\nNbdev es muy modificable, esto se encuentra dentro del archivo settings.ini. Para crear el archivo se puede ejecutar nbdev_create_config.\n\n\nEditamos\nAbrimos el archivo nbs/00_core.ipynb, el cual se generó cuando ejecutamos nbdev_new. Dentro de éste se pueden observar las directrizes más importantes para generar un documento que nos servira para poder hacer tanto nuestro paquete, la documentación y su empaquetado.\nExpliquemos el comportamiento de las celdas que se encuentran dentro de este notebook.\nLa primera celda contiene\n# core\n\n> Fill in a module description here\naquí definimos que el módulo a crear se llamara core y la descripción del mismo. La celda contiene un encabezado H1 de Markdown #y una cita de Markdown donde se describe el módulo.\nLa segunda celda\n#| default_exp core\nes una directriz en la cual se decide el módulo al cual el notebook exportará lo que se desee. Como se encuentra se exporta al módulo core.\nEn la siguiente celda\n#| hide\nfrom nbdev.showdoc import *\nla directriz #| hide nos dice que esta celda no parecerá y tampoco la salida de la misma. Esto nos sirve para poder hacer ciertas pruebas pero que no se desean que sean exportadas ni que sean parte de la documentación.\nEn la celda siguiente\n#| export\ndef foo(): pass\nla directriz #| export exportará el contenido de la celda al módulo.\nLa última celda\n#| hide\nimport nbdev; nbdev.nbdev_export()\nusa la directriz #| hide para ocultar el código y la salida de la celda, lo que se ejecuta dentro de la celda es lo que permite exportar lo que se indicó dentro del notebook al módulo.\nVamos a modificar este notebook para hacer un módulo con funciones sencillas.\nAgregamos la siguiente celdas antes de la última celda en el notebook sin editar.\n#| export\ndef saludo():\n    \"\"\"Imprime Hola\"\"\"\n    print('Hola!')\n    return\nsaludo()\n#| export\ndef saludo_a(to):\n    \"\"\"Imprime hola a un nombre\"\"\"\n    print('Hola!', to)\n    \n    print('Espero que te encuentres bien')\n    return\nsaludo_a('Raul')\nshow_doc(saludo_a)\nLas celdas sin la directriz #| export nos pueden servir para probar las funcionalidades dentro del módulo o bien para ser parte de la documentación como ejemplos. En la celda se utiliza la función show_doc nos sirve para mostrar el uso de la cocumentación iterna de la función saludo_a esta nos sirve para generar una documentación precisa.\nAhora podemos executar todo el notebook usando el boton ⏩ dentro de jupyterlab. Si todo funciona correctamente podemos generar la documentación, hacer pruebas y exportar a un módulo."
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#ver-la-documentación",
+    "href": "contenido/weeks/week03/1_pasos.html#ver-la-documentación",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Ver la documentación",
+    "text": "Ver la documentación\nPara poder ver la documentación de forma local se executa el siguiente comando desde el folder del repositorio\n$ nbdev_preview\nEl comando construye la documentación usando los noteboooks que se encuentran dentro del directorio ‘nbs/’. Y genera un servicio de pagina web de forma local a la cual podemos acceder desde nuestro navegador.\nLa configuración se puede controlar desde el archivo settings.ini y por defecto toma a ‘nbs/index.ipynb’ como la pagina principal. A la izquierda nos muestra una columna donde podemos ir a la documentación del modulo “core”. Podremos observar que se encuentran las modificaciónes que se hicieron al módulo.\nSi se mantiene en servicio la página es posible ver los cambios que se hacen con cierto retraso."
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#probar-el-módulo",
+    "href": "contenido/weeks/week03/1_pasos.html#probar-el-módulo",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Probar el módulo",
+    "text": "Probar el módulo\nPara probar que el todos los elementos del módulo funciona de forma correcta y si alguna modificación hecha no afecta en el desempeño de los componentes de los módulos en nuestro proyecto se utiliza el siguiente comando\n$ nbdev_test\nSi todo esta correcto en la consola se desplegara\nSuccess.\nEn caso contrario se muestran los errores y se especifica los notebook en donde se encuentran.\nnbdev_test puede usarse para probar de manera individual los notebooks\n$ nbdev_test --path notebook.ipynb\nO para todo un directorio\n$ nbdev_test --path tests/"
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#generar-el-módulo",
+    "href": "contenido/weeks/week03/1_pasos.html#generar-el-módulo",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Generar el módulo",
+    "text": "Generar el módulo\nPara generar la documentación, desde la linea de comandos en el directorio de nuestro repositorio se llama el comando:\n$ nbdev_export\nEste comando genera nuestro módulo ‘core’ el cual se encontrará dentro del directorio ‘nbdev_prueba’. Si se desea se pueda abrir el archivo core.py el cual contiene una leyenda\n>  # AUTOGENERATED! DO NOT EDIT! File to edit: ../nbs/00_core.ipynb.\ninformando que el archivo fue autogenerado y que cualquier modificación debe de hacerse dentro del notebook nbs/00_core.ipynb.\nEn core.py podemos ver que se encuentran las funciones definidas dentro del notebook en las celdas con la directriz #| export.\nEl módulo generado forma parte de la nuestro proyecto.\nPor defecto al ejecutar nbdev_export se puede hacer sobre todos los notebooks del projecto. También se puede hacer sobre un notebook en específico.\nnbdev_export --path notebook.ipynb\no un directorio\nnbdev_export --path dir/\nEsto solo sucedera si al principio del notebook se añade la directriz #| default_exp core al principio del notebook."
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#añadir-los-cambios-en-github",
+    "href": "contenido/weeks/week03/1_pasos.html#añadir-los-cambios-en-github",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Añadir los cambios en Github",
+    "text": "Añadir los cambios en Github\nPara mantener el código usando Github limpiamos los notebooks con\n$ nbdev_clean\nEl comportamiento usual es limpiar todos los notebook que se encuentran en el directorio declarado en el archivo settings.ini en la parte de nbdev nbs_path = nbs pero también puede se puede limpiar un solo notebook\n$ nbdev_clean --fname notebook.ipynb\nTambien podemos ejecutar\n$ nbdev_readme \nel cual actualiza el Readme.md del repositorio.\n\nSubir los cambios al repositorio de github\nYa podemos hacer los ‘commits’ y ‘push’ a los cambios en el repositorio para que estos se actualizen en Github. Nbdev nos da un comando para hacer todo para disminuir el tiempo para los cambios. Esto se puede hacer usando\n$ nbdev_prepare \nel cual exporta, prueba, limpia los notebooks y modifica el README del repositorio\n$ git add .\n$ git commit -m 'El primer commit con modificaciones' # Cambie el texto por el que se desee\n$ git push"
+  },
+  {
+    "objectID": "contenido/weeks/week03/1_pasos.html#instalación-de-la-biblioteca",
+    "href": "contenido/weeks/week03/1_pasos.html#instalación-de-la-biblioteca",
+    "title": "Curso Nbdev- Primeros pasos",
+    "section": "Instalación de la biblioteca",
+    "text": "Instalación de la biblioteca\nLa biblioteca se puede añadir a PIP o Anaconda en cualquiera de los casos es necesario tener una cuenta para hacer estas acciones.\nEn este caso se dan los pasos para hacer las instalación desde github usando pip install.\npip install \"Nombre\" @ git+\"URL del repositorio\"\nEn nuestro caso\npip install nbdev-prueba@git+https://github.com/\"Nombre_usuario_github\"/nbdev_prueba\nDe esta forma ya tenemos la biblioteca instalada dentro de nuestro ambiente de python. Para ver esto podemos abrir una terminal de python e importar el módulo core de nuestra biblioteca.\nfrom nbdev_prueba import core\ncore.saludo_a('Juan')\nY obtenemos como resultado\nHola! Juan\nEspero que te encuentres bien"
+  },
+  {
     "objectID": "contenido/weeks/week03/page_1pasos.html",
     "href": "contenido/weeks/week03/page_1pasos.html",
     "title": "Primeros pasos",
@@ -222,5 +187,12 @@
     "title": "Primeros pasos",
     "section": "Presentación",
     "text": "Presentación\nPara ir a la presentación haga chick aquí use las flechas navegar en la presentación."
+  },
+  {
+    "objectID": "contenido/weeks/week04/mas_modulos.html",
+    "href": "contenido/weeks/week04/mas_modulos.html",
+    "title": "Curso Nbdev – Hacer más cosas",
+    "section": "",
+    "text": "Ya sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de nbdev. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo.\nPara la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior\nDentro del directorio nbs del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo arbol el cual contendrá el ejemplo para hacer. El nombre del notebook sera ‘01_arbol.ipynb’.\nEn la primera celda tenemos para importar las dependencias del modulo\n\nLa segunda celda de código definimos una clase simple donde se utiliza la directriz de Quarto #| export al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Towdas las celdas que contengan esta\n#| export\nclass nodo(): \n    \"\"\" Esta clase es un nodo con dos hijos\"\"\"\n    def __init__(self):\n        self.der = None\n        self.izq = None\nnodo_basico = nodo()\nprint(nodo_basico.der)"
   }
 ]

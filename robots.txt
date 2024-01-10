@@ -1,1 +1,1 @@
-Sitemap: https://github.com/msalazarcgeo/Curso_nbdev/sitemap.xml
+Sitemap: https://msalazarcgeo.github.io/Curso_nbdev/sitemap.xml

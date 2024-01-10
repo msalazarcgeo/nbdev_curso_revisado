@@ -79,7 +79,7 @@ Si se utiliza conda para hacer uso de nbdev, es necesario que este instalado den
 
 ## ¿ Cómo usar nbdev ?
 
-El desarrollo de nbdev esta ligado a su uso con herramientas sowtware especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software. 
+El desarrollo de nbdev esta ligado a su uso con herramientas software especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software. 
 
 
 Herramientas ligadas a nbdev:
@@ -97,22 +97,20 @@ Herramientas ligadas a nbdev:
 La idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook. 
 
 
-Al tener todo dentro de un mismo notebook podemos nos permite que todo sea más simple. 
+Al tener todo dentro de un mismo notebook nos permite que todo sea más simple. 
 
 * Se evita la repetición de código pues nombres de parámetros, constantes, typos, etc. 
-* Se simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitara copiarlos y poner estos dentro de una documentación de forma manual. 
-* Se enriquecen los ejemplos y la docimentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.
-* Para los usuarios del código pueden reproducir de forma sencilla los ejemplos y resultados. 
+* Se simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual. 
+* Se enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.
+* Para los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados. 
 
 ## ¿ Cómo funciona nbdev en su segunda versión ? 
 
-En sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de [Quarto](https://quarto.org/).
-
-Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema.  
+En sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de [Quarto](https://quarto.org/). Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema.  
 
 ## ¿ Cómo funciona nbdev en los notebooks ? 
 
-Usando simples directrices dentro de los notebooks nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.
+Usando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.
 
 
 

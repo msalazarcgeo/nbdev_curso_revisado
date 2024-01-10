@@ -2,28 +2,15 @@
 title: "Introducción, Presentacion y conceptos"
 ---
 
-In this first week, we will cover what you can expect to learn from this course and the course logistics: all you need to know about the structure of the lectures, classes, assessments, and how we will interact throughout this course. 
+Se cubre la presentación de la idea sobre la cual se construye _Nbdev_
 
-## 👨‍🏫 Lecture Slides 
+## 👨‍🏫 Presentación
 
-Either click on the slide area below or click [here](slides.qmd) to view it in fullscreen.
+En la area de abajo se muestra una pequeña presentación del concepto y la historia en la que se basa _Nbdev_. [Aquí](slides.qmd) se muestra en un formato grande.
 Use your keypad to navigate the slides.
 
 <div class="container" style="position: relative;overflow: hidden;width: 100%;min-height:600px;">
 <iframe src="slides.html" style="position=absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;min-height:600px;"></iframe>
 </div>
 
-🎥 Looking for lecture recordings? You can only find those on Moodle.
 
-## ✍️ Coursework
-
-🚧 Come back after the lecture to read the coursework instructions for the week 🚧
-
-
-## 📚 Recommended Reading
-
-- Check the end of slides for the list of references cited in the lecture.
-
-## 📟 Communication
-
-- If you feel like it, introduce yourself in the `#introductions` channel on Slack

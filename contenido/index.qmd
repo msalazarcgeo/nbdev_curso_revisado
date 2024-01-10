@@ -5,11 +5,11 @@ format: html
 ---
 
 ::: {.callout-important collapse=false}
-## 📢 Important
+## 📢 Contenido
 
 
 
-- [🎺 Presentacion concepto](/contenido/weeks/week01/page.qmd) Introducción 
+- [🎺 Presentacion concepto](/contenido/weeks/week01/page.qmd) 
 
 - [👣 Instalación de prerequisitos  ](/contenido/weeks/week02/slides.qmd) 
 
@@ -19,12 +19,6 @@ format: html
 
 - [🎺 Mas modulos](/contenido/weeks/week04/mas_modulos.qmd) 
 :::
-
-
-# 🧑🏻‍🏫 
-
-::: {.panel-tabset}
-## Course Convenor
 
 
 

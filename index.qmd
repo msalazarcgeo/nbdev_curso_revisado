@@ -6,25 +6,24 @@ format:
     include-after-body: helpers/remove-title.html
 ---
 
-# 📑 Course Brief
+# 📑 Resumen del curso
 
 **Enfoque:** El objetivo de este curso es la enseñanza de ***nbdev***  para hacer desarrollo de software usando el concepto de programación literal (*Literal Programing*)
 
 
 **¿Cómo ?:** Se muestran brevemente las capacidades de ***nbdev*** y se hacen ejemplos para que todo el desarrollo de software se encuentre contenido en notebooks.  
 
-# 🎯 Learning Objectives
+# 🎯 Objetivos de aprendizaje
 
-- You will discover how to do X
-- Distinguish X from **X**
-- Practice how to put things _in italic_
-- Discover how to highlight `code` inline
-- Proceed to learn stuff
+- Como hacer uso de la plataforma de *Nbdev*
+- Instalación de cosas básicas
+- Generación de bibliotecas
+- Generación de documentación especializada
+- temas avanzados
 
 
 -----------------
 
-**Select Academic Year/Term:**
 
 <a href="contenido/index.qmd">
     <button class="button-61">Contenido</button>

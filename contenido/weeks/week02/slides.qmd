@@ -25,7 +25,7 @@ format:
 
 ## Instalación 
 
-Para hacer uso de nbdev es necesario los siguientes softwares:
+Para hacer uso de _nbdev_ es necesario los siguientes softwares:
 
 
 * Python (Python o [conda](https://www.anaconda.com/))
@@ -37,11 +37,9 @@ Para hacer uso de nbdev es necesario los siguientes softwares:
 
 ## Instalación conda
 
-Para la instalación de conda lo más sencillo es seguie el este [manual](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) aqui sólo se hace un esbozo de la instalación.
+Para la instalación de conda lo más sencillo es seguir el este [manual](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) aquí sólo se hace un esbozo de la instalación.
 
 1. Bajar el instalador:
-
-
     * [Anaconda](https://www.anaconda.com/download/) para windows.
 
 2. Verificar que se ha bajano correctamente ([ver](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#hash-verification) ).

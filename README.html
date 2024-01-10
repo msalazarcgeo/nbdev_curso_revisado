@@ -108,25 +108,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="quarto" class="level1">
-<h1>Quarto</h1>
-<p>The following project is for a course of <a href="https://nbdev.fast.ai/">nbdev</a>.</p>
+<section id="nbdev" class="level1">
+<h1>Nbdev</h1>
+<p>El siguiente proyecto es un curso de <a href="https://nbdev.fast.ai/">nbdev</a>.</p>
 <p><strong>Nbdev</strong></p>
-<p>Is a notebook-driven plataform to develop software. It allows to create hig-quality documentation, testm and continuous integration.</p>
-<p>Nbdev makes debugging and refactoring code in a simpler manner.</p>
-<ul>
-<li>Documentation is automatically generated using <a href="https://quarto.org/">Quarto</a> and allows to be hosted using <a href="https://pages.github.com/">Github Pages</a>. The use of notebooks allow the usage of Latex inside the documentation and easy explanation of the code developed.</li>
-</ul>
+<p>Es una plataforma de desarrollo de software basado en notebooks que nos permite desarrollar software, hacer limpieza de errores, rehacer código, generar documentacón de alto nivel, hacer pruebas y mantener una integración continua de forma simple usando notebooks.</p>
+<p>La documentación del software puede ser generada a partir de simples comandos y puede ser integrada dentro de <a href="https://pages.github.com/">Github Pages</a>. El uso de los notebooks de Markdown nos permite integrar el uso de Latex, esto nos permite generar documentación especializada y organizada.</p>
 </section>
-<section id="what-is-inside-this-repository" class="level1">
-<h1>🔦 What is inside this repository</h1>
-<p>This repository contains a course of Nbdev</p>
+<section id="contenido-del-repositorio" class="level1">
+<h1>🔦 Contenido del repositorio</h1>
+<p>Este repositorio contiene un curso de Nbdev.</p>
 <details>
 <summary>
 <strong>Installation:</strong>
 </summary>
 <ol type="1">
-<li><p>Installation anaconda</p></li>
+<li><p>Instalacion de <em>nbdev</em></p></li>
 <li><p>Installation JupyterLab</p></li>
 <li><p>Installation nbdev</p></li>
 <li><p>Install Quarto</p></li>
@@ -146,30 +143,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 <details>
 <summary>
-<strong>Start editing the files:</strong>
+<strong>Generate the course:</strong>
 </summary>
-<p>Here is a guide of the initial files you might want to modify to remove the sections that refer to the template, leaving only what is relevant to developing/updating the material of your course.</p>
-<ol start="6" type="1">
+<p>Here is a guide of the initial files you want to modify to remove the sections that refer to the template, leaving only what is relevant to developing/updating the material of your course.</p>
+<ol type="1">
 <li><p>Start by editing the <code>README.md</code> file carefully.</p>
 <ul>
 <li>Change the title</li>
 <li>Remove some of the sections</li>
 <li>Edit the Dev Setup instructions to cater to your needs.</li>
 </ul></li>
-<li><p>Add your <strong>course code</strong> and <strong>course name</strong> to the web pages</p>
+<li><p>Add your the <strong>course code</strong> and <strong>course name</strong> to the web pages</p>
 <ul>
+<li>Using the</li>
 <li>If you are using VSCode, you can Ctrl + Shift + F (or ⌘ + Shift + F if you are on Mac) and replace all occurrences of <code>MY_COURSE_CODE</code> and <code>MY_COURSE_NAME</code> to the code and name of your course, respectively.</li>
 <li>Or, you can manually edit those in the following files:
 <ul>
 <li><code>_quarto.yml</code></li>
 <li><code>2023/index.qmd</code></li>
-<li><code>helpers/remove-nav.html</code></li>
+<li><code>helpers/remove-nav.html</code> 3 To add files to render it has to be on the <code>_quarto.yml</code> file. This allows a global control on which files sould be render on the site.</li>
 </ul></li>
 </ul></li>
-<li><p>Then move on to <code>_quarto.yml</code>. Scan through this file to spot what you want to change. What pages do you want to keep or remove from your website?</p></li>
 <li><p>Next, modify the content of <code>index.qmd</code> and start working properly on your content pages under <code>2023/*</code></p></li>
-<li><p>Visualise your changes by running the Quarto website locally:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview . <span class="at">--render</span> all <span class="at">--no-browser</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>To generate all the files:</p>
+<pre><code>quarto preview . --render all --no-browser</code></pre></li>
 </ol>
 </details>
 </section>
@@ -204,22 +201,11 @@ Now, whenever you open a Jupyter Notebook, you should see the <code>venv-my-cour
 <summary>
 📊 The R setup
 </summary>
-</details></section>
-<section id="the-r-setup" class="level2">
-<h2 class="anchored" data-anchor-id="the-r-setup">📊 The R setup</h2>
-<ol type="1">
-<li>Open a terminal and navigate to the root of this repository.</li>
-<li>Ensure you have <strong>R version 4.2.2</strong> or higher</li>
-<li>Open the R console in this same directory and install <code>renv</code> package: <code>r     install.packages("renv")</code></li>
-<li>Run <code>renv::restore()</code> to install all the packages needed for this project</li>
-<li>Whenever you install a new R package, run <code>renv::snapshot()</code> to save it on your renv.</li>
-</ol>
-
 <details>
 <summary>
 <img src="https://quarto.org/favicon.png" style="object-fit: cover;width:1em;height:1em;"> The Quarto setup
 </summary>
-</details></section>
+</details></details></section>
 <section id="the-quarto-setup" class="level2">
 <h2 class="anchored" data-anchor-id="the-quarto-setup"><img src="https://quarto.org/favicon.png" style="object-fit: cover;width:1em;height:1em;"> The Quarto setup</h2>
 <ol type="1">

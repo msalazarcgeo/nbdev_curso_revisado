@@ -1,0 +1,39 @@
+---
+title: "Curso Nbdev -- Hacer más cosas"
+subtitle: "Hacer todo el desarrollo"
+---
+
+# Más módulos 
+
+Ya sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de *nbdev*. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo. 
+
+
+Para la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior
+
+Dentro del directorio `nbs` del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo *arbol* el cual contendrá el ejemplo para hacer. El nombre del notebook sera '01_arbol.ipynb'.
+
+En la primera celda tenemos para importar las dependencias del modulo 
+
+```python
+
+```
+
+La segunda  celda de código definimos una clase simple donde se utiliza la directriz de Quarto `#| export` al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Towdas las celdas que contengan esta 
+
+```python
+#| export
+class nodo(): 
+    """ Esta clase es un nodo con dos hijos"""
+    def __init__(self):
+        self.der = None
+        self.izq = None
+```
+
+
+```python
+nodo_basico = nodo()
+print(nodo_basico.der)
+```
+
+
+

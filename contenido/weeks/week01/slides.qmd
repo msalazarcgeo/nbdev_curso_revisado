@@ -3,8 +3,8 @@ subtitle: "Desarrollo de software \n a través de la programación literal -- Cu
 title: "<font style='font-size:1em;'>Curso Nbdev<br/>Introducción </font>"
 author:   '[J. Miguel Salazar](#)'
 institute: '[CentroGeo](#)'
-date: 14 March 2023
-date-meta: 14 March 2023
+date: 01 Enero 2024
+date-meta: 01 Enero 2024
 date-format: "DD MMM YYYY"
 toc: true
 toc-depth: 1
@@ -22,74 +22,6 @@ format:
     css: /css/styles_slides.css
     footer: 'Curso Nbdev -- Introducción'
 ---
-
-# Who are we
-
-## Your lecturer {.smaller}
-
-::: columns
-
-::: {.column style="display:inline-block;width:40%;height:60%;border-radius:1em;margin:1%;padding:1.5%;background-color:#f5f5f5"}
-<figure>
-    <img src="/figures/people/professor_octopus.png" alt="Photo of Professor Octopian" role="presentation" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;font-size:1em;" class="img-responsive atto_image_button_text-bottom">
-    <figcaption>
-        <strong>Prof.&nbsp;<span><a href="#" target="_blank" class="external">Octopian</a></span></strong> 
-        <br/>Professor of Octopus Issues
-        <br/>Head of the Python vs R Debate Society
-    </figcaption>
-</figure>
-:::
-
-::: {.column style="width:50%;font-size:0.85em;margin-left:3%;"}
-- PhD in Octopi Engineering
-- **Background**: Engineering of Deep Ocean constructions
-- Former **Lead Data Scientist**
-
-<span class="tag" style="background-color:var(--quarto-hl-st-color)">deep ocean</span>
-<br/>
-<span class="tag" style="background-color:var(--quarto-hl-fu-color)">engineering</span>
-<br/>
-<span class="tag" style="background-color:var(--quarto-hl-dv-color)">octopus</span>
-
-:::
-
-:::
-
-## Teaching Assistants {.smaller}
-
-::: columns
-
-::: {.column style="display:inline-block;width:40%;height:60%;border-radius:1em;margin:1%;padding:1.5%;background-color:#f5f5f5"}
-<figure>
-    <img src="/figures/people/ta_octopunian.png" alt="Image Created with DALL·E. Prompt: 'octopus-like alien futuristic non-binary happy teaching assistant, phd student Octopunian, award-winning professional high-quality studio headshot'" role="presentation" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;font-size:1em;" class="img-responsive atto_image_button_text-bottom">
-    <figcaption>
-        <strong><span><a href="#" target="_blank" class="external">Octopnuian Arveda</a></span></strong>
-        <br/> 
-        PhD Candidate at [OctopusLab, OUN](#) <br>
-        MSc in Octopus Transportation<br/>
-        📧 
-        <br/>
-    </figcaption>
-</figure>
-:::
-
-::: {.column style="display:inline-block;width:40%;height:60%;border-radius:1em;margin:1%;padding:1.5%;background-color:#f5f5f5"}
-<figure>
-    <img src="/figures/people/ta_octopunian2.png" alt="Image Created with DALL·E. Prompt: 'octopus-like alien futuristic non-binary happy teaching assistant, phd student Octopunian, award-winning professional high-quality studio headshot'" role="presentation" style="object-fit: cover;width:5em;height:5em;border-radius: 50%;font-size:1em;" class="img-responsive atto_image_button_text-bottom">
-    <figcaption>
-        <strong><span><a href="#" target="_blank" class="external">Octopnuian Arveda</a></span></strong>
-        <br/> 
-        PhD Candidate at [OctopusLab, UOS](#) <br>
-        MSc in Octopus Transportation<br/>
-        📧 
-        <br/>
-    </figcaption>
-</figure>
-:::
-
-:::
-
-
 # Curso 
 
 ##  ¿ Qué es Nbdev ? 
@@ -162,23 +94,23 @@ Herramientas ligadas a nbdev:
 
 ## ¿ Cómo funciona nbdev ?
 
-La idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funtione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook. 
+La idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook. 
 
 
 Al tener todo dentro de un mismo notebook podemos nos permite que todo sea más simple. 
 
 * Se evita la repetición de código pues nombres de parámetros, constantes, typos, etc. 
 * Se simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitara copiarlos y poner estos dentro de una documentación de forma manual. 
-* Se enriquecen los ejemplos y la docimentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imagenes, y ejemplos interactivos.
+* Se enriquecen los ejemplos y la docimentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.
 * Para los usuarios del código pueden reproducir de forma sencilla los ejemplos y resultados. 
 
-## ¿ Cómo funciona nbdev ? 2
+## ¿ Cómo funciona nbdev en su segunda versión ? 
 
 En sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de [Quarto](https://quarto.org/).
 
 Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema.  
 
-## ¿ Cómo funciona nbdev ? 3
+## ¿ Cómo funciona nbdev en los notebooks ? 
 
 Usando simples directrices dentro de los notebooks nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.
 

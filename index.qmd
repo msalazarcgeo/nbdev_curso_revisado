@@ -26,7 +26,7 @@ format:
 
 **Select Academic Year/Term:**
 
-<a href="2023/index.qmd">
-    <button class="button-61">2022/23</button>
+<a href="contenido/index.qmd">
+    <button class="button-61">Contenido</button>
 </a>
 

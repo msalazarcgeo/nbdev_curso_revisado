@@ -9,8 +9,6 @@ Es una plataforma de desarrollo de software basado en notebooks que nos permite 
 
 La documentación del software puede ser generada a partir de simples comandos y puede ser integrada dentro de [Github Pages](https://pages.github.com/). El uso de los notebooks de Markdown nos permite integrar el uso de Latex, esto nos permite generar documentación especializada y organizada.
 
-# 🔦 Lo que se encuentra dentro del curso  
-
 
 # 🔦 Lo que se encuentra dentro del curso  
 
@@ -27,10 +25,6 @@ La documentación del software puede ser generada a partir de simples comandos y
 
 5. Instalación JupyterLab extension
 
-</details>
-
-<details><summary><strong> How to:</strong></summary>
-
 6. Crear un repositorio.
 
 7. Activar Github Pages.
@@ -42,5 +36,6 @@ La documentación del software puede ser generada a partir de simples comandos y
 11. Instalación de la biblioteca.
 
 
+# Link curso github pages 
 
 [Link al curso en linea](https://msalazarcgeo.github.io/Curso_nbdev/) 

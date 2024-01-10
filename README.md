@@ -35,6 +35,8 @@ La documentación del software puede ser generada a partir de simples comandos y
 
 11. Instalación de la biblioteca.
 
+</details>
+
 
 # Link curso github pages 
 

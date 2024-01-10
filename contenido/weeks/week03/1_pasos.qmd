@@ -350,7 +350,20 @@ En nuestro caso
 pip install nbdev-prueba@git+https://github.com/"Nombre_usuario_github"/nbdev_prueba
 ```
 
-De esta forma ya tenemos la biblioteca instalada dentro de python. 
+De esta forma ya tenemos la biblioteca instalada dentro de nuestro ambiente de python. Para ver esto podemos abrir una terminal de python e importar el módulo core de nuestra biblioteca. 
+
+```python
+from nbdev_prueba import core
+core.saludo_a('Juan')
+```
+Y obtenemos como resultado 
+
+```
+Hola! Juan
+Espero que te encuentres bien
+```
+
+
 
 
 

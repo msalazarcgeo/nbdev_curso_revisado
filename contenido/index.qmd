@@ -1,6 +1,6 @@
 ---
 title: "Curso Nbdev -- Programación Literal"
-subtitle: "Como "
+subtitle: "Lo que contiene"
 format: html
 ---
 

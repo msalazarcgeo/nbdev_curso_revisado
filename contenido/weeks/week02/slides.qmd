@@ -35,7 +35,13 @@ Para hacer uso de _nbdev_ es necesario los siguientes softwares:
 * nbdev
 
 
-## Instalación conda
+## Instalación Anaconda
+
+Anaconda permite la generación de ambientes virtuales, estos nos permite tener un manejo eficiente de los paquetes instalados dentro del ambiente y las dependencias dentro de estos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo. 
+
+De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo. 
+ 
+
 
 Para la instalación de conda lo más sencillo es seguir el este [manual](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) aquí sólo se hace un esbozo de la instalación.
 
@@ -44,11 +50,58 @@ Para la instalación de conda lo más sencillo es seguir el este [manual](https:
 
 2. Verificar que se ha bajano correctamente ([ver](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#hash-verification) ).
 
-3.  Hacer doble click en el archivo `.exe` (similar a `Anaconda3-######-Windows-x86_64.exe`).
+3.  Hacer doble click en el archivo `.exe` (similar a `Anaconda3-######-Windows-x86_64.exe`). Para la instalación en Linux o Mac se debe de bajar el archivo `Anaconda3-####-Linux-###.sh` o bien el `Anaconda3-####-MACOSX-###.sh` y ejecutar el archivo  usando la terminal. 
 
-* 4. Seguir las instrucciones en la pantalla.
+
+4. Seguir las instrucciones en la pantalla en caso de windows. Y seguir la instrucciones que apareceran en caso del uso de la terminal. 
 
 5. Para probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando `conda list`. Una lista de paquetes aparecera si se instaló de forma correcta. 
+
+
+### Hacer un ambiente virtual 
+
+Para generar un ambiente virtual usando anaconda se puede hacer a través de la terminal. En caso de windows se puede hacer llamando a **Anaconda Prompt**. 
+
+Dentro de la terminal se puede observar que antes del símbolo del sistema aparece la leyenda `(base)` esta no indica que estamos usando el ambiente virtual base. 
+
+Para crear un nuevo ambiente virtual se ejecuta la siguiente linea en la linea de comandos. 
+
+```{bash}
+conda create -n desarrollo
+```
+Este comando crea un nuevo ambiente virtual llamano desarrollo. Se puede especificar la versión de python a instalar dentro del ambiente virtual. También es posible instalar otros lenguajes de programación dentro del ambiente virtual cono son R o Julia. 
+
+
+Para entrar al ambiente virtual la forma de hacerlo es ejecutar 
+```
+conda activate desarrollo
+```
+Al ejecutar el comando se puede observar que la leyenda `(base)` fue sustituida por la leyenda `(desarrollo)` lo cual nos indica que hemos activado nuestro ambiente virtual. 
+
+### Canales 
+
+Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza anaconda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por *Anaconda*. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las glas establecidas por cada canal. Los distintos canale tienen distintos objetivos por ejemplo [bioconda](https://bioconda.github.io/) contiene las paqueterias desarrolladas relacionadas con desarrollos biomedicos. 
+
+Otro canal muy utilizado es [conda-forge](https://conda-forge.org/) el cual contiene paquetes desarrollados por una extensa comunidad. 
+
+
+### Instalación paquetes
+
+Para instalar un paquete dentro del ambiente virtual es necesario activar el ambiente y ya dentro de este para hacer la instalación tenemos dos formas distintas **PIP** o **conda**. Los 
+
+
+## Instalar git
+
+Git es un systema de control de versiones, aunque existen distintos systemas de control de versiones git es el mäs utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y solo daremos una explicación simplificada de esto. 
+
+Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo. Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
+
+Git tiene 
+
+
+
+La instalación de git dentro de un ambiente virtual de anaconda 
+
 
 
 ## Instalar Jupyter Notebook 
@@ -65,7 +118,7 @@ pip install jupyterlab
 ```
 
 
-## Instalación rápida
+## Instalación rápida (linux o Mac)
 
 Se puede instalar a través de pip usando:
 
@@ -78,6 +131,11 @@ o instalar con conda:
 ```
 conda install -c fastai nbdev
 ```
+
+## Instalación no tan rápida (windows)
+
+La instalaciónen Windows es distinta 
+
 
 ### Instalar Quarto 
 

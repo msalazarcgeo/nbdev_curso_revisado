@@ -424,9 +424,9 @@
 <li>nbdev</li>
 </ul>
 </section>
-<section id="instalación-anaconda" class="slide level2">
-<h2>Instalación Anaconda</h2>
-<p>Anaconda permite la generación de ambientes virtuales, estos nos permite tener un manejo eficiente de los paquetes instalados dentro del ambiente y las dependencias dentro de estos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.</p>
+<section id="instalación-anaconda-conda" class="slide level2">
+<h2>Instalación Anaconda (conda)</h2>
+<p>Anaconda es una empresa que desarrollo manejador de paquetes dentro de un ambiente virtual llamado conda el cual permite la generación de ambientes virtuales, estos nos permite tener un manejo eficiente de los paquetes instalados usando conda dentro del ambiente y las dependencias dentro de estos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.</p>
 <p>De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo.</p>
 <p>Para la instalación de conda lo más sencillo es seguir el este <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html">manual</a> aquí sólo se hace un esbozo de la instalación.</p>
 <ol type="1">
@@ -449,17 +449,21 @@
 <pre><code>conda activate desarrollo</code></pre>
 <p>Al ejecutar el comando se puede observar que la leyenda <code>(base)</code> fue sustituida por la leyenda <code>(desarrollo)</code> lo cual nos indica que hemos activado nuestro ambiente virtual.</p>
 <h3 id="canales">Canales</h3>
-<p>Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza anaconda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por <em>Anaconda</em>. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las glas establecidas por cada canal. Los distintos canale tienen distintos objetivos por ejemplo <a href="https://bioconda.github.io/">bioconda</a> contiene las paqueterias desarrolladas relacionadas con desarrollos biomedicos.</p>
+<p>Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza anaconda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por <em>Anaconda</em>. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las glas establecidas por cada canal. Los distintos canale tienen distintos objetivos por ejemplo <a href="https://bioconda.github.io/">bioconda</a> contiene las paqueterias desarrolladas relacionadas con desarrollos biomedicos.</p>
 <p>Otro canal muy utilizado es <a href="https://conda-forge.org/">conda-forge</a> el cual contiene paquetes desarrollados por una extensa comunidad.</p>
 <h3 id="instalación-paquetes">Instalación paquetes</h3>
-<p>Para instalar un paquete dentro del ambiente virtual es necesario activar el ambiente y ya dentro de este para hacer la instalación tenemos dos formas distintas <strong>PIP</strong> o <strong>conda</strong>. Los</p>
+<p>Para instalar un paquete dentro del ambiente virtual es necesario activar el ambiente. Ya dentro de este para hacer la instalación de los distintos paquetes de python tenemos dos formas distintas <strong>PIP</strong> o <strong>conda</strong>. PIP es el manejador de paquetes usado por python por defecto si se a trabajado anteriormente con Python lo más seguro es estar familiarizado con su uso.</p>
+<p><strong>conda</strong> es el manejador de paquetes del ambiente virtual y nos permite tanto hacer instalar paquetería de python y otras. Por ejemplo podemos instalar R o Julia haciendo uso de conda.</p>
+<p>Como ejemplo para instalar numpy usando conda y el canal conda-forge executamos</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>(desarrollo) $ conda install -c conda-forge numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="instalar-git" class="slide level2">
 <h2>Instalar git</h2>
-<p>Git es un systema de control de versiones, aunque existen distintos systemas de control de versiones git es el mäs utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y solo daremos una explicación simplificada de esto.</p>
-<p>Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo. Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores.</p>
+<p>Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.</p>
+<p>Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores.</p>
 <p>Git tiene</p>
 <p>La instalación de git dentro de un ambiente virtual de anaconda</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>() conda install -c conda-forge git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="instalar-jupyter-notebook" class="slide level2">
 <h2>Instalar Jupyter Notebook</h2>

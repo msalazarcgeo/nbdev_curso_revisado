@@ -35,13 +35,11 @@ Para hacer uso de _nbdev_ es necesario los siguientes softwares:
 * nbdev
 
 
-## Instalación Anaconda
+## Instalación Anaconda (conda)
 
-Anaconda permite la generación de ambientes virtuales, estos nos permite tener un manejo eficiente de los paquetes instalados dentro del ambiente y las dependencias dentro de estos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo. 
+Anaconda es una empresa que desarrollo manejador de paquetes dentro de un ambiente virtual llamado conda el cual permite la generación de ambientes virtuales, estos nos permite tener un manejo eficiente de los paquetes  instalados usando conda dentro del ambiente y las dependencias dentro de estos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo. 
 
 De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo. 
- 
-
 
 Para la instalación de conda lo más sencillo es seguir el este [manual](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) aquí sólo se hace un esbozo de la instalación.
 
@@ -80,27 +78,42 @@ Al ejecutar el comando se puede observar que la leyenda `(base)` fue sustituida 
 
 ### Canales 
 
-Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza anaconda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por *Anaconda*. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las glas establecidas por cada canal. Los distintos canale tienen distintos objetivos por ejemplo [bioconda](https://bioconda.github.io/) contiene las paqueterias desarrolladas relacionadas con desarrollos biomedicos. 
+Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza anaconda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por *Anaconda*. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las glas establecidas por cada canal. Los distintos canale tienen distintos objetivos por ejemplo [bioconda](https://bioconda.github.io/) contiene las paqueterias desarrolladas relacionadas con desarrollos biomedicos. 
 
 Otro canal muy utilizado es [conda-forge](https://conda-forge.org/) el cual contiene paquetes desarrollados por una extensa comunidad. 
 
 
 ### Instalación paquetes
 
-Para instalar un paquete dentro del ambiente virtual es necesario activar el ambiente y ya dentro de este para hacer la instalación tenemos dos formas distintas **PIP** o **conda**. Los 
+Para instalar un paquete dentro del ambiente virtual es necesario activar el ambiente. Ya dentro de este para hacer la instalación de los distintos paquetes de python tenemos dos formas distintas **PIP** o **conda**. PIP es el manejador de paquetes usado por python por defecto si se a trabajado anteriormente con Python lo más seguro es estar familiarizado con su uso. 
+
+**conda** es el manejador de paquetes del ambiente virtual y nos permite tanto hacer instalar paquetería de python y otras. Por ejemplo podemos instalar R o Julia haciendo uso de conda. 
+
+
+Como ejemplo para instalar numpy usando conda y el canal conda-forge executamos 
+
+```{bash}
+(desarrollo) $ conda install -c conda-forge numpy
+```
+
+
 
 
 ## Instalar git
 
-Git es un systema de control de versiones, aunque existen distintos systemas de control de versiones git es el mäs utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y solo daremos una explicación simplificada de esto. 
+Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto. 
 
-Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo. Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
+Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
 
 Git tiene 
 
 
 
 La instalación de git dentro de un ambiente virtual de anaconda 
+
+```{bash}
+() conda install -c conda-forge git
+```
 
 
 

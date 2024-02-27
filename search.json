@@ -304,6 +304,17 @@
     ]
   },
   {
+    "objectID": "contenido/weeks/week02/slides.html#otras-cosas",
+    "href": "contenido/weeks/week02/slides.html#otras-cosas",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Otras cosas",
+    "text": "Otras cosas\nEs recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando,\nnbdev_install_hooks",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
     "objectID": "contenido/weeks/week03/page_1pasos.html",
     "href": "contenido/weeks/week03/page_1pasos.html",
     "title": "Primeros pasos",

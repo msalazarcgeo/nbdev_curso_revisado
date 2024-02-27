@@ -11,7 +11,8 @@ toc-depth: 1
 toc-title: "Contenido del curso:"
 center-title-slide: false
 from: markdown+emoji
-
+execute:
+  echo: false
 ---
 
 ## Instalación 
@@ -109,29 +110,39 @@ Para la instalación de git dentro de un ambiente virtual de anaconda se puede h
 
 ## Instalar Jupyter Notebook 
 
-La instalación de Jupyter para h
+Jupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza [Markdown](https://en.wikipedia.org/wiki/Markdown) esto nos permite hacer uso de [LaTex](https://en.wikipedia.org/wiki/LaTeX) para escribir formulas matemáticas. 
 
-```
-conda install -c conda-forge -y jupyterlab
+El uso de estos notebooks nos permite hacer pruebas y desarrollo de codigo con explicaciones lo cual es importante para el desarrollo del mismo. 
+
+Usaremos **JupyterLab** el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.  
+
+Para su instalación desde un ambiente virtual de conda se ejecuta 
+
+```{bash}
+(desarrollo) conda install -c conda-forge -y jupyterlab
 ```
 O con pip
 
+```{bash}
+(desarrollo) pip install jupyterlab
 ```
-pip install jupyterlab
-```
 
 
-## Instalación rápida (linux o Mac)
 
-Se puede instalar a través de pip usando:
 
-```
+
+
+## Instalación **nbdev** rápida (linux o Mac)
+
+La instalaciön de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla *nbdev*. Se instala a través de pip usando:
+
+```{bash}
 pip install nbdev
 ```
 
 o instalar con conda:
 
-```
+```{bash}
 conda install -c fastai nbdev
 ```
 
@@ -140,11 +151,11 @@ conda install -c fastai nbdev
 La instalaciónen Windows es distinta 
 
 
-### Instalar Quarto 
+## Instalar Quarto 
 
 Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto
 
-```
+```{bash}
 nbdev_install_quarto
 ```
 

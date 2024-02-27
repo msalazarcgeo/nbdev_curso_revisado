@@ -11,16 +11,7 @@ toc-depth: 1
 toc-title: "Contenido del curso:"
 center-title-slide: false
 from: markdown+emoji
-format:
-  revealjs: 
-    fig-responsive: true
-    theme: simple
-    slide-number: true
-    mouse-wheel: false
-    preview-links: auto
-    logo: /figures/icons/course_favicon.png
-    css: /css/styles_slides.css
-    footer: 'Curso Nbdev -- Introducción'
+
 ---
 
 ## Instalación 
@@ -37,7 +28,7 @@ Para hacer uso de _nbdev_ es necesario los siguientes softwares:
 
 ## Instalación Anaconda (conda)
 
-Anaconda es una empresa que desarrollo manejador de paquetes dentro de un ambiente virtual llamado conda el cual permite la generación de ambientes virtuales, estos nos permite tener un manejo eficiente de los paquetes  instalados usando conda dentro del ambiente y las dependencias dentro de estos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo. 
+Anaconda es una empresa la cual desarrollo un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de  dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo. 
 
 De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo. 
 
@@ -78,9 +69,10 @@ Al ejecutar el comando se puede observar que la leyenda `(base)` fue sustituida 
 
 ### Canales 
 
-Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza anaconda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por *Anaconda*. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las glas establecidas por cada canal. Los distintos canale tienen distintos objetivos por ejemplo [bioconda](https://bioconda.github.io/) contiene las paqueterias desarrolladas relacionadas con desarrollos biomedicos. 
+Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza conda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por Anaconda. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las reglas establecidas por cada canal. Los distintos canales tienen distintos objetivos por ejemplo [bioconda](https://bioconda.github.io/) contiene las paqueterias desarrolladas relacionadas con desarrollos biomédicos. 
 
-Otro canal muy utilizado es [conda-forge](https://conda-forge.org/) el cual contiene paquetes desarrollados por una extensa comunidad. 
+Otro canal muy utilizado es [conda-forge](https://conda-forge.org/), el cual contiene paquetes desarrollados por una extensa comunidad. Por facilidad en este curso utilizaremos el canal conda-forge pues tiene la mayoria de las paqueterias necesarias y se encuentran muchas versiones de los mismos.  
+
 
 
 ### Instalación paquetes
@@ -105,14 +97,12 @@ Git es un systema de control de versiones, aunque existen distintos sistemas de 
 
 Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
 
-Git tiene 
+Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar [github](https://github.com/) y [gitlab](http://gitlab.com/). En este curso se utiliza github por facilidad pues se usa su servicio de *github-pages* para tener en linea la documentación del paquete que se desarrolla.
 
-
-
-La instalación de git dentro de un ambiente virtual de anaconda 
+Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma  
 
 ```{bash}
-() conda install -c conda-forge git
+(desarrollo) conda install -c conda-forge git
 ```
 
 

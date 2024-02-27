@@ -169,6 +169,16 @@ Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.or
 
 
 
+## Otras cosas 
+
+Es recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando, 
+
+```{bash}
+nbdev_install_hooks
+```
+
+
+
 
 
 

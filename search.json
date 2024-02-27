@@ -264,18 +264,18 @@
     "href": "contenido/weeks/week02/slides.html#instalar-jupyter-notebook",
     "title": "Curso NbdevIntroducción ",
     "section": "Instalar Jupyter Notebook",
-    "text": "Instalar Jupyter Notebook\nLa instalación de Jupyter para h\nconda install -c conda-forge -y jupyterlab\nO con pip\npip install jupyterlab",
+    "text": "Instalar Jupyter Notebook\nJupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza Markdown esto nos permite hacer uso de LaTex para escribir formulas matemáticas.\nEl uso de estos notebooks nos permite hacer pruebas y desarrollo de codigo con explicaciones lo cual es importante para el desarrollo del mismo.\nUsaremos JupyterLab el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.\nPara su instalación desde un ambiente virtual de conda se ejecuta\n(desarrollo) conda install -c conda-forge -y jupyterlab\nO con pip\n(desarrollo) pip install jupyterlab",
     "crumbs": [
       "Contenido",
       "Instalación prerequisitos"
     ]
   },
   {
-    "objectID": "contenido/weeks/week02/slides.html#instalación-rápida-linux-o-mac",
-    "href": "contenido/weeks/week02/slides.html#instalación-rápida-linux-o-mac",
+    "objectID": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
+    "href": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
     "title": "Curso NbdevIntroducción ",
-    "section": "Instalación rápida (linux o Mac)",
-    "text": "Instalación rápida (linux o Mac)\nSe puede instalar a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev",
+    "section": "Instalación nbdev rápida (linux o Mac)",
+    "text": "Instalación nbdev rápida (linux o Mac)\nLa instalaciön de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla nbdev. Se instala a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev",
     "crumbs": [
       "Contenido",
       "Instalación prerequisitos"
@@ -286,7 +286,18 @@
     "href": "contenido/weeks/week02/slides.html#instalación-no-tan-rápida-windows",
     "title": "Curso NbdevIntroducción ",
     "section": "Instalación no tan rápida (windows)",
-    "text": "Instalación no tan rápida (windows)\nLa instalaciónen Windows es distinta\n\nInstalar Quarto\nYa con la instalación de nbdev un comando del mismo nos permite instalar Quarto\nnbdev_install_quarto\nSi se desea se puede instalar siguiendo los siguientes pasos para usar con el IDE de preferencia.",
+    "text": "Instalación no tan rápida (windows)\nLa instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.\npip install nbdev=2.3.12",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalar-quarto",
+    "href": "contenido/weeks/week02/slides.html#instalar-quarto",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalar Quarto",
+    "text": "Instalar Quarto\nYa con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando\nnbdev_install_quarto\n\nInstalación Quarto windows\nSi se desea se puede instalar siguiendo los siguientes pasos para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo.",
     "crumbs": [
       "Contenido",
       "Instalación prerequisitos"

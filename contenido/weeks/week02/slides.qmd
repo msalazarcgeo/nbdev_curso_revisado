@@ -148,18 +148,27 @@ conda install -c fastai nbdev
 
 ## Instalación no tan rápida (windows)
 
-La instalaciónen Windows es distinta 
+La instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.  
+
+```{bash}
+pip install nbdev=2.3.12
+```
 
 
 ## Instalar Quarto 
 
-Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto
+Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando 
 
 ```{bash}
 nbdev_install_quarto
 ```
 
-Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. 
+### Instalación Quarto windows 
+
+Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. 
+
+
+
 
 
 

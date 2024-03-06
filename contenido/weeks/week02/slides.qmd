@@ -165,8 +165,7 @@ nbdev_install_quarto
 
 ### Instalación Quarto windows 
 
-Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. 
-
+Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica. 
 
 
 ## Otras cosas 

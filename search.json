@@ -275,7 +275,7 @@
     "href": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
     "title": "Curso NbdevIntroducción ",
     "section": "Instalación nbdev rápida (linux o Mac)",
-    "text": "Instalación nbdev rápida (linux o Mac)\nLa instalaciön de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla nbdev. Se instala a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev",
+    "text": "Instalación nbdev rápida (linux o Mac)\nLa instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla nbdev. Se instala a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev",
     "crumbs": [
       "Contenido",
       "Instalación prerequisitos"

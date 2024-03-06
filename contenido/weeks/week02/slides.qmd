@@ -85,7 +85,7 @@ Para instalar un paquete dentro del ambiente virtual es necesario activar el amb
 
 Como ejemplo para instalar numpy usando conda y el canal conda-forge executamos 
 
-```{bash}
+```bash
 (desarrollo) $ conda install -c conda-forge numpy
 ```
 
@@ -102,7 +102,7 @@ Existen distintos servicios para almacenar código de manera remota dentro de lo
 
 Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma  
 
-```{bash}
+```bash
 (desarrollo) conda install -c conda-forge git
 ```
 
@@ -118,12 +118,12 @@ Usaremos **JupyterLab** el cual integra una plataforma web para generar notebook
 
 Para su instalación desde un ambiente virtual de conda se ejecuta 
 
-```{bash}
+```bash
 (desarrollo) conda install -c conda-forge -y jupyterlab
 ```
 O con pip
 
-```{bash}
+```bash
 (desarrollo) pip install jupyterlab
 ```
 
@@ -134,15 +134,15 @@ O con pip
 
 ## Instalación **nbdev** rápida (linux o Mac)
 
-La instalaciön de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla *nbdev*. Se instala a través de pip usando:
+La instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla *nbdev*. Se instala a través de pip usando:
 
-```{bash}
+```bash
 pip install nbdev
 ```
 
 o instalar con conda:
 
-```{bash}
+```bash
 conda install -c fastai nbdev
 ```
 
@@ -150,7 +150,7 @@ conda install -c fastai nbdev
 
 La instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.  
 
-```{bash}
+```bash
 pip install nbdev=2.3.12
 ```
 
@@ -159,7 +159,7 @@ pip install nbdev=2.3.12
 
 Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando 
 
-```{bash}
+```bash
 nbdev_install_quarto
 ```
 
@@ -172,7 +172,7 @@ Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.or
 
 Es recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando, 
 
-```{bash}
+```bash
 nbdev_install_hooks
 ```
 

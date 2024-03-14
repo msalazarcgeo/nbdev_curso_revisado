@@ -18,6 +18,8 @@ format: html
 - [🎺 Primer biblioteca](/contenido/weeks/week03/1_pasos.qmd) 
 
 - [🎺 Mas modulos](/contenido/weeks/week04/mas_modulos.qmd) 
+
+- [🎺 Modulo Clusters](/contenido/weeks/Week05/Clusters_ejemplo.qmd) 
 :::
 
 

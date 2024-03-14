@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week04/mas_modulos.html</loc>
-    <lastmod>2024-03-14T03:14:12.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week03/1_pasos.html</loc>
-    <lastmod>2024-03-14T03:14:12.061Z</lastmod>
-  </url>
-  <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week01/slides.html</loc>
-    <lastmod>2024-03-14T03:14:12.053Z</lastmod>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/index.html</loc>
+    <lastmod>2024-03-14T03:16:50.326Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/index.html</loc>
-    <lastmod>2024-03-14T03:14:12.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/index.html</loc>
-    <lastmod>2024-03-14T03:14:12.097Z</lastmod>
+    <lastmod>2024-03-14T03:16:50.610Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week01/page.html</loc>
-    <lastmod>2024-03-14T03:14:12.053Z</lastmod>
+    <lastmod>2024-03-14T03:16:50.874Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week01/slides.html</loc>
+    <lastmod>2024-03-14T03:16:51.178Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week02/slides.html</loc>
-    <lastmod>2024-03-14T03:14:12.053Z</lastmod>
+    <lastmod>2024-03-14T03:16:52.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week03/1_pasos.html</loc>
+    <lastmod>2024-03-14T03:16:52.598Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week03/page_1pasos.html</loc>
-    <lastmod>2024-03-14T03:14:12.069Z</lastmod>
+    <lastmod>2024-03-14T03:16:52.818Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week04/mas_modulos.html</loc>
+    <lastmod>2024-03-14T03:16:53.062Z</lastmod>
   </url>
 </urlset>

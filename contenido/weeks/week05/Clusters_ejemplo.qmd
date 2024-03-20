@@ -81,9 +81,88 @@ Otros comandos importantes de git
 Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev. 
 
 
-Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el alchivo y como lo hiciomos anteriormente este archivo nos sirve 
+Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el archivo y como lo hicimos anteriormente nos sirve para hace la bibloteca. 
+
+En la primera linea de código podemos observar que se tiene una directriz 
+`default_exp` la cual nos sirve para determinar a que modulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame `cluster_ejemplo`.
+```python
+#| default_exp cluster_ejemplo
+```
+
+Podemos eliminar todas las demás celdas exepto la última. Esta última celda es la que genera el modulo. 
+
+```python
+#| hide
+import nbdev; nbdev.nbdev_export()
+```
+Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a la celda. 
+
+```python
+#| hide
+#| export
+from nbdev.showdoc import *
+import sklearn
+import random 
+import numpy as np
+import shapely
+```
+La directriz `#| hide` esconde la celda, es especialmente útil para hacer la documentación  mientras que la directriz `#| export` va a exportar a nuestro módulo lo que se encuentre en esta celda. 
 
 
+Añadimos un objeto para generar datos de forma aleatoria 
+
+```python
+#| export
+class data_points:
+    """Una clase que contiene a los datos"""
+    def __init__(self, n, min_x = 0, min_y = 0, max_x= 1, max_y=1, seed= None):
+        if seed != None:
+            random.seed(seed)
+        
+        self.Points = np.random.uniform(low= min_x, high= max_x, size=(n, 2));
+        self.Points =  [shapely.Point(x[0],x[1]) for x in self.Points]
+
+    
+    def get_points(self):
+        """Una funcion que para obtener los puntos"""
+        return self.Points
+
+    def get_Multypoint(self):
+        """Regresa un objeto MultiPoint con los puntos"""
+        return shapely.geometry.MultiPoint(self.Points)
+    
+    def get_X(self):
+        """Regresa las coordenadas X"""
+        return [x.x for x in self.Points]
+
+    def get_Y(self):
+        """Regresa las coordenadas X"""
+        return [x.x for x in self.Points]
+```
+Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen @fig-3-W5-nbdev_docu.
 
 
+![Ejemplo de documentacion](./docu_ejemplo_01.png){#fig-3-W5-nbdev_docu}
+
+Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se esta haciendo construyendo el objeto y haciendo uso de sus métodos internos. 
+
+```python
+#| hide
+datos_simples = data_points(40)
+```
+```python
+datos_simples.get_points()
+```
+```python
+datos_simples.get_points()
+```
+```python
+datos_simples.get_Multypoint()
+```
+```python
+datos_simples.get_X()
+```
+```python
+datos_simples.get_Y()
+```
 

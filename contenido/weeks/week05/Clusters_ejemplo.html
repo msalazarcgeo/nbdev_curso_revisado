@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr.&nbsp;J. Miguel Salazar">
 
-<title>Curso Nbdeb - Curso Nbdev – Programación Literal</title>
+<title>Curso Nbdeb - Curso Nbdev – Módulo con Clusters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../contenido/weeks/week01/page.html" rel="next">
-<link href="../figures/icons/course_favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../figures/icons/course_favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,10 +103,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../css/custom_style.css">
-<link rel="stylesheet" href="../css/syllabus.css">
-<meta property="og:title" content="Curso Nbdeb - Curso Nbdev – Programación Literal">
-<meta property="og:description" content="Lo que contiene">
+<link rel="stylesheet" href="../../../css/custom_style.css">
+<link rel="stylesheet" href="../../../css/syllabus.css">
+<meta property="og:title" content="Curso Nbdeb - Curso Nbdev – Módulo con Clusters">
+<meta property="og:description" content="Hacer todo el desarrollo">
 <meta property="og:site_name" content="Curso Nbdeb">
 </head>
 
@@ -84,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Curso Nbdeb</span>
     </a>
   </div>
@@ -103,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/index.html">🏠 Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Curso Nbdev – Módulo con Clusters</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -117,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../contenido/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🏠 Home</span></a>
   </div>
 </li>
@@ -132,25 +165,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../contenido/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentación del concepto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/weeks/week02/slides.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../contenido/weeks/week02/slides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instalación prerequisitos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/weeks/week03/1_pasos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../contenido/weeks/week03/1_pasos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Generar biblioteca</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/weeks/week04/mas_modulos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../contenido/weeks/week04/mas_modulos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Más módulos</span></a>
   </div>
 </li>
@@ -166,7 +199,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cuando-se-imparte-la-clase-magistral" id="toc-cuando-se-imparte-la-clase-magistral" class="nav-link active" data-scroll-target="#cuando-se-imparte-la-clase-magistral">📍 Cuando se imparte La clase magistral</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link active" data-scroll-target="#ejemplo">Ejemplo</a>
+  <ul class="collapse">
+  <li><a href="#entendiendo-un-poco-más" id="toc-entendiendo-un-poco-más" class="nav-link" data-scroll-target="#entendiendo-un-poco-más">Entendiendo un poco más</a></li>
+  <li><a href="#otros-comandos-git" id="toc-otros-comandos-git" class="nav-link" data-scroll-target="#otros-comandos-git">Otros comandos git</a></li>
+  </ul></li>
+  <li><a href="#regresar-al-ejemplo" id="toc-regresar-al-ejemplo" class="nav-link" data-scroll-target="#regresar-al-ejemplo">Regresar al ejemplo</a></li>
   </ul>
 </nav>
     </div>
@@ -175,8 +213,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curso Nbdev – Programación Literal</h1>
-<p class="subtitle lead">Lo que contiene</p>
+<h1 class="title">Curso Nbdev – Módulo con Clusters</h1>
+<p class="subtitle lead">Hacer todo el desarrollo</p>
 </div>
 
 
@@ -199,38 +237,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="ejemplo" class="level1">
+<h1>Ejemplo</h1>
+<p>Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev.</p>
+<p>Primero generamos nuestro repositorio como lo hicimos en el ejemplo <a href="../../../contenido/weeks/week03/1_pasos.html#generar-un-repositorio">anterior</a>.</p>
+<p>Una vez con nuestro repositorio podemos iniciar nuestro repositorio de forma local y vamos a modificarlo para hacer el módulo de ejemplo.</p>
+<section id="entendiendo-un-poco-más" class="level2">
+<h2 class="anchored" data-anchor-id="entendiendo-un-poco-más">Entendiendo un poco más</h2>
+<p>En la <a href="../../../contenido/weeks/week03/1_pasos.html#generar-un-modulo">sección anterior</a> vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.</p>
+<p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
+<p>Si no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> nbdev_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-1-W5-nbdev_new_manual" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1-W5-nbdev_new_manual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./nbdev_new_out.png" class="img-fluid figure-img">
 </div>
-<div class="callout-title-container flex-fill">
-📢 Contenido
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-W5-nbdev_new_manual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Salida nbdev_new
+</figcaption>
+</figure>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+<p>En el archivo <code>settings.ini</code> podemos ver las configuraciones, como ejemplo podemos ver que el archivo recien creado en el repositorio muestra los valores que se insertaron.</p>
+<div id="fig-2-W5-settings_ini" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-W5-settings_ini-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./set_ini_new.png" class="img-fluid figure-img">
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-W5-settings_ini-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: contenido de settings.ini
+</figcaption>
+</figure>
+</div>
+<p>En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc.</p>
+<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca.</p>
+<p>También nbdev generará el archivo <code>README.md</code> el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este se hacen desde el archivo <code>nbs/index.ipynb</code> el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo <code>README.md</code> ejecutando el comando <code>nbdev_readme</code>, una vez ejecutado se puede abrir el archivo y ver las modificaciones.</p>
+<pre><code>nbdev_readme</code></pre>
+<p>Si se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.</p>
+<pre><code>git add README.md
+git commit -c "Se modifica el README"
+git push</code></pre>
 <ul>
-<li><p><a href="../contenido/weeks/week01/page.html">🎺 Presentacion concepto</a></p></li>
-<li><p><a href="../contenido/weeks/week02/slides.html">👣 Instalación de prerequisitos</a></p></li>
-<li><p><a href="../contenido/weeks/week02/slides.html">👣 Instalación</a></p></li>
-<li><p><a href="../contenido/weeks/week03/1_pasos.html">🎺 Primer biblioteca</a></p></li>
-<li><p><a href="../contenido/weeks/week04/mas_modulos.html">🎺 Mas modulos</a></p></li>
-<li><p><a href="../contenido/weeks/week05/Clusters_ejemplo.html">🎺 Modulo Clusters</a></p></li>
+<li><p><code>git add README.md</code> añade el archivo que se modifico y que se desea que actualizar, o bien añadir el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados.</p></li>
+<li><p><code>git commit -c "Se modifica el README"</code> se “comitea” es decir se añade a un registro de cambios de forma local los cambios hechos. <code>-c</code> es para añadir el comentario <code>"Se modifica el README"</code> a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.</p></li>
+<li><p><code>git push</code> Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar.</p></li>
 </ul>
-</div>
-</div>
-</div>
-<p><strong><a href="#J.%20Miguel%20Salazar">MY_NAME</a></strong> <br> Profesor <br> <a href="#">CentroGeo</a><br> 📧 <script type="text/javascript">
-<!--
-h='&#x63;&#x65;&#110;&#116;&#114;&#x6f;&#x67;&#x65;&#x6f;&#46;&#x65;&#100;&#x75;&#46;&#x6d;&#120;';a='&#64;';n='&#x25;&#50;&#48;&#x6d;&#x73;&#x61;&#108;&#x61;&#122;&#x61;&#114;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x4d;&#x59;&#x5f;&#x45;&#x4d;&#x41;&#x49;&#76;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>MY_EMAIL (%20msalazar at centrogeo dot edu dot mx)</noscript></p>
-<section id="cuando-se-imparte-la-clase-magistral" class="level1">
-<h1>📍 Cuando se imparte La clase magistral</h1>
-<p>En linea</p>
+<p>Podemos ver las modificaciones en nuestro repositorio.</p>
+</section>
+<section id="otros-comandos-git" class="level2">
+<h2 class="anchored" data-anchor-id="otros-comandos-git">Otros comandos git</h2>
+<p>Otros comandos importantes de git</p>
+<ul>
+<li><code>git clone</code> sirve poara clonar repositorios</li>
+<li><code>git pull</code> sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).</li>
+<li><code>git config</code> configura distintos valores de el repositorio.</li>
+<li><code>git config –global user.name “Tu nombre”</code> Cambia el valor de nombre de usuario de forma global.</li>
+<li><code>git config –global user.email “tumail@example.com”</code> Cambia el valor global del mail.</li>
+<li><code>git init</code> Crea un nuevo repositorio.</li>
+<li><code>git commit -a</code> “Comitea” todos los archivos añadidos anteriormente al repositorio.</li>
+<li><code>git status</code> Enlista los archivos que se han cambiado dentro y aquellos que todavia se necesitan añadir o “comitear”.</li>
+<li><code>git checkout -b &lt;nombre_rama&gt;</code> crea una nueva rama en el repositorio.</li>
+<li><code>git checkout &lt;nombre_rama&gt;</code>cambia a la rama <nombre_rama>.</nombre_rama></li>
+<li><code>git branch</code> Enlista todas las ramas en el repositorio y en que rama te encuentras actualmente.</li>
+<li><code>git branch -d &lt;nombre_rama&gt;</code> Borra la rama <nombre_rama>.</nombre_rama></li>
+</ul>
+</section>
+</section>
+<section id="regresar-al-ejemplo" class="level1">
+<h1>Regresar al ejemplo</h1>
+<p>Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev.</p>
+<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el alchivo y como lo hiciomos anteriormente este archivo nos sirve</p>
 
 
 </section>
@@ -652,15 +728,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../contenido/weeks/week01/page.html" class="pagination-link" aria-label="Presentación del concepto">
-        <span class="nav-page-text">Presentación del concepto</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

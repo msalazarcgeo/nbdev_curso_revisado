@@ -306,7 +306,48 @@ git push</code></pre>
 <section id="regresar-al-ejemplo" class="level1">
 <h1>Regresar al ejemplo</h1>
 <p>Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev.</p>
-<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el alchivo y como lo hiciomos anteriormente este archivo nos sirve</p>
+<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el archivo y como lo hicimos anteriormente nos sirve para hace la bibloteca.</p>
+<p>En la primera linea de código podemos observar que se tiene una directriz <code>default_exp</code> la cual nos sirve para determinar a que modulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame <code>cluster_ejemplo</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| default_exp cluster_ejemplo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos eliminar todas las demás celdas exepto la última. Esta última celda es la que genera el modulo.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| hide</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nbdev<span class="op">;</span> nbdev.nbdev_export()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a la celda.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| hide</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| export</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nbdev.showdoc <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shapely</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La directriz <code>#| hide</code> esconde la celda, es especialmente útil para hacer la documentación mientras que la directriz <code>#| export</code> va a exportar a nuestro módulo lo que se encuentre en esta celda.</p>
+<p>Añadimos un objeto para generar datos de forma aleatoria</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| export</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> data_points:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Una clase que contiene a los datos"""</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n, min_x <span class="op">=</span> <span class="dv">0</span>, min_y <span class="op">=</span> <span class="dv">0</span>, max_x<span class="op">=</span> <span class="dv">1</span>, max_y<span class="op">=</span><span class="dv">1</span>, seed<span class="op">=</span> <span class="va">None</span>):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> seed <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            random.seed(seed)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Points <span class="op">=</span> np.random.uniform(low<span class="op">=</span> min_x, high<span class="op">=</span> max_x, size<span class="op">=</span>(n, <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Points <span class="op">=</span>  [shapely.Point(x[<span class="dv">0</span>],x[<span class="dv">1</span>]) <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_points(<span class="va">self</span>):</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Una funcion que para obtener los puntos"""</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.Points</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_Multypoint(<span class="va">self</span>):</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa un objeto MultiPoint con los puntos"""</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> shapely.geometry.MultiPoint(<span class="va">self</span>.Points)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_X(<span class="va">self</span>):</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa las coordenadas X"""</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [x.x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_Y(<span class="va">self</span>):</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa las coordenadas X"""</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [x.x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

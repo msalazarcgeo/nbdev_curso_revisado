@@ -165,4 +165,6 @@ datos_simples.get_X()
 ```python
 datos_simples.get_Y()
 ```
+Todas estas celdas nos serviran para que hacer pruebas y comprobar la funsionalidades, en este caso estamos probando que los métodos funcionen de forma correcta. 
+
 

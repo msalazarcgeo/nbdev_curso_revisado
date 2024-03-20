@@ -9,6 +9,7 @@ project:
     - "contenido/weeks/week02/*.qmd"
     - "contenido/weeks/week03/*.qmd"
     - "contenido/weeks/week04/*.qmd"
+    - "contenido/weeks/week05/*.qmd"
 
 execute:
   freeze: auto

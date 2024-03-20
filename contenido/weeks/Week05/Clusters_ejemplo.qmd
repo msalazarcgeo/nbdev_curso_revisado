@@ -32,14 +32,13 @@ En el archivo `settings.ini` podemos ver las configuraciones, como ejemplo podem
 
 En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc. 
 
-Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con codigo que corresponden a nuestra biblioteca. 
+Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca. 
 
-También nbdev generará el archivo `README.md` el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este se hacen desde el archivo `nbs/index.ipynb` el cual nos permitira una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo `README.md` ejecutando el comando `nbdev_readme`, una vez ejecutado se puede abrir el archivo y ver las modificaciones. 
+También nbdev generará el archivo `README.md` el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este se hacen desde el archivo `nbs/index.ipynb` el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo `README.md` ejecutando el comando `nbdev_readme`, una vez ejecutado se puede abrir el archivo y ver las modificaciones. 
 
 ```
 nbdev_readme
 ```
-
 
 Si se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso. 
 
@@ -56,7 +55,34 @@ git push
 * `git push` Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar. 
 
 
+
 Podemos ver las modificaciones en nuestro repositorio. 
+
+## Otros comandos git 
+
+Otros comandos importantes de git
+
+* `git clone` sirve poara clonar repositorios
+* `git pull` sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).
+* `git config` configura distintos valores de el repositorio.
+*  `git config –global user.name “Tu nombre” ` Cambia el valor de nombre de usuario de forma global.
+* `git config –global user.email “tumail@example.com”` 	Cambia el valor global del mail. 
+* `git init` Crea un nuevo repositorio. 
+* `git commit -a` "Comitea" todos los archivos añadidos anteriormente al repositorio. 
+* `git status` Enlista los archivos que se han cambiado dentro y aquellos que todavia se necesitan añadir o "comitear".
+* `git checkout -b <nombre_rama>` crea una nueva rama en el repositorio. 
+* `git checkout <nombre_rama>`cambia a la rama <nombre_rama>. 
+* `git branch` Enlista todas las ramas en el repositorio y en que rama te encuentras actualmente. 
+* `git branch -d <nombre_rama>` Borra la rama <nombre_rama>.
+ 
+
+# Regresar al ejemplo
+
+Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev. 
+
+
+Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el alchivo y como lo hiciomos anteriormente este archivo nos sirve 
+
 
 
 

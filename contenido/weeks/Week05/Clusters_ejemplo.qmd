@@ -51,12 +51,12 @@ git push
 
 * `git add README.md` añade el archivo que se modifico y que se desea que actualizar, o bien añadir el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados. 
 
-* `git commit -c "Se modifica el README"` se "comitea" es decir se añade a un registro de cambios de forma local los cambios hechos. `-c` es para añadir el comentario `"Se modifica el README"` a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.  
+* `git commit -c "Se modifica el README"` se "comitea" es decir se añade a un registro de cambios de forma local los cambios hechos. `-c` es para añadir el comentario  `"Se modifica el README"` a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.  
 
 * `git push` Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar. 
 
 
-Las modificaciones pueden verse en nuestro repositorio. 
+Podemos ver las modificaciones en nuestro repositorio. 
 
 
 

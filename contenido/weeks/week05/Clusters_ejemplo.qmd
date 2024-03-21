@@ -174,8 +174,11 @@ Incluso se pueden hacer pruebas más complicadas, tomemos como ejemplo el códig
 if len(datos_simples.get_Y()) != len(datos_simples.get_Y()):
     raise Exception("Si hay problema la evaluacion ")
 ```
-Este código generara un error si el número de elementos fuesen distintos, es claro que la clase siempre pasara esta prueba. Las pruebas tienen que ser  pensadas para que las clases las pasen, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista donde cada lista  almacena los datos de cada coordenada. Si se tiene un error en la generación de estas lista como simplemente generar la lista pero no llenarla con los datos su tamaño seria distinto y nuestra prueba no pasaria. Para ver si las pruebas que se tienen pasan en la linea de comandos se ejecuta `nbdev_test`. 
+Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se tiene siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que las clases las pasen, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada. Si se tiene un error en la generación de estas lista como puede ser simplemente generar la lista pero no llenarla con los datos su tamaño seria distinto y nuestra prueba no pasaria. Para ver si el código dentro de los notebooks que generan  de nuestros módulos pasan las pruebas se ejecuta  la linea de comandos `nbdev_test`. 
 
 ```bash
-
+nbdev_test
 ```
+lo cual mostra 
+![Exito pruebas](./Succes.png){#fig-4-W5-nbdev_test}
+

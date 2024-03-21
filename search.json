@@ -1,14 +1,232 @@
 [
   {
-    "objectID": "contenido/weeks/week04/mas_modulos.html",
-    "href": "contenido/weeks/week04/mas_modulos.html",
-    "title": "Curso Nbdev – Hacer más cosas",
+    "objectID": "contenido/weeks/week05/Clusters_ejemplo.html",
+    "href": "contenido/weeks/week05/Clusters_ejemplo.html",
+    "title": "Curso Nbdev – Módulo con Clusters",
     "section": "",
-    "text": "Más módulos\nYa sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de nbdev. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo.\nPara la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior\nDentro del directorio nbs del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo arbol el cual contendrá el ejemplo para hacer. El nombre del notebook sera ‘01_arbol.ipynb’.\nEn la primera celda se importan las dependencias del nuevo módulo\n\nLa segunda celda de código definimos una clase simple donde se utiliza la directriz de Quarto #| export al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Todas las celdas que contengan esta directriz seran exportadas cuando se construye el módulo.\n#| export\nclass nodo(): \n    \"\"\" Esta clase es un nodo con dos hijos\"\"\"\n    def __init__(self):\n        self.der = None\n        self.izq = None\nLa siguiente celda de código funciona como prueba para determinar si la clase nodo funciona de forma correcta.\n#| hide\nnodo_basico = nodo()\nprint(nodo_basico.der)\nCuando se exporta el módulo en el archivo .py generado se encuentran las celdas con la directriz #| export. Entonces si se tiene algún error en el código o se hace un cambio que modifica el actuar como se comporta esta acción se propaga hasta que se se tenga el conflicto específico. Para evitar esto, podemos hacer pruebas para verificar que todo el código funciona de la manera prevista.\nSi no se desea que las pruebas sean parte de la documentación autogenerada se puede utilizar la directriz #| hide la cual evita desplegar la celda.\nSi generamos la documentacion con el comando nbdev_docs o nbdev_preview desde terminal, se puede ver que la celda con la directriz #| hide no aparece dentro de la documentación.\nPara probar\nSi se añade una celda",
+    "text": "Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev.\nPrimero generamos nuestro repositorio como lo hicimos en el ejemplo anterior.\nUna vez con nuestro repositorio podemos iniciar nuestro repositorio de forma local y vamos a modificarlo para hacer el módulo de ejemplo.\n\n\nEn la sección anterior vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.\nEntendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio nbs se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando nbdev_new nos genera toda la estructura dentro de nuestro repositorio.\nSi no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados\n&gt; nbdev_new\n\n\n\n\n\n\nFigure 1: Salida nbdev_new\n\n\n\nEn el archivo settings.ini podemos ver las configuraciones, como ejemplo podemos ver que el archivo recien creado en el repositorio muestra los valores que se insertaron.\n\n\n\n\n\n\nFigure 2: contenido de settings.ini\n\n\n\nEn este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc.\nComo ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca.\nTambién nbdev generará el archivo README.md el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este se hacen desde el archivo nbs/index.ipynb el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo README.md ejecutando el comando nbdev_readme, una vez ejecutado se puede abrir el archivo y ver las modificaciones.\nnbdev_readme\nSi se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.\ngit add README.md\ngit commit -c \"Se modifica el README\"\ngit push\n\ngit add README.md añade el archivo que se modifico y que se desea que actualizar, o bien añadir el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados.\ngit commit -c \"Se modifica el README\" se “comitea” es decir se añade a un registro de cambios de forma local los cambios hechos. -c es para añadir el comentario \"Se modifica el README\" a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.\ngit push Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar.\n\nPodemos ver las modificaciones en nuestro repositorio.\n\n\n\nOtros comandos importantes de git\n\ngit clone sirve poara clonar repositorios\ngit pull sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).\ngit config configura distintos valores de el repositorio.\ngit config –global user.name “Tu nombre” Cambia el valor de nombre de usuario de forma global.\ngit config –global user.email “tumail@example.com” Cambia el valor global del mail.\ngit init Crea un nuevo repositorio.\ngit commit -a “Comitea” todos los archivos añadidos anteriormente al repositorio.\ngit status Enlista los archivos que se han cambiado dentro y aquellos que todavia se necesitan añadir o “comitear”.\ngit checkout -b &lt;nombre_rama&gt; crea una nueva rama en el repositorio.\ngit checkout &lt;nombre_rama&gt;cambia a la rama .\ngit branch Enlista todas las ramas en el repositorio y en que rama te encuentras actualmente.\ngit branch -d &lt;nombre_rama&gt; Borra la rama ."
+  },
+  {
+    "objectID": "contenido/weeks/week05/Clusters_ejemplo.html#entendiendo-un-poco-más",
+    "href": "contenido/weeks/week05/Clusters_ejemplo.html#entendiendo-un-poco-más",
+    "title": "Curso Nbdev – Módulo con Clusters",
+    "section": "",
+    "text": "En la sección anterior vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.\nEntendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio nbs se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando nbdev_new nos genera toda la estructura dentro de nuestro repositorio.\nSi no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados\n&gt; nbdev_new\n\n\n\n\n\n\nFigure 1: Salida nbdev_new\n\n\n\nEn el archivo settings.ini podemos ver las configuraciones, como ejemplo podemos ver que el archivo recien creado en el repositorio muestra los valores que se insertaron.\n\n\n\n\n\n\nFigure 2: contenido de settings.ini\n\n\n\nEn este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc.\nComo ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca.\nTambién nbdev generará el archivo README.md el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este se hacen desde el archivo nbs/index.ipynb el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo README.md ejecutando el comando nbdev_readme, una vez ejecutado se puede abrir el archivo y ver las modificaciones.\nnbdev_readme\nSi se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.\ngit add README.md\ngit commit -c \"Se modifica el README\"\ngit push\n\ngit add README.md añade el archivo que se modifico y que se desea que actualizar, o bien añadir el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados.\ngit commit -c \"Se modifica el README\" se “comitea” es decir se añade a un registro de cambios de forma local los cambios hechos. -c es para añadir el comentario \"Se modifica el README\" a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.\ngit push Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar.\n\nPodemos ver las modificaciones en nuestro repositorio."
+  },
+  {
+    "objectID": "contenido/weeks/week05/Clusters_ejemplo.html#otros-comandos-git",
+    "href": "contenido/weeks/week05/Clusters_ejemplo.html#otros-comandos-git",
+    "title": "Curso Nbdev – Módulo con Clusters",
+    "section": "",
+    "text": "Otros comandos importantes de git\n\ngit clone sirve poara clonar repositorios\ngit pull sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).\ngit config configura distintos valores de el repositorio.\ngit config –global user.name “Tu nombre” Cambia el valor de nombre de usuario de forma global.\ngit config –global user.email “tumail@example.com” Cambia el valor global del mail.\ngit init Crea un nuevo repositorio.\ngit commit -a “Comitea” todos los archivos añadidos anteriormente al repositorio.\ngit status Enlista los archivos que se han cambiado dentro y aquellos que todavia se necesitan añadir o “comitear”.\ngit checkout -b &lt;nombre_rama&gt; crea una nueva rama en el repositorio.\ngit checkout &lt;nombre_rama&gt;cambia a la rama .\ngit branch Enlista todas las ramas en el repositorio y en que rama te encuentras actualmente.\ngit branch -d &lt;nombre_rama&gt; Borra la rama ."
+  },
+  {
+    "objectID": "contenido/weeks/week03/page_1pasos.html",
+    "href": "contenido/weeks/week03/page_1pasos.html",
+    "title": "Primeros pasos",
+    "section": "",
+    "text": "En esta parte se muestra los primeros pasos de como construir todo el ambiente para desarrollar paquetes con nbdev."
+  },
+  {
+    "objectID": "contenido/weeks/week03/page_1pasos.html#presentación",
+    "href": "contenido/weeks/week03/page_1pasos.html#presentación",
+    "title": "Primeros pasos",
+    "section": "Presentación",
+    "text": "Presentación\nPara ir a la presentación haga chick aquí use las flechas navegar en la presentación."
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html",
+    "href": "contenido/weeks/week02/slides.html",
+    "title": "Curso NbdevIntroducción ",
+    "section": "",
+    "text": "Para hacer uso de nbdev es necesario los siguientes softwares:\n\nPython (Python o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev",
     "crumbs": [
       "Contenido",
-      "Más módulos"
+      "Instalación prerequisitos"
     ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalación",
+    "href": "contenido/weeks/week02/slides.html#instalación",
+    "title": "Curso NbdevIntroducción ",
+    "section": "",
+    "text": "Para hacer uso de nbdev es necesario los siguientes softwares:\n\nPython (Python o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalación-anaconda-conda",
+    "href": "contenido/weeks/week02/slides.html#instalación-anaconda-conda",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalación Anaconda (conda)",
+    "text": "Instalación Anaconda (conda)\nAnaconda es una empresa la cual desarrollo un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.\nDe esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo.\nPara la instalación de conda lo más sencillo es seguir el este manual aquí sólo se hace un esbozo de la instalación.\n\nBajar el instalador:\n\nAnaconda para windows.\n\nVerificar que se ha bajano correctamente (ver ).\nHacer doble click en el archivo .exe (similar a Anaconda3-######-Windows-x86_64.exe). Para la instalación en Linux o Mac se debe de bajar el archivo Anaconda3-####-Linux-###.sh o bien el Anaconda3-####-MACOSX-###.sh y ejecutar el archivo usando la terminal.\nSeguir las instrucciones en la pantalla en caso de windows. Y seguir la instrucciones que apareceran en caso del uso de la terminal.\nPara probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando conda list. Una lista de paquetes aparecera si se instaló de forma correcta.\n\n\nHacer un ambiente virtual\nPara generar un ambiente virtual usando anaconda se puede hacer a través de la terminal. En caso de windows se puede hacer llamando a Anaconda Prompt.\nDentro de la terminal se puede observar que antes del símbolo del sistema aparece la leyenda (base) esta no indica que estamos usando el ambiente virtual base.\nPara crear un nuevo ambiente virtual se ejecuta la siguiente linea en la linea de comandos.\nconda create -n desarrollo\nEste comando crea un nuevo ambiente virtual llamano desarrollo. Se puede especificar la versión de python a instalar dentro del ambiente virtual. También es posible instalar otros lenguajes de programación dentro del ambiente virtual cono son R o Julia.\nPara entrar al ambiente virtual la forma de hacerlo es ejecutar\nconda activate desarrollo\nAl ejecutar el comando se puede observar que la leyenda (base) fue sustituida por la leyenda (desarrollo) lo cual nos indica que hemos activado nuestro ambiente virtual.\n\n\nCanales\nDentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza conda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por Anaconda. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las reglas establecidas por cada canal. Los distintos canales tienen distintos objetivos por ejemplo bioconda contiene las paqueterias desarrolladas relacionadas con desarrollos biomédicos.\nOtro canal muy utilizado es conda-forge, el cual contiene paquetes desarrollados por una extensa comunidad. Por facilidad en este curso utilizaremos el canal conda-forge pues tiene la mayoria de las paqueterias necesarias y se encuentran muchas versiones de los mismos.\n\n\nInstalación paquetes\nPara instalar un paquete dentro del ambiente virtual es necesario activar el ambiente. Ya dentro de este para hacer la instalación de los distintos paquetes de python tenemos dos formas distintas PIP o conda. PIP es el manejador de paquetes usado por python por defecto si se a trabajado anteriormente con Python lo más seguro es estar familiarizado con su uso.\nconda es el manejador de paquetes del ambiente virtual y nos permite tanto hacer instalar paquetería de python y otras. Por ejemplo podemos instalar R o Julia haciendo uso de conda.\nComo ejemplo para instalar numpy usando conda y el canal conda-forge executamos\n(desarrollo) $ conda install -c conda-forge numpy",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalar-git",
+    "href": "contenido/weeks/week02/slides.html#instalar-git",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalar git",
+    "text": "Instalar git\nGit es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.\nLos sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores.\nExisten distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar github y gitlab. En este curso se utiliza github por facilidad pues se usa su servicio de github-pages para tener en linea la documentación del paquete que se desarrolla.\nPara la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma\n(desarrollo) conda install -c conda-forge git",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalar-jupyter-notebook",
+    "href": "contenido/weeks/week02/slides.html#instalar-jupyter-notebook",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalar Jupyter Notebook",
+    "text": "Instalar Jupyter Notebook\nJupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza Markdown esto nos permite hacer uso de LaTex para escribir formulas matemáticas.\nEl uso de estos notebooks nos permite hacer pruebas y desarrollo de codigo con explicaciones lo cual es importante para el desarrollo del mismo.\nUsaremos JupyterLab el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.\nPara su instalación desde un ambiente virtual de conda se ejecuta\n(desarrollo) conda install -c conda-forge -y jupyterlab\nO con pip\n(desarrollo) pip install jupyterlab",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
+    "href": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalación nbdev rápida (linux o Mac)",
+    "text": "Instalación nbdev rápida (linux o Mac)\nLa instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla nbdev. Se instala a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalación-no-tan-rápida-windows",
+    "href": "contenido/weeks/week02/slides.html#instalación-no-tan-rápida-windows",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalación no tan rápida (windows)",
+    "text": "Instalación no tan rápida (windows)\nLa instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.\npip install nbdev=2.3.12",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#instalar-quarto",
+    "href": "contenido/weeks/week02/slides.html#instalar-quarto",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalar Quarto",
+    "text": "Instalar Quarto\nYa con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando\nnbdev_install_quarto\n\nInstalación Quarto windows\nSi se desea se puede instalar siguiendo los siguientes pasos para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica.",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week02/slides.html#otras-cosas",
+    "href": "contenido/weeks/week02/slides.html#otras-cosas",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Otras cosas",
+    "text": "Otras cosas\nEs recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando,\nnbdev_install_hooks",
+    "crumbs": [
+      "Contenido",
+      "Instalación prerequisitos"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week01/page.html",
+    "href": "contenido/weeks/week01/page.html",
+    "title": "Introducción, Presentacion y conceptos",
+    "section": "",
+    "text": "Se cubre la presentación de la idea sobre la cual se construye Nbdev",
+    "crumbs": [
+      "Contenido",
+      "Presentación del concepto"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week01/page.html#presentación",
+    "href": "contenido/weeks/week01/page.html#presentación",
+    "title": "Introducción, Presentacion y conceptos",
+    "section": "👨‍🏫 Presentación",
+    "text": "👨‍🏫 Presentación\nEn la area de abajo se muestra una pequeña presentación del concepto y la historia en la que se basa Nbdev. Aquí se muestra en un formato grande. Use your keypad to navigate the slides.",
+    "crumbs": [
+      "Contenido",
+      "Presentación del concepto"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Curso Nbdev",
+    "section": "",
+    "text": "📑 Resumen del curso\nEnfoque: El objetivo de este curso es la enseñanza de nbdev para hacer desarrollo de software usando el concepto de programación literal (Literal Programing)\n¿Cómo ?: Se muestran brevemente las capacidades de nbdev y se hacen ejemplos para que todo el desarrollo de software se encuentre contenido en notebooks.\n\n\n🎯 Objetivos de aprendizaje\n\nComo hacer uso de la plataforma de Nbdev\nInstalación de cosas básicas\nGeneración de bibliotecas\nGeneración de documentación especializada\ntemas avanzados\n\n\n Contenido"
+  },
+  {
+    "objectID": "contenido/index.html",
+    "href": "contenido/index.html",
+    "title": "Curso Nbdev – Programación Literal",
+    "section": "",
+    "text": "📢 Contenido\n\n\n\n\n\n\n🎺 Presentacion concepto\n👣 Instalación de prerequisitos\n👣 Instalación\n🎺 Primer biblioteca\n🎺 Mas modulos\n🎺 Modulo Clusters\n\n\n\n\nMY_NAME  Profesor  CentroGeo 📧 MY_EMAIL (%20msalazar at centrogeo dot edu dot mx)\n\n📍 Cuando se imparte La clase magistral\nEn linea",
+    "crumbs": [
+      "🏠 Home"
+    ]
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#qué-es-nbdev",
+    "href": "contenido/weeks/week01/slides.html#qué-es-nbdev",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Qué es Nbdev ?",
+    "text": "¿ Qué es Nbdev ?\nNbdev es un ambiente de programación para el desarrollo de software en Python el cual esta basado en el concepto de programación literal (literal programing) de Donald E. Knuth\n\nLiterate programming is a methodology that combines a programming language with a documentation language, thereby making programs more robust, more portable, more easily maintained, and arguably more fun to write than programs that are written only in a high-level language. The main idea is to treat a program as a piece of literature, addressed to human beings rather than to a computer.1\n\nFragmento del libro Literate Programming de Donald E. Knuth"
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#qué-es-nbdev-1",
+    "href": "contenido/weeks/week01/slides.html#qué-es-nbdev-1",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Qué es Nbdev ?",
+    "text": "¿ Qué es Nbdev ?\nNbdev es un ambiente de programación para el desarrollo de software en Python el cual esta basado en el concepto de programación literal (literal programing) de Donald E. Knuth\n\nProgramación literal es una metodología que combina un lenguaje de programación con un lenguaje de documentación, haciendo los programas más robustos, más portables, más fáciles de mantener y discutiblemente más divertidos de escribir que programas escritos en un lenguaje de programación de alto nivel. La idea principal es tratar a un programa como una pieza de literatura dirigido a un humano en vez de a una computadora. 1\n\nFragmento del libro Literate Programming de Donald E. Knuth"
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#cuál-es-la-diferencia",
+    "href": "contenido/weeks/week01/slides.html#cuál-es-la-diferencia",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Cuál es la diferencia ?",
+    "text": "¿ Cuál es la diferencia ?\nNbdev utiliza un jupyter notebooks para generar tanto el código de la biblioteca como la documentación de la misma.\nPermite\n\nConstruir código a partir de Notebooks de Jupyter.\nGenerar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.\nPublicación de la documentación (A través de GitHub Pages)\nIntegración continua a través de GitHub Actions\nPublicas paquetes a PYPI y conda.\n\nAdicionalmente\n\nGenerar pruebas del código esenciales para el mantenimiento del paquete.\n\nMantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte leible para los humanos).\nMuchos más!!!"
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#instalación-rápida",
+    "href": "contenido/weeks/week01/slides.html#instalación-rápida",
+    "title": "Curso NbdevIntroducción ",
+    "section": "Instalación rápida",
+    "text": "Instalación rápida\nSe puede instalar a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev\nSi se utiliza conda para hacer uso de nbdev, es necesario que este instalado dentro del mismo ambiente de Python que se utiliza para hacer uso de Jupyter y del proyecto."
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#cómo-usar-nbdev",
+    "href": "contenido/weeks/week01/slides.html#cómo-usar-nbdev",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Cómo usar nbdev ?",
+    "text": "¿ Cómo usar nbdev ?\nEl desarrollo de nbdev esta ligado a su uso con herramientas software especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software.\nHerramientas ligadas a nbdev:\n\nPython (Python o conda)\nManejador de paquetes de Python (pip o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev"
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
+    "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Cómo funciona nbdev ?",
+    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados."
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
+    "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Cómo funciona nbdev en su segunda versión ?",
+    "text": "¿ Cómo funciona nbdev en su segunda versión ?\nEn sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de Quarto. Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema."
+  },
+  {
+    "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
+    "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
+    "title": "Curso NbdevIntroducción ",
+    "section": "¿ Cómo funciona nbdev en los notebooks ?",
+    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.\n\n\n\n\nCurso Nbdev – Introducción"
   },
   {
     "objectID": "contenido/weeks/week03/1_pasos.html",
@@ -121,211 +339,14 @@
     ]
   },
   {
-    "objectID": "contenido/weeks/week01/slides.html#qué-es-nbdev",
-    "href": "contenido/weeks/week01/slides.html#qué-es-nbdev",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Qué es Nbdev ?",
-    "text": "¿ Qué es Nbdev ?\nNbdev es un ambiente de programación para el desarrollo de software en Python el cual esta basado en el concepto de programación literal (literal programing) de Donald E. Knuth\n\nLiterate programming is a methodology that combines a programming language with a documentation language, thereby making programs more robust, more portable, more easily maintained, and arguably more fun to write than programs that are written only in a high-level language. The main idea is to treat a program as a piece of literature, addressed to human beings rather than to a computer.1\n\nFragmento del libro Literate Programming de Donald E. Knuth"
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#qué-es-nbdev-1",
-    "href": "contenido/weeks/week01/slides.html#qué-es-nbdev-1",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Qué es Nbdev ?",
-    "text": "¿ Qué es Nbdev ?\nNbdev es un ambiente de programación para el desarrollo de software en Python el cual esta basado en el concepto de programación literal (literal programing) de Donald E. Knuth\n\nProgramación literal es una metodología que combina un lenguaje de programación con un lenguaje de documentación, haciendo los programas más robustos, más portables, más fáciles de mantener y discutiblemente más divertidos de escribir que programas escritos en un lenguaje de programación de alto nivel. La idea principal es tratar a un programa como una pieza de literatura dirigido a un humano en vez de a una computadora. 1\n\nFragmento del libro Literate Programming de Donald E. Knuth"
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#cuál-es-la-diferencia",
-    "href": "contenido/weeks/week01/slides.html#cuál-es-la-diferencia",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cuál es la diferencia ?",
-    "text": "¿ Cuál es la diferencia ?\nNbdev utiliza un jupyter notebooks para generar tanto el código de la biblioteca como la documentación de la misma.\nPermite\n\nConstruir código a partir de Notebooks de Jupyter.\nGenerar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.\nPublicación de la documentación (A través de GitHub Pages)\nIntegración continua a través de GitHub Actions\nPublicas paquetes a PYPI y conda.\n\nAdicionalmente\n\nGenerar pruebas del código esenciales para el mantenimiento del paquete.\n\nMantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte leible para los humanos).\nMuchos más!!!"
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#instalación-rápida",
-    "href": "contenido/weeks/week01/slides.html#instalación-rápida",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalación rápida",
-    "text": "Instalación rápida\nSe puede instalar a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev\nSi se utiliza conda para hacer uso de nbdev, es necesario que este instalado dentro del mismo ambiente de Python que se utiliza para hacer uso de Jupyter y del proyecto."
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#cómo-usar-nbdev",
-    "href": "contenido/weeks/week01/slides.html#cómo-usar-nbdev",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo usar nbdev ?",
-    "text": "¿ Cómo usar nbdev ?\nEl desarrollo de nbdev esta ligado a su uso con herramientas software especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software.\nHerramientas ligadas a nbdev:\n\nPython (Python o conda)\nManejador de paquetes de Python (pip o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev"
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
-    "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo funciona nbdev ?",
-    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados."
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
-    "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo funciona nbdev en su segunda versión ?",
-    "text": "¿ Cómo funciona nbdev en su segunda versión ?\nEn sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de Quarto. Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema."
-  },
-  {
-    "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
-    "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo funciona nbdev en los notebooks ?",
-    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.\n\n\n\n\nCurso Nbdev – Introducción"
-  },
-  {
-    "objectID": "contenido/index.html",
-    "href": "contenido/index.html",
-    "title": "Curso Nbdev – Programación Literal",
+    "objectID": "contenido/weeks/week04/mas_modulos.html",
+    "href": "contenido/weeks/week04/mas_modulos.html",
+    "title": "Curso Nbdev – Hacer más cosas",
     "section": "",
-    "text": "📢 Contenido\n\n\n\n\n\n\n🎺 Presentacion concepto\n👣 Instalación de prerequisitos\n👣 Instalación\n🎺 Primer biblioteca\n🎺 Mas modulos\n🎺 Modulo Clusters\n\n\n\n\nMY_NAME  Profesor  CentroGeo 📧 MY_EMAIL (%20msalazar at centrogeo dot edu dot mx)\n\n📍 Cuando se imparte La clase magistral\nEn linea",
-    "crumbs": [
-      "🏠 Home"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Curso Nbdev",
-    "section": "",
-    "text": "📑 Resumen del curso\nEnfoque: El objetivo de este curso es la enseñanza de nbdev para hacer desarrollo de software usando el concepto de programación literal (Literal Programing)\n¿Cómo ?: Se muestran brevemente las capacidades de nbdev y se hacen ejemplos para que todo el desarrollo de software se encuentre contenido en notebooks.\n\n\n🎯 Objetivos de aprendizaje\n\nComo hacer uso de la plataforma de Nbdev\nInstalación de cosas básicas\nGeneración de bibliotecas\nGeneración de documentación especializada\ntemas avanzados\n\n\n Contenido"
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html",
-    "href": "contenido/weeks/week01/page.html",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "",
-    "text": "Se cubre la presentación de la idea sobre la cual se construye Nbdev",
+    "text": "Más módulos\nYa sabemos los pasos básicos para la construccion de bibliotecas haciendo uso de nbdev. A continuación vamos a profundizar en la construcción de modulos distintos y como hacer todo el proceso de generación de software más profundo.\nPara la siguiente sección seguiremos usando como ejemplo la biblioteca generada en la sección anterior\nDentro del directorio nbs del repositorio generamos un nuevo notebook con el nombre del modulo que se desea, para el ejemplo vamos a nombrar nuestro módulo arbol el cual contendrá el ejemplo para hacer. El nombre del notebook sera ‘01_arbol.ipynb’.\nEn la primera celda se importan las dependencias del nuevo módulo\n\nLa segunda celda de código definimos una clase simple donde se utiliza la directriz de Quarto #| export al principio de la celda, esta directriz nos permite exportar lo que se encuentra dentro de la celda al nuevo módulo. Todas las celdas que contengan esta directriz seran exportadas cuando se construye el módulo.\n#| export\nclass nodo(): \n    \"\"\" Esta clase es un nodo con dos hijos\"\"\"\n    def __init__(self):\n        self.der = None\n        self.izq = None\nLa siguiente celda de código funciona como prueba para determinar si la clase nodo funciona de forma correcta.\n#| hide\nnodo_basico = nodo()\nprint(nodo_basico.der)\nCuando se exporta el módulo en el archivo .py generado se encuentran las celdas con la directriz #| export. Entonces si se tiene algún error en el código o se hace un cambio que modifica el actuar como se comporta esta acción se propaga hasta que se se tenga el conflicto específico. Para evitar esto, podemos hacer pruebas para verificar que todo el código funciona de la manera prevista.\nSi no se desea que las pruebas sean parte de la documentación autogenerada se puede utilizar la directriz #| hide la cual evita desplegar la celda.\nSi generamos la documentacion con el comando nbdev_docs o nbdev_preview desde terminal, se puede ver que la celda con la directriz #| hide no aparece dentro de la documentación.\nPara probar\nSi se añade una celda",
     "crumbs": [
       "Contenido",
-      "Presentación del concepto"
+      "Más módulos"
     ]
-  },
-  {
-    "objectID": "contenido/weeks/week01/page.html#presentación",
-    "href": "contenido/weeks/week01/page.html#presentación",
-    "title": "Introducción, Presentacion y conceptos",
-    "section": "👨‍🏫 Presentación",
-    "text": "👨‍🏫 Presentación\nEn la area de abajo se muestra una pequeña presentación del concepto y la historia en la que se basa Nbdev. Aquí se muestra en un formato grande. Use your keypad to navigate the slides.",
-    "crumbs": [
-      "Contenido",
-      "Presentación del concepto"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html",
-    "href": "contenido/weeks/week02/slides.html",
-    "title": "Curso NbdevIntroducción ",
-    "section": "",
-    "text": "Para hacer uso de nbdev es necesario los siguientes softwares:\n\nPython (Python o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalación",
-    "href": "contenido/weeks/week02/slides.html#instalación",
-    "title": "Curso NbdevIntroducción ",
-    "section": "",
-    "text": "Para hacer uso de nbdev es necesario los siguientes softwares:\n\nPython (Python o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalación-anaconda-conda",
-    "href": "contenido/weeks/week02/slides.html#instalación-anaconda-conda",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalación Anaconda (conda)",
-    "text": "Instalación Anaconda (conda)\nAnaconda es una empresa la cual desarrollo un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.\nDe esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo.\nPara la instalación de conda lo más sencillo es seguir el este manual aquí sólo se hace un esbozo de la instalación.\n\nBajar el instalador:\n\nAnaconda para windows.\n\nVerificar que se ha bajano correctamente (ver ).\nHacer doble click en el archivo .exe (similar a Anaconda3-######-Windows-x86_64.exe). Para la instalación en Linux o Mac se debe de bajar el archivo Anaconda3-####-Linux-###.sh o bien el Anaconda3-####-MACOSX-###.sh y ejecutar el archivo usando la terminal.\nSeguir las instrucciones en la pantalla en caso de windows. Y seguir la instrucciones que apareceran en caso del uso de la terminal.\nPara probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando conda list. Una lista de paquetes aparecera si se instaló de forma correcta.\n\n\nHacer un ambiente virtual\nPara generar un ambiente virtual usando anaconda se puede hacer a través de la terminal. En caso de windows se puede hacer llamando a Anaconda Prompt.\nDentro de la terminal se puede observar que antes del símbolo del sistema aparece la leyenda (base) esta no indica que estamos usando el ambiente virtual base.\nPara crear un nuevo ambiente virtual se ejecuta la siguiente linea en la linea de comandos.\nconda create -n desarrollo\nEste comando crea un nuevo ambiente virtual llamano desarrollo. Se puede especificar la versión de python a instalar dentro del ambiente virtual. También es posible instalar otros lenguajes de programación dentro del ambiente virtual cono son R o Julia.\nPara entrar al ambiente virtual la forma de hacerlo es ejecutar\nconda activate desarrollo\nAl ejecutar el comando se puede observar que la leyenda (base) fue sustituida por la leyenda (desarrollo) lo cual nos indica que hemos activado nuestro ambiente virtual.\n\n\nCanales\nDentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza conda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por Anaconda. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las reglas establecidas por cada canal. Los distintos canales tienen distintos objetivos por ejemplo bioconda contiene las paqueterias desarrolladas relacionadas con desarrollos biomédicos.\nOtro canal muy utilizado es conda-forge, el cual contiene paquetes desarrollados por una extensa comunidad. Por facilidad en este curso utilizaremos el canal conda-forge pues tiene la mayoria de las paqueterias necesarias y se encuentran muchas versiones de los mismos.\n\n\nInstalación paquetes\nPara instalar un paquete dentro del ambiente virtual es necesario activar el ambiente. Ya dentro de este para hacer la instalación de los distintos paquetes de python tenemos dos formas distintas PIP o conda. PIP es el manejador de paquetes usado por python por defecto si se a trabajado anteriormente con Python lo más seguro es estar familiarizado con su uso.\nconda es el manejador de paquetes del ambiente virtual y nos permite tanto hacer instalar paquetería de python y otras. Por ejemplo podemos instalar R o Julia haciendo uso de conda.\nComo ejemplo para instalar numpy usando conda y el canal conda-forge executamos\n(desarrollo) $ conda install -c conda-forge numpy",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalar-git",
-    "href": "contenido/weeks/week02/slides.html#instalar-git",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalar git",
-    "text": "Instalar git\nGit es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.\nLos sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores.\nExisten distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar github y gitlab. En este curso se utiliza github por facilidad pues se usa su servicio de github-pages para tener en linea la documentación del paquete que se desarrolla.\nPara la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma\n(desarrollo) conda install -c conda-forge git",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalar-jupyter-notebook",
-    "href": "contenido/weeks/week02/slides.html#instalar-jupyter-notebook",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalar Jupyter Notebook",
-    "text": "Instalar Jupyter Notebook\nJupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza Markdown esto nos permite hacer uso de LaTex para escribir formulas matemáticas.\nEl uso de estos notebooks nos permite hacer pruebas y desarrollo de codigo con explicaciones lo cual es importante para el desarrollo del mismo.\nUsaremos JupyterLab el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.\nPara su instalación desde un ambiente virtual de conda se ejecuta\n(desarrollo) conda install -c conda-forge -y jupyterlab\nO con pip\n(desarrollo) pip install jupyterlab",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
-    "href": "contenido/weeks/week02/slides.html#instalación-nbdev-rápida-linux-o-mac",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalación nbdev rápida (linux o Mac)",
-    "text": "Instalación nbdev rápida (linux o Mac)\nLa instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla nbdev. Se instala a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalación-no-tan-rápida-windows",
-    "href": "contenido/weeks/week02/slides.html#instalación-no-tan-rápida-windows",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalación no tan rápida (windows)",
-    "text": "Instalación no tan rápida (windows)\nLa instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.\npip install nbdev=2.3.12",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#instalar-quarto",
-    "href": "contenido/weeks/week02/slides.html#instalar-quarto",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalar Quarto",
-    "text": "Instalar Quarto\nYa con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando\nnbdev_install_quarto\n\nInstalación Quarto windows\nSi se desea se puede instalar siguiendo los siguientes pasos para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica.",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week02/slides.html#otras-cosas",
-    "href": "contenido/weeks/week02/slides.html#otras-cosas",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Otras cosas",
-    "text": "Otras cosas\nEs recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando,\nnbdev_install_hooks",
-    "crumbs": [
-      "Contenido",
-      "Instalación prerequisitos"
-    ]
-  },
-  {
-    "objectID": "contenido/weeks/week03/page_1pasos.html",
-    "href": "contenido/weeks/week03/page_1pasos.html",
-    "title": "Primeros pasos",
-    "section": "",
-    "text": "En esta parte se muestra los primeros pasos de como construir todo el ambiente para desarrollar paquetes con nbdev."
-  },
-  {
-    "objectID": "contenido/weeks/week03/page_1pasos.html#presentación",
-    "href": "contenido/weeks/week03/page_1pasos.html#presentación",
-    "title": "Primeros pasos",
-    "section": "Presentación",
-    "text": "Presentación\nPara ir a la presentación haga chick aquí use las flechas navegar en la presentación."
   }
 ]

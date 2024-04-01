@@ -180,5 +180,5 @@ Este código generara un error si el número de elementos fuesen distintos, es c
 nbdev_test
 ```
 lo cual mostra 
-![Exito pruebas](./Succes.png){#fig-4-W5-nbdev_test}
+![Exito pruebas](./Succes.png){#fig-4-W5-nbdev_test} de
 

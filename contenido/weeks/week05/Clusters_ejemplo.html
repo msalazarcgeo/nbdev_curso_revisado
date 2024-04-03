@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -204,7 +204,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#entendiendo-un-poco-más" id="toc-entendiendo-un-poco-más" class="nav-link" data-scroll-target="#entendiendo-un-poco-más">Entendiendo un poco más</a></li>
   <li><a href="#otros-comandos-git" id="toc-otros-comandos-git" class="nav-link" data-scroll-target="#otros-comandos-git">Otros comandos git</a></li>
   </ul></li>
-  <li><a href="#regresar-al-ejemplo" id="toc-regresar-al-ejemplo" class="nav-link" data-scroll-target="#regresar-al-ejemplo">Regresar al ejemplo</a></li>
+  <li><a href="#regresar-al-ejemplo" id="toc-regresar-al-ejemplo" class="nav-link" data-scroll-target="#regresar-al-ejemplo">Regresar al ejemplo</a>
+  <ul class="collapse">
+  <li><a href="#clase-clusters" id="toc-clase-clusters" class="nav-link" data-scroll-target="#clase-clusters">Clase clusters</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -347,7 +350,11 @@ git push</code></pre>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_Y(<span class="va">self</span>):</span>
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa las coordenadas X"""</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [x.x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [x.x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> centroid(<span class="va">self</span>):</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa el centroide de los puntos """</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> shapely.centroid(<span class="va">self</span>.get_Multypoint())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a>.</p>
 <div id="fig-3-W5-nbdev_docu" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -359,7 +366,7 @@ Figure&nbsp;3: Ejemplo de documentacion
 </figcaption>
 </figure>
 </div>
-<p>Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se esta haciendo construyendo el objeto y haciendo uso de sus métodos internos.</p>
+<p>Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se inicialica el objeto y se hace uso de sus métodos internos.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| hide</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>datos_simples <span class="op">=</span> data_points(<span class="dv">40</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>datos_simples.get_points()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -369,13 +376,65 @@ Figure&nbsp;3: Ejemplo de documentacion
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>datos_simples.get_Y()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Todas estas celdas nos serviran para que hacer pruebas y comprobar las funcionalidades, en este caso estamos probando que los métodos funcionen de forma correcta.</p>
 <p>Incluso se pueden hacer pruebas más complicadas, tomemos como ejemplo el código de la siguientes celda.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(datos_simples.get_Y()) <span class="op">!=</span> <span class="bu">len</span>(datos_simples.get_Y()):</span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(datos_simples.get_X()) <span class="op">!=</span> <span class="bu">len</span>(datos_simples.get_Y()):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"Si hay problema la evaluacion "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se tiene siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que las clases las pasen, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada. Si se tiene un error en la generación de estas lista como puede ser simplemente generar la lista pero no llenarla con los datos su tamaño seria distinto y nuestra prueba no pasaria. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta la linea de comandos <code>nbdev_test</code>.</p>
+<p>Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se tiene siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta la linea de comandos <code>nbdev_test</code>.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>lo cual mostra <img src="./Succes.png" id="fig-4-W5-nbdev_test" class="img-fluid" alt="Exito pruebas"> de</p>
+<section id="clase-clusters" class="level2">
+<h2 class="anchored" data-anchor-id="clase-clusters">Clase clusters</h2>
+<p>Vamos añadir una nueva clase a nuestro módulo, la cual llamaremos <code>Clusters</code>, esta clase nos sirve para generar clusters usando distintos algoritmos.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Clusters:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Clase para generar los clusters a partir del conjunto de datos"""</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, data_points_i, seed<span class="op">=</span><span class="dv">1234</span>):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> seed <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>            random.seed(seed)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_structure <span class="op">=</span>  data_points_i</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> KMeans(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Use Kmeans to obtain the clusters"""</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        kmeans_c <span class="op">=</span> KMeans(<span class="op">**</span>kwargs)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        classes_val <span class="op">=</span> kmeans_c.fit_predict(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_structure.classes_Kmeans <span class="op">=</span> classes_val</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> :</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span>  kmeans_c</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> DBSCAN(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Use DBSCAN to obtain clusters"""</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        db <span class="op">=</span> DBSCAN(<span class="op">**</span>kwargs).fit(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_structure.classes_DBSCAN <span class="op">=</span> db.labels_</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> :</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span>  db</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> HDBSCAN(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Use HDBSCAN to obtain the clusters"""</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        hdb <span class="op">=</span> HDBSCAN(<span class="op">**</span>kwargs).fit(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_structure.classes_HDBSCAN <span class="op">=</span> hdb.labels_</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> : </span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span>  hdb</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> OPTICS(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        optics<span class="op">=</span>  OPTICS(<span class="op">**</span>kwargs).fit(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_structure.classes_OPTICS <span class="op">=</span> optics.labels_</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> :</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span>  optics</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para exportar la clase al módulo es necesario añadir la directriz <code>#| export</code> al inicio de la celda. Adicionalmente añadimos pruebas simples usando los datos que ya se generaron.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cluster_all  <span class="op">=</span> Clusters(datos_simples)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cluster_all.DBSCAN()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>cluster_all.KMeans()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cluster_all.HDBSCAN()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cluster_all.OPTICS()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como estas celdas nos sirven de pruebas vamos a añadir la directriz <code>#| hide</code> para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de añadir como se usan</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

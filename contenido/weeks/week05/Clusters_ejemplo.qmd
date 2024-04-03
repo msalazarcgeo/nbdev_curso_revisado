@@ -138,30 +138,39 @@ class data_points:
     def get_Y(self):
         """Regresa las coordenadas X"""
         return [x.x for x in self.Points]
+
+    def centroid(self):
+        """Regresa el centroide de los puntos """
+        return shapely.centroid(self.get_Multypoint())
 ```
 Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen @fig-3-W5-nbdev_docu.
 
 
 ![Ejemplo de documentacion](./docu_ejemplo_01.png){#fig-3-W5-nbdev_docu}
 
-Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se esta haciendo construyendo el objeto y haciendo uso de sus métodos internos. 
+Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se inicialica el objeto y se hace uso de sus métodos internos. 
 
 ```python
 #| hide
 datos_simples = data_points(40)
 ```
+
 ```python
 datos_simples.get_points()
 ```
+
 ```python
 datos_simples.get_points()
 ```
+
 ```python
 datos_simples.get_Multypoint()
 ```
+
 ```python
 datos_simples.get_X()
 ```
+
 ```python
 datos_simples.get_Y()
 ```
@@ -171,10 +180,10 @@ Todas estas celdas nos serviran para que hacer pruebas y comprobar las funcional
 Incluso se pueden hacer pruebas más complicadas, tomemos como ejemplo el código de la siguientes celda.
 
 ```python
-if len(datos_simples.get_Y()) != len(datos_simples.get_Y()):
+if len(datos_simples.get_X()) != len(datos_simples.get_Y()):
     raise Exception("Si hay problema la evaluacion ")
 ```
-Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se tiene siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que las clases las pasen, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada. Si se tiene un error en la generación de estas lista como puede ser simplemente generar la lista pero no llenarla con los datos su tamaño seria distinto y nuestra prueba no pasaria. Para ver si el código dentro de los notebooks que generan  de nuestros módulos pasan las pruebas se ejecuta  la linea de comandos `nbdev_test`. 
+Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se tiene siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta  la linea de comandos `nbdev_test`. 
 
 ```bash
 nbdev_test
@@ -182,3 +191,74 @@ nbdev_test
 lo cual mostra 
 ![Exito pruebas](./Succes.png){#fig-4-W5-nbdev_test} de
 
+## Clase clusters 
+
+Vamos añadir una nueva clase a nuestro módulo, la cual llamaremos `Clusters`, esta clase nos sirve para generar clusters usando distintos algoritmos. 
+
+
+```python
+class Clusters:
+    """Clase para generar los clusters a partir del conjunto de datos"""
+    
+    def __init__(self, data_points_i, seed=1234):
+        if seed != None:
+            random.seed(seed)
+        
+        self.data_structure =  data_points_i
+
+    def KMeans(self, **kwargs):
+        """Use Kmeans to obtain the clusters"""
+        kmeans_c = KMeans(**kwargs)
+        classes_val = kmeans_c.fit_predict(self.data_structure.as_array())
+        self.data_structure.classes_Kmeans = classes_val
+        if 'ret_model' in kwargs and kwargs['ret_model']==True :
+            return  kmeans_c
+        
+
+    def DBSCAN(self, **kwargs):
+        """Use DBSCAN to obtain clusters"""
+        db = DBSCAN(**kwargs).fit(self.data_structure.as_array())
+        self.data_structure.classes_DBSCAN = db.labels_
+        if 'ret_model' in kwargs and kwargs['ret_model']==True :
+            return  db
+    
+    
+    def HDBSCAN(self, **kwargs):
+        """Use HDBSCAN to obtain the clusters"""
+        hdb = HDBSCAN(**kwargs).fit(self.data_structure.as_array())
+        self.data_structure.classes_HDBSCAN = hdb.labels_
+        if 'ret_model' in kwargs and kwargs['ret_model']==True : 
+            return  hdb
+        
+
+    def OPTICS(self, **kwargs):
+        optics=  OPTICS(**kwargs).fit(self.data_structure.as_array())
+        self.data_structure.classes_OPTICS = optics.labels_
+        
+        if 'ret_model' in kwargs and kwargs['ret_model']==True :
+            return  optics
+        
+```
+
+Para exportar la clase al módulo es necesario añadir la directriz `#| export` al inicio de la celda. Adicionalmente añadimos pruebas simples usando los datos que ya se generaron. 
+
+```python
+cluster_all  = Clusters(datos_simples)
+```
+
+```python
+cluster_all.DBSCAN()
+```
+
+```python
+cluster_all.KMeans()
+```
+
+```python
+cluster_all.HDBSCAN()
+```
+
+```python
+cluster_all.OPTICS()
+```
+Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de  añadir como se usan 

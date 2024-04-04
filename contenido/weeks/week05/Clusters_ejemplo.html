@@ -226,6 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#documentación" id="toc-documentación" class="nav-link" data-scroll-target="#documentación">Documentación</a></li>
   <li><a href="#mas-documentación" id="toc-mas-documentación" class="nav-link" data-scroll-target="#mas-documentación">Mas documentación</a></li>
   </ul></li>
+  <li><a href="#publicar-todo" id="toc-publicar-todo" class="nav-link" data-scroll-target="#publicar-todo">Publicar todo</a></li>
   </ul>
 </nav>
     </div>
@@ -462,8 +463,8 @@ git push</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>show_doc(Clusters.DBSCAN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>show_doc(Clusters.HDBSCAN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>show_doc(Clusters.OPTICS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Estas mostraran lo que se haya puesto dentro de los ‘docstrings’ de los métodos en la claser <code>Cluster</code>.</p>
-<p>También podemos generar la documentación y una previsualización haciendo uso del comando</p>
+<p>Estas mostraran lo que se haya puesto dentro de los ‘docstrings’ de los métodos en la clase <code>Cluster</code>.</p>
+<p>También podemos generar la documentación y hacer una previsualización haciendo uso del comando</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_preview</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>lo cual nos mostrara</p>
 <div id="fig-6-W5-nbdev_preview" class="quarto-figure quarto-figure-center anchored">
@@ -472,7 +473,7 @@ git push</code></pre>
 <p></p><figcaption class="figure-caption">Figure&nbsp;5: Muestra la documentación</figcaption><p></p>
 </figure>
 </div>
-<p>llevandonos a la documentación.</p>
+<p>llevandonos a la documentación de forma local.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -536,9 +537,16 @@ Actividad
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_Y(),</span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> cluster_all.data_structure.classes_OPTICS</span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
+<p>Si se ejecuta <code>nbdev_preview</code> o <code>nbdev_docs</code> en la documentación mostrara el ejemplo dentro de la misma.</p>
+<p>Ahora para preparar verificar que todo esta bien ejecutamos</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_prepare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lo cual mostrara <img src="./Succes.png" id="fig-7-W5-exito" class="img-fluid"></p>
 </section>
+</section>
+<section id="publicar-todo" class="level1">
+<h1>Publicar todo</h1>
+
+
 </section>
 
 </main> <!-- /main -->

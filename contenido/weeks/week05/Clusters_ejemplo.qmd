@@ -34,7 +34,7 @@ En este archivo se puede modificar cosas como la licencia, la url de la document
 
 Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca. 
 
-También nbdev generará el archivo `README.md` el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este se hacen desde el archivo `nbs/index.ipynb` el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo `README.md` ejecutando el comando `nbdev_readme`, una vez ejecutado se puede abrir el archivo y ver las modificaciones. 
+También nbdev generará el archivo `README.md` el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este, se deben hacer desde el archivo `nbs/index.ipynb` el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo `README.md` ejecutando el comando `nbdev_readme`, una vez ejecutado se puede abrir el archivo y ver las modificaciones realizadas. 
 
 ```
 nbdev_readme
@@ -84,12 +84,12 @@ Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos
 Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el archivo y como lo hicimos anteriormente nos sirve para hace la bibloteca. 
 
 En la primera linea de código podemos observar que se tiene una directriz 
-`default_exp` la cual nos sirve para determinar a que modulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame `cluster_ejemplo`.
+`default_exp` la cual nos sirve para determinar a que módulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame `cluster_ejemplo`.
 ```python
 #| default_exp cluster_ejemplo
 ```
 
-Podemos eliminar todas las demás celdas exepto la última. Esta última celda es la que genera el modulo. 
+Podemos eliminar todas las demás celdas exepto la última. Esta última es la que indica celda es la que genera el módulo. 
 
 ```python
 #| hide
@@ -101,10 +101,13 @@ Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguient
 #| hide
 #| export
 from nbdev.showdoc import *
+import matplotlib
 import sklearn
 import random 
 import numpy as np
 import shapely
+from sklearn.cluster import DBSCAN, HDBSCAN, OPTICS, KMeans
+import matplotlib.pyplot as plt
 ```
 La directriz `#| hide` esconde la celda, es especialmente útil para hacer la documentación  mientras que la directriz `#| export` va a exportar a nuestro módulo lo que se encuentre en esta celda. 
 
@@ -148,7 +151,7 @@ Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcio
 
 ![Ejemplo de documentacion](./docu_ejemplo_01.png){#fig-3-W5-nbdev_docu}
 
-Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se inicialica el objeto y se hace uso de sus métodos internos. 
+Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se inicializa el objeto y se hace uso de sus métodos internos. 
 
 ```python
 #| hide
@@ -183,7 +186,8 @@ Incluso se pueden hacer pruebas más complicadas, tomemos como ejemplo el códig
 if len(datos_simples.get_X()) != len(datos_simples.get_Y()):
     raise Exception("Si hay problema la evaluacion ")
 ```
-Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se tiene siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta  la linea de comandos `nbdev_test`. 
+
+Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se encuentra implementada  siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta  la linea de comandos `nbdev_test`. 
 
 ```bash
 nbdev_test
@@ -197,47 +201,54 @@ Vamos añadir una nueva clase a nuestro módulo, la cual llamaremos `Clusters`, 
 
 
 ```python
-class Clusters:
-    """Clase para generar los clusters a partir del conjunto de datos"""
-    
-    def __init__(self, data_points_i, seed=1234):
+class data_points:
+    """Una clase que contiene a los datos"""
+    def __init__(self, n, min_x = 0, min_y = 0, max_x= 1, max_y=1, seed= None):
         if seed != None:
             random.seed(seed)
-        
-        self.data_structure =  data_points_i
 
-    def KMeans(self, **kwargs):
-        """Use Kmeans to obtain the clusters"""
-        kmeans_c = KMeans(**kwargs)
-        classes_val = kmeans_c.fit_predict(self.data_structure.as_array())
-        self.data_structure.classes_Kmeans = classes_val
-        if 'ret_model' in kwargs and kwargs['ret_model']==True :
-            return  kmeans_c
+        Xpoint = np.random.uniform(low= min_x, high= max_x, size=n)
+        Ypoint = np.random.uniform(low= min_y, high= max_y, size=n)
         
-
-    def DBSCAN(self, **kwargs):
-        """Use DBSCAN to obtain clusters"""
-        db = DBSCAN(**kwargs).fit(self.data_structure.as_array())
-        self.data_structure.classes_DBSCAN = db.labels_
-        if 'ret_model' in kwargs and kwargs['ret_model']==True :
-            return  db
+        #self.Points = np.random.uniform(low= min_x, high= max_x, size=(n, 2))
+        self.Points =  [shapely.Point(x[0],x[1]) for x in zip(Xpoint, Ypoint)]
     
+    @classmethod
+    def from_list(cls, list_points):
+        """Se genera los datos usando una lista de puntos"""
+        toto = cls(0)
+        toto.Points = list_points
+        return toto
     
-    def HDBSCAN(self, **kwargs):
-        """Use HDBSCAN to obtain the clusters"""
-        hdb = HDBSCAN(**kwargs).fit(self.data_structure.as_array())
-        self.data_structure.classes_HDBSCAN = hdb.labels_
-        if 'ret_model' in kwargs and kwargs['ret_model']==True : 
-            return  hdb
-        
+    def get_points(self):
+        """Una funcion que para obtener los puntos"""
+        return self.Points
 
-    def OPTICS(self, **kwargs):
-        optics=  OPTICS(**kwargs).fit(self.data_structure.as_array())
-        self.data_structure.classes_OPTICS = optics.labels_
-        
-        if 'ret_model' in kwargs and kwargs['ret_model']==True :
-            return  optics
-        
+    def get_Multypoint(self):
+        """Regresa un objeto MultiPoint con los puntos"""
+        return shapely.geometry.MultiPoint(self.Points)
+    
+    def get_X(self):
+        """Regresa las coordenadas X"""
+        return [x.x for x in self.Points]
+
+    def get_Y(self):
+        """Regresa las coordenadas X"""
+        return [x.y for x in self.Points]
+    
+    def centroid(self):
+        """Regresa el centroide de los puntos """
+        return shapely.centroid(self.get_Multypoint())
+    
+    def as_array(self):
+        """Regresa los puntos como un array"""
+        list_arrays = np.array([ (geom.xy[0][0], geom.xy[1][0]) for geom in self.Points])
+        return list_arrays
+
+    def add_points(self, data_points):
+        """Agrega puntos de otra """
+        self.Points = self.Points + data_points.Points
+        return         
 ```
 
 Para exportar la clase al módulo es necesario añadir la directriz `#| export` al inicio de la celda. Adicionalmente añadimos pruebas simples usando los datos que ya se generaron. 
@@ -261,4 +272,143 @@ cluster_all.HDBSCAN()
 ```python
 cluster_all.OPTICS()
 ```
-Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de  añadir como se usan 
+
+Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los metodos. 
+
+## Documentación 
+
+Para generar la documentación se hace usando el comando 
+
+```bash
+nbdev_docs
+```
+En este caso en nuestra terminal podemos observar lo que se muestra en la imagen @fig-5-W5-nbdev_docs, como se observa en el directorio `_docs` se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el 'docstring' generado por las clase como en la figura @fig-3-W5-nbdev_docu y el respectivo para la clase `Clusters`.
+
+![Generación documentación](./docs.png){#fig-5-W5-nbdev_docs} 
+
+Para mostrar un poco más lo que hace nuestra clase simple añadimos las siguientes celdas
+
+```python
+show_doc(Clusters.KMeans)
+```
+```python
+show_doc(Clusters.DBSCAN)
+```
+```python
+show_doc(Clusters.HDBSCAN)
+```
+```python
+show_doc(Clusters.OPTICS)
+```
+Estas mostraran lo que se haya puesto dentro de los 'docstrings' de los métodos en la clase `Cluster`. 
+
+También podemos generar la documentación y hacer una previsualización haciendo uso del comando 
+```bash
+nbdev_preview
+```
+lo cual nos mostrara
+
+![Muestra la documentación](./nbdev_preview.png){#fig-6-W5-nbdev_preview} 
+
+llevandonos a la documentación de forma local. 
+
+::: {.callout-tip collapse="true"}
+## Actividad
+Muestre los métodos para la clase `data_points` en la documentación
+:::
+
+
+## Mas documentación 
+
+Podemos hacer uso de las facilidades de los jupyter notebooks para generar ejemplos y tutoriales, para esto vamos hacer dentro del mismo notebook. 
+
+
+Creamos un conjunto de datos usando los distintos metodos en las clases que ya hicimos. 
+
+```python
+datos_simples_3 = data_points(500, min_x = 0.6, min_y= 0.6, max_x= 1.0, max_y= 1.0 )
+datos_simples_2 = data_points(500, min_x = 0.0, min_y= 0.6, max_x= 0.4, max_y= 1.0 )
+datos_simples_1 = data_points(500, min_x = 0.6, min_y= 0.0, max_x= 1.0, max_y= 0.4 )
+datos_simples_0 = data_points(500, min_x = 0.0, min_y= 0.0, max_x= 0.4, max_y= 0.4 )
+```
+Unimos todos los puntos con el metodo `add_points` de la clase `data_points`. 
+
+
+```python
+datos_simples_0.add_points(datos_simples_1)
+datos_simples_0.add_points(datos_simples_2)
+datos_simples_0.add_points(datos_simples_3)
+```
+
+Veamos los puntos dentro de nuestra estructura.
+
+```python
+datos_simples_0.get_Multypoint()
+```
+
+Ahora inicialicemos nuestro objeto `Clusters` 
+```python
+cluster_all  = Clusters(datos_simples_0)
+```
+Y ahora podemos hacer uso de los algoritmos usando los metodos  de las distintas las clusterizaciones.
+
+
+```python
+cluster_all.OPTICS()
+cluster_all.HDBSCAN()
+cluster_all.DBSCAN(eps=0.1, min_samples=10)
+cluster_all.KMeans()
+```
+
+Y visualizemos las clusterizaciones 
+
+
+```python
+fig, ax = plt.subplots(1,1, figsize=(6,6))
+plt.scatter(
+        cluster_all.data_structure.get_X(),
+        cluster_all.data_structure.get_Y(),
+        c = cluster_all.data_structure.classes_Kmeans
+    )
+```
+
+```python
+fig, ax = plt.subplots(1,1, figsize=(6,6))
+plt.scatter(
+        cluster_all.data_structure.get_X(),
+        cluster_all.data_structure.get_Y(),
+        c = cluster_all.data_structure.classes_DBSCAN
+    )
+```
+
+```python
+fig, ax = plt.subplots(1,1, figsize=(6,6))
+plt.scatter(
+        cluster_all.data_structure.get_X(),
+        cluster_all.data_structure.get_Y(),
+        c = cluster_all.data_structure.classes_HDBSCAN
+    )
+```
+
+```python
+fig, ax = plt.subplots(1,1, figsize=(6,6))
+plt.scatter(
+        cluster_all.data_structure.get_X(),
+        cluster_all.data_structure.get_Y(),
+        c = cluster_all.data_structure.classes_OPTICS
+    )
+```
+
+Si se ejecuta `nbdev_preview` o `nbdev_docs` en la documentación mostrara el ejemplo dentro de la misma.  
+
+Ahora para preparar verificar que todo esta bien ejecutamos 
+
+```bash 
+nbdev_prepare
+``` 
+Lo cual mostrara ![](./Succes.png){#fig-7-W5-exito} si no hay ningun problema en el fondo lo que hace `nbdev_prepare` es pues hace las pruebas
+
+# Publicar todo
+
+
+

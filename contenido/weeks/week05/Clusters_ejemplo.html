@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.1.179">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,12 +18,11 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,13 +47,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -81,12 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -95,10 +119,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -108,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:title" content="Curso Nbdeb - Curso Nbdev – Módulo con Clusters">
 <meta property="og:description" content="Hacer todo el desarrollo">
 <meta property="og:image" content="https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week05/nbdev_preview.png">
-<meta property="og:site_name" content="Curso Nbdeb">
+<meta property="og:site-name" content="Curso Nbdeb">
 <meta property="og:image:height" content="139">
 <meta property="og:image:width" content="370">
 </head>
@@ -117,77 +139,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Curso Nbdeb</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-end">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+          <div class="quarto-toggle-container ms-auto">
+              <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
-</div>
+          </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Curso Nbdev – Módulo con Clusters</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Curso Nbdev – Módulo con Clusters</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">🏠 Home</span></a>
+  <a href="../../../contenido/index.html" class="sidebar-item-text sidebar-link">🏠 Home</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Contenido</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Contenido</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week01/page.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Presentación del concepto</span></a>
+  <a href="../../../contenido/weeks/week01/page.html" class="sidebar-item-text sidebar-link">Presentación del concepto</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week02/slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Instalación prerequisitos</span></a>
+  <a href="../../../contenido/weeks/week02/slides.html" class="sidebar-item-text sidebar-link">Instalación prerequisitos</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week03/1_pasos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generar biblioteca</span></a>
+  <a href="../../../contenido/weeks/week03/1_pasos.html" class="sidebar-item-text sidebar-link">Generar biblioteca</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../contenido/weeks/week04/mas_modulos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Más módulos</span></a>
+  <a href="../../../contenido/weeks/week04/mas_modulos.html" class="sidebar-item-text sidebar-link">Más módulos</a>
   </div>
 </li>
       </ul>
@@ -195,7 +209,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -213,7 +226,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#documentación" id="toc-documentación" class="nav-link" data-scroll-target="#documentación">Documentación</a></li>
   <li><a href="#mas-documentación" id="toc-mas-documentación" class="nav-link" data-scroll-target="#mas-documentación">Mas documentación</a></li>
   </ul></li>
-  <li><a href="#publicar-todo" id="toc-publicar-todo" class="nav-link" data-scroll-target="#publicar-todo">Publicar todo</a></li>
+  <li><a href="#publicar-todo" id="toc-publicar-todo" class="nav-link" data-scroll-target="#publicar-todo">Publicar todo</a>
+  <ul class="collapse">
+  <li><a href="#entendiendo-github-actions." id="toc-entendiendo-github-actions." class="nav-link" data-scroll-target="#entendiendo-github-actions.">Entendiendo github-actions.</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -222,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curso Nbdev – Módulo con Clusters</h1>
+<h1 class="title d-none d-lg-block">Curso Nbdev – Módulo con Clusters</h1>
 <p class="subtitle lead">Hacer todo el desarrollo</p>
 </div>
 
@@ -237,14 +253,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
-  
     
   </div>
   
 
-
 </header>
-
 
 <section id="ejemplo" class="level1">
 <h1>Ejemplo</h1>
@@ -257,25 +270,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
 <p>Si no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> nbdev_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-1-W5-nbdev_new_manual" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-1-W5-nbdev_new_manual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./nbdev_new_out.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-W5-nbdev_new_manual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Salida nbdev_new
-</figcaption>
+<div id="fig-1-W5-nbdev_new_manual" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./nbdev_new_out.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Salida nbdev_new</figcaption><p></p>
 </figure>
 </div>
 <p>En el archivo <code>settings.ini</code> podemos ver las configuraciones, como ejemplo podemos ver que el archivo recien creado en el repositorio muestra los valores que se insertaron.</p>
-<div id="fig-2-W5-settings_ini" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-2-W5-settings_ini-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./set_ini_new.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-W5-settings_ini-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: contenido de settings.ini
-</figcaption>
+<div id="fig-2-W5-settings_ini" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./set_ini_new.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: contenido de settings.ini</figcaption><p></p>
 </figure>
 </div>
 <p>En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc.</p>
@@ -364,15 +369,11 @@ git push</code></pre>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> centroid(<span class="va">self</span>):</span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa el centroide de los puntos """</span></span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> shapely.centroid(<span class="va">self</span>.get_Multypoint())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a>.</p>
-<div id="fig-3-W5-nbdev_docu" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-3-W5-nbdev_docu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./docu_ejemplo_01.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-W5-nbdev_docu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Ejemplo de documentacion
-</figcaption>
+<p>Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen <a href="#fig-3-W5-nbdev_docu">Figure&nbsp;3</a>.</p>
+<div id="fig-3-W5-nbdev_docu" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./docu_ejemplo_01.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Ejemplo de documentacion</figcaption><p></p>
 </figure>
 </div>
 <p>Todavía no vamos a hacer la documentación, antes de hacerlo vamos a añadir ciertas cosas. Se añaden las siguientes celdas como se puede observar ninguna de las celdas define nada nuevo simplemente se inicializa el objeto y se hace uso de sus métodos internos.</p>
@@ -453,15 +454,11 @@ Figure&nbsp;3: Ejemplo de documentacion
 <h2 class="anchored" data-anchor-id="documentación">Documentación</h2>
 <p>Para generar la documentación se hace usando el comando</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso en nuestra terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs" class="quarto-xref">Figure&nbsp;4</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
-<div id="fig-5-W5-nbdev_docs" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-5-W5-nbdev_docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./docs.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5-W5-nbdev_docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Generación documentación
-</figcaption>
+<p>En este caso en nuestra terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs">Figure&nbsp;4</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
+<div id="fig-5-W5-nbdev_docs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./docs.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Generación documentación</figcaption><p></p>
 </figure>
 </div>
 <p>Para mostrar un poco más lo que hace nuestra clase simple añadimos las siguientes celdas</p>
@@ -473,23 +470,19 @@ Figure&nbsp;4: Generación documentación
 <p>También podemos generar la documentación y hacer una previsualización haciendo uso del comando</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_preview</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>lo cual nos mostrara</p>
-<div id="fig-6-W5-nbdev_preview" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-6-W5-nbdev_preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./nbdev_preview.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6-W5-nbdev_preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Muestra la documentación
-</figcaption>
+<div id="fig-6-W5-nbdev_preview" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./nbdev_preview.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Muestra la documentación</figcaption><p></p>
 </figure>
 </div>
 <p>llevandonos a la documentación de forma local.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Actividad
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -550,13 +543,64 @@ Actividad
 <p>Si se ejecuta <code>nbdev_preview</code> o <code>nbdev_docs</code> en la documentación mostrara el ejemplo dentro de la misma.</p>
 <p>Ahora para preparar verificar que todo esta bien ejecutamos</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_prepare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Lo cual mostrara <img src="./Succes.png" id="fig-7-W5-exito" class="img-fluid"> si no hay ningun problema en el fondo lo que hace <code>nbdev_prepare</code> es pues hace las pruebas</p>
+<p>Lo cual mostrara <img src="./Succes.png" id="fig-7-W5-exito" class="img-fluid"> si no hay ningun problema. En el fondo lo que hace <code>nbdev_prepare</code> preprocesar los archivos dentro de <code>nbs</code> y generar los</p>
 </section>
 </section>
 <section id="publicar-todo" class="level1">
 <h1>Publicar todo</h1>
+<p>Vamos a entender un poco más que es lo que pasa cuando se hace la publicación de la documentación generada. Ya hemos dicho que por abajo nbdev usa <em>Quarto</em> para la generación de la documentación, lo que sucede es que nuestros notebooks son preprocesados generando notebooks que se usan como base para convertirlos a documentos html. Estos notebooks se encuentran en el directorio <code>_proc</code> (se genera cuando se executa <code>nbdev_docs</code>) los cuales tienen en sus celdas directrizes de <em>Quarto</em> para generar los resultados deseados. Podemos inspeccionar estos archivos comprobando observar que son similares a los notebook originales, si se inspecciona el directorio <code>_docs</code> se vera que los documentos html son los que fueron generados a partir de los notebooks en <code>_prod</code>.</p>
+<p>De esta forma hemos generado todo para nuestra librería, tiene documentación y haciendo uso de <code>nbdev_prepare</code> se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a <em>github</em>.</p>
+<p>A continuación vamos a integrar todo en <em>Github</em> para que tanto las pruebas como la creación de la documentación realizadas usando <a href="https://docs.github.com/en/actions">github-actions</a> como ya se hizo en los <a href="../../../contenido/weeks/week03/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo">primeros pasos de este curso</a> con la creación de una librería muy sencilla.</p>
+<p>Como hemos añadido librerías y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por talmotivo vamos a dar una explicación mas extensa de los pasos.</p>
+<section id="entendiendo-github-actions." class="level2">
+<h2 class="anchored" data-anchor-id="entendiendo-github-actions.">Entendiendo github-actions.</h2>
+<p>Las acciones de Github acitions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio <code>.github</code> dentro del directorio <code>workflows</code> los cuales son <code>deploy.yaml</code> y <code>test.yaml</code>. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicad un poco que hacen cada uno.</p>
+<p>El archivo deploy es el que utilizamos para generar la documentación,</p>
+<pre class="yalm"><code>name: Deploy to GitHub Pages
+on:  [workflow_dispatch, pull_request, push] 
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - name: Install Dependencies and create documentation 
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install -Uq git+https://github.com/fastai/ghapi.git # you need this for enabling pages
+          pip install -Uq git+https://github.com/fastai/fastcore.git
+          pip install -Uq git+https://github.com/fastai/execnb.git
+          pip install -U git+https://github.com/fastai/nbdev.git
+          wget -q $(curl https://latest.fast.ai/pre/quarto-dev/quarto-cli/linux-amd64.deb)
+          sudo dpkg -i quarto*.deb
+          pip install -Uq matplotlib
+          pip install -Uq setuptools
+          pip install -Uq scikit-learn
+          pip install -Uq shapely
+          nbdev_docs
+          pwd
+          ls
+#          pip install -e ".[dev]"
+         
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true
+          publish_dir: ./_docs
+          # The following lines assign commit authorship to the official GH-Actions bot for deploys to `gh-pages` branch.
+          # You can swap them out with your own user credentials.
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+      
+</code></pre>
+<p>Lo que queremos es que esto mismo</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -587,23 +631,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -615,58 +645,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:lse-dsi\.github\.io\/|localhost)");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-          // default icon
-          link.classList.add("external");
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -676,17 +665,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -698,299 +678,52 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/^(?:http:|https:)\/\/(?:lse-dsi\.github\.io\/|localhost)/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Copyright 2024, CentroGeo</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+    <div class="nav-footer-left">Copyright 2024, CentroGeo</div>   
   </div>
 </footer>
-
 
 
 

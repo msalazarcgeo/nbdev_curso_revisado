@@ -228,8 +228,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#publicar-todo" id="toc-publicar-todo" class="nav-link" data-scroll-target="#publicar-todo">Publicar todo</a>
   <ul class="collapse">
-  <li><a href="#entendiendo-github-actions." id="toc-entendiendo-github-actions." class="nav-link" data-scroll-target="#entendiendo-github-actions.">Entendiendo github-actions.</a></li>
+  <li><a href="#entendiendo-github-actions." id="toc-entendiendo-github-actions." class="nav-link" data-scroll-target="#entendiendo-github-actions.">Entendiendo github-actions.</a>
+  <ul class="collapse">
+  <li><a href="#archivo-deploy.yaml" id="toc-archivo-deploy.yaml" class="nav-link" data-scroll-target="#archivo-deploy.yaml">Archivo deploy.yaml</a></li>
+  <li><a href="#archivo-test.yaml" id="toc-archivo-test.yaml" class="nav-link" data-scroll-target="#archivo-test.yaml">Archivo test.yaml</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#comentarios-finales" id="toc-comentarios-finales" class="nav-link" data-scroll-target="#comentarios-finales">Comentarios finales</a></li>
   </ul>
 </nav>
     </div>
@@ -555,52 +560,222 @@ Actividad
 <section id="entendiendo-github-actions." class="level2">
 <h2 class="anchored" data-anchor-id="entendiendo-github-actions.">Entendiendo github-actions.</h2>
 <p>Las acciones de Github acitions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio <code>.github</code> dentro del directorio <code>workflows</code> los cuales son <code>deploy.yaml</code> y <code>test.yaml</code>. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicad un poco que hacen cada uno.</p>
-<p>El archivo deploy es el que utilizamos para generar la documentación,</p>
-<pre class="yalm"><code>name: Deploy to GitHub Pages
-on:  [workflow_dispatch, pull_request, push] 
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      - name: Install Dependencies and create documentation 
-        shell: bash
-        run: |
-          python -m pip install --upgrade pip
-          pip install -Uq git+https://github.com/fastai/ghapi.git # you need this for enabling pages
-          pip install -Uq git+https://github.com/fastai/fastcore.git
-          pip install -Uq git+https://github.com/fastai/execnb.git
-          pip install -U git+https://github.com/fastai/nbdev.git
-          wget -q $(curl https://latest.fast.ai/pre/quarto-dev/quarto-cli/linux-amd64.deb)
-          sudo dpkg -i quarto*.deb
-          pip install -Uq matplotlib
-          pip install -Uq setuptools
-          pip install -Uq scikit-learn
-          pip install -Uq shapely
-          nbdev_docs
-          pwd
-          ls
-#          pip install -e ".[dev]"
-         
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force_orphan: true
-          publish_dir: ./_docs
-          # The following lines assign commit authorship to the official GH-Actions bot for deploys to `gh-pages` branch.
-          # You can swap them out with your own user credentials.
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
-      
-</code></pre>
-<p>Lo que queremos es que esto mismo</p>
-
-
+<p>El archivo deploy es el que utilizamos para generar la documentación, vamos a sustituir el contenido del archivo con el que se encuentra en la celda siguiente:</p>
+<section id="archivo-deploy.yaml" class="level3">
+<h3 class="anchored" data-anchor-id="archivo-deploy.yaml">Archivo deploy.yaml</h3>
+<div class="sourceCode" id="cb38"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at">  </span><span class="kw">[</span><span class="at">workflow_dispatch</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">,</span><span class="at"> push</span><span class="kw">]</span><span class="at"> </span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">permissions</span><span class="kw">:</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">deploy</span><span class="kw">:</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Dependencies and create documentation </span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>          python -m pip install --upgrade pip</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>          pip install -Uq git+https://github.com/fastai/ghapi.git # you need this for enabling pages</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>          pip install -Uq git+https://github.com/fastai/fastcore.git</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>          pip install -Uq git+https://github.com/fastai/execnb.git</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>          pip install -U git+https://github.com/fastai/nbdev.git</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>          wget -q $(curl https://latest.fast.ai/pre/quarto-dev/quarto-cli/linux-amd64.deb)</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>          sudo dpkg -i quarto*.deb</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>          pip install -Uq matplotlib</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>          pip install -Uq setuptools</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>          pip install -Uq scikit-learn</span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>          pip install -Uq shapely</span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>          nbdev_docs</span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a><span class="co">#          pip install -e ".[dev]"</span></span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a><span class="at">         </span></span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v4</span></span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">force_orphan</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">publish_dir</span><span class="kw">:</span><span class="at"> ./_docs</span></span>
+<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a><span class="co">          # The following lines assign commit authorship to the official GH-Actions bot for deploys to `gh-pages` branch.</span></span>
+<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a><span class="co">          # You can swap them out with your own user credentials.</span></span>
+<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">user_name</span><span class="kw">:</span><span class="at"> github-actions[bot]</span></span>
+<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">user_email</span><span class="kw">:</span><span class="at"> 41898282+github-actions[bot]@users.noreply.github.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expliquemos a grandes razgos lo que esta haciendo este archivo. Las primeras lineas le dan nomble a la accion y cuando se realiza esta. En este caso llamamos a la acion ‘Deploy to GitHub Pages’ y la accion sera realizada cuando se solicite de forma manual (‘workflow_dispatch’) cuando se haga una petición pull (‘pull_request’) o bien quando se realize un pull.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at">  </span><span class="kw">[</span><span class="at">workflow_dispatch</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">,</span><span class="at"> push</span><span class="kw">]</span><span class="at"> </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El trabajo que va a realizar se denomina ‘deploy’ el cual utilizara una maquina con la version más reciente de ubuntu para realizarlo (‘ubuntu-latest’).</p>
+<p>En las siguientes lineas estamos dando permiso a la maquina virtual de poder escribir dentro de nuestro repositorio.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">permissions</span><span class="kw">:</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Despues el trabajo consiste en los siguientes pasos:</p>
+<pre class="yalm"><code>- uses: actions/checkout@v3
+- uses: actions/setup-python@v4</code></pre>
+<p>Utiliza las acciones <code>actions/checkout@v3</code> y <code>actions/setup-python@v4</code> que son acciones que tenemos estandarizadas dentro de github actions. Las cuales hace un check out del repositorio dentro de la maquina virtual para realizar el trabajo. <code>actions/setup-python@v4</code> instala python dentro de la maquina virtual.</p>
+<p>El siguiente paso lo llamamo ‘Install Dependencies and create documentation’ aqui podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Dependencies and create documentation </span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="at">    python -m pip install --upgrade pip</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq git+https://github.com/fastai/ghapi.git</span><span class="co"> # you need this for enabling pages</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq git+https://github.com/fastai/fastcore.git</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq git+https://github.com/fastai/execnb.git</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -U git+https://github.com/fastai/nbdev.git</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="at">    wget -q $(curl https://latest.fast.ai/pre/quarto-dev/quarto-cli/linux-amd64.deb)</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="at">    sudo dpkg -i quarto*.deb</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq matplotlib</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq setuptools</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq scikit-learn</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq shapely</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="at">    nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra libreria y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con ‘nbdev_docs’.</p>
+<p>Como en la maquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo ‘branch’, por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese ‘branch’ para publicar la documentación usando el siguiente paso:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v4</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">force_orphan</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">publish_dir</span><span class="kw">:</span><span class="at"> ./_docs</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co">      # The following lines assign commit authorship to the official GH-Actions bot for deploys to `gh-pages` branch.</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">      # You can swap them out with your own user credentials.</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">user_name</span><span class="kw">:</span><span class="at"> github-actions[bot]</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">user_email</span><span class="kw">:</span><span class="at"> 41898282+github-actions[bot]@users.noreply.github.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto usa las acciones descritas en <code>peaceiris/actions-gh-pages@v4</code> las cuales ya estan automatizadas para generar un nuevo branch con nombre ‘gh-pages’ y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio ’./_docs’. ‘github_token’ nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parametros de ‘user_name’ y ‘user_email’ permiten avisar que acciones fueron realizadas por el script ‘peaceiris/actions-gh-pages@v4’ y tendran como las cuales apareceran que fueron realizadas por github-pages bot . Estas acciones nos enviaran un mail con el resultado del trabajo realizado , es decir si este fue exitoso o no.</p>
 </section>
+<section id="archivo-test.yaml" class="level3">
+<h3 class="anchored" data-anchor-id="archivo-test.yaml">Archivo test.yaml</h3>
+<p>En el caso de las pruebas estas se hacen en las acciones en el archivo ‘test.yaml’ y vamos a remplazar su contenido por el código siguiente:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Test CI</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at">  </span><span class="kw">[</span><span class="at">workflow_dispatch</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">,</span><span class="at"> push</span><span class="kw">]</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Nbdev Dependencies</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>          python -m pip install --upgrade pip</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>          pip install -Uq git+https://github.com/fastai/ghapi.git # you need this for enabling pages</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>          pip install -Uq git+https://github.com/fastai/fastcore.git</span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>          pip install -Uq git+https://github.com/fastai/execnb.git</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>          pip install -U git+https://github.com/fastai/nbdev.git</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install package dependencies</span></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>          python -m pip install -Uq matplotlib</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>          python -m pip install -Uq setuptools</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>          python -m pip install -Uq scikit-learn</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>          python -m pip install -Uq shapely</span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test the package</span></span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>          echo "Check we are starting with clean git checkout"</span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>          if [[ `git status --porcelain -uno` ]]; then</span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>            git diff</span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a>            echo "git status is not clean"</span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>            false</span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>          fi</span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>          echo "Trying to strip out notebooks"</span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a>          nbdev_clean</span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a>          echo "Check that strip out was unnecessary"</span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>          git status -s # display the status to see which nbs need cleaning up</span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>          if [[ `git status --porcelain -uno` ]]; then</span>
+<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a>            git status -uno</span>
+<span id="cb44-41"><a href="#cb44-41" aria-hidden="true" tabindex="-1"></a>            echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_hooks"</span>
+<span id="cb44-42"><a href="#cb44-42" aria-hidden="true" tabindex="-1"></a>            echo -e "This error can also happen if you are using an older version of nbdev relative to what is in CI.  Please try to upgrade nbdev with the command `pip install -U nbdev`"</span>
+<span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a>            false</span>
+<span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a>          fi</span>
+<span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a>          nbdev_export</span>
+<span id="cb44-46"><a href="#cb44-46" aria-hidden="true" tabindex="-1"></a>          if [[ `git status --porcelain -uno` ]]; then</span>
+<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a>            echo "::error::Notebooks and library are not in sync.  Please run nbdev_export."</span>
+<span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a>            git status -uno</span>
+<span id="cb44-49"><a href="#cb44-49" aria-hidden="true" tabindex="-1"></a>            git diff</span>
+<span id="cb44-50"><a href="#cb44-50" aria-hidden="true" tabindex="-1"></a>            exit 1;</span>
+<span id="cb44-51"><a href="#cb44-51" aria-hidden="true" tabindex="-1"></a>          fi</span>
+<span id="cb44-52"><a href="#cb44-52" aria-hidden="true" tabindex="-1"></a>          if [ ! $SKIP_TEST ]; then</span>
+<span id="cb44-53"><a href="#cb44-53" aria-hidden="true" tabindex="-1"></a>            nbdev_test --flags "$FLAGS"</span>
+<span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a>          fi</span>
+<span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De forma similar el nombre del trabajo es ‘Test CI’ los trabajos se realizaran cuando cuando se hace una petición de forma manual o se hace un pull o un push.</p>
+<p>Se corre en una maquina virtual con ubuntu ‘runs-on: ubuntu-latest’ y hace un check out, se instala python y nbdev junto con sus dependencias.</p>
+<p>En el siguiente paso se instalan las dependencias de la librería en la maquina virtual.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install package dependencies</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>        python -m pip install -Uq matplotlib</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>        python -m pip install -Uq setuptools</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>        python -m pip install -Uq scikit-learn</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>        python -m pip install -Uq shapely</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y en lo que resta del código verifica ciestas cosas y hace las pruebas usando nbdev_test dentro de la maquina virtual</p>
+<ul>
+<li>git se verifica ell contenido de la version del repositrio que se encuentra en la maquina virtual</li>
+<li>Verifica que los notebooks no tengan cosas inecesarias, si no es asi marca error</li>
+<li>Construye la librería dentro de la maquina virtual usando ‘nbdev_export’</li>
+<li>Hace las pruebas usando ‘nbdev_test’</li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Test the package</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>        echo "Check we are starting with clean git checkout"</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>        if [[ `git status --porcelain -uno` ]]; then</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>        git diff</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>        echo "git status is not clean"</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>        false</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        fi</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        echo "Trying to strip out notebooks"</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>        nbdev_clean</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>        echo "Check that strip out was unnecessary"</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>        git status -s # display the status to see which nbs need cleaning up</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>        if [[ `git status --porcelain -uno` ]]; then</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>        git status -uno</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>        echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_hooks"</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>        echo -e "This error can also happen if you are using an older version of nbdev relative to what is in CI.  Please try to upgrade nbdev with the command `pip install -U nbdev`"</span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>        false</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>        fi</span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>        nbdev_export</span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>        if [[ `git status --porcelain -uno` ]]; then</span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>        echo "::error::Notebooks and library are not in sync.  Please run nbdev_export."</span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>        git status -uno</span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>        git diff</span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>        exit 1;</span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>        fi</span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>        if [ ! $SKIP_TEST ]; then</span>
+<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a>        nbdev_test --flags "$FLAGS"</span>
+<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>        fi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la librería.</p>
+<p>Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio.</p>
+<div id="fig-7-W5-github_actions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./Acctions.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: Menu github actions</figcaption><p></p>
+</figure>
+</div>
+<p>En este menu veremos las aciones que se llevan del lado izquierdoo acabo en nuestro caso:</p>
+<ul>
+<li>Deploy to Github Pages</li>
+<li>Test CI</li>
+<li>pages-build-deployment (ejecutado al hacer el branch ‘gh-pages’)</li>
+</ul>
+<p>En el centro una lista con los commits realizado y el resultado de las acciones que se llevaron acabo y si estas tuvieron exito (✅) o no (❌).</p>
+<div id="fig-7-W5-succes_github" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./Workflow_actions.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Woorkflows Actions</figcaption><p></p>
+</figure>
+</div>
+<p>Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos <a href="../../../contenido/weeks/week03/1_pasos.html#ver-la-documentación">anteriormente</a> y se selecciona el branch de ‘gh-pages’ para habilitar la documentación.</p>
+</section>
+</section>
+</section>
+<section id="comentarios-finales" class="level1">
+<h1>Comentarios finales</h1>
+<p>Como hemos visto nbdev tiene muchas funcionalidades, esto nos permite tener una integración continua para generar tanto nuestros módulos como la documentación de los mismo sin hacer mucho esfuerzo extra.</p>
+
+
 </section>
 
 </main> <!-- /main -->

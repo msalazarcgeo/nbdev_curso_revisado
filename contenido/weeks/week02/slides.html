@@ -253,8 +253,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>nbdev</li>
 </ul>
 </section>
-<section id="instalación-anaconda-conda" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-anaconda-conda">Instalación Anaconda (conda)</h2>
+<section id="instalación-anaconda-conda-tema-2.1" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-anaconda-conda-tema-2.1">Instalación Anaconda (conda) (Tema 2.1)</h2>
 <p>Anaconda es una empresa la cual desarrollo un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.</p>
 <p>De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo.</p>
 <p>Para la instalación de conda lo más sencillo es seguir el este <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html">manual</a> aquí sólo se hace un esbozo de la instalación.</p>
@@ -292,16 +292,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">desarrollo</span><span class="kw">)</span> <span class="ex">$</span> conda install <span class="at">-c</span> conda-forge numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="instalar-git" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-git">Instalar git</h2>
+<section id="instalar-git-tema-2.4" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-git-tema-2.4">Instalar git (Tema 2.4)</h2>
 <p>Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.</p>
 <p>Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores.</p>
 <p>Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar <a href="https://github.com/">github</a> y <a href="http://gitlab.com/">gitlab</a>. En este curso se utiliza github por facilidad pues se usa su servicio de <em>github-pages</em> para tener en linea la documentación del paquete que se desarrolla.</p>
 <p>Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">desarrollo</span><span class="kw">)</span> <span class="ex">conda</span> install <span class="at">-c</span> conda-forge git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalar-jupyter-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-jupyter-notebook">Instalar Jupyter Notebook</h2>
+<section id="instalar-jupyter-notebook-tema-2.2" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-jupyter-notebook-tema-2.2">Instalar Jupyter Notebook (Tema 2.2)</h2>
 <p>Jupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> esto nos permite hacer uso de <a href="https://en.wikipedia.org/wiki/LaTeX">LaTex</a> para escribir formulas matemáticas.</p>
 <p>El uso de estos notebooks nos permite hacer pruebas y desarrollo de codigo con explicaciones lo cual es importante para el desarrollo del mismo.</p>
 <p>Usaremos <strong>JupyterLab</strong> el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.</p>
@@ -310,8 +310,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>O con pip</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">desarrollo</span><span class="kw">)</span> <span class="ex">pip</span> install jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalación-nbdev-rápida-linux-o-mac" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-nbdev-rápida-linux-o-mac">Instalación <strong>nbdev</strong> rápida (linux o Mac)</h2>
+<section id="instalación-nbdev-rápida-linux-o-mac-tema-2.5" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-nbdev-rápida-linux-o-mac-tema-2.5">Instalación <strong>nbdev</strong> rápida (linux o Mac) (Tema 2.5)</h2>
 <p>La instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla <em>nbdev</em>. Se instala a través de pip usando:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nbdev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>o instalar con conda:</p>
@@ -322,21 +322,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nbdev=2.3.12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalar-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-quarto">Instalar Quarto</h2>
+<section id="instalar-quarto-tema-2.4" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-quarto-tema-2.4">Instalar Quarto (Tema 2.4)</h2>
 <p>Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_install_quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="instalación-quarto-windows" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-quarto-windows">Instalación Quarto windows</h3>
 <p>Si se desea se puede instalar siguiendo los siguientes <a href="https://quarto.org/docs/get-started/">pasos</a> para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica.</p>
 </section>
-</section>
-<section id="otras-cosas" class="level2">
-<h2 class="anchored" data-anchor-id="otras-cosas">Otras cosas</h2>
+<section id="otras-cosas" class="level3">
+<h3 class="anchored" data-anchor-id="otras-cosas">Otras cosas</h3>
 <p>Es recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando,</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_install_hooks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -3,7 +3,7 @@ title: "Curso Nbdev -- Módulo con Clusters"
 subtitle: "Hacer todo el desarrollo"
 ---
 
-# Ejemplo
+# Ejemplo (Tema 4  Este es el  que seria el tema 3)
 
 Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev. 
 

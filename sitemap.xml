@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week05/Clusters_ejemplo.html</loc>
-    <lastmod>2024-04-19T19:03:57.282Z</lastmod>
-  </url>
-  <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week03/page_1pasos.html</loc>
-    <lastmod>2024-04-19T19:03:57.282Z</lastmod>
-  </url>
-  <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week02/slides.html</loc>
-    <lastmod>2024-04-19T19:03:57.266Z</lastmod>
-  </url>
-  <url>
-    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week01/page.html</loc>
-    <lastmod>2024-04-19T19:03:57.266Z</lastmod>
-  </url>
-  <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/index.html</loc>
-    <lastmod>2024-04-19T19:03:57.314Z</lastmod>
+    <lastmod>2024-04-19T19:21:29.061Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/index.html</loc>
-    <lastmod>2024-04-19T19:03:57.266Z</lastmod>
+    <lastmod>2024-04-19T19:21:29.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week01/page.html</loc>
+    <lastmod>2024-04-19T19:21:29.637Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week01/slides.html</loc>
-    <lastmod>2024-04-19T19:03:57.266Z</lastmod>
+    <lastmod>2024-04-19T19:21:29.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week02/slides.html</loc>
+    <lastmod>2024-04-19T19:21:30.893Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week03/1_pasos.html</loc>
-    <lastmod>2024-04-19T19:03:57.274Z</lastmod>
+    <lastmod>2024-04-19T19:21:31.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week03/page_1pasos.html</loc>
+    <lastmod>2024-04-19T19:21:31.701Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week04/mas_modulos.html</loc>
-    <lastmod>2024-04-19T19:03:57.282Z</lastmod>
+    <lastmod>2024-04-19T19:21:31.969Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/Curso_nbdev/contenido/weeks/week05/Clusters_ejemplo.html</loc>
+    <lastmod>2024-04-19T19:21:32.693Z</lastmod>
   </url>
 </urlset>

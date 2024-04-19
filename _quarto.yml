@@ -38,6 +38,8 @@ website:
           text: Generar biblioteca
         - href: contenido/weeks/week04/mas_modulos.qmd
           text: Más módulos
+        - href: contenido/weeks/week05/Cluster_ejemplo
+          text: Un ejemplo más entretenido
   navbar:
     background: primary
   page-footer:

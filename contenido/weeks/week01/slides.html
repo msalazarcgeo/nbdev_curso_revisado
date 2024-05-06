@@ -9,7 +9,7 @@
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+  <meta name="generator" content="quarto-1.4.554">
 
   <meta name="author" content="J. Miguel Salazar">
   <meta name="dcterms.date" content="01 Enero 2024">
@@ -379,17 +379,17 @@
 <p>Nbdev utiliza un jupyter notebooks para generar tanto el código de la biblioteca como la documentación de la misma.</p>
 <h3 id="permite">Permite</h3>
 <ul>
-<li>Construir código a partir de Notebooks de Jupyter.</li>
+<li>Construir código a partir de Notebooks de Jupyter permitiendo que el desarrollo del software sea similar a contar una historia.</li>
 <li>Generar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.</li>
 <li>Publicación de la documentación (A través de <a href="https://pages.github.com/">GitHub Pages</a>)</li>
-<li>Integración continua a través de <a href="https://github.com/features/actions">GitHub Actions</a></li>
+<li>Integración continua a través de <a href="https://github.com/features/actions">GitHub Actions</a> permitiendo generar pruebas para mantener y validar las utilidades del código.</li>
 <li>Publicas paquetes a PYPI y conda.</li>
 </ul>
 <h3 id="adicionalmente">Adicionalmente</h3>
 <ul>
 <li>Generar pruebas del código esenciales para el mantenimiento del paquete.<br>
 </li>
-<li>Mantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte leible para los humanos).</li>
+<li>Mantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte legible para los humanos).</li>
 <li>Muchos más!!!</li>
 </ul>
 </section>
@@ -416,13 +416,13 @@
 </section>
 <section id="cómo-funciona-nbdev" class="slide level2">
 <h2>¿ Cómo funciona nbdev ?</h2>
-<p>La idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.</p>
+<p>La idea central es poder hacer todo como una historia, hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.</p>
 <p>Al tener todo dentro de un mismo notebook nos permite que todo sea más simple.</p>
 <ul>
 <li>Se evita la repetición de código pues nombres de parámetros, constantes, typos, etc.</li>
 <li>Se simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.</li>
 <li>Se enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.</li>
-<li>Para los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados.</li>
+<li>Para los usuarios de la biblioteca o módulo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados.</li>
 </ul>
 </section>
 <section id="cómo-funciona-nbdev-en-su-segunda-versión" class="slide level2">
@@ -431,7 +431,8 @@
 </section>
 <section id="cómo-funciona-nbdev-en-los-notebooks" class="slide level2">
 <h2>¿ Cómo funciona nbdev en los notebooks ?</h2>
-<p>Usando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.</p>
+<p>Usando simples directrices dentro de los notebooks y sus celdas nos permite: * Crear la documentación * Exportar fragmentos de código para la creación de codigo fuente. * Ejecución de código para pruebas. * Visibilidad y comportamiento de celdas. * Manejo de variables internas. * etc.</p>
+<p>Haciendo uso de lo anterior nos permite generar tutoriales para mosrtrar el uso del desarrollo.</p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../../figures/icons/course_favicon.png" class="slide-logo"></p>

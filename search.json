@@ -236,7 +236,7 @@
     "href": "contenido/weeks/week01/slides.html#cuál-es-la-diferencia",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cuál es la diferencia ?",
-    "text": "¿ Cuál es la diferencia ?\nNbdev utiliza un jupyter notebooks para generar tanto el código de la biblioteca como la documentación de la misma.\nPermite\n\nConstruir código a partir de Notebooks de Jupyter.\nGenerar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.\nPublicación de la documentación (A través de GitHub Pages)\nIntegración continua a través de GitHub Actions\nPublicas paquetes a PYPI y conda.\n\nAdicionalmente\n\nGenerar pruebas del código esenciales para el mantenimiento del paquete.\n\nMantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte leible para los humanos).\nMuchos más!!!"
+    "text": "¿ Cuál es la diferencia ?\nNbdev utiliza un jupyter notebooks para generar tanto el código de la biblioteca como la documentación de la misma.\nPermite\n\nConstruir código a partir de Notebooks de Jupyter permitiendo que el desarrollo del software sea similar a contar una historia.\nGenerar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.\nPublicación de la documentación (A través de GitHub Pages)\nIntegración continua a través de GitHub Actions permitiendo generar pruebas para mantener y validar las utilidades del código.\nPublicas paquetes a PYPI y conda.\n\nAdicionalmente\n\nGenerar pruebas del código esenciales para el mantenimiento del paquete.\n\nMantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte legible para los humanos).\nMuchos más!!!"
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#instalación-rápida",
@@ -257,7 +257,7 @@
     "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cómo funciona nbdev ?",
-    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados."
+    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia, hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios de la biblioteca o módulo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados."
   },
   {
     "objectID": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-su-segunda-versión",
@@ -271,7 +271,7 @@
     "href": "contenido/weeks/week01/slides.html#cómo-funciona-nbdev-en-los-notebooks",
     "title": "Curso NbdevIntroducción ",
     "section": "¿ Cómo funciona nbdev en los notebooks ?",
-    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.\n\n\n\n\nCurso Nbdev – Introducción"
+    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks y sus celdas nos permite: * Crear la documentación * Exportar fragmentos de código para la creación de codigo fuente. * Ejecución de código para pruebas. * Visibilidad y comportamiento de celdas. * Manejo de variables internas. * etc.\nHaciendo uso de lo anterior nos permite generar tutoriales para mosrtrar el uso del desarrollo.\n\n\n\n\nCurso Nbdev – Introducción"
   },
   {
     "objectID": "contenido/weeks/week03/1_pasos.html",

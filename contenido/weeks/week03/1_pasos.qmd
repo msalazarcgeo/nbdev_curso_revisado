@@ -2,6 +2,8 @@
 title: "Curso Nbdev- Primeros pasos"
 subtitle: "Poniendo las cosas en orden para trabajar"
 ---
+# Curso Nbdev- Primeros pasos (Tema 3 Cambiar en la matriz para que se a acorde)
+
 
 ## ¿Cómo me organizo ?
 
@@ -132,7 +134,7 @@ Esto nos ayuda, pues es común que ciertos datos se modifiquen sin haber editato
 
 
 ::: {.callout-caution }
-# Advertencia
+ **Advertencia**
 
 No se debe de usar los hooks de nbdev dentro de un repositorio que no se confie. 
 :::
@@ -362,8 +364,3 @@ Y obtenemos como resultado
 Hola! Juan
 Espero que te encuentres bien
 ```
-
-
-
-
-

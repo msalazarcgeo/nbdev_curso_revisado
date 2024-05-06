@@ -22,7 +22,7 @@ format:
     css: /css/styles_slides.css
     footer: 'Curso Nbdev -- Introducción'
 ---
-# Curso 
+# Curso (Tema 1 todo)
 
 ##  ¿ Qué es Nbdev ? 
 

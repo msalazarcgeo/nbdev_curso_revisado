@@ -48,15 +48,15 @@ Nbdev utiliza un jupyter notebooks para generar tanto el código de la bibliotec
 
 ### Permite 
 
-* Construir código a partir de Notebooks de Jupyter.
+* Construir código a partir de Notebooks de Jupyter permitiendo que el desarrollo del software sea similar a contar una historia.
 * Generar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.
 * Publicación de la documentación (A través de [GitHub Pages](https://pages.github.com/)) 
-* Integración continua a través de [GitHub Actions](https://github.com/features/actions)
+* Integración continua a través de [GitHub Actions](https://github.com/features/actions) permitiendo generar pruebas para mantener y validar las utilidades del código. 
 * Publicas paquetes a PYPI y conda. 
 
 ### Adicionalmente 
  * Generar pruebas del código esenciales para el mantenimiento del paquete.  
- * Mantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte leible para los humanos).
+ * Mantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte legible para los humanos).
  * Muchos más!!!
 
 ## Instalación rápida
@@ -94,7 +94,7 @@ Herramientas ligadas a nbdev:
 
 ## ¿ Cómo funciona nbdev ?
 
-La idea central es poder hacer todo como una historia hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook. 
+La idea central es poder hacer todo como una historia, hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook. 
 
 
 Al tener todo dentro de un mismo notebook nos permite que todo sea más simple. 
@@ -102,7 +102,7 @@ Al tener todo dentro de un mismo notebook nos permite que todo sea más simple.
 * Se evita la repetición de código pues nombres de parámetros, constantes, typos, etc. 
 * Se simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual. 
 * Se enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.
-* Para los usuarios de la biblioteca o módolo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados. 
+* Para los usuarios de la biblioteca o módulo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados. 
 
 ## ¿ Cómo funciona nbdev en su segunda versión ? 
 
@@ -110,7 +110,18 @@ En sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el de
 
 ## ¿ Cómo funciona nbdev en los notebooks ? 
 
-Usando simples directrices dentro de los notebooks y sus celdas nos permite tanto crear la documentación, los módulos necesarios para la installación del paquete desarrollado, pruebas de uso, incluso generar los tutoriales necesarios para el uso del paquete.
+Usando simples directrices dentro de los notebooks y sus celdas nos permite:
+* Crear la documentación
+* Exportar fragmentos de código para la creación de codigo fuente.
+* Ejecución de código para pruebas.
+* Visibilidad y comportamiento de celdas.
+* Manejo de variables internas.
+* etc.
+
+Haciendo uso de lo anterior nos permite generar tutoriales para mosrtrar el uso del desarrollo.
+
+
+
 
 
 

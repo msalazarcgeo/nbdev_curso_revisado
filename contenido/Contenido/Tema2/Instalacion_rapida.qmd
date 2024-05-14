@@ -92,11 +92,18 @@ Como ejemplo para instalar numpy usando conda y el canal conda-forge executamos
 
 ## Instalar Jupyter Notebook (Tema 2.2)
 
-Jupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza [Markdown](https://en.wikipedia.org/wiki/Markdown) esto nos permite hacer uso de [LaTex](https://en.wikipedia.org/wiki/LaTeX) para escribir formulas matemáticas. 
+Jupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza [Markdown](https://en.wikipedia.org/wiki/Markdown) y adicionalmente se puede hacer uso de [LaTex](https://en.wikipedia.org/wiki/LaTeX) para escribir fórmulas matemáticas. 
 
-El uso de estos notebooks nos permite hacer pruebas y desarrollo de codigo con explicaciones lo cual es importante para el desarrollo del mismo. 
+A través del uso de JupyterLab es posible hacer desarrollo de software de forma interactiva usando notebooks, código e información. Esto ayuda al desarrollador a generar un archivo que tiene todo el contexto del desarrollo y entender la forma en la cual el software fue desarrollado, por que se tomaron ciertas decisiones en la creación del código. Esto es particularmente útil en el análisis exploratorio de datos, en la ciencia de dátos y en el desarrollo de la inteligencia artificial.  
+
+El uso de los notebooks ha sido usado principalmente para hacer análisis exploratorios y esto generó la necesidad de poder generar gráficos dentro de los notebooks lo cual nos permite no sólo tener una descripción del código con texto plano sino de manera gráfica poder ver los resulrado de los dátos analizados. Adicionalmente se puede hacer uso de  tiempo de animaciones para complementar las narrativas.
+
+Los notebooks en cierta forma han ido remplazando el uso de las terminales interactivas, pues enriquecen las descripción del código y facilitan la visualización. Al tener los mismos beneficios que las terminales interactivas y poder hacer pruebas con pequeños fragmentos de código la presentación del código desarrollado resulta de fácil lectura. Adicionalmente se tienen ciertas herramientas que ayudan al desarrollo las cuales han sido pensadas para los usos más comunes. Conocer todas las funcionalidades de los notbooks de jupter queda fuera del alcance de este curso pero veremos ciertas cosas básicas para poder trabajar con ellos. 
 
 Usaremos **JupyterLab** el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.  
+
+
+### Instalación JupyterLab
 
 Para su instalación desde un ambiente virtual de conda se ejecuta 
 
@@ -109,7 +116,28 @@ O con pip
 (desarrollo) pip install jupyterlab
 ```
 
+### Uso de JupyterLab
 
+Para iniciar una instancia de JupyterLab desde terminal dentro del ambiente virtual que se genero se hace usando el siguiente comando
+
+
+```bash
+(desarrollo) jupyter-lab
+```
+
+Tambien se puede hacer uso de la interfaz gráfica en windows para lanzar el JupyterLab. 
+
+![Inicio de JupyterLab \label{mylabel}](./Inicio_jupyter.png){#fig:inicioJL}
+
+Una vez ejecutado el comando se desplegara un servicio web el cual se puede acceder desde un navegador y nos mostrara una pagina web muy similar a la que se muestra en \ref{mylabel}. 
+
+
+
+
+Para empezar un nuevo notebook se elige la version de python que se desea que se ejecute y esta generara un nuevo notebook con nombre 'Untitled.ipynb'
+
+
+![Nuevo Notebook]
 
 
 ## Instalación **nbdev** rápida (linux o Mac) (Tema 2.3)

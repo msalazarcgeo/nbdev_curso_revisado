@@ -136,7 +136,13 @@ Para empezar un nuevo notebook se elige la version de python que se desea que se
 
 ![Nuevo Notebook](./nuevo_notebook.png){#fig-nuevo_notebook}
 
-En los notebooks se tienen tres tipos de celda ('Code', 'Markdown' y 'Raw') las cuales se usan con distintos propositos. 'Code' se utiliza para la ejecución de código, la celdas 'Markdown' nos permite hacer uso de el lenguaje Markdown para el enriquecimiente del texto plano y 'Raw' simplemente va a mostrar el contenido dentro de la celda. Como ejemplo este curso hace uso de los Notebooks y Markdown.   
+En los notebooks se tienen tres tipos de celda ('Code', 'Markdown' y 'Raw') las cuales se usan con distintos propositos. 
+
+* 'Code' se utiliza para la ejecución de código
+* 'Markdown' nos permite hacer uso de el lenguaje Markdown para el enriquecimiente del texto plano.
+* 'Raw' simplemente va a mostrar el contenido dentro de la celda.
+
+Como ejemplo este curso hace uso de los Notebooks y Markdown, como se ve es de pespecial útilidad para la creación de texto relacionado con la creación de codigo y para la generación de manuales técnicos. 
 
 
 

@@ -9,17 +9,13 @@ format: html
 
 
 
-- [🎺 Presentacion concepto](/contenido/weeks/week01/page.qmd) 
+- [🎺 Presentacion concepto](/contenido/Contenido/Tema1/nbdev_python.qmd) 
 
-- [👣 Instalación de prerequisitos  ](/contenido/weeks/week02/slides.qmd) 
+- [👣 Instalación de prerequisitos  ](/contenido/Contenido/Tema2/Instalacion_rapida.qmd) 
 
-- [👣 Instalación ](/contenido/weeks/week02/slides.qmd) 
+- [👣  ](/contenido/Contenido/Tema2_extendido/1_pasos.qmd) 
 
-- [🎺 Primer biblioteca](/contenido/weeks/week03/1_pasos.qmd) 
-
-- [🎺 Mas modulos](/contenido/weeks/week04/mas_modulos.qmd) 
-
-- [🎺 Modulo Clusters](/contenido/weeks/week05/Clusters_ejemplo.qmd) 
+- [🎺 Modulo Clusters](/contenido/Contenido/Tema3/Clusters_ejemplo.qmd) 
 :::
 
 

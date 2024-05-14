@@ -7,15 +7,13 @@ format: html
 ::: {.callout-important collapse=false}
 ## 📢 Contenido
 
-
-
 - [🎺 Presentacion concepto](/contenido/Contenido/Tema1/nbdev_python.qmd) 
 
 - [👣 Instalación de prerequisitos  ](/contenido/Contenido/Tema2/Instalacion_rapida.qmd) 
 
-- [👣  ](/contenido/Contenido/Tema2_extendido/1_pasos.qmd) 
+- [👣 Nbdev y herramientas ](/contenido/Contenido/Tema2_extendido/1_pasos.qmd) 
 
-- [🎺 Modulo Clusters](/contenido/Contenido/Tema3/Clusters_ejemplo.qmd) 
+- [🎺 Módulo Clusters](/contenido/Contenido/Tema3/Clusters_ejemplo.qmd) 
 :::
 
 
@@ -25,9 +23,4 @@ Profesor <br/>
 [CentroGeo](#)</a><br/>
 📧 [MY_EMAIL](mailto: msalazar@centrogeo.edu.mx)
 
-
-
-# 📍 Cuando se imparte La clase magistral
-
-  En linea
 

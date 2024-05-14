@@ -100,8 +100,7 @@ El uso de los notebooks ha sido usado principalmente para hacer análisis explor
 
 Los notebooks en cierta forma han ido remplazando el uso de las terminales interactivas, pues enriquecen las descripción del código y facilitan la visualización. Al tener los mismos beneficios que las terminales interactivas y poder hacer pruebas con pequeños fragmentos de código la presentación del código desarrollado resulta de fácil lectura. Adicionalmente se tienen ciertas herramientas que ayudan al desarrollo las cuales han sido pensadas para los usos más comunes. Conocer todas las funcionalidades de los notbooks de jupter queda fuera del alcance de este curso pero veremos ciertas cosas básicas para poder trabajar con ellos. 
 
-Usaremos **JupyterLab** el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web.  
-
+Usaremos **JupyterLab** el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web. Aunque en este curso se utiliza Python también los notebooks de Jupyter-lab puede hacer uso de distintos lenguajes de programación como son R, Julia. 
 
 ### Instalación JupyterLab
 
@@ -127,17 +126,18 @@ Para iniciar una instancia de JupyterLab desde terminal dentro del ambiente virt
 
 Tambien se puede hacer uso de la interfaz gráfica en windows para lanzar el JupyterLab. 
 
-![Inicio de JupyterLab \label{mylabel}](./Inicio_jupyter.png){#fig:inicioJL}
+![Inicio de JupyterLab ](./Inicio_jupyter.png){#fig-inicioJL}
 
-Una vez ejecutado el comando se desplegara un servicio web el cual se puede acceder desde un navegador y nos mostrara una pagina web muy similar a la que se muestra en \ref{mylabel}. 
-
-
+Una vez ejecutado el comando se desplegara un servicio web el cual se puede acceder desde un navegador y nos mostrara una pagina web muy similar a la que se muestra en  @fig-inicioJL. 
 
 
-Para empezar un nuevo notebook se elige la version de python que se desea que se ejecute y esta generara un nuevo notebook con nombre 'Untitled.ipynb'
+Para empezar un nuevo notebook se elige la version de python que se desea que se ejecute y esta generara un nuevo notebook con nombre 'Untitled.ipynb' como en @fig-nuevo_notebook
 
 
-![Nuevo Notebook]
+![Nuevo Notebook](./nuevo_notebook.png){#fig-nuevo_notebook}
+
+En los notebooks se tienen tres tipos de celda ('Code', 'Markdown' y 'Raw') las cuales se usan con distintos propositos. 'Code' se utiliza para la ejecución de código, la celdas 'Markdown' nos permite hacer uso de el lenguaje Markdown para el enriquecimiente del texto plano y 'Raw' simplemente va a mostrar el contenido dentro de la celda. Como ejemplo este curso hace uso de los Notebooks y Markdown.   
+
 
 
 ## Instalación **nbdev** rápida (linux o Mac) (Tema 2.3)

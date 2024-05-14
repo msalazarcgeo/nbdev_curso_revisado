@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://msalazarcgeo.github.io/nbdev_curso_revisado/contenido/Contenido/Tema1/nbdev_python.html</loc>
-    <lastmod>2024-05-14T01:27:00.817Z</lastmod>
-  </url>
-  <url>
     <loc>https://msalazarcgeo.github.io/nbdev_curso_revisado/index.html</loc>
-    <lastmod>2024-05-14T01:27:00.861Z</lastmod>
+    <lastmod>2024-05-14T01:40:03.899Z</lastmod>
   </url>
   <url>
     <loc>https://msalazarcgeo.github.io/nbdev_curso_revisado/contenido/index.html</loc>
-    <lastmod>2024-05-14T01:27:00.829Z</lastmod>
+    <lastmod>2024-05-14T01:40:04.191Z</lastmod>
+  </url>
+  <url>
+    <loc>https://msalazarcgeo.github.io/nbdev_curso_revisado/contenido/Contenido/Tema1/nbdev_python.html</loc>
+    <lastmod>2024-05-14T01:40:04.571Z</lastmod>
   </url>
 </urlset>

@@ -5,11 +5,10 @@ project:
   render:
     - "index.qmd"
     - "contenido/*.qmd"
-    - "contenido/weeks/week01/*.qmd"
-    - "contenido/weeks/week02/*.qmd"
-    - "contenido/weeks/week03/*.qmd"
-    - "contenido/weeks/week04/*.qmd"
-    - "contenido/weeks/week05/*.qmd"
+    - "contenido/Contenido/Tema1/*.qmd"
+    - "contenido/weeks/Tema2/*.qmd"
+    - "contenido/weeks/Tema2_extendido/*.qmd"
+    - "contenido/weeks/Tema3/*.qmd"
 
 execute:
   freeze: auto
@@ -27,18 +26,15 @@ website:
     contents:
       - href: contenido/index.qmd
         text: "🏠 Home"
-      
       - section: "Contenido"
         contents:
-        - href: contenido/weeks/week01/page.qmd
+        - href: contenido/Contenido/Tema1/nbdev_python.qmd
           text: Presentación del concepto 
-        - href: contenido/weeks/week02/slides.qmd
+        - href: contenido/Contenido/Tema2/Instalacion_rapida.qmd
           text: Instalación prerequisitos
-        - href: contenido/weeks/week03/1_pasos.qmd
-          text: Generar biblioteca
-        - href: contenido/weeks/week04/mas_modulos.qmd
-          text: Más módulos
-        - href: contenido/weeks/week05/Clusters_ejemplo.qmd
+        - href: contenido/Contenido/Tema2_extendido/
+          text: Nbdev y sus usos
+        - href: contenido/Contenido/Tema3/Clusters_ejemplo.qmd
           text: Un ejemplo más entretenido Clusters
   navbar:
     background: primary

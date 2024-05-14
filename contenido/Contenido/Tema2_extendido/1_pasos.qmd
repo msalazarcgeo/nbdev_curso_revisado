@@ -2,12 +2,12 @@
 title: "Curso Nbdev- Primeros pasos"
 subtitle: "Poniendo las cosas en orden para trabajar"
 ---
-# Curso Nbdev- Primeros pasos (Tema 3 Cambiar en la matriz para que se a acorde)
+# Iniciar un repossitorio con github y nbdev. 
 
 
-## ¿Cómo me organizo ?
+## ¿Cómo me organizo ? 
 
-A continuación vamos a poner las cosas para crear un ambiente de desarrollo para automatizar todos los procesos.
+A continuación vamos a poner los pasos que vamos a seguir para crear un ambiente de desarrollo y automatizar todos los procesos.
 
 * [Generar un repositorio](#generar-un-repositorio).
 * [Habilitar Github Pages](#habilitar-github-pages). 
@@ -18,14 +18,14 @@ A continuación vamos a poner las cosas para crear un ambiente de desarrollo par
 
 
 
-## Generar un repositorio 
+## Generar un repositorio. 
 
-Los repositorios nos permiten mantener un orden en el código y un control de cambios, por la simpleza usaremos [Github](https://github.com) donde alojaremos el repositorio de nuestro desarrollo. 
+Los repositorios nos permiten mantener un orden en el código y un control de cambios, por la simpleza usaremos [Github](https://github.com) donde alojaremos el repositorio de nuestro desarrollo. Para poder crear un repositorio dentro de github sera necesario crear una cuenta dentro del sitio. 
 
 <img src="/figures/Screen_shots/New_repository.png" alt="image" width="500" height="auto">
 
 
-Se utiliza el siguiente comando para clonar el repositorio y poder modificarlo de forma local. 
+Una vez creado nuestro repositorio se utiliza el siguiente comando para clonar el repositorio de forma local  y poder modificarlo tanto de forma local como actualizar los cambies en github. 
 
 ```
 git clone git@github.com:%nombreusuario/nbdev_prueba.git
@@ -43,7 +43,7 @@ Nbdev contiene un comando para añadir toda la estructura necesaria para poder g
 nbdev_new
 ```
 
-Este comando debera ejecutarse dentro del directorio del repositorio. El comando genera tres subdirectorios
+Este comando debera ejecutarse dentro del directorio del repositorio. El comando generará tres subdirectorios:
 
 * Un subdirectorio con el nombre del repositorio (nbdev_prueba)
 * nbs
@@ -69,7 +69,7 @@ $ git commit -m 'Primer commit'
 $ git push
 ```
 
-Si vamos a nuestro repositorio podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales. 
+Si vamos a nuestro repositorio dentro de Github podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales. 
 
 <img src="/figures/Screen_shots/nbdev_prueba_modificado.png" alt="image" width="500" height="auto">
 
@@ -96,7 +96,7 @@ Cuando nuestra pagina de documentación se encuentre disponible en la pestaña d
 
 <img src="/figures/Screen_shots/nbdev_prueba_depoy.png" alt="image" width="500" height="auto">
 
-Para poder ver la documentación que se creo nos podemos dirigir a la la cual estará alojada en algo similar a `https://%nombreusuario.github.io/nbdev_prueba/`
+Para poder ver la documentación que se creo, nos podemos dirigir a la la cual estará alojada en algo similar a `https://%nombreusuario.github.io/nbdev_prueba/`
 
 <img src="/figures/Screen_shots/Primer_documentacion.png" alt="image" width="500" height="auto">
 
@@ -149,7 +149,7 @@ Los hook de nbdev funcionan para cualquier repositorio, sin importar si se usa n
 Nbdev es muy modificable, esto se encuentra dentro del archivo `settings.ini`. Para crear el archivo se puede ejecutar `nbdev_create_config`. 
 
 
-### Editamos 
+### Nbdev y Jupyter.  
 
 Abrimos el archivo `nbs/00_core.ipynb`, el cual se generó cuando ejecutamos `nbdev_new`. Dentro de éste se pueden observar las directrizes más importantes para generar un documento que nos servira para poder hacer tanto nuestro paquete, la documentación y su empaquetado. 
 
@@ -322,7 +322,7 @@ $ nbdev_readme
 ```
 el cual actualiza el `Readme.md` del repositorio.
 
-### Subir los cambios al repositorio de github
+## Subir los cambios al repositorio de github
 
 Ya podemos hacer los 'commits' y 'push' a los cambios en el repositorio para que estos se actualizen en Github. Nbdev nos da un comando para hacer todo para disminuir el tiempo para los cambios. Esto se puede hacer usando 
 ```
@@ -337,7 +337,7 @@ $ git push
 ```
 
 
-## Instalación de la biblioteca 
+### Instalación de la biblioteca 
 
 La biblioteca se puede añadir a PIP o Anaconda en cualquiera de los casos es necesario tener una cuenta para hacer estas acciones. 
 

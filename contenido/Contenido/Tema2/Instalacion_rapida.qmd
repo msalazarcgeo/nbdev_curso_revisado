@@ -90,24 +90,6 @@ Como ejemplo para instalar numpy usando conda y el canal conda-forge executamos
 ```
 
 
-
-
-## Instalar git (Tema 2.4)
-
-Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto. 
-
-Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
-
-Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar [github](https://github.com/) y [gitlab](http://gitlab.com/). En este curso se utiliza github por facilidad pues se usa su servicio de *github-pages* para tener en linea la documentación del paquete que se desarrolla.
-
-Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma  
-
-```bash
-(desarrollo) conda install -c conda-forge git
-```
-
-
-
 ## Instalar Jupyter Notebook (Tema 2.2)
 
 Jupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza [Markdown](https://en.wikipedia.org/wiki/Markdown) esto nos permite hacer uso de [LaTex](https://en.wikipedia.org/wiki/LaTeX) para escribir formulas matemáticas. 
@@ -130,9 +112,7 @@ O con pip
 
 
 
-
-
-## Instalación **nbdev** rápida (linux o Mac) (Tema 2.5)
+## Instalación **nbdev** rápida (linux o Mac) (Tema 2.3)
 
 La instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla *nbdev*. Se instala a través de pip usando:
 
@@ -155,7 +135,24 @@ pip install nbdev=2.3.12
 ```
 
 
-## Instalar Quarto (Tema 2.4)
+
+## Instalar git (Tema 2.4)
+
+Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto. 
+
+Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
+
+Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar [github](https://github.com/) y [gitlab](http://gitlab.com/). En este curso se utiliza github por facilidad pues se usa su servicio de *github-pages* para tener en linea la documentación del paquete que se desarrolla.
+
+Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma  
+
+```bash
+(desarrollo) conda install -c conda-forge git
+```
+
+
+
+## Instalar Quarto (Tema 2.5)
 
 Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando 
 

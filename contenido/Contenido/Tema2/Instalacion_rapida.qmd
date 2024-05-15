@@ -124,14 +124,14 @@ Para iniciar una instancia de JupyterLab desde terminal dentro del ambiente virt
 (desarrollo) jupyter-lab
 ```
 
-Tambien se puede hacer uso de la interfaz gráfica en windows para lanzar el JupyterLab. 
+En windows tambien se puede hacer uso de la interfaz gráfica de conda para lanzar el JupyterLab. 
 
 ![Inicio de JupyterLab ](./Inicio_jupyter.png){#fig-inicioJL}
 
 Una vez ejecutado el comando se desplegara un servicio web el cual se puede acceder desde un navegador y nos mostrara una pagina web muy similar a la que se muestra en  @fig-inicioJL. 
 
 
-Para empezar un nuevo notebook se elige la version de python que se desea que se ejecute y esta generara un nuevo notebook con nombre 'Untitled.ipynb' como en @fig-nuevo_notebook
+Para empezar un nuevo notebook se elige la version de python que se desea que se ejecute y esta generará un nuevo notebook con nombre 'Untitled.ipynb' como en @fig-nuevo_notebook
 
 
 ![Nuevo Notebook](./nuevo_notebook.png){#fig-nuevo_notebook}
@@ -142,8 +142,76 @@ En los notebooks se tienen tres tipos de celda ('Code', 'Markdown' y 'Raw') las 
 * 'Markdown' nos permite hacer uso de el lenguaje Markdown para el enriquecimiente del texto plano.
 * 'Raw' simplemente va a mostrar el contenido dentro de la celda.
 
-Como ejemplo este curso hace uso de los Notebooks y Markdown, como se ve es de pespecial útilidad para la creación de texto relacionado con la creación de codigo y para la generación de manuales técnicos. 
+Como ejemplo este curso hace uso de los Notebooks y Markdown, como se ve es de especial útilidad para la creación de texto relacionado con la creación de código y para la generación de manuales técnicos. 
 
+### Basicos de Markdown 
+
+Markdown es un simple conjunto de instrucciones en texto plano que nos permiten enriquecer el texto para crear documentos más completos. Las siguientes son una muestra de como se utiliza Markdown. 
+
+
+
+#### Cursiva
+La letra cursiva es un recurso que se utiliza en la creación de texto para resaltar alguna palabra en particular para distinguirla del texto usual. Es común utilizarla para palabras en otro idioma como *ballet* o *software*. En el caso de las ciencias es común su uso cuando se hace uso del latín como *curriculum vitae*. 
+
+Para escribir con negritas en Markdown se utiliza el caracter `*`,  todo lo que se entre los asteríscos queda como *cursiva*  `*cursiva*`.  
+
+
+#### Negritas
+
+La letras en **negritas** nos sirve para resaltas una palabra o palabras del texto normal. Para que el texto este en **negritas** en Markdown tenemos que colocarlo entre dos asteriscos `** **`. De esta forma podemos hacer **enfasis** `**enfasis**` en algo particular. 
+
+#### Para escribrir código en el texto. 
+
+En ciertos casos es necesario escribir código dentro del texto sin que este sea ejecutado por tal motivo se utiliza la tilde invertida (`` ` ``) y nos permite escribir cosas sin que estas sean ejecutadas en los distintos lenguajes soportados por Quarto `1+1` `` `1+1` ``. 
+
+
+#### Listas 
+
+Para hacer listas en Markdown es muy fácil pues esto se puede hacer usando un sólo `*` para definirlas, y un espacio para determina la lista.    
+
+* Cosa 1
+* Cosa 2
+* Cossa 3
+    * Cosa 3.1
+    * Cosa 3.
+    
+
+```
+* Cosa 1
+* Cosa 2
+* Cossa 3
+    * Cosa 3.1
+    * Cosa 3.2
+```
+
+
+
+#### Secciones 
+
+Markdown nos permite tener mantener un orden dentro del documento haciendo uso de `#`, este funciona para indicar un encabezado e inicio de la sección. Markdown nos permite hacer subsecciones a partir del uso consecutivo de `#`. 
+
+
+```
+# Sección 1
+
+# Sección 2
+
+# Sección 3
+
+## Sección 3.1
+
+### Sección 3.1.1
+### Sección 3.1.2
+
+## Sección 3.2 
+## Sección 3.3
+
+# Seccion 4
+```
+
+### Otras
+
+Markdown nos permite hacer tablas referencia insertar imagenes, etc. Se puede hacer un curso para conocer los distintos usos de forma más extensiva,pero queda fuera del alcance de este curso.
 
 
 ## Instalación **nbdev** rápida (linux o Mac) (Tema 2.3)

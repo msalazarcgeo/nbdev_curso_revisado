@@ -1,8 +1,20 @@
 ---
 title: "Curso Nbdev- Primeros pasos"
 subtitle: "Poniendo las cosas en orden para trabajar"
+author:   '[J. Miguel Salazar](#)'
+institute: '[CentroGeo](#)'
+date: 01 Enero 2024
+date-meta: 01 Enero 2024
+date-format: "DD MMM YYYY"
+toc: true
+toc-depth: 1
+toc-title: "Contenido del curso:"
+center-title-slide: false
+from: markdown+emoji
+execute:
+  echo: false
 ---
-# Iniciar un repossitorio con github y nbdev. 
+# Iniciar un repositorio con github y nbdev. 
 
 
 ## ¿Cómo me organizo ? 
@@ -22,7 +34,8 @@ A continuación vamos a poner los pasos que vamos a seguir para crear un ambient
 
 Los repositorios nos permiten mantener un orden en el código y un control de cambios, por la simpleza usaremos [Github](https://github.com) donde alojaremos el repositorio de nuestro desarrollo. Para poder crear un repositorio dentro de github sera necesario crear una cuenta dentro del sitio. 
 
-<img src="/figures/Screen_shots/New_repository.png" alt="image" width="500" height="auto">
+![Nuevo repositorio](./Images_tem/New_repository.png){#fig-nuevo_rep}
+
 
 
 Una vez creado nuestro repositorio se utiliza el siguiente comando para clonar el repositorio de forma local  y poder modificarlo tanto de forma local como actualizar los cambies en github. 
@@ -43,7 +56,7 @@ Nbdev contiene un comando para añadir toda la estructura necesaria para poder g
 nbdev_new
 ```
 
-Este comando debera ejecutarse dentro del directorio del repositorio. El comando generará tres subdirectorios:
+Este comando debera ejecutarse dentro del directorio del repositorio. El comando generará tres subdirectorios: 
 
 * Un subdirectorio con el nombre del repositorio (nbdev_prueba)
 * nbs
@@ -69,9 +82,11 @@ $ git commit -m 'Primer commit'
 $ git push
 ```
 
-Si vamos a nuestro repositorio dentro de Github podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales. 
+Si vamos a nuestro repositorio dentro de Github podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales Ver @fig-nbd-modificado. 
 
-<img src="/figures/Screen_shots/nbdev_prueba_modificado.png" alt="image" width="500" height="auto">
+
+![Nuevo repositorio](./Images_tem/nbdev_prueba_modificado.png){width=300,#fig-nbd-modificado}
+
 
 
 ## Habilitar Github Pages y flujos de trabajo
@@ -86,7 +101,7 @@ Aunque **nbdev** tiene por defecto el uso de Github Pages esto puede ser modific
 Para habilitar en el repositorio hay que ir a la parte de "Settings" del repositorio y en el menu (Izquierda) en "Pages". En esta sección se cambia de “Branch” a “gh-pages” y se da click en "Save". 
 
 
-<img src="/figures/Screen_shots/nbdev_prueba_pages.png" alt="image" width="500" height="auto">
+![Nuevo repositorio](./Images_tem/nbdev_prueba_pages.png){width=500,#fig-nbd-prueba}
 
 La página se encuentra alojada en una dirección similar a  `https://%nombreusuario.github.io/nbdev_prueba/`. Pero primero esta debe ser generada por Github.
 
@@ -94,11 +109,13 @@ Una de las características de Github es que podemos generar ciertas acciones y 
 
 Cuando nuestra pagina de documentación se encuentre disponible en la pestaña de "Actions" del repositorio podremos ver (✅) en "pages build and deployment". En caso de que se vea (❌) significa que algo a salido mal. 
 
-<img src="/figures/Screen_shots/nbdev_prueba_depoy.png" alt="image" width="500" height="auto">
+![Deploy documentacion](./Images_tem/nbdev_prueba_depoy.png){width=500,#fig-nbd-deploy}
+
 
 Para poder ver la documentación que se creo, nos podemos dirigir a la la cual estará alojada en algo similar a `https://%nombreusuario.github.io/nbdev_prueba/`
 
-<img src="/figures/Screen_shots/Primer_documentacion.png" alt="image" width="500" height="auto">
+![Documentacion](./Images_tem/Primer_documentacion.png){width=500,#fig-prim-docu}
+
 
 
 ::: {.callout}
@@ -109,7 +126,6 @@ Al tener todo integrado facilitamos el trabajo del desarrollador, aprovechando e
 
 
 ## Hacer la primera edición
-
 
 Ya que hemos generado un repositorio y hemos modificado las configuraciones para tener la documentación alojada de forma automatica vamos a hacer la primera edición a nuestro paquete. 
 
@@ -244,8 +260,8 @@ La configuración se puede controlar desde el archivo `settings.ini` y por defec
 
 Si se mantiene en servicio la página es posible ver los cambios que se hacen con cierto retraso. 
 
+![Documentacion Modificada](./Images_tem/Modificacion_documentacion.png){width=500,#fig-docum-modi}
 
-<img src="/figures/Screen_shots/Modificacion_documentacion.png" alt="image" width="500" height="auto">
 
 ## Probar el módulo 
 

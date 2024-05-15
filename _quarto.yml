@@ -6,9 +6,9 @@ project:
     - "index.qmd"
     - "contenido/*.qmd"
     - "contenido/Contenido/Tema1/*.qmd"
-    - "contenido/weeks/Tema2/*.qmd"
-    - "contenido/weeks/Tema2_extendido/*.qmd"
-    - "contenido/weeks/Tema3/*.qmd"
+    - "contenido/Contenido/Tema2/*.qmd"
+    - "contenido/Contenido/Tema2_extendido/*.qmd"
+    - "contenido/Contenido/Tema3/*.qmd"
 
 execute:
   freeze: auto

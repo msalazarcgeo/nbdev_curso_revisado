@@ -1,6 +1,7 @@
 ---
 title: "Curso Nbdev -- Módulo con Clusters"
 subtitle: "Hacer todo el desarrollo"
+
 ---
 
 # Ejemplo (Tema 4  Este es el que seria el tema 3)
@@ -8,13 +9,13 @@ subtitle: "Hacer todo el desarrollo"
 Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev. 
 
 
-Primero generamos nuestro repositorio como lo hicimos en el ejemplo [anterior](../week03/1_pasos.qmd#generar-un-repositorio). 
+Primero generamos nuestro repositorio como lo hicimos en el ejemplo [anterior](../Tema2_extendido/1_pasos.qmd#generar-un-repositorio). 
 
 Una vez con nuestro repositorio podemos iniciar nuestro repositorio de forma local y vamos a modificarlo para hacer el módulo de ejemplo.
 
 ## Entendiendo un poco más 
 
-En la [sección anterior](../week03/1_pasos.qmd#generar-un-modulo) vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.
+En la [sección anterior](../Tema2_extendido/1_pasos.qmd#generar-un-modulo) vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.
 
 Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio `nbs` se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando `nbdev_new` nos genera toda la estructura dentro de nuestro repositorio. 
 
@@ -414,7 +415,7 @@ Vamos a entender un poco más que es lo que pasa cuando se hace la publicación 
 
 De esta forma hemos generado todo para nuestra librería, tiene documentación y haciendo uso de `nbdev_prepare` se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a *github*. 
 
-A continuación vamos a integrar todo en *Github* para que tanto las pruebas como la creación de la documentación realizadas usando [github-actions](https://docs.github.com/en/actions) como ya se hizo en los [primeros pasos de este curso](../week03/1_pasos.qmd#habilitar-github-pages-y-flujos-de-trabajo) con la creación de una librería muy sencilla. 
+A continuación vamos a integrar todo en *Github* para que tanto las pruebas como la creación de la documentación realizadas usando [github-actions](https://docs.github.com/en/actions) como ya se hizo en los [primeros pasos de este curso](../Tema2_extendido/1_pasos.qmd#habilitar-github-pages-y-flujos-de-trabajo) con la creación de una librería muy sencilla. 
 
 Como hemos añadido librerías y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por talmotivo vamos a dar una explicación mas extensa de los pasos. 
 
@@ -663,7 +664,7 @@ En el centro una lista con los commits realizado y el resultado de las acciones 
 
 ![Woorkflows Actions](./Workflow_actions.png){#fig-7-W5-succes_github}
 
-Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos [anteriormente](../week03/1_pasos.qmd#ver-la-documentación) y se selecciona el branch de 'gh-pages' para habilitar la documentación.
+Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos [anteriormente](../Tema2_extendido/1_pasos.qmd#ver-la-documentación) y se selecciona el branch de 'gh-pages' para habilitar la documentación.
 
 
 

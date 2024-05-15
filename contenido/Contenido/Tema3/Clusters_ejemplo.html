@@ -566,7 +566,7 @@ Actividad
 <h1>Publicar todo</h1>
 <p>Vamos a entender un poco más que es lo que pasa cuando se hace la publicación de la documentación generada. Ya hemos dicho que por abajo nbdev usa <em>Quarto</em> para la generación de la documentación, lo que sucede es que nuestros notebooks son preprocesados generando notebooks que se usan como base para convertirlos a documentos html. Estos notebooks se encuentran en el directorio <code>_proc</code> (se genera cuando se executa <code>nbdev_docs</code>) los cuales tienen en sus celdas directrizes de <em>Quarto</em> para generar los resultados deseados. Podemos inspeccionar estos archivos comprobando observar que son similares a los notebook originales, si se inspecciona el directorio <code>_docs</code> se vera que los documentos html son los que fueron generados a partir de los notebooks en <code>_prod</code>.</p>
 <p>De esta forma hemos generado todo para nuestra librería, tiene documentación y haciendo uso de <code>nbdev_prepare</code> se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a <em>github</em>.</p>
-<p>A continuación vamos a integrar todo en <em>Github</em> para que tanto las pruebas como la creación de la documentación realizadas usando <a href="https://docs.github.com/en/actions">github-actions</a> como ya se hizo en los <a href="../week03/1_pasos.qmd#habilitar-github-pages-y-flujos-de-trabajo">primeros pasos de este curso</a> con la creación de una librería muy sencilla.</p>
+<p>A continuación vamos a integrar todo en <em>Github</em> para que tanto las pruebas como la creación de la documentación realizadas usando <a href="https://docs.github.com/en/actions">github-actions</a> como ya se hizo en los <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo">primeros pasos de este curso</a> con la creación de una librería muy sencilla.</p>
 <p>Como hemos añadido librerías y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por talmotivo vamos a dar una explicación mas extensa de los pasos.</p>
 <section id="entendiendo-github-actions." class="level2">
 <h2 class="anchored" data-anchor-id="entendiendo-github-actions.">Entendiendo github-actions.</h2>
@@ -786,7 +786,7 @@ Figure&nbsp;7: Woorkflows Actions
 </figcaption>
 </figure>
 </div>
-<p>Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos <a href="../week03/1_pasos.qmd#ver-la-documentación">anteriormente</a> y se selecciona el branch de ‘gh-pages’ para habilitar la documentación.</p>
+<p>Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#ver-la-documentación">anteriormente</a> y se selecciona el branch de ‘gh-pages’ para habilitar la documentación.</p>
 </section>
 </section>
 </section>

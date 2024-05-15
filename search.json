@@ -14,60 +14,11 @@
     "text": "MY_NAME  Profesor  CentroGeo 📧 MY_EMAIL (%20msalazar at centrogeo dot edu dot mx)"
   },
   {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#qué-es-nbdev",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#qué-es-nbdev",
+    "objectID": "contenido/Contenido/Tema1/nbdev_python.html",
+    "href": "contenido/Contenido/Tema1/nbdev_python.html",
     "title": "Curso NbdevIntroducción ",
-    "section": "¿ Qué es Nbdev ?",
-    "text": "¿ Qué es Nbdev ?\nNbdev es un ambiente de programación para el desarrollo de software en Python el cual esta basado en el concepto de programación literal (literal programing) de Donald E. Knuth\n\nLiterate programming is a methodology that combines a programming language with a documentation language, thereby making programs more robust, more portable, more easily maintained, and arguably more fun to write than programs that are written only in a high-level language. The main idea is to treat a program as a piece of literature, addressed to human beings rather than to a computer.1\n\nFragmento del libro Literate Programming de Donald E. Knuth"
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#qué-es-nbdev-1",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#qué-es-nbdev-1",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Qué es Nbdev ?",
-    "text": "¿ Qué es Nbdev ?\nNbdev es un ambiente de programación para el desarrollo de software en Python el cual esta basado en el concepto de programación literal (literal programing) de Donald E. Knuth\n\nProgramación literal es una metodología que combina un lenguaje de programación con un lenguaje de documentación, haciendo los programas más robustos, más portables, más fáciles de mantener y discutiblemente más divertidos de escribir que programas escritos en un lenguaje de programación de alto nivel. La idea principal es tratar a un programa como una pieza de literatura dirigido a un humano en vez de a una computadora. 1\n\nFragmento del libro Literate Programming de Donald E. Knuth"
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#cuál-es-la-diferencia",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#cuál-es-la-diferencia",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cuál es la diferencia ?",
-    "text": "¿ Cuál es la diferencia ?\nNbdev utiliza un jupyter notebooks para generar tanto el código de la biblioteca como la documentación de la misma.\nPermite\n\nConstruir código a partir de Notebooks de Jupyter permitiendo que el desarrollo del software sea similar a contar una historia.\nGenerar documentación usando las propiedades de Markdown y Latex integradas en Jupyter y de fácil mantenimiento usando Quarto.\nPublicación de la documentación (A través de GitHub Pages)\nIntegración continua a través de GitHub Actions permitiendo generar pruebas para mantener y validar las utilidades del código.\nPublicas paquetes a PYPI y conda.\n\nAdicionalmente\n\nGenerar pruebas del código esenciales para el mantenimiento del paquete.\n\nMantener notebooks limpios (Limpios de metadata y quedendonos sólo con la parte legible para los humanos).\nMuchos más!!!"
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#instalación-rápida",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#instalación-rápida",
-    "title": "Curso NbdevIntroducción ",
-    "section": "Instalación rápida",
-    "text": "Instalación rápida\nSe puede instalar a través de pip usando:\npip install nbdev\no instalar con conda:\nconda install -c fastai nbdev\nSi se utiliza conda para hacer uso de nbdev, es necesario que este instalado dentro del mismo ambiente de Python que se utiliza para hacer uso de Jupyter y del proyecto."
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#cómo-usar-nbdev",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#cómo-usar-nbdev",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo usar nbdev ?",
-    "text": "¿ Cómo usar nbdev ?\nEl desarrollo de nbdev esta ligado a su uso con herramientas software especificas. Por tal motivo la forma más sencilla de hacer uso de nbdev es utilizar dichas herramientas de software.\nHerramientas ligadas a nbdev:\n\nPython (Python o conda)\nManejador de paquetes de Python (pip o conda)\nJupyter Notebooks\nQuarto\nGithub\nnbdev"
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#cómo-funciona-nbdev",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#cómo-funciona-nbdev",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo funciona nbdev ?",
-    "text": "¿ Cómo funciona nbdev ?\nLa idea central es poder hacer todo como una historia, hacer el desarrollo de una idea, pasarla a código, ver que funcione, hacer pruebas , exportar el código, hacer la documentacion, etc. Todo dentro de un mismo notebook.\nAl tener todo dentro de un mismo notebook nos permite que todo sea más simple.\n\nSe evita la repetición de código pues nombres de parámetros, constantes, typos, etc.\nSe simplifica la generación de ejemplos, pues si el ejemplo ya se encuentra dentro de un notebook el desarrollador no necesitará copiarlos y poner estos dentro de una documentación de forma manual.\nSe enriquecen los ejemplos y la documentación pues al hacer uso de los notebooks de Jupyter podemos hacer gráficas, imágenes, y ejemplos interactivos.\nPara los usuarios de la biblioteca o módulo que se desarrolla pueden reproducir de forma sencilla los ejemplos y resultados."
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#cómo-funciona-nbdev-en-su-segunda-versión",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#cómo-funciona-nbdev-en-su-segunda-versión",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo funciona nbdev en su segunda versión ?",
-    "text": "¿ Cómo funciona nbdev en su segunda versión ?\nEn sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el desarrollo, a partir de su segunda versión se recomienda el uso de Quarto. Quarto nos permite usar los notebooks con la diferencia que a partir de un mismo notebook podemos generar distintos tipos de documentos como HTML, PDF, MS word, Markdown, presentaciones, etc. Uno de los formatos que podemos generar es el de un notebook de Jupyter, por tal motivo los desarrolladores de nbdev decidieron hacer uso de Quarto en vez de generar todo un nuevo ecosistema."
-  },
-  {
-    "objectID": "contenido/Contenido/Tema1/nbdev_python.html#cómo-funciona-nbdev-en-los-notebooks",
-    "href": "contenido/Contenido/Tema1/nbdev_python.html#cómo-funciona-nbdev-en-los-notebooks",
-    "title": "Curso NbdevIntroducción ",
-    "section": "¿ Cómo funciona nbdev en los notebooks ?",
-    "text": "¿ Cómo funciona nbdev en los notebooks ?\nUsando simples directrices dentro de los notebooks y sus celdas nos permite: * Crear la documentación * Exportar fragmentos de código para la creación de codigo fuente. * Ejecución de código para pruebas. * Visibilidad y comportamiento de celdas. * Manejo de variables internas. * etc.\nHaciendo uso de lo anterior nos permite generar tutoriales para mosrtrar el uso del desarrollo.\n\n\n\nCurso Nbdev – Introducción"
+    "section": "",
+    "text": "Footnotes\n\n\nFragmento del libro Literate Programming de Donald E. Knuth↩︎\nFragmento del libro Literate Programming de Donald E. Knuth↩︎"
   },
   {
     "objectID": "contenido/Contenido/Tema2/Instalacion_rapida.html",

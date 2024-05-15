@@ -8,13 +8,13 @@ subtitle: "Hacer todo el desarrollo"
 Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev. 
 
 
-Primero generamos nuestro repositorio como lo hicimos en el ejemplo [anterior](../week03/1_pasos.qmd#generar-un-repositorio). 
+Primero generamos nuestro repositorio como lo hicimos en el ejemplo [anterior](../Tema2_extendido/1_pasos.qmd#generar-un-repositorio). 
 
 Una vez con nuestro repositorio podemos iniciar nuestro repositorio de forma local y vamos a modificarlo para hacer el módulo de ejemplo.
 
 ## Entendiendo un poco más 
 
-En la [sección anterior](../week03/1_pasos.qmd#generar-un-modulo) vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.
+En la [sección anterior](../Tema2_extendido/1_pasos.qmd#generar-un-modulo) vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.
 
 Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio `nbs` se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando `nbdev_new` nos genera toda la estructura dentro de nuestro repositorio. 
 

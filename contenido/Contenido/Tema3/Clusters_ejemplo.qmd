@@ -2,6 +2,7 @@
 title: "Curso Nbdev -- Módulo con Clusters"
 subtitle: "Hacer todo el desarrollo"
 
+
 ---
 
 # Ejemplo (Tema 4  Este es el que seria el tema 3)
@@ -59,7 +60,7 @@ git push
 
 Podemos ver las modificaciones en nuestro repositorio. 
 
-## Otros comandos git 
+### Otros comandos git 
 
 Otros comandos importantes de git
 

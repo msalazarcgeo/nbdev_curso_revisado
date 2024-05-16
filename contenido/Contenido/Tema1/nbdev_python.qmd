@@ -1,26 +1,6 @@
 ---
-subtitle: "Desarrollo de software \n a través de la programación literal -- Curso nbdev"
 title: "<font style='font-size:1em;'>Curso Nbdev<br/>Introducción </font>"
-author:   '[J. Miguel Salazar](#)'
-institute: '[CentroGeo](#)'
-date: 01 Enero 2024
-date-meta: 01 Enero 2024
-date-format: "DD MMM YYYY"
-toc: true
-toc-depth: 1
-toc-title: "Contenido del curso:"
-center-title-slide: false
-from: markdown+emoji
-format:
-  revealjs: 
-    fig-responsive: true
-    theme: simple
-    slide-number: true
-    mouse-wheel: false
-    preview-links: auto
-    logo: /figures/icons/course_favicon.png
-    css: /css/styles_slides.css
-    footer: 'Curso Nbdev -- Introducción'
+subtitle: "Desarrollo de software \n a través de la programación literal -- Curso nbdev"
 ---
 # Curso (Tema 1 todo)
 
@@ -119,10 +99,3 @@ Usando simples directrices dentro de los notebooks y sus celdas nos permite:
 * etc.
 
 Haciendo uso de lo anterior nos permite generar tutoriales para mosrtrar el uso del desarrollo.
-
-
-
-
-
-
-

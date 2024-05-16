@@ -32,7 +32,7 @@ website:
           text: Presentación del concepto 
         - href: contenido/Contenido/Tema2/Instalacion_rapida.qmd
           text: Instalación prerequisitos
-        - href: contenido/Contenido/Tema2_extendido/
+        - href: contenido/Contenido/Tema2_extendido/1_pasos.qmd
           text: Nbdev y sus usos
         - href: contenido/Contenido/Tema3/Clusters_ejemplo.qmd
           text: Un ejemplo más entretenido Clusters

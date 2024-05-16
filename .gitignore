@@ -235,8 +235,11 @@ cython_debug/
 
 
 .vscode/
-contenido/weeks/week05/Custers_ejemplo_files/**
-contenido/weeks/week05/Custers_ejemplo.html
-contenido/weeks/week05/Clusters_ejemplo_files/libs/*
 _freeze/**
 
+contenido/Contenido/Tema1/nbdev_python.html
+contenido/Contenido/Tema1/nbdev_python_files/
+contenido/Contenido/Tema3/Clusters_ejemplo.html
+contenido/Contenido/Tema3/Clusters_ejemplo_files/
+contenido/Contenido/Tema2/Instalacion_rapida.html
+contenido/Contenido/Tema2/Instalacion_rapida_files/

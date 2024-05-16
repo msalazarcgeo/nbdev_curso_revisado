@@ -1,21 +1,9 @@
 ---
+title: "Curso Nbdev Introducción "
 subtitle: "Instalación -- Curso nbdev"
-title: "<font style='font-size:1em;'>Curso Nbdev<br/>Introducción </font>"
-author:   '[J. Miguel Salazar](#)'
-institute: '[CentroGeo](#)'
-date: 01 Enero 2024
-date-meta: 01 Enero 2024
-date-format: "DD MMM YYYY"
-toc: true
-toc-depth: 1
-toc-title: "Contenido del curso:"
-center-title-slide: false
-from: markdown+emoji
-execute:
-  echo: false
 ---
 
-## Instalación 
+# Instalación 
 
 Para hacer uso de _nbdev_ es necesario los siguientes softwares:
 
@@ -26,12 +14,15 @@ Para hacer uso de _nbdev_ es necesario los siguientes softwares:
 * Github
 * nbdev
 
+A continuación se da una breve explicación de cada uno de estos y como lo utilizamos. 
 
-## Instalación Anaconda (conda) (Tema 2.1)
+## Ambientes virtuales (conda) (Tema 2.1)
 
 Anaconda es una empresa la cual desarrollo un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de  dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo. 
 
 De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo. 
+
+### Instalación Anaconda (conda) 
 
 Para la instalación de conda lo más sencillo es seguir el este [manual](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) aquí sólo se hace un esbozo de la instalación.
 
@@ -76,7 +67,7 @@ Otro canal muy utilizado es [conda-forge](https://conda-forge.org/), el cual con
 
 
 
-### Instalación paquetes
+### Uso de Conda para instalación paquetes
 
 Para instalar un paquete dentro del ambiente virtual es necesario activar el ambiente. Ya dentro de este para hacer la instalación de los distintos paquetes de python tenemos dos formas distintas **PIP** o **conda**. PIP es el manejador de paquetes usado por python por defecto si se a trabajado anteriormente con Python lo más seguro es estar familiarizado con su uso. 
 
@@ -214,6 +205,68 @@ Markdown nos permite tener mantener un orden dentro del documento haciendo uso d
 Markdown nos permite hacer tablas referencia insertar imagenes, etc. Se puede hacer un curso para conocer los distintos usos de forma más extensiva,pero queda fuera del alcance de este curso.
 
 
+## Instalacion de git (github) 
+
+
+
+Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software pues nos permiten tener un control sobre las versiones del código desarrollado a través de los cambios en el ćodigo. A través del seguimiento de dichos cambios es posible tener un trabajo en equipo sobre el mismo archivo de forma autónoma permitiendo un desarrollo más rápido. 
+
+Una de las herramientas más usadas en los sistemas de control de versiones es la idea básica para lo que fueron creados que es **poder regresar a una versión anterior en el desarrollo de software**, lo cual resulta fundamental si hay un error en el desarrollo (bug).
+
+y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto. 
+
+**Git** es un sistema de control de versiones . Los sistemas de control de versiones. . De igual forma nos facilita encontrar y corregir los posibles bugs dentro del código. 
+
+
+  
+
+Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar [github](https://github.com/) y [gitlab](http://gitlab.com/). En este curso se utiliza github por facilidad pues se usa su servicio de *github-pages* para tener en linea la documentación del paquete que se desarrolla.
+
+Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma  
+
+```bash
+(desarrollo) conda install -c conda-forge git
+```
+
+
+
+Lo más seguro es que git ya se encuentre instalado en su sistemas, al menos es el caso para Mac y Linux. Para saber si se tiene instalado git se puede abrir una terminal y ejecutar:
+
+```bash
+git version
+```
+
+Este comando mostrara la versión instalada dentro del sistema.
+
+En caso de que no se tenga instalado se puede seguir los pasos que se encuentran en [*Github*](https://github.com/git-guides/install-git) o se puede descargar desde [https://git-scm.com/download/win](https://git-scm.com/download/win). Usando cualquiera de los dos metodos su instalación será de forma global, en caso de desear instalarlo dentro de una ambiente virtual se puede hacer con conda o usando el canal oficial de *anaconda*:
+
+```bash
+conda install -c anaconda git
+```
+ o el canal de la comunidad *conda-forge*:
+```bash
+conda install -c conda-forge git
+```
+
+### Uso de git 
+
+A continuación solo enlistamos ciertos comandos de git pues su uso completo se encuentra fuera del alcance de este curso, en la [sección](../Tema3/Clusters_ejemplo.qmd#otros-comandos-git) se describen un pooco más. 
+
+* `git clone` sirve poara clonar repositorios.
+* `git pull` sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).
+* `git add <archivo>` añade el archivo que se modificó y que se desea que actualizar, o bien se añade el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados. 
+* `git commit -a` "Comitea" todos los cambios en de los archivos añadidos anteriormente de forma local. 
+* `git push` Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar. 
+* `git status` nos dice los archivos que han sido añadidos cuales se estan vigilando pero sus cambios no han sido añadidos y cuales no se estan vigilando. 
+
+
+
+
+
+
+
+
+
 ## Instalación **nbdev** rápida (linux o Mac) (Tema 2.3)
 
 La instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla *nbdev*. Se instala a través de pip usando:
@@ -234,22 +287,6 @@ La instalación en Windows es distinta pues es necesario hacerla desde PIP y usa
 
 ```bash
 pip install nbdev=2.3.12
-```
-
-
-
-## Instalar git (Tema 2.4)
-
-Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto. 
-
-Los sistemas de control de versiones fueron ideados para poder regresar a una versión anterior en el desarrollo de software, lo cual resulta fundamental si hay un error en el desarrollo (bug). Con el paso del tiempo y con el aumento en el tamaño de los equipos de desarrollo, también sirven como herramientas en la integración entre los distintos desarrolladores. 
-
-Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar [github](https://github.com/) y [gitlab](http://gitlab.com/). En este curso se utiliza github por facilidad pues se usa su servicio de *github-pages* para tener en linea la documentación del paquete que se desarrolla.
-
-Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma  
-
-```bash
-(desarrollo) conda install -c conda-forge git
 ```
 
 

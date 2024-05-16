@@ -442,6 +442,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="uso-de-git" class="level3">
 <h3 class="anchored" data-anchor-id="uso-de-git">Uso de git</h3>
+<p>A continuación solo enlistamos ciertos comandos de git pues su uso completo se encuentra fuera del alcance de este curso, en la <a href="../../../contenido/Contenido/Tema3/Clusters_ejemplo.html#otros-comandos-git">sección</a> se describen un pooco más.</p>
+<ul>
+<li><code>git clone</code> sirve poara clonar repositorios.</li>
+<li><code>git pull</code> sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).</li>
+<li><code>git add &lt;archivo&gt;</code> añade el archivo que se modificó y que se desea que actualizar, o bien se añade el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados.</li>
+<li><code>git commit -a</code> “Comitea” todos los cambios en de los archivos añadidos anteriormente de forma local.</li>
+<li><code>git push</code> Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar.</li>
+<li><code>git status</code> nos dice los archivos que han sido añadidos cuales se estan vigilando pero sus cambios no han sido añadidos y cuales no se estan vigilando.</li>
+</ul>
 </section>
 </section>
 <section id="instalación-nbdev-rápida-linux-o-mac-tema-2.3" class="level2">

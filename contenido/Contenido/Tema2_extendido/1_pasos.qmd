@@ -1,18 +1,6 @@
 ---
 title: "Curso Nbdev- Primeros pasos"
 subtitle: "Poniendo las cosas en orden para trabajar"
-author:   '[J. Miguel Salazar](#)'
-institute: '[CentroGeo](#)'
-date: 01 Enero 2024
-date-meta: 01 Enero 2024
-date-format: "DD MMM YYYY"
-toc: true
-toc-depth: 1
-toc-title: "Contenido del curso:"
-center-title-slide: false
-from: markdown+emoji
-execute:
-  echo: false
 ---
 # Iniciar un repositorio con github y nbdev. 
 

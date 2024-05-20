@@ -32,9 +32,9 @@ En el archivo `settings.ini` podemos ver las configuraciones, como ejemplo podem
 
 ![contenido de settings.ini](./set_ini_new.png){#fig-2-W5-settings_ini}
 
-En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc. 
+En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, la ruta en donde se localizan los notebooks, etc. 
 
-Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca. 
+Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a nuestra biblioteca. 
 
 También nbdev generará el archivo `README.md` el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este, se deben hacer desde el archivo `nbs/index.ipynb` el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo `README.md` ejecutando el comando `nbdev_readme`, una vez ejecutado se puede abrir el archivo y ver las modificaciones realizadas. 
 
@@ -83,7 +83,7 @@ Otros comandos importantes de git
 Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev. 
 
 
-Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el archivo y como lo hicimos anteriormente nos sirve para hace la bibloteca. 
+Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el archivo y como lo hicimos anteriormente este archivo nos servira para generar tanto el código como la documentación de la bibloteca. 
 
 En la primera linea de código podemos observar que se tiene una directriz 
 `default_exp` la cual nos sirve para determinar a que módulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame `cluster_ejemplo`.
@@ -148,6 +148,7 @@ class data_points:
         """Regresa el centroide de los puntos """
         return shapely.centroid(self.get_Multypoint())
 ```
+
 Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen @fig-3-W5-nbdev_docu.
 
 
@@ -189,13 +190,14 @@ if len(datos_simples.get_X()) != len(datos_simples.get_Y()):
     raise Exception("Si hay problema la evaluacion ")
 ```
 
-Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se encuentra implementada  siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta  la linea de comandos `nbdev_test`. 
+Este código generará un error si el número de elementos fuesen distintos, es claro que la clase como se encuentra implementada siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta la linea de comandos `nbdev_test`. 
 
 ```bash
 nbdev_test
 ```
-lo cual mostra 
-![Exito pruebas](./Succes.png){#fig-4-W5-nbdev_test} de
+lo cual mostrará 
+
+![Exito pruebas](./Succes.png){#fig-4-W5-nbdev_test} 
 
 ## Clase clusters 
 
@@ -275,7 +277,7 @@ cluster_all.HDBSCAN()
 cluster_all.OPTICS()
 ```
 
-Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los metodos. 
+Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los métodos. 
 
 ## Documentación 
 
@@ -284,7 +286,7 @@ Para generar la documentación se hace usando el comando
 ```bash
 nbdev_docs
 ```
-En este caso en nuestra terminal podemos observar lo que se muestra en la imagen @fig-5-W5-nbdev_docs, como se observa en el directorio `_docs` se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el 'docstring' generado por las clase como en la figura @fig-3-W5-nbdev_docu y el respectivo para la clase `Clusters`.
+En este caso, en la terminal podemos observar lo que se muestra en la imagen @fig-5-W5-nbdev_docs, como se observa en el directorio `_docs` se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el 'docstring' generado por las clase como en la figura @fig-3-W5-nbdev_docu y el respectivo para la clase `Clusters`.
 
 ![Generación documentación](./docs.png){#fig-5-W5-nbdev_docs} 
 
@@ -414,11 +416,11 @@ Lo cual mostrara ![](./Succes.png){#fig-7-W5-exito} si no hay ningun problema. E
 
 Vamos a entender un poco más que es lo que pasa cuando se hace la publicación de la documentación generada. Ya hemos dicho que por abajo nbdev usa *Quarto* para la generación de la documentación, lo que sucede es que nuestros notebooks son preprocesados generando notebooks que se usan como base para convertirlos a documentos html. Estos notebooks se encuentran en el directorio `_proc` (se genera cuando se executa `nbdev_docs`) los cuales tienen en sus celdas directrizes de *Quarto* para generar los resultados deseados. Podemos inspeccionar estos archivos comprobando observar que son similares a los notebook originales, si se inspecciona el directorio `_docs` se vera que los documentos html son los que fueron generados a partir de los notebooks en `_prod`. 
 
-De esta forma hemos generado todo para nuestra librería, tiene documentación y haciendo uso de `nbdev_prepare` se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a *github*. 
+De esta forma hemos generado todo para nuestra biblioteca, tiene documentación y haciendo uso de `nbdev_prepare` se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a *github*. 
 
-A continuación vamos a integrar todo en *Github* para que tanto las pruebas como la creación de la documentación realizadas usando [github-actions](https://docs.github.com/en/actions) como ya se hizo en los [primeros pasos de este curso](../Tema2_extendido/1_pasos.qmd#habilitar-github-pages-y-flujos-de-trabajo) con la creación de una librería muy sencilla. 
+A continuación vamos a integrar todo en *Github* para que tanto las pruebas como la creación de la documentación realizadas usando [github-actions](https://docs.github.com/en/actions) como ya se hizo en los [primeros pasos de este curso](../Tema2_extendido/1_pasos.qmd#habilitar-github-pages-y-flujos-de-trabajo) con la creación de una biblioteca muy sencilla. 
 
-Como hemos añadido librerías y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por talmotivo vamos a dar una explicación mas extensa de los pasos. 
+Como hemos añadido bibliotecas y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por tal motivo vamos a dar una explicación más extensa de los pasos. 
 
 ## Entendiendo github-actions. 
 
@@ -468,15 +470,14 @@ jobs:
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
 ```
 
-Expliquemos a grandes razgos lo que esta haciendo este archivo. Las primeras lineas le dan nomble a la accion y cuando se realiza esta. En este caso llamamos a la acion 'Deploy to GitHub Pages' y la accion sera realizada cuando se solicite de forma manual ('workflow_dispatch') cuando se haga una petición pull ('pull_request') o bien quando se realize un pull.  
+Expliquemos a grandes rasgos lo que esta haciendo este archivo. Las primeras lineas le dan nombre a la acción y cuando se realiza esta. En este caso llamamos a la acción 'Deploy to GitHub Pages' y la acción será realizada cuando se solicite de forma manual ('workflow_dispatch') cuando se haga una petición pull ('pull_request') o bien quando se realize un push.  
 
 ```YAML
 name: Deploy to GitHub Pages
 on:  [workflow_dispatch, pull_request, push] 
 ```
 
-El trabajo que va a realizar se denomina 'deploy' el cual utilizara una maquina con la version más reciente de ubuntu para realizarlo ('ubuntu-latest').
-
+El trabajo que va a realizar se denomina 'deploy' el cual utilizará una máquina virtual con la versión más reciente de ubuntu ('ubuntu-latest').
 
 En las siguientes lineas estamos dando permiso a la maquina virtual de poder escribir dentro de nuestro repositorio. 
 
@@ -493,7 +494,7 @@ Despues el trabajo consiste en los siguientes pasos:
 ```
 Utiliza las acciones `actions/checkout@v3` y `actions/setup-python@v4` que son acciones que tenemos estandarizadas dentro de github actions. Las cuales hace un check out del repositorio dentro de la maquina virtual para realizar el trabajo. `actions/setup-python@v4` instala python dentro de la maquina virtual. 
 
-El siguiente paso lo llamamo  'Install Dependencies and create documentation' aqui podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc. 
+El siguiente paso lo llamamo  'Install Dependencies and create documentation' aquí podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc. 
  
 ```YAML
 - name: Install Dependencies and create documentation 
@@ -513,9 +514,9 @@ El siguiente paso lo llamamo  'Install Dependencies and create documentation' aq
     nbdev_docs
 ```
 
-Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra libreria y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con 'nbdev_docs'. 
+Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra biblioteca  y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con 'nbdev_docs'. 
 
-Como en la maquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo 'branch', por eso le tenemos que dar permiso para escribir,  dentro del repositorio y usar ese 'branch' para publicar la documentación usando el siguiente paso: 
+Como en la maquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo 'branch', por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese 'branch' para publicar la documentación usando el siguiente paso: 
 
 ```YAML
 - name: Deploy to GitHub Pages
@@ -529,7 +530,7 @@ Como en la maquina virtual ya generamos nuestra documentación ahora vamos a pon
       user_name: github-actions[bot]
       user_email: 41898282+github-actions[bot]@users.noreply.github.com
 ```
-Esto usa las acciones descritas en `peaceiris/actions-gh-pages@v4` las cuales ya estan automatizadas para generar un nuevo branch con nombre 'gh-pages' y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio  './_docs'. 'github_token' nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parametros de 'user_name' y 'user_email' permiten avisar que acciones fueron realizadas por el script 'peaceiris/actions-gh-pages@v4' y tendran como  las cuales apareceran que fueron realizadas por github-pages bot . Estas acciones nos enviaran un mail con el resultado del trabajo realizado , es decir si este fue exitoso o no. 
+Esto usa las acciones descritas en `peaceiris/actions-gh-pages@v4` las cuales ya estan automatizadas para generar un nuevo branch con nombre 'gh-pages' y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio  './_docs'. 'github_token' nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parámetros de 'user_name' y 'user_email' permiten avisar que acciones fueron realizadas por el script 'peaceiris/actions-gh-pages@v4' y tendran como  las cuales apareceran que fueron realizadas por github-pages bot. Estas acciones nos enviaran un mail con el resultado del trabajo realizado, es decir si este fue exitoso o no. 
 
 
 
@@ -597,9 +598,9 @@ jobs:
 
 De forma similar el nombre del trabajo es 'Test CI' los trabajos se realizaran cuando cuando se hace una petición de forma manual o se hace un pull o un push. 
 
-Se corre en una maquina virtual con ubuntu 'runs-on: ubuntu-latest' y hace un check out, se instala python y nbdev junto con sus dependencias.  
+Se corre en una maquina virtual con ubuntu 'runs-on: ubuntu-latest' y hace un checkout, se instala python y nbdev junto con sus dependencias.  
 
-En el siguiente paso se instalan las dependencias de la librería en la maquina virtual. 
+En el siguiente paso se instalan las dependencias de la biblioteca en la maquina virtual. 
 
 ```YAML
 - name: Install package dependencies
@@ -611,11 +612,11 @@ En el siguiente paso se instalan las dependencias de la librería en la maquina 
         python -m pip install -Uq shapely
     
 ```
-Y en lo que resta del código verifica ciestas cosas y hace las pruebas usando nbdev_test dentro de la  maquina virtual 
+Y en lo que resta del código verifica si estas cosas y hace las pruebas usando nbdev_test dentro de la  maquina virtual 
 
-* git se verifica ell contenido de la version del repositrio que se encuentra en la maquina virtual 
-* Verifica que los notebooks no tengan cosas inecesarias, si no es asi marca error 
-* Construye la librería dentro de la maquina virtual usando 'nbdev_export'
+* git se verifica el contenido de la versión del repositorio que se encuentra en la máquina virtual 
+* Verifica que los notebooks no tengan cosas inecesarias, si no es así marca error 
+* Construye la biblioteca dentro de la máquina virtual usando 'nbdev_export'
 * Hace las pruebas usando 'nbdev_test'
 
 ```YAML
@@ -649,8 +650,9 @@ name: Test the package
         nbdev_test --flags "$FLAGS"
         fi
 ```
-Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la librería. 
+Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la biblioteca. 
 
+Con los archivos que hemos modificado hemos dado las instrucciónes para que estas acciones se desarrollen en máquinas virtuales en servidores de github. 
 Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio. 
 
 ![Menu github actions](./Acctions.png){#fig-7-W5-github_actions}

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -289,8 +289,8 @@ Figure&nbsp;2: contenido de settings.ini
 </figcaption>
 </figure>
 </div>
-<p>En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, el path de donde se localizan los notebooks, etc.</p>
-<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con código que corresponden a nuestra biblioteca.</p>
+<p>En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, la ruta en donde se localizan los notebooks, etc.</p>
+<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a nuestra biblioteca.</p>
 <p>También nbdev generará el archivo <code>README.md</code> el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este, se deben hacer desde el archivo <code>nbs/index.ipynb</code> el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo <code>README.md</code> ejecutando el comando <code>nbdev_readme</code>, una vez ejecutado se puede abrir el archivo y ver las modificaciones realizadas.</p>
 <pre><code>nbdev_readme</code></pre>
 <p>Si se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.</p>
@@ -326,7 +326,7 @@ git push</code></pre>
 <section id="regresar-al-ejemplo" class="level1">
 <h1>Regresar al ejemplo</h1>
 <p>Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev.</p>
-<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el archivo y como lo hicimos anteriormente nos sirve para hace la bibloteca.</p>
+<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el archivo y como lo hicimos anteriormente este archivo nos servira para generar tanto el código como la documentación de la bibloteca.</p>
 <p>En la primera linea de código podemos observar que se tiene una directriz <code>default_exp</code> la cual nos sirve para determinar a que módulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame <code>cluster_ejemplo</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| default_exp cluster_ejemplo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Podemos eliminar todas las demás celdas exepto la última. Esta última es la que indica celda es la que genera el módulo.</p>
@@ -398,9 +398,19 @@ Figure&nbsp;3: Ejemplo de documentacion
 <p>Incluso se pueden hacer pruebas más complicadas, tomemos como ejemplo el código de la siguientes celda.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(datos_simples.get_X()) <span class="op">!=</span> <span class="bu">len</span>(datos_simples.get_Y()):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"Si hay problema la evaluacion "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Este código generara un error si el número de elementos fuesen distintos, es claro que la clase como se encuentra implementada siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta la linea de comandos <code>nbdev_test</code>.</p>
+<p>Este código generará un error si el número de elementos fuesen distintos, es claro que la clase como se encuentra implementada siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta la linea de comandos <code>nbdev_test</code>.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>lo cual mostra <img src="./Succes.png" id="fig-4-W5-nbdev_test" class="img-fluid" alt="Exito pruebas"> de</p>
+<p>lo cual mostrará</p>
+<div id="fig-4-W5-nbdev_test" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-4-W5-nbdev_test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./Succes.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4-W5-nbdev_test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Exito pruebas
+</figcaption>
+</figure>
+</div>
 <section id="clase-clusters" class="level2">
 <h2 class="anchored" data-anchor-id="clase-clusters">Clase clusters</h2>
 <p>Vamos añadir una nueva clase a nuestro módulo, la cual llamaremos <code>Clusters</code>, esta clase nos sirve para generar clusters usando distintos algoritmos.</p>
@@ -458,20 +468,20 @@ Figure&nbsp;3: Ejemplo de documentacion
 <div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>cluster_all.KMeans()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cluster_all.HDBSCAN()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cluster_all.OPTICS()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Como estas celdas nos sirven de pruebas vamos a añadir la directriz <code>#| hide</code> para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los metodos.</p>
+<p>Como estas celdas nos sirven de pruebas vamos a añadir la directriz <code>#| hide</code> para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los métodos.</p>
 </section>
 <section id="documentación" class="level2">
 <h2 class="anchored" data-anchor-id="documentación">Documentación</h2>
 <p>Para generar la documentación se hace usando el comando</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso en nuestra terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs" class="quarto-xref">Figure&nbsp;4</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
+<p>En este caso, en la terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs" class="quarto-xref">Figure&nbsp;5</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
 <div id="fig-5-W5-nbdev_docs" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5-W5-nbdev_docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./docs.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5-W5-nbdev_docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Generación documentación
+Figure&nbsp;5: Generación documentación
 </figcaption>
 </figure>
 </div>
@@ -490,7 +500,7 @@ Figure&nbsp;4: Generación documentación
 <img src="./nbdev_preview.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6-W5-nbdev_preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Muestra la documentación
+Figure&nbsp;6: Muestra la documentación
 </figcaption>
 </figure>
 </div>
@@ -567,9 +577,9 @@ Actividad
 <section id="publicar-todo" class="level1">
 <h1>Publicar todo</h1>
 <p>Vamos a entender un poco más que es lo que pasa cuando se hace la publicación de la documentación generada. Ya hemos dicho que por abajo nbdev usa <em>Quarto</em> para la generación de la documentación, lo que sucede es que nuestros notebooks son preprocesados generando notebooks que se usan como base para convertirlos a documentos html. Estos notebooks se encuentran en el directorio <code>_proc</code> (se genera cuando se executa <code>nbdev_docs</code>) los cuales tienen en sus celdas directrizes de <em>Quarto</em> para generar los resultados deseados. Podemos inspeccionar estos archivos comprobando observar que son similares a los notebook originales, si se inspecciona el directorio <code>_docs</code> se vera que los documentos html son los que fueron generados a partir de los notebooks en <code>_prod</code>.</p>
-<p>De esta forma hemos generado todo para nuestra librería, tiene documentación y haciendo uso de <code>nbdev_prepare</code> se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a <em>github</em>.</p>
-<p>A continuación vamos a integrar todo en <em>Github</em> para que tanto las pruebas como la creación de la documentación realizadas usando <a href="https://docs.github.com/en/actions">github-actions</a> como ya se hizo en los <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo">primeros pasos de este curso</a> con la creación de una librería muy sencilla.</p>
-<p>Como hemos añadido librerías y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por talmotivo vamos a dar una explicación mas extensa de los pasos.</p>
+<p>De esta forma hemos generado todo para nuestra biblioteca, tiene documentación y haciendo uso de <code>nbdev_prepare</code> se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a <em>github</em>.</p>
+<p>A continuación vamos a integrar todo en <em>Github</em> para que tanto las pruebas como la creación de la documentación realizadas usando <a href="https://docs.github.com/en/actions">github-actions</a> como ya se hizo en los <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo">primeros pasos de este curso</a> con la creación de una biblioteca muy sencilla.</p>
+<p>Como hemos añadido bibliotecas y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por tal motivo vamos a dar una explicación más extensa de los pasos.</p>
 <section id="entendiendo-github-actions." class="level2">
 <h2 class="anchored" data-anchor-id="entendiendo-github-actions.">Entendiendo github-actions.</h2>
 <p>Las acciones de Github acitions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio <code>.github</code> dentro del directorio <code>workflows</code> los cuales son <code>deploy.yaml</code> y <code>test.yaml</code>. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicad un poco que hacen cada uno.</p>
@@ -613,10 +623,10 @@ Actividad
 <span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a><span class="co">          # You can swap them out with your own user credentials.</span></span>
 <span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">user_name</span><span class="kw">:</span><span class="at"> github-actions[bot]</span></span>
 <span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">user_email</span><span class="kw">:</span><span class="at"> 41898282+github-actions[bot]@users.noreply.github.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Expliquemos a grandes razgos lo que esta haciendo este archivo. Las primeras lineas le dan nomble a la accion y cuando se realiza esta. En este caso llamamos a la acion ‘Deploy to GitHub Pages’ y la accion sera realizada cuando se solicite de forma manual (‘workflow_dispatch’) cuando se haga una petición pull (‘pull_request’) o bien quando se realize un pull.</p>
+<p>Expliquemos a grandes rasgos lo que esta haciendo este archivo. Las primeras lineas le dan nombre a la acción y cuando se realiza esta. En este caso llamamos a la acción ‘Deploy to GitHub Pages’ y la acción será realizada cuando se solicite de forma manual (‘workflow_dispatch’) cuando se haga una petición pull (‘pull_request’) o bien quando se realize un push.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at">  </span><span class="kw">[</span><span class="at">workflow_dispatch</span><span class="kw">,</span><span class="at"> pull_request</span><span class="kw">,</span><span class="at"> push</span><span class="kw">]</span><span class="at"> </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El trabajo que va a realizar se denomina ‘deploy’ el cual utilizara una maquina con la version más reciente de ubuntu para realizarlo (‘ubuntu-latest’).</p>
+<p>El trabajo que va a realizar se denomina ‘deploy’ el cual utilizará una máquina virtual con la versión más reciente de ubuntu (‘ubuntu-latest’).</p>
 <p>En las siguientes lineas estamos dando permiso a la maquina virtual de poder escribir dentro de nuestro repositorio.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">permissions</span><span class="kw">:</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -624,7 +634,7 @@ Actividad
 <pre class="yalm"><code>- uses: actions/checkout@v3
 - uses: actions/setup-python@v4</code></pre>
 <p>Utiliza las acciones <code>actions/checkout@v3</code> y <code>actions/setup-python@v4</code> que son acciones que tenemos estandarizadas dentro de github actions. Las cuales hace un check out del repositorio dentro de la maquina virtual para realizar el trabajo. <code>actions/setup-python@v4</code> instala python dentro de la maquina virtual.</p>
-<p>El siguiente paso lo llamamo ‘Install Dependencies and create documentation’ aqui podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc.</p>
+<p>El siguiente paso lo llamamo ‘Install Dependencies and create documentation’ aquí podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Dependencies and create documentation </span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    run</span><span class="kw">: </span><span class="ch">|</span></span>
@@ -640,7 +650,7 @@ Actividad
 <span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq scikit-learn</span></span>
 <span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq shapely</span></span>
 <span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="at">    nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra libreria y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con ‘nbdev_docs’.</p>
+<p>Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra biblioteca y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con ‘nbdev_docs’.</p>
 <p>Como en la maquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo ‘branch’, por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese ‘branch’ para publicar la documentación usando el siguiente paso:</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v4</span></span>
@@ -652,7 +662,7 @@ Actividad
 <span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">      # You can swap them out with your own user credentials.</span></span>
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">user_name</span><span class="kw">:</span><span class="at"> github-actions[bot]</span></span>
 <span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">user_email</span><span class="kw">:</span><span class="at"> 41898282+github-actions[bot]@users.noreply.github.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Esto usa las acciones descritas en <code>peaceiris/actions-gh-pages@v4</code> las cuales ya estan automatizadas para generar un nuevo branch con nombre ‘gh-pages’ y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio ’./_docs’. ‘github_token’ nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parametros de ‘user_name’ y ‘user_email’ permiten avisar que acciones fueron realizadas por el script ‘peaceiris/actions-gh-pages@v4’ y tendran como las cuales apareceran que fueron realizadas por github-pages bot . Estas acciones nos enviaran un mail con el resultado del trabajo realizado , es decir si este fue exitoso o no.</p>
+<p>Esto usa las acciones descritas en <code>peaceiris/actions-gh-pages@v4</code> las cuales ya estan automatizadas para generar un nuevo branch con nombre ‘gh-pages’ y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio ’./_docs’. ‘github_token’ nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parámetros de ‘user_name’ y ‘user_email’ permiten avisar que acciones fueron realizadas por el script ‘peaceiris/actions-gh-pages@v4’ y tendran como las cuales apareceran que fueron realizadas por github-pages bot. Estas acciones nos enviaran un mail con el resultado del trabajo realizado, es decir si este fue exitoso o no.</p>
 </section>
 <section id="archivo-test.yaml" class="level3">
 <h3 class="anchored" data-anchor-id="archivo-test.yaml">Archivo test.yaml</h3>
@@ -713,8 +723,8 @@ Actividad
 <span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a>          fi</span>
 <span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De forma similar el nombre del trabajo es ‘Test CI’ los trabajos se realizaran cuando cuando se hace una petición de forma manual o se hace un pull o un push.</p>
-<p>Se corre en una maquina virtual con ubuntu ‘runs-on: ubuntu-latest’ y hace un check out, se instala python y nbdev junto con sus dependencias.</p>
-<p>En el siguiente paso se instalan las dependencias de la librería en la maquina virtual.</p>
+<p>Se corre en una maquina virtual con ubuntu ‘runs-on: ubuntu-latest’ y hace un checkout, se instala python y nbdev junto con sus dependencias.</p>
+<p>En el siguiente paso se instalan las dependencias de la biblioteca en la maquina virtual.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install package dependencies</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    run</span><span class="kw">: </span><span class="ch">|</span></span>
@@ -723,11 +733,11 @@ Actividad
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>        python -m pip install -Uq scikit-learn</span>
 <span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>        python -m pip install -Uq shapely</span>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y en lo que resta del código verifica ciestas cosas y hace las pruebas usando nbdev_test dentro de la maquina virtual</p>
+<p>Y en lo que resta del código verifica si estas cosas y hace las pruebas usando nbdev_test dentro de la maquina virtual</p>
 <ul>
-<li>git se verifica ell contenido de la version del repositrio que se encuentra en la maquina virtual</li>
-<li>Verifica que los notebooks no tengan cosas inecesarias, si no es asi marca error</li>
-<li>Construye la librería dentro de la maquina virtual usando ‘nbdev_export’</li>
+<li>git se verifica el contenido de la versión del repositorio que se encuentra en la máquina virtual</li>
+<li>Verifica que los notebooks no tengan cosas inecesarias, si no es así marca error</li>
+<li>Construye la biblioteca dentro de la máquina virtual usando ‘nbdev_export’</li>
 <li>Hace las pruebas usando ‘nbdev_test’</li>
 </ul>
 <div class="sourceCode" id="cb46"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Test the package</span></span>
@@ -759,15 +769,15 @@ Actividad
 <span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>        if [ ! $SKIP_TEST ]; then</span>
 <span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a>        nbdev_test --flags "$FLAGS"</span>
 <span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>        fi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la librería.</p>
-<p>Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio.</p>
+<p>Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la biblioteca.</p>
+<p>Con los archivos que hemos modificado hemos dado las instrucciónes para que estas acciones se desarrollen en máquinas virtuales en servidores de github. Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio.</p>
 <div id="fig-7-W5-github_actions" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7-W5-github_actions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./Acctions.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-7-W5-github_actions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Menu github actions
+Figure&nbsp;7: Menu github actions
 </figcaption>
 </figure>
 </div>
@@ -784,7 +794,7 @@ Figure&nbsp;6: Menu github actions
 <img src="./Workflow_actions.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-7-W5-succes_github-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Woorkflows Actions
+Figure&nbsp;8: Woorkflows Actions
 </figcaption>
 </figure>
 </div>

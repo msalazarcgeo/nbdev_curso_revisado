@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -217,13 +217,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#basicos-de-markdown" id="toc-basicos-de-markdown" class="nav-link" data-scroll-target="#basicos-de-markdown">Basicos de Markdown</a></li>
   <li><a href="#otras" id="toc-otras" class="nav-link" data-scroll-target="#otras">Otras</a></li>
   </ul></li>
-  <li><a href="#instalacion-de-git-github" id="toc-instalacion-de-git-github" class="nav-link" data-scroll-target="#instalacion-de-git-github">Instalacion de git (github)</a>
+  <li><a href="#instalacion-de-git-github-tema-2.3" id="toc-instalacion-de-git-github-tema-2.3" class="nav-link" data-scroll-target="#instalacion-de-git-github-tema-2.3">Instalacion de git (github) (Tema 2.3)</a>
   <ul class="collapse">
   <li><a href="#uso-de-git" id="toc-uso-de-git" class="nav-link" data-scroll-target="#uso-de-git">Uso de git</a></li>
   </ul></li>
-  <li><a href="#instalación-nbdev-rápida-linux-o-mac-tema-2.3" id="toc-instalación-nbdev-rápida-linux-o-mac-tema-2.3" class="nav-link" data-scroll-target="#instalación-nbdev-rápida-linux-o-mac-tema-2.3">Instalación <strong>nbdev</strong> rápida (linux o Mac) (Tema 2.3)</a></li>
+  <li><a href="#instalación-nbdev-rápida-linux-o-mac-tema-2.4" id="toc-instalación-nbdev-rápida-linux-o-mac-tema-2.4" class="nav-link" data-scroll-target="#instalación-nbdev-rápida-linux-o-mac-tema-2.4">Instalación <strong>nbdev</strong> rápida (linux o Mac) (Tema 2.4)</a></li>
   <li><a href="#instalación-no-tan-rápida-windows" id="toc-instalación-no-tan-rápida-windows" class="nav-link" data-scroll-target="#instalación-no-tan-rápida-windows">Instalación no tan rápida (windows)</a></li>
-  <li><a href="#instalar-quarto-tema-2.5" id="toc-instalar-quarto-tema-2.5" class="nav-link" data-scroll-target="#instalar-quarto-tema-2.5">Instalar Quarto (Tema 2.5)</a>
+  <li><a href="#quarto-tema-2.5" id="toc-quarto-tema-2.5" class="nav-link" data-scroll-target="#quarto-tema-2.5">Quarto (Tema 2.5)</a></li>
+  <li><a href="#instalar-quarto" id="toc-instalar-quarto" class="nav-link" data-scroll-target="#instalar-quarto">Instalar Quarto</a>
   <ul class="collapse">
   <li><a href="#instalación-quarto-windows" id="toc-instalación-quarto-windows" class="nav-link" data-scroll-target="#instalación-quarto-windows">Instalación Quarto windows</a></li>
   <li><a href="#otras-cosas" id="toc-otras-cosas" class="nav-link" data-scroll-target="#otras-cosas">Otras cosas</a></li>
@@ -422,8 +423,8 @@ Figure&nbsp;2: Nuevo Notebook
 <p>Markdown nos permite hacer tablas referencia insertar imagenes, etc. Se puede hacer un curso para conocer los distintos usos de forma más extensiva,pero queda fuera del alcance de este curso.</p>
 </section>
 </section>
-<section id="instalacion-de-git-github" class="level2">
-<h2 class="anchored" data-anchor-id="instalacion-de-git-github">Instalacion de git (github)</h2>
+<section id="instalacion-de-git-github-tema-2.3" class="level2">
+<h2 class="anchored" data-anchor-id="instalacion-de-git-github-tema-2.3">Instalacion de git (github) (Tema 2.3)</h2>
 <p>Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software pues nos permiten tener un control sobre las versiones del código desarrollado a través de los cambios en el ćodigo. A través del seguimiento de dichos cambios es posible tener un trabajo en equipo sobre el mismo archivo de forma autónoma permitiendo un desarrollo más rápido.</p>
 <p>Una de las herramientas más usadas en los sistemas de control de versiones es la idea básica para lo que fueron creados que es <strong>poder regresar a una versión anterior en el desarrollo de software</strong>, lo cual resulta fundamental si hay un error en el desarrollo (bug).</p>
 <p>y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.</p>
@@ -451,8 +452,8 @@ Figure&nbsp;2: Nuevo Notebook
 </ul>
 </section>
 </section>
-<section id="instalación-nbdev-rápida-linux-o-mac-tema-2.3" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-nbdev-rápida-linux-o-mac-tema-2.3">Instalación <strong>nbdev</strong> rápida (linux o Mac) (Tema 2.3)</h2>
+<section id="instalación-nbdev-rápida-linux-o-mac-tema-2.4" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-nbdev-rápida-linux-o-mac-tema-2.4">Instalación <strong>nbdev</strong> rápida (linux o Mac) (Tema 2.4)</h2>
 <p>La instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla <em>nbdev</em>. Se instala a través de pip usando:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nbdev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>o instalar con conda:</p>
@@ -463,9 +464,14 @@ Figure&nbsp;2: Nuevo Notebook
 <p>La instalación en Windows es distinta pues es necesario hacerla desde PIP y usar una version especifica, al momento de escribir este curso la instalación disponible a través de PIP no funciona de forma totalmente correcta, por tal motivo vamos a especificar la version para hacer uso de esta.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nbdev=2.3.12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalar-quarto-tema-2.5" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-quarto-tema-2.5">Instalar Quarto (Tema 2.5)</h2>
-<p>Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando</p>
+<section id="quarto-tema-2.5" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-tema-2.5">Quarto (Tema 2.5)</h2>
+<p>Quarto es un sistema que nos permite utilizar las utilidades de los notebook de markdown, en particular usar los notebooks de jupyter, y todas sus utilidades. Quarto esta construido sobre <a href="https://pandoc.org/">pandoc</a> el cual permite convertir entre distintos tipos de documentos, en particular distintos tipos de markdown, esto permite utilizar las herramientas desarrolladas en quarto y traducir estos los notebooks a otro tipo de documentos.</p>
+<p>Con esta idea los desarrolladores de nbdev utilizan Quarto para generar documentos html utilizando y poder generar la documentación necesaria de una biblioteca siguiendo la idea de programacion literal.</p>
+</section>
+<section id="instalar-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-quarto">Instalar Quarto</h2>
+<p>Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en el caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_install_quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="instalación-quarto-windows" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-quarto-windows">Instalación Quarto windows</h3>

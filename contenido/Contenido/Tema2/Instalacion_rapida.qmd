@@ -205,7 +205,7 @@ Markdown nos permite tener mantener un orden dentro del documento haciendo uso d
 Markdown nos permite hacer tablas referencia insertar imagenes, etc. Se puede hacer un curso para conocer los distintos usos de forma más extensiva,pero queda fuera del alcance de este curso.
 
 
-## Instalacion de git (github) 
+## Instalacion de git (github) (Tema 2.3)
 
 
 
@@ -261,13 +261,7 @@ A continuación solo enlistamos ciertos comandos de git pues su uso completo se 
 
 
 
-
-
-
-
-
-
-## Instalación **nbdev** rápida (linux o Mac) (Tema 2.3)
+## Instalación **nbdev** rápida (linux o Mac) (Tema 2.4)
 
 La instalación de nbdev es igual de fácil que los anteriores paquetes, pero en este caso se utiliza el canal de la empresa que desarrolla *nbdev*. Se instala a través de pip usando:
 
@@ -291,9 +285,18 @@ pip install nbdev=2.3.12
 
 
 
-## Instalar Quarto (Tema 2.5)
 
-Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en ael caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando 
+
+##  Quarto (Tema 2.5)
+
+Quarto es un sistema que nos permite utilizar las utilidades de los notebook de markdown, en particular usar los notebooks de jupyter, y todas sus utilidades. Quarto esta construido sobre [pandoc](https://pandoc.org/) el cual permite convertir entre distintos tipos de documentos, en particular distintos tipos de markdown, esto permite utilizar las herramientas desarrolladas en quarto y traducir estos los notebooks a otro tipo de documentos. 
+
+Con esta idea los desarrolladores de nbdev utilizan Quarto para generar documentos html utilizando y poder generar la documentación necesaria de una biblioteca siguiendo la idea de programacion literal.
+
+
+## Instalar Quarto 
+
+Ya con la instalación de nbdev un comando del mismo nos permite instalar Quarto en el caso de Mac o Linux esto se puede hacer una vez instalado nbdev usando el comando 
 
 ```bash
 nbdev_install_quarto
@@ -303,7 +306,6 @@ nbdev_install_quarto
 
 Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica. 
 
-
 ### Otras cosas 
 
 Es recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando, 
@@ -311,7 +313,6 @@ Es recomendable instalar ciertos plug-ins para hacernos la vida más fácil esto
 ```bash
 nbdev_install_hooks
 ```
-
 
 
 

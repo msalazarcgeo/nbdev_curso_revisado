@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ejemplo-tema-4-este-es-el-que-seria-el-tema-3" id="toc-ejemplo-tema-4-este-es-el-que-seria-el-tema-3" class="nav-link active" data-scroll-target="#ejemplo-tema-4-este-es-el-que-seria-el-tema-3">Ejemplo (Tema 4 Este es el que seria el tema 3)</a>
+  <li><a href="#ejemplo-tema-3" id="toc-ejemplo-tema-3" class="nav-link active" data-scroll-target="#ejemplo-tema-3">Ejemplo (Tema 3)</a>
   <ul class="collapse">
   <li><a href="#entendiendo-un-poco-más" id="toc-entendiendo-un-poco-más" class="nav-link" data-scroll-target="#entendiendo-un-poco-más">Entendiendo un poco más</a>
   <ul class="collapse">
@@ -257,15 +257,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="ejemplo-tema-4-este-es-el-que-seria-el-tema-3" class="level1">
-<h1>Ejemplo (Tema 4 Este es el que seria el tema 3)</h1>
+<section id="ejemplo-tema-3" class="level1">
+<h1>Ejemplo (Tema 3)</h1>
 <p>Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev.</p>
 <p>Primero generamos nuestro repositorio como lo hicimos en el ejemplo <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#generar-un-repositorio">anterior</a>.</p>
 <p>Una vez con nuestro repositorio podemos iniciar nuestro repositorio de forma local y vamos a modificarlo para hacer el módulo de ejemplo.</p>
 <section id="entendiendo-un-poco-más" class="level2">
 <h2 class="anchored" data-anchor-id="entendiendo-un-poco-más">Entendiendo un poco más</h2>
-<p>En la <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#generar-un-modulo">sección anterior</a> vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.</p>
-<p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
+<p>En la <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#generar-un-modulo">sección anterior</a> vimos como construir un ejemplo básico, en este vamos a generar un módulo que de una biblioteca simple donde contenga ejemplos básicos de distintos tipos algoritmos de clusterizaciones.</p>
+<p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. Al momento de creación del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
 <p>Si no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> nbdev_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-1-W5-nbdev_new_manual" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -290,7 +290,7 @@ Figure&nbsp;2: contenido de settings.ini
 </figure>
 </div>
 <p>En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, la ruta en donde se localizan los notebooks, etc.</p>
-<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a nuestra biblioteca.</p>
+<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a los módulos de nuestra biblioteca.</p>
 <p>También nbdev generará el archivo <code>README.md</code> el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este, se deben hacer desde el archivo <code>nbs/index.ipynb</code> el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo <code>README.md</code> ejecutando el comando <code>nbdev_readme</code>, una vez ejecutado se puede abrir el archivo y ver las modificaciones realizadas.</p>
 <pre><code>nbdev_readme</code></pre>
 <p>Si se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.</p>
@@ -332,7 +332,7 @@ git push</code></pre>
 <p>Podemos eliminar todas las demás celdas exepto la última. Esta última es la que indica celda es la que genera el módulo.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| hide</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nbdev<span class="op">;</span> nbdev.nbdev_export()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a la celda.</p>
+<p>Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a una nueva celda.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| hide</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| export</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nbdev.showdoc <span class="im">import</span> <span class="op">*</span></span>

@@ -7,8 +7,7 @@ subtitle: "Hacer todo el desarrollo"
 
 # Ejemplo (Tema 4  Este es el que seria el tema 3)
 
-Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev. 
-
+Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev.
 
 Primero generamos nuestro repositorio como lo hicimos en el ejemplo [anterior](../Tema2_extendido/1_pasos.qmd#generar-un-repositorio). 
 
@@ -16,11 +15,11 @@ Una vez con nuestro repositorio podemos iniciar nuestro repositorio de forma loc
 
 ## Entendiendo un poco más 
 
-En la [sección anterior](../Tema2_extendido/1_pasos.qmd#generar-un-modulo) vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de clusterizar.
+En la [sección anterior](../Tema2_extendido/1_pasos.qmd#generar-un-modulo) vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de distintos tipos de clusterizaciones.
 
 Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio `nbs` se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando `nbdev_new` nos genera toda la estructura dentro de nuestro repositorio. 
 
-Si no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados
+Si no se hizo de la misma forma que como se describió anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados
 
 ```bash
 > nbdev_new
@@ -34,7 +33,7 @@ En el archivo `settings.ini` podemos ver las configuraciones, como ejemplo podem
 
 En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, la ruta en donde se localizan los notebooks, etc. 
 
-Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a nuestra biblioteca. 
+Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este propósito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a los módulos de nuestra biblioteca.
 
 También nbdev generará el archivo `README.md` el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este, se deben hacer desde el archivo `nbs/index.ipynb` el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo `README.md` ejecutando el comando `nbdev_readme`, una vez ejecutado se puede abrir el archivo y ver las modificaciones realizadas. 
 
@@ -42,17 +41,17 @@ También nbdev generará el archivo `README.md` el cual sirve como portada en nu
 nbdev_readme
 ```
 
-Si se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso. 
+Si se desea ver desde github será necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.
 
 ```
 git add README.md
-git commit -c "Se modifica el README"
+git commit -m "Se modifica el README"
 git push
 ```
 
 * `git add README.md` añade el archivo que se modifico y que se desea que actualizar, o bien añadir el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados. 
 
-* `git commit -c "Se modifica el README"` se "comitea" es decir se añade a un registro de cambios de forma local los cambios hechos. `-c` es para añadir el comentario  `"Se modifica el README"` a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.  
+* `git commit -m "Se modifica el README"` se "comitea" es decir se añade a un registro de cambios de forma local los cambios hechos. `-m` es para añadir el comentario  `"Se modifica el README"` a los cambios hechos, esto nos sirve como guía para ver qué cambios se han hecho y cúal fue la razón de nuestros cambios. Esto es muy útil cuando se buscan errores en el desarrollo y poder regresar al estado anterior.  
 
 * `git push` Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar. 
 
@@ -80,25 +79,23 @@ Otros comandos importantes de git
 
 # Regresar al ejemplo
 
-Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev. 
+Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que están disponibles en nbdev.
 
+Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el archivo y como lo hicimos anteriormente este archivo nos servirá para generar tanto el código como la documentación de la biblioteca. 
 
-Dentro del directorio `nbs` se encuentra el archivo `00_core.ipynb` cambiemos el nombre de dicho archivo a `00_cluster.ipynb`. Podemos abrir el archivo y como lo hicimos anteriormente este archivo nos servira para generar tanto el código como la documentación de la bibloteca. 
-
-En la primera linea de código podemos observar que se tiene una directriz 
-`default_exp` la cual nos sirve para determinar a que módulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame `cluster_ejemplo`.
+En la primera línea de código podemos observar que se tiene una directriz  `default_exp` la cual nos sirve para determinar a qué módulo se exportarán lo que se genere dentro del notebook. Lo modificamos para que el módulo a exportar se llame `cluster_ejemplo`.
 ```python
 #| default_exp cluster_ejemplo
 ```
 
-Podemos eliminar todas las demás celdas exepto la última. Esta última es la que indica celda es la que genera el módulo. 
+Podemos eliminar todas las demás celdas excepto la última. Esta última es la que indica que se genera el módulo. Esto es de importancia cuando se trabaja con múltiples notebooks y varios módulos.
 
 ```python
 #| hide
 import nbdev; nbdev.nbdev_export()
 ```
-Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a la celda. 
 
+Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a una nueva celda.
 ```python
 #| hide
 #| export
@@ -111,7 +108,7 @@ import shapely
 from sklearn.cluster import DBSCAN, HDBSCAN, OPTICS, KMeans
 import matplotlib.pyplot as plt
 ```
-La directriz `#| hide` esconde la celda, es especialmente útil para hacer la documentación  mientras que la directriz `#| export` va a exportar a nuestro módulo lo que se encuentre en esta celda. 
+La directriz `#| hide` esconde la celda al momento de generar un html, es especialmente útil para hacer la documentación mientras que la directriz `#| export` va a exportar a nuestro módulo lo que se encuentre en esta celda. 
 
 
 Añadimos un objeto para generar datos de forma aleatoria 
@@ -205,54 +202,72 @@ Vamos añadir una nueva clase a nuestro módulo, la cual llamaremos `Clusters`, 
 
 
 ```python
-class data_points:
-    """Una clase que contiene a los datos"""
-    def __init__(self, n, min_x = 0, min_y = 0, max_x= 1, max_y=1, seed= None):
-        if seed != None:
-            random.seed(seed)
-
-        Xpoint = np.random.uniform(low= min_x, high= max_x, size=n)
-        Ypoint = np.random.uniform(low= min_y, high= max_y, size=n)
+class Clusters:
+  """
+  Clase para generar los clusters a partir de un objeto de la clase data_points
+  
+  Esta clase se utiliza para generar los distintos tipos de clusterizaciones, 
+  se almacena los datos en una estructura de datos y se le añaden las respectivas 
+  classes
+  """
+    
+  def __init__(self, data_points_i, seed=1234):
+    if seed != None:
+      random.seed(seed)
+      self.data_structure =  data_points_i
+    
+  def KMeans(self, **kwargs):
+    """
+    Se usa el algoritmo Kmeans para la obtencion de clusters, 
+    las clases quedan almacenadas en .data_structure_classes_Kmeans.
+    Si se desea obtener el modelo se tiene que añadir 
+    (ret_model = True) como parámetro.
+    """
+    kmeans_c = KMeans(**kwargs)
+    classes_val = kmeans_c.fit_predict(self.data_structure.as_array())
+    self.data_structure.classes_Kmeans = classes_val
+    
+    if 'ret_model' in kwargs and kwargs['ret_model']==True :
+        return  kmeans_c
         
-        #self.Points = np.random.uniform(low= min_x, high= max_x, size=(n, 2))
-        self.Points =  [shapely.Point(x[0],x[1]) for x in zip(Xpoint, Ypoint)]
-    
-    @classmethod
-    def from_list(cls, list_points):
-        """Se genera los datos usando una lista de puntos"""
-        toto = cls(0)
-        toto.Points = list_points
-        return toto
-    
-    def get_points(self):
-        """Una funcion que para obtener los puntos"""
-        return self.Points
 
-    def get_Multypoint(self):
-        """Regresa un objeto MultiPoint con los puntos"""
-        return shapely.geometry.MultiPoint(self.Points)
+  def DBSCAN(self, **kwargs):
+    """
+    Se DBSCAN para la obtencion de clusters, las clases quedan almacenadas
+    en .data_structure_classes_DBSCAN. Si se desea obtener el modelo se tiene
+    que añadir (ret_model = True) como parámetro.
+    """
+    db = DBSCAN(**kwargs).fit(self.data_structure.as_array())
+    self.data_structure.classes_DBSCAN = db.labels_
+    if 'ret_model' in kwargs and kwargs['ret_model']==True :
+        return  db
     
-    def get_X(self):
-        """Regresa las coordenadas X"""
-        return [x.x for x in self.Points]
+    
+  def HDBSCAN(self, **kwargs):
+    """
+    Se HDBSCAN para la obtencion de clusters, las clases quedan almacenadas
+    en .data_structure_classes_HDBSCAN. Si se desea obtener el modelo se tiene
+    que añadir (ret_model = True) como parámetro.
+    """
+    hdb = HDBSCAN(**kwargs).fit(self.data_structure.as_array())
+    self.data_structure.classes_HDBSCAN = hdb.labels_
+    if 'ret_model' in kwargs and kwargs['ret_model']==True : 
+      return  hdb
+        
 
-    def get_Y(self):
-        """Regresa las coordenadas X"""
-        return [x.y for x in self.Points]
+  def OPTICS(self, **kwargs):
+    """
+    Se usa el algoritmo OPTICS para la obtencion de clusters, 
+    las clases quedan almacenadas en .data_structure_classes_OPTICS.
+    Si se desea obtener el modelo se tiene que añadir 
+    (ret_model = True) como parámetro.
+    """
+    optics=  OPTICS(**kwargs).fit(self.data_structure.as_array())
+    self.data_structure.classes_OPTICS = optics.labels_
     
-    def centroid(self):
-        """Regresa el centroide de los puntos """
-        return shapely.centroid(self.get_Multypoint())
-    
-    def as_array(self):
-        """Regresa los puntos como un array"""
-        list_arrays = np.array([ (geom.xy[0][0], geom.xy[1][0]) for geom in self.Points])
-        return list_arrays
+    if 'ret_model' in kwargs and kwargs['ret_model']==True :
+        return  optics
 
-    def add_points(self, data_points):
-        """Agrega puntos de otra """
-        self.Points = self.Points + data_points.Points
-        return         
 ```
 
 Para exportar la clase al módulo es necesario añadir la directriz `#| export` al inicio de la celda. Adicionalmente añadimos pruebas simples usando los datos que ya se generaron. 
@@ -277,7 +292,8 @@ cluster_all.HDBSCAN()
 cluster_all.OPTICS()
 ```
 
-Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los métodos. 
+Como estas celdas nos sirven de pruebas vamos a añadir la directriz `#| hide` para evitar que estas sean parte de la documentación. Ahora podemos añadir ejemplos del uso de la clase cluster e incluso añadir como se usan los métodos.
+
 
 ## Documentación 
 
@@ -286,7 +302,7 @@ Para generar la documentación se hace usando el comando
 ```bash
 nbdev_docs
 ```
-En este caso, en la terminal podemos observar lo que se muestra en la imagen @fig-5-W5-nbdev_docs, como se observa en el directorio `_docs` se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el 'docstring' generado por las clase como en la figura @fig-3-W5-nbdev_docu y el respectivo para la clase `Clusters`.
+En este caso, en la terminal podemos observar lo que se muestra en la imagen @fig-5-W5-nbdev_docs, como se observa en el directorio `_docs` se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que sólo muestra el 'docstring' generado por las clase como en la figura @fig-3-W5-nbdev_docu y el respectivo para la clase `Clusters`.
 
 ![Generación documentación](./docs.png){#fig-5-W5-nbdev_docs} 
 
@@ -295,26 +311,30 @@ Para mostrar un poco más lo que hace nuestra clase simple añadimos las siguien
 ```python
 show_doc(Clusters.KMeans)
 ```
+
 ```python
 show_doc(Clusters.DBSCAN)
 ```
+
 ```python
 show_doc(Clusters.HDBSCAN)
 ```
+
 ```python
 show_doc(Clusters.OPTICS)
-```
-Estas mostraran lo que se haya puesto dentro de los 'docstrings' de los métodos en la clase `Cluster`. 
+``` 
+Estas mostrarán lo que se haya puesto dentro de los ‘docstrings’ de los métodos en la clase `Cluster`.
 
 También podemos generar la documentación y hacer una previsualización haciendo uso del comando 
 ```bash
 nbdev_preview
 ```
-lo cual nos mostrara
+lo cual nos mostrará
 
 ![Muestra la documentación](./nbdev_preview.png){#fig-6-W5-nbdev_preview} 
 
-llevandonos a la documentación de forma local. 
+llevándonos a la documentación de forma local.
+
 
 ::: {.callout-tip collapse="true"}
 ## Actividad
@@ -324,10 +344,9 @@ Muestre los métodos para la clase `data_points` en la documentación
 
 ## Mas documentación 
 
-Podemos hacer uso de las facilidades de los jupyter notebooks para generar ejemplos y tutoriales, para esto vamos hacer dentro del mismo notebook. 
+Podemos hacer uso de las facilidades de los jupyter notebooks para generar ejemplos y tutoriales, para esto vamos hacer dentro del mismo notebook.
 
-
-Creamos un conjunto de datos usando los distintos metodos en las clases que ya hicimos. 
+Creamos un conjunto de datos usando los distintos métodos en las clases que ya hicimos.
 
 ```python
 datos_simples_3 = data_points(500, min_x = 0.6, min_y= 0.6, max_x= 1.0, max_y= 1.0 )
@@ -335,8 +354,7 @@ datos_simples_2 = data_points(500, min_x = 0.0, min_y= 0.6, max_x= 0.4, max_y= 1
 datos_simples_1 = data_points(500, min_x = 0.6, min_y= 0.0, max_x= 1.0, max_y= 0.4 )
 datos_simples_0 = data_points(500, min_x = 0.0, min_y= 0.0, max_x= 0.4, max_y= 0.4 )
 ```
-Unimos todos los puntos con el metodo `add_points` de la clase `data_points`. 
-
+Unimos todos los puntos con el método `add_points` de la clase `data_points`. 
 
 ```python
 datos_simples_0.add_points(datos_simples_1)
@@ -354,8 +372,7 @@ Ahora inicialicemos nuestro objeto `Clusters`
 ```python
 cluster_all  = Clusters(datos_simples_0)
 ```
-Y ahora podemos hacer uso de los algoritmos usando los metodos  de las distintas las clusterizaciones.
-
+Y ahora podemos hacer uso de los algoritmos usando los métodos de las distintas las clusterizaciones.
 
 ```python
 cluster_all.OPTICS()
@@ -366,51 +383,50 @@ cluster_all.KMeans()
 
 Y visualizemos las clusterizaciones 
 
-
 ```python
 fig, ax = plt.subplots(1,1, figsize=(6,6))
 plt.scatter(
-        cluster_all.data_structure.get_X(),
-        cluster_all.data_structure.get_Y(),
-        c = cluster_all.data_structure.classes_Kmeans
-    )
+  cluster_all.data_structure.get_X(),
+  cluster_all.data_structure.get_Y(),
+  c = cluster_all.data_structure.classes_Kmeans
+)
 ```
 
 ```python
 fig, ax = plt.subplots(1,1, figsize=(6,6))
 plt.scatter(
-        cluster_all.data_structure.get_X(),
-        cluster_all.data_structure.get_Y(),
-        c = cluster_all.data_structure.classes_DBSCAN
-    )
+  cluster_all.data_structure.get_X(),
+  cluster_all.data_structure.get_Y(),
+  c = cluster_all.data_structure.classes_DBSCAN
+)
 ```
 
 ```python
 fig, ax = plt.subplots(1,1, figsize=(6,6))
 plt.scatter(
-        cluster_all.data_structure.get_X(),
-        cluster_all.data_structure.get_Y(),
-        c = cluster_all.data_structure.classes_HDBSCAN
-    )
+  cluster_all.data_structure.get_X(),
+  cluster_all.data_structure.get_Y(),
+  c = cluster_all.data_structure.classes_HDBSCAN
+)
 ```
 
 ```python
 fig, ax = plt.subplots(1,1, figsize=(6,6))
 plt.scatter(
-        cluster_all.data_structure.get_X(),
-        cluster_all.data_structure.get_Y(),
-        c = cluster_all.data_structure.classes_OPTICS
-    )
+  cluster_all.data_structure.get_X(),
+  cluster_all.data_structure.get_Y(),
+  c = cluster_all.data_structure.classes_OPTICS
+)
 ```
 
-Si se ejecuta `nbdev_preview` o `nbdev_docs` en la documentación mostrara el ejemplo dentro de la misma.  
+Si se ejecuta `nbdev_preview` o `nbdev_docs` en la documentación mostrará el ejemplo dentro de la misma.  
 
-Ahora para preparar verificar que todo esta bien ejecutamos 
+Ahora para preparar verificar que todo esta bien ejecutamos
 
 ```bash 
 nbdev_prepare
 ``` 
-Lo cual mostrara ![](./Succes.png){#fig-7-W5-exito} si no hay ningun problema. En el fondo lo que hace `nbdev_prepare` preprocesar los archivos dentro de `nbs` y generar los 
+Lo cual mostrará ![](./Succes.png){#fig-7-W5-exito} si no hay ningun problema. En el fondo lo que hace `nbdev_prepare` preprocesar los archivos dentro de `nbs` y generar los 
 
 # Publicar todo
 
@@ -420,13 +436,15 @@ De esta forma hemos generado todo para nuestra biblioteca, tiene documentación 
 
 A continuación vamos a integrar todo en *Github* para que tanto las pruebas como la creación de la documentación realizadas usando [github-actions](https://docs.github.com/en/actions) como ya se hizo en los [primeros pasos de este curso](../Tema2_extendido/1_pasos.qmd#habilitar-github-pages-y-flujos-de-trabajo) con la creación de una biblioteca muy sencilla. 
 
-Como hemos añadido bibliotecas y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por tal motivo vamos a dar una explicación más extensa de los pasos. 
+Como hemos añadido bibliotecas y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podrán ser realizadas de forma correcta. Por tal motivo vamos a dar una explicación más extensa de los pasos.
+
 
 ## Entendiendo github-actions. 
 
-Las acciones de Github acitions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio `.github` dentro del directorio `workflows` los cuales son `deploy.yaml` y `test.yaml`. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicad un poco que hacen cada uno. 
+Las acciones de Github actions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio `.github` dentro del directorio `workflows` los cuales son `deploy.yaml` y `test.yaml`. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicar un poco que hacen cada uno.
 
-El archivo deploy es el que utilizamos para generar la documentación, vamos a sustituir el contenido del archivo con el que se encuentra en la celda siguiente: 
+
+El archivo deploy es el que utilizamos para generar la documentación, vamos a sustituir el contenido del archivo con el que se encuentra en la celda siguiente:
 
 ### Archivo deploy.yaml
 
@@ -494,7 +512,7 @@ Despues el trabajo consiste en los siguientes pasos:
 ```
 Utiliza las acciones `actions/checkout@v3` y `actions/setup-python@v4` que son acciones que tenemos estandarizadas dentro de github actions. Las cuales hace un check out del repositorio dentro de la maquina virtual para realizar el trabajo. `actions/setup-python@v4` instala python dentro de la maquina virtual. 
 
-El siguiente paso lo llamamo  'Install Dependencies and create documentation' aquí podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc. 
+El siguiente paso lo llamamo  'Install Dependencies and create documentation' aquí podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de Nbdev, Git, Quarto, etc. 
  
 ```YAML
 - name: Install Dependencies and create documentation 
@@ -514,9 +532,9 @@ El siguiente paso lo llamamo  'Install Dependencies and create documentation' aq
     nbdev_docs
 ```
 
-Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra biblioteca  y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con 'nbdev_docs'. 
+Pongamos especial atención en las últimas líneas, aquí instalamos las dependencias que se utilizaron en hacer nuestra biblioteca y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con ‘nbdev_docs’.
 
-Como en la maquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo 'branch', por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese 'branch' para publicar la documentación usando el siguiente paso: 
+Como en la máquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo ‘branch’, por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese ‘branch’ para publicar la documentación usando el siguiente paso:
 
 ```YAML
 - name: Deploy to GitHub Pages
@@ -530,8 +548,7 @@ Como en la maquina virtual ya generamos nuestra documentación ahora vamos a pon
       user_name: github-actions[bot]
       user_email: 41898282+github-actions[bot]@users.noreply.github.com
 ```
-Esto usa las acciones descritas en `peaceiris/actions-gh-pages@v4` las cuales ya estan automatizadas para generar un nuevo branch con nombre 'gh-pages' y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio  './_docs'. 'github_token' nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parámetros de 'user_name' y 'user_email' permiten avisar que acciones fueron realizadas por el script 'peaceiris/actions-gh-pages@v4' y tendran como  las cuales apareceran que fueron realizadas por github-pages bot. Estas acciones nos enviaran un mail con el resultado del trabajo realizado, es decir si este fue exitoso o no. 
-
+Esto usa las acciones descritas en `peaceiris/actions-gh-pages@v4` las cuales ya estan automatizadas para generar un nuevo branch con nombre 'gh-pages' y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio  './_docs'. 'github_token' nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parámetros de 'user_name' y 'user_email' permiten avisar que acciones fueron realizadas por el script 'peaceiris/actions-gh-pages@v4' y las cuales aparecerán que fueron realizadas por github-pages bot. Estas acciones nos enviaran un mail con el resultado del trabajo realizado, es decir si este fue exitoso o no.
 
 
 ### Archivo test.yaml
@@ -596,9 +613,10 @@ jobs:
       
 ```
 
-De forma similar el nombre del trabajo es 'Test CI' los trabajos se realizaran cuando cuando se hace una petición de forma manual o se hace un pull o un push. 
+De forma similar el nombre del trabajo es 'Test CI' los trabajos se  se realizan cuando se hace una petición de forma manual o se hace un pull o un push.
 
-Se corre en una maquina virtual con ubuntu 'runs-on: ubuntu-latest' y hace un checkout, se instala python y nbdev junto con sus dependencias.  
+
+Se corre en una máquina virtual con ubuntu ‘runs-on: ubuntu-latest’ y hace un checkout, se instala python y nbdev junto con sus dependencias.
 
 En el siguiente paso se instalan las dependencias de la biblioteca en la maquina virtual. 
 
@@ -653,35 +671,28 @@ name: Test the package
 Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la biblioteca. 
 
 Con los archivos que hemos modificado hemos dado las instrucciónes para que estas acciones se desarrollen en máquinas virtuales en servidores de github. 
+
 Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio. 
 
 ![Menu github actions](./Acctions.png){#fig-7-W5-github_actions}
 
-En este menu veremos las aciones que se llevan del lado izquierdoo acabo en nuestro caso:
+En este menú veremos las acciones que se llevan a cabo del lado izquierdo en nuestro caso:
+
 
 * Deploy to Github Pages
 * Test CI
 * pages-build-deployment (ejecutado al hacer el branch 'gh-pages')
 
-En el centro una lista con los commits realizado y el resultado de las acciones que se llevaron acabo y si estas tuvieron exito (✅) o no (❌). 
+En el centro una lista con los commits realizado y el resultado de las acciones que se llevaron acabo y si estas tuvieron éxito (✅) o no (❌). 
 
 ![Woorkflows Actions](./Workflow_actions.png){#fig-7-W5-succes_github}
 
-Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos [anteriormente](../Tema2_extendido/1_pasos.qmd#ver-la-documentación) y se selecciona el branch de 'gh-pages' para habilitar la documentación.
+Para habilitar nuestra página de documentación se tienen que seguir los mismos pasoes que vimos [anteriormente](../Tema2_extendido/1_pasos.qmd#ver-la-documentación) y se selecciona el branch de 'gh-pages' para habilitar la documentación.
 
 
 
 # Comentarios finales 
 
 Como hemos visto nbdev tiene muchas funcionalidades, esto nos permite tener una integración continua para generar tanto nuestros módulos como la documentación de los mismo sin hacer mucho esfuerzo extra. 
-
-
-
-
-
-
-
-
-
 
 

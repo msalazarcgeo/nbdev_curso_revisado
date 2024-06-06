@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ejemplo-tema-3" id="toc-ejemplo-tema-3" class="nav-link active" data-scroll-target="#ejemplo-tema-3">Ejemplo (Tema 3)</a>
+  <li><a href="#ejemplo-tema-4-este-es-el-que-seria-el-tema-3" id="toc-ejemplo-tema-4-este-es-el-que-seria-el-tema-3" class="nav-link active" data-scroll-target="#ejemplo-tema-4-este-es-el-que-seria-el-tema-3">Ejemplo (Tema 4 Este es el que seria el tema 3)</a>
   <ul class="collapse">
   <li><a href="#entendiendo-un-poco-más" id="toc-entendiendo-un-poco-más" class="nav-link" data-scroll-target="#entendiendo-un-poco-más">Entendiendo un poco más</a>
   <ul class="collapse">
@@ -257,16 +257,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="ejemplo-tema-3" class="level1">
-<h1>Ejemplo (Tema 3)</h1>
+<section id="ejemplo-tema-4-este-es-el-que-seria-el-tema-3" class="level1">
+<h1>Ejemplo (Tema 4 Este es el que seria el tema 3)</h1>
 <p>Un uso común en el mundo de los datos es el uso de algoritmos de agrupamiento o clusterización. A continuación vamos a tomar distintos algoritmos de clusterización y vamos a ponerlos todos dentro de un módulo. Este simple ejemplo aunque sencillo nos mostrará de forma más extensa el uso de nbdev.</p>
 <p>Primero generamos nuestro repositorio como lo hicimos en el ejemplo <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#generar-un-repositorio">anterior</a>.</p>
 <p>Una vez con nuestro repositorio podemos iniciar nuestro repositorio de forma local y vamos a modificarlo para hacer el módulo de ejemplo.</p>
 <section id="entendiendo-un-poco-más" class="level2">
 <h2 class="anchored" data-anchor-id="entendiendo-un-poco-más">Entendiendo un poco más</h2>
-<p>En la <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#generar-un-modulo">sección anterior</a> vimos como construir un ejemplo básico, en este vamos a generar un módulo que de una biblioteca simple donde contenga ejemplos básicos de distintos tipos algoritmos de clusterizaciones.</p>
-<p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. Al momento de creación del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
-<p>Si no se hizo de la misma forma que como se describio anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados</p>
+<p>En la <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#generar-un-modulo">sección anterior</a> vimos como construir un ejemplo básico, en este vamos a generar un módulo que tenga una biblioteca simple donde contenga ejemplos básicos de distintos tipos de clusterizaciones.</p>
+<p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
+<p>Si no se hizo de la misma forma que como se describió anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> nbdev_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-1-W5-nbdev_new_manual" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -290,16 +290,16 @@ Figure&nbsp;2: contenido de settings.ini
 </figure>
 </div>
 <p>En este archivo se puede modificar cosas como la licencia, la url de la documentación, donde se aloja la documentación, el autor, el nombre de la biblioteca, la ruta en donde se localizan los notebooks, etc.</p>
-<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este proposito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a los módulos de nuestra biblioteca.</p>
+<p>Como ya hemos visto para modificar algo en nuestra biblioteca es necesario hacerlo en los notebooks, con este propósito, nbdev generará los archivos correspondientes tanto de la documentación, como los archivos con el código que corresponden a los módulos de nuestra biblioteca.</p>
 <p>También nbdev generará el archivo <code>README.md</code> el cual sirve como portada en nuestro repositorio. Para hace modificaciones a este, se deben hacer desde el archivo <code>nbs/index.ipynb</code> el cual nos permitirá una vez terminada nuestra biblioteca dar instrucciones simples para su instalación así como la posibilidad de añadir links a la documentación de nuestra biblioteca. Se puede generar únicamente el archivo <code>README.md</code> ejecutando el comando <code>nbdev_readme</code>, una vez ejecutado se puede abrir el archivo y ver las modificaciones realizadas.</p>
 <pre><code>nbdev_readme</code></pre>
-<p>Si se desea ver desde github sera necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.</p>
+<p>Si se desea ver desde github será necesario actualizar los cambios en el repositorio, para esto haremos un ejemplo desde la terminal sólo se muestra como ejemplo pues un curso completo de git queda fuera de los temas de este curso.</p>
 <pre><code>git add README.md
-git commit -c "Se modifica el README"
+git commit -m "Se modifica el README"
 git push</code></pre>
 <ul>
 <li><p><code>git add README.md</code> añade el archivo que se modifico y que se desea que actualizar, o bien añadir el archivo si no se tiene dentro de nuesto conjunto de archivos vigilados.</p></li>
-<li><p><code>git commit -c "Se modifica el README"</code> se “comitea” es decir se añade a un registro de cambios de forma local los cambios hechos. <code>-c</code> es para añadir el comentario <code>"Se modifica el README"</code> a los cambios hechos, esto nos sirve como guía para ver que cambios se han hecho y cual fue la razon de nuestros cambios. Esto es muy útil cuando se busca errores en el desarrollo y poder regresar al estado anterior.</p></li>
+<li><p><code>git commit -m "Se modifica el README"</code> se “comitea” es decir se añade a un registro de cambios de forma local los cambios hechos. <code>-m</code> es para añadir el comentario <code>"Se modifica el README"</code> a los cambios hechos, esto nos sirve como guía para ver qué cambios se han hecho y cúal fue la razón de nuestros cambios. Esto es muy útil cuando se buscan errores en el desarrollo y poder regresar al estado anterior.</p></li>
 <li><p><code>git push</code> Sube los cambios hechos a el servidor de git, en nuestro caso lo va a subir a github pues el es servicio que determinamos usar.</p></li>
 </ul>
 <p>Podemos ver las modificaciones en nuestro repositorio.</p>
@@ -325,11 +325,11 @@ git push</code></pre>
 </section>
 <section id="regresar-al-ejemplo" class="level1">
 <h1>Regresar al ejemplo</h1>
-<p>Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo y para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que estan disponibles en nbdev.</p>
-<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el archivo y como lo hicimos anteriormente este archivo nos servira para generar tanto el código como la documentación de la bibloteca.</p>
-<p>En la primera linea de código podemos observar que se tiene una directriz <code>default_exp</code> la cual nos sirve para determinar a que módulo se exportaran lo que se genere dentro del notebook. Lo modificamos para que el modulo a exportar se llame <code>cluster_ejemplo</code>.</p>
+<p>Ya comprendimos un poco más como es la estructura que genera nbdev, ahora vamos hacer un ejemplo para generar nuevos módulos y como se hace el manejo de las dependencias y otras herramientas que están disponibles en nbdev.</p>
+<p>Dentro del directorio <code>nbs</code> se encuentra el archivo <code>00_core.ipynb</code> cambiemos el nombre de dicho archivo a <code>00_cluster.ipynb</code>. Podemos abrir el archivo y como lo hicimos anteriormente este archivo nos servirá para generar tanto el código como la documentación de la biblioteca.</p>
+<p>En la primera línea de código podemos observar que se tiene una directriz <code>default_exp</code> la cual nos sirve para determinar a qué módulo se exportarán lo que se genere dentro del notebook. Lo modificamos para que el módulo a exportar se llame <code>cluster_ejemplo</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| default_exp cluster_ejemplo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Podemos eliminar todas las demás celdas exepto la última. Esta última es la que indica celda es la que genera el módulo.</p>
+<p>Podemos eliminar todas las demás celdas excepto la última. Esta última es la que indica que se genera el módulo. Esto es de importancia cuando se trabaja con múltiples notebooks y varios módulos.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| hide</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nbdev<span class="op">;</span> nbdev.nbdev_export()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vamos a modificar las cosas para hacer nuestra biblioteca. Añadimos el siguiente contenido a una nueva celda.</p>
@@ -343,7 +343,7 @@ git push</code></pre>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shapely</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN, HDBSCAN, OPTICS, KMeans</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La directriz <code>#| hide</code> esconde la celda, es especialmente útil para hacer la documentación mientras que la directriz <code>#| export</code> va a exportar a nuestro módulo lo que se encuentre en esta celda.</p>
+<p>La directriz <code>#| hide</code> esconde la celda al momento de generar un html, es especialmente útil para hacer la documentación mientras que la directriz <code>#| export</code> va a exportar a nuestro módulo lo que se encuentre en esta celda.</p>
 <p>Añadimos un objeto para generar datos de forma aleatoria</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| export</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> data_points:</span>
@@ -414,54 +414,71 @@ Figure&nbsp;4: Exito pruebas
 <section id="clase-clusters" class="level2">
 <h2 class="anchored" data-anchor-id="clase-clusters">Clase clusters</h2>
 <p>Vamos añadir una nueva clase a nuestro módulo, la cual llamaremos <code>Clusters</code>, esta clase nos sirve para generar clusters usando distintos algoritmos.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> data_points:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Una clase que contiene a los datos"""</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n, min_x <span class="op">=</span> <span class="dv">0</span>, min_y <span class="op">=</span> <span class="dv">0</span>, max_x<span class="op">=</span> <span class="dv">1</span>, max_y<span class="op">=</span><span class="dv">1</span>, seed<span class="op">=</span> <span class="va">None</span>):</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> seed <span class="op">!=</span> <span class="va">None</span>:</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>            random.seed(seed)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        Xpoint <span class="op">=</span> np.random.uniform(low<span class="op">=</span> min_x, high<span class="op">=</span> max_x, size<span class="op">=</span>n)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        Ypoint <span class="op">=</span> np.random.uniform(low<span class="op">=</span> min_y, high<span class="op">=</span> max_y, size<span class="op">=</span>n)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">#self.Points = np.random.uniform(low= min_x, high= max_x, size=(n, 2))</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Points <span class="op">=</span>  [shapely.Point(x[<span class="dv">0</span>],x[<span class="dv">1</span>]) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">zip</span>(Xpoint, Ypoint)]</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> from_list(cls, list_points):</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Se genera los datos usando una lista de puntos"""</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        toto <span class="op">=</span> cls(<span class="dv">0</span>)</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        toto.Points <span class="op">=</span> list_points</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> toto</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_points(<span class="va">self</span>):</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Una funcion que para obtener los puntos"""</span></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.Points</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_Multypoint(<span class="va">self</span>):</span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa un objeto MultiPoint con los puntos"""</span></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> shapely.geometry.MultiPoint(<span class="va">self</span>.Points)</span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_X(<span class="va">self</span>):</span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa las coordenadas X"""</span></span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [x.x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_Y(<span class="va">self</span>):</span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa las coordenadas X"""</span></span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [x.y <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.Points]</span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> centroid(<span class="va">self</span>):</span>
-<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa el centroide de los puntos """</span></span>
-<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> shapely.centroid(<span class="va">self</span>.get_Multypoint())</span>
-<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> as_array(<span class="va">self</span>):</span>
-<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa los puntos como un array"""</span></span>
-<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>        list_arrays <span class="op">=</span> np.array([ (geom.xy[<span class="dv">0</span>][<span class="dv">0</span>], geom.xy[<span class="dv">1</span>][<span class="dv">0</span>]) <span class="cf">for</span> geom <span class="kw">in</span> <span class="va">self</span>.Points])</span>
-<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> list_arrays</span>
-<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_points(<span class="va">self</span>, data_points):</span>
-<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Agrega puntos de otra """</span></span>
-<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Points <span class="op">=</span> <span class="va">self</span>.Points <span class="op">+</span> data_points.Points</span>
-<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Clusters:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Clase para generar los clusters a partir de un objeto de la clase data_points</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">  </span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">  Esta clase se utiliza para generar los distintos tipos de clusterizaciones, </span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">  se almacena los datos en una estructura de datos y se le añaden las respectivas </span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">  classes</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, data_points_i, seed<span class="op">=</span><span class="dv">1234</span>):</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> seed <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      random.seed(seed)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="va">self</span>.data_structure <span class="op">=</span>  data_points_i</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> KMeans(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co">    Se usa el algoritmo Kmeans para la obtencion de clusters, </span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co">    las clases quedan almacenadas en .data_structure_classes_Kmeans.</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Si se desea obtener el modelo se tiene que añadir </span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="co">    (ret_model = True) como parámetro.</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    kmeans_c <span class="op">=</span> KMeans(<span class="op">**</span>kwargs)</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    classes_val <span class="op">=</span> kmeans_c.fit_predict(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.data_structure.classes_Kmeans <span class="op">=</span> classes_val</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> :</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>  kmeans_c</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> DBSCAN(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="co">    Se DBSCAN para la obtencion de clusters, las clases quedan almacenadas</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="co">    en .data_structure_classes_DBSCAN. Si se desea obtener el modelo se tiene</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="co">    que añadir (ret_model = True) como parámetro.</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> DBSCAN(<span class="op">**</span>kwargs).fit(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.data_structure.classes_DBSCAN <span class="op">=</span> db.labels_</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> :</span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>  db</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> HDBSCAN(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="co">    Se HDBSCAN para la obtencion de clusters, las clases quedan almacenadas</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="co">    en .data_structure_classes_HDBSCAN. Si se desea obtener el modelo se tiene</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a><span class="co">    que añadir (ret_model = True) como parámetro.</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>    hdb <span class="op">=</span> HDBSCAN(<span class="op">**</span>kwargs).fit(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.data_structure.classes_HDBSCAN <span class="op">=</span> hdb.labels_</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> : </span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span>  hdb</span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> OPTICS(<span class="va">self</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a><span class="co">    Se usa el algoritmo OPTICS para la obtencion de clusters, </span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a><span class="co">    las clases quedan almacenadas en .data_structure_classes_OPTICS.</span></span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a><span class="co">    Si se desea obtener el modelo se tiene que añadir </span></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a><span class="co">    (ret_model = True) como parámetro.</span></span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>    optics<span class="op">=</span>  OPTICS(<span class="op">**</span>kwargs).fit(<span class="va">self</span>.data_structure.as_array())</span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.data_structure.classes_OPTICS <span class="op">=</span> optics.labels_</span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'ret_model'</span> <span class="kw">in</span> kwargs <span class="kw">and</span> kwargs[<span class="st">'ret_model'</span>]<span class="op">==</span><span class="va">True</span> :</span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>  optics</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Para exportar la clase al módulo es necesario añadir la directriz <code>#| export</code> al inicio de la celda. Adicionalmente añadimos pruebas simples usando los datos que ya se generaron.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cluster_all  <span class="op">=</span> Clusters(datos_simples)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cluster_all.DBSCAN()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -474,7 +491,7 @@ Figure&nbsp;4: Exito pruebas
 <h2 class="anchored" data-anchor-id="documentación">Documentación</h2>
 <p>Para generar la documentación se hace usando el comando</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, en la terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs" class="quarto-xref">Figure&nbsp;5</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que solo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
+<p>En este caso, en la terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs" class="quarto-xref">Figure&nbsp;5</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que sólo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
 <div id="fig-5-W5-nbdev_docs" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5-W5-nbdev_docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -490,10 +507,10 @@ Figure&nbsp;5: Generación documentación
 <div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>show_doc(Clusters.DBSCAN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>show_doc(Clusters.HDBSCAN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>show_doc(Clusters.OPTICS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Estas mostraran lo que se haya puesto dentro de los ‘docstrings’ de los métodos en la clase <code>Cluster</code>.</p>
+<p>Estas mostrarán lo que se haya puesto dentro de los ‘docstrings’ de los métodos en la clase <code>Cluster</code>.</p>
 <p>También podemos generar la documentación y hacer una previsualización haciendo uso del comando</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_preview</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>lo cual nos mostrara</p>
+<p>lo cual nos mostrará</p>
 <div id="fig-6-W5-nbdev_preview" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6-W5-nbdev_preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -504,7 +521,7 @@ Figure&nbsp;6: Muestra la documentación
 </figcaption>
 </figure>
 </div>
-<p>llevandonos a la documentación de forma local.</p>
+<p>llevándonos a la documentación de forma local.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -525,12 +542,12 @@ Actividad
 <section id="mas-documentación" class="level2">
 <h2 class="anchored" data-anchor-id="mas-documentación">Mas documentación</h2>
 <p>Podemos hacer uso de las facilidades de los jupyter notebooks para generar ejemplos y tutoriales, para esto vamos hacer dentro del mismo notebook.</p>
-<p>Creamos un conjunto de datos usando los distintos metodos en las clases que ya hicimos.</p>
+<p>Creamos un conjunto de datos usando los distintos métodos en las clases que ya hicimos.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>datos_simples_3 <span class="op">=</span> data_points(<span class="dv">500</span>, min_x <span class="op">=</span> <span class="fl">0.6</span>, min_y<span class="op">=</span> <span class="fl">0.6</span>, max_x<span class="op">=</span> <span class="fl">1.0</span>, max_y<span class="op">=</span> <span class="fl">1.0</span> )</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>datos_simples_2 <span class="op">=</span> data_points(<span class="dv">500</span>, min_x <span class="op">=</span> <span class="fl">0.0</span>, min_y<span class="op">=</span> <span class="fl">0.6</span>, max_x<span class="op">=</span> <span class="fl">0.4</span>, max_y<span class="op">=</span> <span class="fl">1.0</span> )</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>datos_simples_1 <span class="op">=</span> data_points(<span class="dv">500</span>, min_x <span class="op">=</span> <span class="fl">0.6</span>, min_y<span class="op">=</span> <span class="fl">0.0</span>, max_x<span class="op">=</span> <span class="fl">1.0</span>, max_y<span class="op">=</span> <span class="fl">0.4</span> )</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>datos_simples_0 <span class="op">=</span> data_points(<span class="dv">500</span>, min_x <span class="op">=</span> <span class="fl">0.0</span>, min_y<span class="op">=</span> <span class="fl">0.0</span>, max_x<span class="op">=</span> <span class="fl">0.4</span>, max_y<span class="op">=</span> <span class="fl">0.4</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Unimos todos los puntos con el metodo <code>add_points</code> de la clase <code>data_points</code>.</p>
+<p>Unimos todos los puntos con el método <code>add_points</code> de la clase <code>data_points</code>.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>datos_simples_0.add_points(datos_simples_1)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>datos_simples_0.add_points(datos_simples_2)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>datos_simples_0.add_points(datos_simples_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -538,7 +555,7 @@ Actividad
 <div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>datos_simples_0.get_Multypoint()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ahora inicialicemos nuestro objeto <code>Clusters</code></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>cluster_all  <span class="op">=</span> Clusters(datos_simples_0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y ahora podemos hacer uso de los algoritmos usando los metodos de las distintas las clusterizaciones.</p>
+<p>Y ahora podemos hacer uso de los algoritmos usando los métodos de las distintas las clusterizaciones.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>cluster_all.OPTICS()</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>cluster_all.HDBSCAN()</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>cluster_all.DBSCAN(eps<span class="op">=</span><span class="fl">0.1</span>, min_samples<span class="op">=</span><span class="dv">10</span>)</span>
@@ -546,32 +563,32 @@ Actividad
 <p>Y visualizemos las clusterizaciones</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_X(),</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_Y(),</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> cluster_all.data_structure.classes_Kmeans</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_X(),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_Y(),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> cluster_all.data_structure.classes_Kmeans</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_X(),</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_Y(),</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> cluster_all.data_structure.classes_DBSCAN</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_X(),</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_Y(),</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> cluster_all.data_structure.classes_DBSCAN</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_X(),</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_Y(),</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> cluster_all.data_structure.classes_HDBSCAN</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_X(),</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_Y(),</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> cluster_all.data_structure.classes_HDBSCAN</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_X(),</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        cluster_all.data_structure.get_Y(),</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> cluster_all.data_structure.classes_OPTICS</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si se ejecuta <code>nbdev_preview</code> o <code>nbdev_docs</code> en la documentación mostrara el ejemplo dentro de la misma.</p>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_X(),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  cluster_all.data_structure.get_Y(),</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> cluster_all.data_structure.classes_OPTICS</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si se ejecuta <code>nbdev_preview</code> o <code>nbdev_docs</code> en la documentación mostrará el ejemplo dentro de la misma.</p>
 <p>Ahora para preparar verificar que todo esta bien ejecutamos</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_prepare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Lo cual mostrara <img src="./Succes.png" id="fig-7-W5-exito" class="img-fluid"> si no hay ningun problema. En el fondo lo que hace <code>nbdev_prepare</code> preprocesar los archivos dentro de <code>nbs</code> y generar los</p>
+<p>Lo cual mostrará <img src="./Succes.png" id="fig-7-W5-exito" class="img-fluid"> si no hay ningun problema. En el fondo lo que hace <code>nbdev_prepare</code> preprocesar los archivos dentro de <code>nbs</code> y generar los</p>
 </section>
 </section>
 <section id="publicar-todo" class="level1">
@@ -579,10 +596,10 @@ Actividad
 <p>Vamos a entender un poco más que es lo que pasa cuando se hace la publicación de la documentación generada. Ya hemos dicho que por abajo nbdev usa <em>Quarto</em> para la generación de la documentación, lo que sucede es que nuestros notebooks son preprocesados generando notebooks que se usan como base para convertirlos a documentos html. Estos notebooks se encuentran en el directorio <code>_proc</code> (se genera cuando se executa <code>nbdev_docs</code>) los cuales tienen en sus celdas directrizes de <em>Quarto</em> para generar los resultados deseados. Podemos inspeccionar estos archivos comprobando observar que son similares a los notebook originales, si se inspecciona el directorio <code>_docs</code> se vera que los documentos html son los que fueron generados a partir de los notebooks en <code>_prod</code>.</p>
 <p>De esta forma hemos generado todo para nuestra biblioteca, tiene documentación y haciendo uso de <code>nbdev_prepare</code> se generan los módulos para poder instalar. Esto nos sirve si se desea publicar la documentación en un servicio distinto a <em>github</em>.</p>
 <p>A continuación vamos a integrar todo en <em>Github</em> para que tanto las pruebas como la creación de la documentación realizadas usando <a href="https://docs.github.com/en/actions">github-actions</a> como ya se hizo en los <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#habilitar-github-pages-y-flujos-de-trabajo">primeros pasos de este curso</a> con la creación de una biblioteca muy sencilla.</p>
-<p>Como hemos añadido bibliotecas y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podran se realizadas de forma correcta. Por tal motivo vamos a dar una explicación más extensa de los pasos.</p>
+<p>Como hemos añadido bibliotecas y hemos modificado las cosas si intentamos seguir los pasos descritos con anterioridad ni las prueba ni la documentación podrán ser realizadas de forma correcta. Por tal motivo vamos a dar una explicación más extensa de los pasos.</p>
 <section id="entendiendo-github-actions." class="level2">
 <h2 class="anchored" data-anchor-id="entendiendo-github-actions.">Entendiendo github-actions.</h2>
-<p>Las acciones de Github acitions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio <code>.github</code> dentro del directorio <code>workflows</code> los cuales son <code>deploy.yaml</code> y <code>test.yaml</code>. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicad un poco que hacen cada uno.</p>
+<p>Las acciones de Github actions nos permiten realizar acciones automatizadas dentro de nuestro directorio de Github, en nuestro caso dichas acciones se encuentran dentro de los archivos que se encuentran en el directorio <code>.github</code> dentro del directorio <code>workflows</code> los cuales son <code>deploy.yaml</code> y <code>test.yaml</code>. Estos dos archivos controlan los dos flujos de trabajo que se realizan dentro de github. Vamos a modificarlos y explicar un poco que hacen cada uno.</p>
 <p>El archivo deploy es el que utilizamos para generar la documentación, vamos a sustituir el contenido del archivo con el que se encuentra en la celda siguiente:</p>
 <section id="archivo-deploy.yaml" class="level3">
 <h3 class="anchored" data-anchor-id="archivo-deploy.yaml">Archivo deploy.yaml</h3>
@@ -634,7 +651,7 @@ Actividad
 <pre class="yalm"><code>- uses: actions/checkout@v3
 - uses: actions/setup-python@v4</code></pre>
 <p>Utiliza las acciones <code>actions/checkout@v3</code> y <code>actions/setup-python@v4</code> que son acciones que tenemos estandarizadas dentro de github actions. Las cuales hace un check out del repositorio dentro de la maquina virtual para realizar el trabajo. <code>actions/setup-python@v4</code> instala python dentro de la maquina virtual.</p>
-<p>El siguiente paso lo llamamo ‘Install Dependencies and create documentation’ aquí podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de nbdev, git, quarto, etc.</p>
+<p>El siguiente paso lo llamamo ‘Install Dependencies and create documentation’ aquí podemos ver que hacemos un conjunto de acciones que hicimos con anterioridad cuando instalamos las cosas necesarias para hacer uso de Nbdev, Git, Quarto, etc.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Dependencies and create documentation </span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    run</span><span class="kw">: </span><span class="ch">|</span></span>
@@ -650,8 +667,8 @@ Actividad
 <span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq scikit-learn</span></span>
 <span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="at">    pip install -Uq shapely</span></span>
 <span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="at">    nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pongamos especial atención en las últimas lineas, aquí instalamos las dependencias que se utilizaron en hacer nuestra biblioteca y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con ‘nbdev_docs’.</p>
-<p>Como en la maquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo ‘branch’, por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese ‘branch’ para publicar la documentación usando el siguiente paso:</p>
+<p>Pongamos especial atención en las últimas líneas, aquí instalamos las dependencias que se utilizaron en hacer nuestra biblioteca y son necesarias para que los notebooks que hicimos puedan correr. Una vez instaladas las dependencias podemos generar la documentación con ‘nbdev_docs’.</p>
+<p>Como en la máquina virtual ya generamos nuestra documentación ahora vamos a ponerla dentro de un nuevo ‘branch’, por eso le tenemos que dar permiso para escribir, dentro del repositorio y usar ese ‘branch’ para publicar la documentación usando el siguiente paso:</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v4</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">with</span><span class="kw">:</span></span>
@@ -662,7 +679,7 @@ Actividad
 <span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">      # You can swap them out with your own user credentials.</span></span>
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">user_name</span><span class="kw">:</span><span class="at"> github-actions[bot]</span></span>
 <span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">user_email</span><span class="kw">:</span><span class="at"> 41898282+github-actions[bot]@users.noreply.github.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Esto usa las acciones descritas en <code>peaceiris/actions-gh-pages@v4</code> las cuales ya estan automatizadas para generar un nuevo branch con nombre ‘gh-pages’ y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio ’./_docs’. ‘github_token’ nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parámetros de ‘user_name’ y ‘user_email’ permiten avisar que acciones fueron realizadas por el script ‘peaceiris/actions-gh-pages@v4’ y tendran como las cuales apareceran que fueron realizadas por github-pages bot. Estas acciones nos enviaran un mail con el resultado del trabajo realizado, es decir si este fue exitoso o no.</p>
+<p>Esto usa las acciones descritas en <code>peaceiris/actions-gh-pages@v4</code> las cuales ya estan automatizadas para generar un nuevo branch con nombre ‘gh-pages’ y añadir el contenido de la documentación dentro de el branch. Lo que se añade dentro del branch es lo que se encuentra dentro del directorio ’./_docs’. ‘github_token’ nos permite autenticar el trabajo realizado por el flujo de trabajo. Los parámetros de ‘user_name’ y ‘user_email’ permiten avisar que acciones fueron realizadas por el script ‘peaceiris/actions-gh-pages@v4’ y las cuales aparecerán que fueron realizadas por github-pages bot. Estas acciones nos enviaran un mail con el resultado del trabajo realizado, es decir si este fue exitoso o no.</p>
 </section>
 <section id="archivo-test.yaml" class="level3">
 <h3 class="anchored" data-anchor-id="archivo-test.yaml">Archivo test.yaml</h3>
@@ -722,8 +739,8 @@ Actividad
 <span id="cb44-53"><a href="#cb44-53" aria-hidden="true" tabindex="-1"></a>            nbdev_test --flags "$FLAGS"</span>
 <span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a>          fi</span>
 <span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>De forma similar el nombre del trabajo es ‘Test CI’ los trabajos se realizaran cuando cuando se hace una petición de forma manual o se hace un pull o un push.</p>
-<p>Se corre en una maquina virtual con ubuntu ‘runs-on: ubuntu-latest’ y hace un checkout, se instala python y nbdev junto con sus dependencias.</p>
+<p>De forma similar el nombre del trabajo es ‘Test CI’ los trabajos se se realizan cuando se hace una petición de forma manual o se hace un pull o un push.</p>
+<p>Se corre en una máquina virtual con ubuntu ‘runs-on: ubuntu-latest’ y hace un checkout, se instala python y nbdev junto con sus dependencias.</p>
 <p>En el siguiente paso se instalan las dependencias de la biblioteca en la maquina virtual.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install package dependencies</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">shell</span><span class="kw">:</span><span class="at"> bash</span></span>
@@ -770,7 +787,8 @@ Actividad
 <span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a>        nbdev_test --flags "$FLAGS"</span>
 <span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>        fi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la biblioteca.</p>
-<p>Con los archivos que hemos modificado hemos dado las instrucciónes para que estas acciones se desarrollen en máquinas virtuales en servidores de github. Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio.</p>
+<p>Con los archivos que hemos modificado hemos dado las instrucciónes para que estas acciones se desarrollen en máquinas virtuales en servidores de github.</p>
+<p>Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio.</p>
 <div id="fig-7-W5-github_actions" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7-W5-github_actions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -781,13 +799,13 @@ Figure&nbsp;7: Menu github actions
 </figcaption>
 </figure>
 </div>
-<p>En este menu veremos las aciones que se llevan del lado izquierdoo acabo en nuestro caso:</p>
+<p>En este menú veremos las acciones que se llevan a cabo del lado izquierdo en nuestro caso:</p>
 <ul>
 <li>Deploy to Github Pages</li>
 <li>Test CI</li>
 <li>pages-build-deployment (ejecutado al hacer el branch ‘gh-pages’)</li>
 </ul>
-<p>En el centro una lista con los commits realizado y el resultado de las acciones que se llevaron acabo y si estas tuvieron exito (✅) o no (❌).</p>
+<p>En el centro una lista con los commits realizado y el resultado de las acciones que se llevaron acabo y si estas tuvieron éxito (✅) o no (❌).</p>
 <div id="fig-7-W5-succes_github" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7-W5-succes_github-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -798,7 +816,7 @@ Figure&nbsp;8: Woorkflows Actions
 </figcaption>
 </figure>
 </div>
-<p>Para habilitar nuestra pagina de documentación se tienen que seguir los mismos pasoes que vimos <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#ver-la-documentación">anteriormente</a> y se selecciona el branch de ‘gh-pages’ para habilitar la documentación.</p>
+<p>Para habilitar nuestra página de documentación se tienen que seguir los mismos pasoes que vimos <a href="../../../contenido/Contenido/Tema2_extendido/1_pasos.html#ver-la-documentación">anteriormente</a> y se selecciona el branch de ‘gh-pages’ para habilitar la documentación.</p>
 </section>
 </section>
 </section>

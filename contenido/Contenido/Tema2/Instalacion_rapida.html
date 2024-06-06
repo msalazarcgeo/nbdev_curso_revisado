@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -275,8 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A continuación se da una breve explicación de cada uno de estos y como lo utilizamos.</p>
 <section id="ambientes-virtuales-conda-tema-2.1" class="level2">
 <h2 class="anchored" data-anchor-id="ambientes-virtuales-conda-tema-2.1">Ambientes virtuales (conda) (Tema 2.1)</h2>
-<p>Anaconda es una empresa la cual desarrollo un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.</p>
-<p>De esta forma algo instalado dentro de un ambiente virtual no afectara a las distintas paqueterias que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo.</p>
+<p>Anaconda es una empresa la cual desarrolló un manejador de ambientes virtuales con un manejador de paquetes (conda), éste nos permite la creación de ambientes virtuales. Dentro de dichos ambientes se puede hacer un manejo eficiente de los diferentes softwares instalados dentro del ambiente virtual y las dependencias de los mismos. Al tener un manejo eficiente de las paqueterias y las dependencias dentro de este se hace más fácil la creación de ambientes de desarrollo.</p>
+<p>De esta forma algo instalado dentro de un ambiente virtual no afectará a las distintas paqueterías que se encuentran fuera del ambiente virtual. Lo cual nos permite tener tener aislado un ambiente de desarrollo con respecto al sistema operativo u otro ambiente de desarrollo.</p>
 <section id="instalación-anaconda-conda" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-anaconda-conda">Instalación Anaconda (conda)</h3>
 <p>Para la instalación de conda lo más sencillo es seguir el este <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html">manual</a> aquí sólo se hace un esbozo de la instalación.</p>
@@ -287,8 +287,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><p>Verificar que se ha bajano correctamente (<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#hash-verification">ver</a> ).</p></li>
 <li><p>Hacer doble click en el archivo <code>.exe</code> (similar a <code>Anaconda3-######-Windows-x86_64.exe</code>). Para la instalación en Linux o Mac se debe de bajar el archivo <code>Anaconda3-####-Linux-###.sh</code> o bien el <code>Anaconda3-####-MACOSX-###.sh</code> y ejecutar el archivo usando la terminal.</p></li>
-<li><p>Seguir las instrucciones en la pantalla en caso de windows. Y seguir la instrucciones que apareceran en caso del uso de la terminal.</p></li>
-<li><p>Para probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando <code>conda list</code>. Una lista de paquetes aparecera si se instaló de forma correcta.</p></li>
+<li><p>Seguir las instrucciones en la pantalla en caso de windows. Y seguir las instrucciones que aparecerán en caso del uso de la terminal.</p></li>
+<li><p>Para probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando conda list. Una lista de paquetes aparecerá si se instaló de forma correcta.</p></li>
 </ol>
 </section>
 <section id="hacer-un-ambiente-virtual" class="level3">
@@ -297,15 +297,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dentro de la terminal se puede observar que antes del símbolo del sistema aparece la leyenda <code>(base)</code> esta no indica que estamos usando el ambiente virtual base.</p>
 <p>Para crear un nuevo ambiente virtual se ejecuta la siguiente linea en la linea de comandos.</p>
 <pre class="{bash}"><code>conda create -n desarrollo</code></pre>
-<p>Este comando crea un nuevo ambiente virtual llamano desarrollo. Se puede especificar la versión de python a instalar dentro del ambiente virtual. También es posible instalar otros lenguajes de programación dentro del ambiente virtual cono son R o Julia.</p>
+<p>Este comando crea un nuevo ambiente virtual llamado desarrollo. Se puede especificar la versión de python a instalar dentro del ambiente virtual. También es posible instalar otros lenguajes de programación dentro del ambiente virtual como son R o Julia.</p>
 <p>Para entrar al ambiente virtual la forma de hacerlo es ejecutar</p>
 <pre><code>conda activate desarrollo</code></pre>
-<p>Al ejecutar el comando se puede observar que la leyenda <code>(base)</code> fue sustituida por la leyenda <code>(desarrollo)</code> lo cual nos indica que hemos activado nuestro ambiente virtual.</p>
+<p>Al ejecutar el comando se puede observar que la leyenda (base) fue sustituida por la leyenda (desarrollo) lo cual nos indica que hemos activado nuestro ambiente virtual.</p>
 </section>
 <section id="canales" class="level3">
 <h3 class="anchored" data-anchor-id="canales">Canales</h3>
-<p>Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza conda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por Anaconda. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las reglas establecidas por cada canal. Los distintos canales tienen distintos objetivos por ejemplo <a href="https://bioconda.github.io/">bioconda</a> contiene las paqueterias desarrolladas relacionadas con desarrollos biomédicos.</p>
-<p>Otro canal muy utilizado es <a href="https://conda-forge.org/">conda-forge</a>, el cual contiene paquetes desarrollados por una extensa comunidad. Por facilidad en este curso utilizaremos el canal conda-forge pues tiene la mayoria de las paqueterias necesarias y se encuentran muchas versiones de los mismos.</p>
+<p>Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza conda, muchos paquetes. Anaconda es la encargada de verificar que el el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por Anaconda. De la misma forma hay distintos canales los cuales tiene paquetes que estan de acuerdo a las reglas establecidas por cada canal. Los distintos canales tienen distintos objetivos por ejemplo contiene las paqueterias desarrolladas relacionadas con desarrollos biomédicos.</p>
+<p>Dentro de nuestro ambiente virtual podemos instalar las distintas bibliotecas y paquetes que sean necesarios. Por defecto Anaconda tiene un canal para poner a la disposición de la comunidad, que utiliza conda, muchos paquetes. Anaconda es la encargada de verificar que el desarrollo de dichos paquetes sean de acuerdo a las mismas reglas establecidas por Anaconda. De la misma forma hay distintos canales los cuales tienen paquetes que están de acuerdo a las reglas establecidas por cada canal. Los distintos canales tienen distintos objetivos por ejemplo <a href="https://bioconda.github.io/">bioconda</a> contiene las paqueterías desarrolladas relacionadas con desarrollos biomédicos.</p>
+<p>Otro canal muy utilizado es <a href="https://conda-forge.org/">conda-forge</a>, el cual contiene paquetes desarrollados por una extensa comunidad. Por facilidad en este curso utilizaremos el canal conda-forge pues tiene la mayoria de las paqueterías necesarias y se encuentran muchas versiones de los mismos.</p>
 </section>
 <section id="uso-de-conda-para-instalación-paquetes" class="level3">
 <h3 class="anchored" data-anchor-id="uso-de-conda-para-instalación-paquetes">Uso de Conda para instalación paquetes</h3>
@@ -317,10 +318,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="instalar-jupyter-notebook-tema-2.2" class="level2">
 <h2 class="anchored" data-anchor-id="instalar-jupyter-notebook-tema-2.2">Instalar Jupyter Notebook (Tema 2.2)</h2>
-<p>Jupyter es un conjunto de softwares que nos permite hacer uso de multiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> y adicionalmente se puede hacer uso de <a href="https://en.wikipedia.org/wiki/LaTeX">LaTex</a> para escribir fórmulas matemáticas.</p>
-<p>A través del uso de JupyterLab es posible hacer desarrollo de software de forma interactiva usando notebooks, código e información. Esto ayuda al desarrollador a generar un archivo que tiene todo el contexto del desarrollo y entender la forma en la cual el software fue desarrollado, por que se tomaron ciertas decisiones en la creación del código. Esto es particularmente útil en el análisis exploratorio de datos, en la ciencia de dátos y en el desarrollo de la inteligencia artificial.</p>
-<p>El uso de los notebooks ha sido usado principalmente para hacer análisis exploratorios y esto generó la necesidad de poder generar gráficos dentro de los notebooks lo cual nos permite no sólo tener una descripción del código con texto plano sino de manera gráfica poder ver los resulrado de los dátos analizados. Adicionalmente se puede hacer uso de tiempo de animaciones para complementar las narrativas.</p>
-<p>Los notebooks en cierta forma han ido remplazando el uso de las terminales interactivas, pues enriquecen las descripción del código y facilitan la visualización. Al tener los mismos beneficios que las terminales interactivas y poder hacer pruebas con pequeños fragmentos de código la presentación del código desarrollado resulta de fácil lectura. Adicionalmente se tienen ciertas herramientas que ayudan al desarrollo las cuales han sido pensadas para los usos más comunes. Conocer todas las funcionalidades de los notbooks de jupter queda fuera del alcance de este curso pero veremos ciertas cosas básicas para poder trabajar con ellos.</p>
+<p>Jupyter es un conjunto de softwares que nos permite hacer uso de múltiples herramientas, una de sus principales herramientas es el uso de noteboooks los cuales son documentos donde podemos escribir texto plano y hacer ejecución de código. Para que los documentos finales tengan una mayor riqueza se utiliza <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> y adicionalmente se puede hacer uso de <a href="https://en.wikipedia.org/wiki/LaTeX">LaTex</a> para escribir fórmulas matemáticas.</p>
+<p>A través del uso de JupyterLab es posible hacer desarrollo de software de forma interactiva usando notebooks, código e información. Esto ayuda al desarrollador a generar un archivo que tiene todo el contexto del desarrollo y entender la forma en la cual el software fue desarrollado, por que se tomaron ciertas decisiones en la creación del código. Esto es particularmente útil en el análisis exploratorio de datos, en la ciencia de datos y en el desarrollo de la inteligencia artificial.</p>
+<p>El uso de los notebooks ha sido usado principalmente para hacer análisis exploratorios y esto generó la necesidad de poder generar gráficos dentro de los notebooks lo cual nos permite no sólo tener una descripción del código con texto plano sino de manera gráfica poder ver los resultado de los datos analizados. Adicionalmente se puede hacer uso de tiempo de animaciones para complementar las narrativas.</p>
+<p>Los notebooks en cierta forma han ido reemplazando el uso de las terminales interactivas, pues enriquecen la descripción del código y facilitan la visualización. Al tener los mismos beneficios que las terminales interactivas y poder hacer pruebas con pequeños fragmentos de código la presentación del código desarrollado resulta de fácil lectura. Adicionalmente se tienen ciertas herramientas que ayudan al desarrollo las cuales han sido pensadas para los usos más comunes. Conocer todas las funcionalidades de los notebooks de jupyter queda fuera del alcance de este curso pero veremos ciertas cosas básicas para poder trabajar con ellos.</p>
 <p>Usaremos <strong>JupyterLab</strong> el cual integra una plataforma web para generar notebooks, esta interfaz se hace desplegando un servicio web de forma local y puede ser accedida desde cualquier navegador web. Aunque en este curso se utiliza Python también los notebooks de Jupyter-lab puede hacer uso de distintos lenguajes de programación como son R, Julia.</p>
 <section id="instalación-jupyterlab" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-jupyterlab">Instalación JupyterLab</h3>
@@ -333,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="uso-de-jupyterlab">Uso de JupyterLab</h3>
 <p>Para iniciar una instancia de JupyterLab desde terminal dentro del ambiente virtual que se genero se hace usando el siguiente comando</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">desarrollo</span><span class="kw">)</span> <span class="ex">jupyter-lab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En windows tambien se puede hacer uso de la interfaz gráfica de conda para lanzar el JupyterLab.</p>
+<p>En windows también se puede hacer uso de la interfaz gráfica de conda para lanzar el JupyterLab.</p>
 <div id="fig-inicioJL" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inicioJL-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -344,7 +345,7 @@ Figure&nbsp;1: Inicio de JupyterLab
 </figcaption>
 </figure>
 </div>
-<p>Una vez ejecutado el comando se desplegara un servicio web el cual se puede acceder desde un navegador y nos mostrara una pagina web muy similar a la que se muestra en <a href="#fig-inicioJL" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>Una vez ejecutado el comando se desplegará un servicio web el cual se puede acceder desde un navegador y nos mostrará una página web muy similar a la que se muestra en <a href="#fig-inicioJL" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <p>Para empezar un nuevo notebook se elige la version de python que se desea que se ejecute y esta generará un nuevo notebook con nombre ‘Untitled.ipynb’ como en <a href="#fig-nuevo_notebook" class="quarto-xref">Figure&nbsp;2</a></p>
 <div id="fig-nuevo_notebook" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -356,13 +357,13 @@ Figure&nbsp;2: Nuevo Notebook
 </figcaption>
 </figure>
 </div>
-<p>En los notebooks se tienen tres tipos de celda (‘Code’, ‘Markdown’ y ‘Raw’) las cuales se usan con distintos propositos.</p>
+<p>En los notebooks se tienen tres tipos de celdas (‘Code’, ‘Markdown’ y ‘Raw’) las cuales se usan con distintos propósitos.</p>
 <ul>
 <li>‘Code’ se utiliza para la ejecución de código</li>
-<li>‘Markdown’ nos permite hacer uso de el lenguaje Markdown para el enriquecimiente del texto plano.</li>
+<li>‘Markdown’ nos permite hacer uso del lenguaje Markdown para enriquecer el texto plano.</li>
 <li>‘Raw’ simplemente va a mostrar el contenido dentro de la celda.</li>
 </ul>
-<p>Como ejemplo este curso hace uso de los Notebooks y Markdown, como se ve es de especial útilidad para la creación de texto relacionado con la creación de código y para la generación de manuales técnicos.</p>
+<p>Como ejemplo este curso hace uso de los Notebooks y Markdown, como se ve es de especial utilidad para la creación de texto relacionado con la creación de código y para la generación de manuales técnicos.</p>
 </section>
 <section id="basicos-de-markdown" class="level3">
 <h3 class="anchored" data-anchor-id="basicos-de-markdown">Basicos de Markdown</h3>
@@ -370,11 +371,11 @@ Figure&nbsp;2: Nuevo Notebook
 <section id="cursiva" class="level4">
 <h4 class="anchored" data-anchor-id="cursiva">Cursiva</h4>
 <p>La letra cursiva es un recurso que se utiliza en la creación de texto para resaltar alguna palabra en particular para distinguirla del texto usual. Es común utilizarla para palabras en otro idioma como <em>ballet</em> o <em>software</em>. En el caso de las ciencias es común su uso cuando se hace uso del latín como <em>curriculum vitae</em>.</p>
-<p>Para escribir con negritas en Markdown se utiliza el caracter <code>*</code>, todo lo que se entre los asteríscos queda como <em>cursiva</em> <code>*cursiva*</code>.</p>
+<p>Para escribir con negritas en Markdown se utiliza el carácter <code>*</code>, todo lo que se entre los asteríscos queda como <em>cursiva</em> <code>*cursiva*</code>.</p>
 </section>
 <section id="negritas" class="level4">
 <h4 class="anchored" data-anchor-id="negritas">Negritas</h4>
-<p>La letras en <strong>negritas</strong> nos sirve para resaltas una palabra o palabras del texto normal. Para que el texto este en <strong>negritas</strong> en Markdown tenemos que colocarlo entre dos asteriscos <code>** **</code>. De esta forma podemos hacer <strong>enfasis</strong> <code>**enfasis**</code> en algo particular.</p>
+<p>La letras en <strong>negritas</strong> nos sirve para resaltas una palabra o palabras del texto normal. Para que el texto este en <strong>negritas</strong> en Markdown tenemos que colocarlo entre dos asteriscos <code>** **</code>. De esta forma podemos hacer <strong>énfasis</strong> <code>**énfasis**</code> en algo particular.</p>
 </section>
 <section id="para-escribrir-código-en-el-texto." class="level4">
 <h4 class="anchored" data-anchor-id="para-escribrir-código-en-el-texto.">Para escribrir código en el texto.</h4>
@@ -415,33 +416,32 @@ Figure&nbsp;2: Nuevo Notebook
 ## Sección 3.2 
 ## Sección 3.3
 
-# Seccion 4</code></pre>
+# Sección 4</code></pre>
 </section>
 </section>
 <section id="otras" class="level3">
 <h3 class="anchored" data-anchor-id="otras">Otras</h3>
-<p>Markdown nos permite hacer tablas referencia insertar imagenes, etc. Se puede hacer un curso para conocer los distintos usos de forma más extensiva,pero queda fuera del alcance de este curso.</p>
+<p>Markdown nos permite hacer tablas referencia insertar imagenes, etc. Se puede hacer un curso para conocer los distintos usos de forma más extensiva, pero queda fuera del alcance de este curso.</p>
 </section>
 </section>
 <section id="instalacion-de-git-github-tema-2.3" class="level2">
 <h2 class="anchored" data-anchor-id="instalacion-de-git-github-tema-2.3">Instalacion de git (github) (Tema 2.3)</h2>
-<p>Git es un systema de control de versiones, aunque existen distintos sistemas de control de versiones git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software pues nos permiten tener un control sobre las versiones del código desarrollado a través de los cambios en el ćodigo. A través del seguimiento de dichos cambios es posible tener un trabajo en equipo sobre el mismo archivo de forma autónoma permitiendo un desarrollo más rápido.</p>
+<p>Git es un sistema de control de versiones, aunque existen distintos sistemas de control de versiones, Git es el más utilizado. Los sistemas de control de versiones son una herramienta fundamental en el desarrollo de software pues nos permiten tener un control sobre las versiones del código desarrollado a través de los cambios en el código. A través del seguimiento de dichos cambios es posible tener un trabajo en equipo sobre el mismo archivo de forma autónoma permitiendo un desarrollo más rápido.</p>
 <p>Una de las herramientas más usadas en los sistemas de control de versiones es la idea básica para lo que fueron creados que es <strong>poder regresar a una versión anterior en el desarrollo de software</strong>, lo cual resulta fundamental si hay un error en el desarrollo (bug).</p>
-<p>y se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.</p>
-<p><strong>Git</strong> es un sistema de control de versiones . Los sistemas de control de versiones. . De igual forma nos facilita encontrar y corregir los posibles bugs dentro del código.</p>
+<p>Se recomienda tener una mejor comprensión de los mismos. Por desgracia esto queda fuera del campo de este curso y sólo daremos una explicación simplificada de esto.</p>
 <p>Existen distintos servicios para almacenar código de manera remota dentro de los cuales podemos destacar <a href="https://github.com/">github</a> y <a href="http://gitlab.com/">gitlab</a>. En este curso se utiliza github por facilidad pues se usa su servicio de <em>github-pages</em> para tener en linea la documentación del paquete que se desarrolla.</p>
 <p>Para la instalación de git dentro de un ambiente virtual de anaconda se puede hacer de la siguiente forma</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">desarrollo</span><span class="kw">)</span> <span class="ex">conda</span> install <span class="at">-c</span> conda-forge git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Lo más seguro es que git ya se encuentre instalado en su sistemas, al menos es el caso para Mac y Linux. Para saber si se tiene instalado git se puede abrir una terminal y ejecutar:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Este comando mostrara la versión instalada dentro del sistema.</p>
-<p>En caso de que no se tenga instalado se puede seguir los pasos que se encuentran en <a href="https://github.com/git-guides/install-git"><em>Github</em></a> o se puede descargar desde <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>. Usando cualquiera de los dos metodos su instalación será de forma global, en caso de desear instalarlo dentro de una ambiente virtual se puede hacer con conda o usando el canal oficial de <em>anaconda</em>:</p>
+<p>Este comando mostrará la versión instalada dentro del sistema.</p>
+<p>En caso de que no se tenga instalado se puede seguir los pasos que se encuentran en <a href="https://github.com/git-guides/install-git"><em>Github</em></a> o se puede descargar desde <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>. Usando cualquiera de los dos métodos su instalación será de forma global, en caso de desear instalarlo dentro de una ambiente virtual se puede hacer con conda o usando el canal oficial de <em>anaconda</em>:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> anaconda git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>o el canal de la comunidad <em>conda-forge</em>:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="uso-de-git" class="level3">
 <h3 class="anchored" data-anchor-id="uso-de-git">Uso de git</h3>
-<p>A continuación solo enlistamos ciertos comandos de git pues su uso completo se encuentra fuera del alcance de este curso, en la <a href="../../../contenido/Contenido/Tema3/Clusters_ejemplo.html#otros-comandos-git">sección</a> se describen un pooco más.</p>
+<p>A continuación solo enlistamos ciertos comandos de git pues su uso completo se encuentra fuera del alcance de este curso, en la <a href="../../../contenido/Contenido/Tema3/Clusters_ejemplo.html#otros-comandos-git">sección</a> se describen un poco más.</p>
 <ul>
 <li><code>git clone</code> sirve poara clonar repositorios.</li>
 <li><code>git pull</code> sirve para traer los cambios desde el servidor de git. El servidor depende de donde se tiene el servicio (github, gitlab o similares).</li>
@@ -466,7 +466,7 @@ Figure&nbsp;2: Nuevo Notebook
 </section>
 <section id="quarto-tema-2.5" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-tema-2.5">Quarto (Tema 2.5)</h2>
-<p>Quarto es un sistema que nos permite utilizar las utilidades de los notebook de markdown, en particular usar los notebooks de jupyter, y todas sus utilidades. Quarto esta construido sobre <a href="https://pandoc.org/">pandoc</a> el cual permite convertir entre distintos tipos de documentos, en particular distintos tipos de markdown, esto permite utilizar las herramientas desarrolladas en quarto y traducir estos los notebooks a otro tipo de documentos.</p>
+<p>Quarto es un sistema que nos permite utilizar las utilidades de los notebook de markdown, en particular usar los notebooks de jupyter, y todas sus utilidades. Quarto esta construido sobre <a href="https://pandoc.org/">pandoc</a> el cual permite convertir entre distintos tipos de documentos, en particular distintos tipos de Markdown, esto permite utilizar las herramientas desarrolladas en Quarto y traducir estos los notebooks a otro tipo de documentos.</p>
 <p>Con esta idea los desarrolladores de nbdev utilizan Quarto para generar documentos html utilizando y poder generar la documentación necesaria de una biblioteca siguiendo la idea de programacion literal.</p>
 </section>
 <section id="instalar-quarto" class="level2">
@@ -475,7 +475,7 @@ Figure&nbsp;2: Nuevo Notebook
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_install_quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="instalación-quarto-windows" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-quarto-windows">Instalación Quarto windows</h3>
-<p>Si se desea se puede instalar siguiendo los siguientes <a href="https://quarto.org/docs/get-started/">pasos</a> para usar con el IDE de preferencia. Esta instalación tendra disponible quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica.</p>
+<p>Si se desea se puede instalar siguiendo los siguientes <a href="https://quarto.org/docs/get-started/">pasos</a> para usar con el IDE de preferencia. Esta instalación tendra disponible Quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica.</p>
 </section>
 <section id="otras-cosas" class="level3">
 <h3 class="anchored" data-anchor-id="otras-cosas">Otras cosas</h3>

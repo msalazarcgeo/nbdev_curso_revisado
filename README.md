@@ -40,4 +40,4 @@ La documentación del software puede ser generada a partir de simples comandos y
 
 # Link curso github pages 
 
-[Link al curso en linea](https://msalazarcgeo.github.io/nbdev_curso_revisado/) 
+[Link al curso en linea](https://msalazarcgeo.github.io/nbdev_curso_revisado/)  

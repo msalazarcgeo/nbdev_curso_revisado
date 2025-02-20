@@ -1,6 +1,6 @@
 ---
 title: "Curso Nbdev -- Programación Literal"
-subtitle: "Lo que contiene"
+subtitle: "Curso para hacer programación literal en Python"
 format: html
 ---
 
@@ -18,7 +18,7 @@ format: html
 
 
 
-**[MY_NAME](#J. Miguel Salazar)** <br/>
+**[Dr. J. Miguel Salazar](#J. Miguel Salazar)** <br/>
 Profesor <br/>
 [CentroGeo](#)</a><br/>
 📧 [MY_EMAIL](mailto: msalazar@centrogeo.edu.mx)

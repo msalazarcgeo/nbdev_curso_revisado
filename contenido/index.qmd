@@ -20,7 +20,7 @@ format: html
 
 **[Dr. J. Miguel Salazar](#J. Miguel Salazar)** <br/>
 Profesor <br/>
-[CentroGeo](#)</a><br/>
-📧 [MY_EMAIL](mailto: msalazar@centrogeo.edu.mx)
+[CentroGeo](https://www.centrogeo.org.mx/)</a><br/>
+📧 [msalazar en centrogeo.edu.mx](mailto: msalazar@centrogeo.edu.mx)
 
 

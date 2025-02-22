@@ -91,6 +91,7 @@ En sus origenes nbdev hacia uso de los notebook de Jupyter para hacer todo el de
 ## ¿ Cómo funciona nbdev en los notebooks ? 
 
 Usando simples directrices dentro de los notebooks y sus celdas nos permite:
+
 * Crear la documentación
 * Exportar fragmentos de código para la creación de codigo fuente.
 * Ejecución de código para pruebas.

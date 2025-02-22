@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;J. Miguel Salazar">
 
-<title>Curso Nbdeb - Curso Nbdev – Módulo con Clusters</title>
+<title>Curso Nbdev – Módulo con Clusters – Curso Nbdeb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../../../css/custom_style.css">
 <link rel="stylesheet" href="../../../css/syllabus.css">
-<meta property="og:title" content="Curso Nbdeb - Curso Nbdev – Módulo con Clusters">
+<meta property="og:title" content="Curso Nbdev – Módulo con Clusters – Curso Nbdeb">
 <meta property="og:description" content="Hacer todo el desarrollo">
 <meta property="og:image" content="https://msalazarcgeo.github.io/nbdev_curso_revisado/contenido/Contenido/Tema3/nbdev_preview.png">
 <meta property="og:site_name" content="Curso Nbdeb">
@@ -137,11 +137,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../contenido/Contenido/Tema1/nbdev_python.html">Contenido</a></li><li class="breadcrumb-item"><a href="../../../contenido/Contenido/Tema3/Clusters_ejemplo.html">Un ejemplo más entretenido Clusters</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -160,9 +160,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Contenido</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Entendamos la estructura que utiliza nbdev para generar nuestra nueva biblioteca, en el directorio <code>nbs</code> se encuentran los notebooks que vamos a modificar en nuestro ejemplo. al momento de creacion del repositorio una vez ejecutado el comando <code>nbdev_new</code> nos genera toda la estructura dentro de nuestro repositorio.</p>
 <p>Si no se hizo de la misma forma que como se describió anteriormente, esto se puede hacer de forma manual, se ejecuta el mismo comando y se rellenan los campos solicitados</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> nbdev_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-1-W5-nbdev_new_manual" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-1-W5-nbdev_new_manual" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-1-W5-nbdev_new_manual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./nbdev_new_out.png" class="img-fluid figure-img">
@@ -279,7 +279,7 @@ Figure&nbsp;1: Salida nbdev_new
 </figure>
 </div>
 <p>En el archivo <code>settings.ini</code> podemos ver las configuraciones, como ejemplo podemos ver que el archivo recien creado en el repositorio muestra los valores que se insertaron.</p>
-<div id="fig-2-W5-settings_ini" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-2-W5-settings_ini" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2-W5-settings_ini-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./set_ini_new.png" class="img-fluid figure-img">
@@ -376,7 +376,7 @@ git push</code></pre>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Regresa el centroide de los puntos """</span></span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> shapely.centroid(<span class="va">self</span>.get_Multypoint())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Esta es una clase simple que nos sirve de ejemplo para ver algunas de las funcionalidades de nbdev. Cuando se contruye la documentación de forma automática nos genera una documentación simple como se muestra en la imagen <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a>.</p>
-<div id="fig-3-W5-nbdev_docu" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-3-W5-nbdev_docu" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-3-W5-nbdev_docu-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./docu_ejemplo_01.png" class="img-fluid figure-img">
@@ -401,7 +401,7 @@ Figure&nbsp;3: Ejemplo de documentacion
 <p>Este código generará un error si el número de elementos fuesen distintos, es claro que la clase como se encuentra implementada siempre pasara esta prueba. Las pruebas tienen que ser pensadas para que la idea las pasen sin importar como se hizo la implementación, como es el caso de la prueba anterior. Dentro del desarrollo podriamos cambiar la forma en la cual se generan los puntos y almacenar estos como si fueran dos lista, donde cada lista almacena los datos de cada coordenada, esto dependería de cada desarrollador. Si se tiene un error en la generación de estas lista, como puede ser simplemente generar la lista pero no llenarla con datos, el tamaño seria distinto y no pasaria la prueba. Para ver si el código dentro de los notebooks que generan de nuestros módulos pasan las pruebas se ejecuta la linea de comandos <code>nbdev_test</code>.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>lo cual mostrará</p>
-<div id="fig-4-W5-nbdev_test" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-4-W5-nbdev_test" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-4-W5-nbdev_test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./Succes.png" class="img-fluid figure-img">
@@ -492,7 +492,7 @@ Figure&nbsp;4: Exito pruebas
 <p>Para generar la documentación se hace usando el comando</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este caso, en la terminal podemos observar lo que se muestra en la imagen <a href="#fig-5-W5-nbdev_docs" class="quarto-xref">Figure&nbsp;5</a>, como se observa en el directorio <code>_docs</code> se encuentra un archivo html que puede abrirse usando un navegador y se puede ver la documentación y se puede ver que sólo muestra el ‘docstring’ generado por las clase como en la figura <a href="#fig-3-W5-nbdev_docu" class="quarto-xref">Figure&nbsp;3</a> y el respectivo para la clase <code>Clusters</code>.</p>
-<div id="fig-5-W5-nbdev_docs" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-5-W5-nbdev_docs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5-W5-nbdev_docs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./docs.png" class="img-fluid figure-img">
@@ -511,7 +511,7 @@ Figure&nbsp;5: Generación documentación
 <p>También podemos generar la documentación y hacer una previsualización haciendo uso del comando</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_preview</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>lo cual nos mostrará</p>
-<div id="fig-6-W5-nbdev_preview" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-6-W5-nbdev_preview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6-W5-nbdev_preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./nbdev_preview.png" class="img-fluid figure-img">
@@ -789,7 +789,7 @@ Actividad
 <p>Como se observa, los pasos anteriores son los que ya hemos desde la instalación y la construcción de la biblioteca.</p>
 <p>Con los archivos que hemos modificado hemos dado las instrucciónes para que estas acciones se desarrollen en máquinas virtuales en servidores de github.</p>
 <p>Si todo se encuentra en orden podemos salvar los archivos, hacer un commit, y hacer un push. Como las acciones se ejecuntan cuando se hace un push podemos ver en las acciones de github e ir a la página de github para verificar que el flujo de trabajo funciona de forma adecuada. En el menu Actions del repositrio.</p>
-<div id="fig-7-W5-github_actions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-7-W5-github_actions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7-W5-github_actions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./Acctions.png" class="img-fluid figure-img">
@@ -806,7 +806,7 @@ Figure&nbsp;7: Menu github actions
 <li>pages-build-deployment (ejecutado al hacer el branch ‘gh-pages’)</li>
 </ul>
 <p>En el centro una lista con los commits realizado y el resultado de las acciones que se llevaron acabo y si estas tuvieron éxito (✅) o no (❌).</p>
-<div id="fig-7-W5-succes_github" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-7-W5-succes_github" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7-W5-succes_github-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./Workflow_actions.png" class="img-fluid figure-img">
@@ -863,18 +863,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -906,7 +895,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:lse-dsi\.github\.io\/|localhost)");
@@ -914,7 +925,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

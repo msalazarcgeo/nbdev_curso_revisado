@@ -305,11 +305,15 @@ Figure&nbsp;1: Nuevo repositorio
 <pre><code>$ git add .
 $ git commit -m 'Primer commit'
 $ git push</code></pre>
-<p>Si vamos a nuestro repositorio dentro de Github podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales Ver <strong>?@fig-nbd-modificado</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./Images_tem/nbdev_prueba_modificado.png" class="img-fluid figure-img"></p>
-<figcaption>Nuevo repositorio</figcaption>
+<p>Si vamos a nuestro repositorio dentro de Github podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales Ver <a href="#fig-nbd-modificado" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div id="fig-nbd-modificado" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nbd-modificado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./Images_tem/nbdev_prueba_modificado.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nbd-modificado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Nuevo repositorio
+</figcaption>
 </figure>
 </div>
 </section>
@@ -329,7 +333,7 @@ Note
 <p>Aunque <strong>nbdev</strong> tiene por defecto el uso de Github Pages esto puede ser modificado y tener alojada la documentación en otra parte.</p>
 </div>
 </div>
-<p>Para habilitar en el repositorio hay que ir a la parte de “Settings” del repositorio y en el menú (Izquierda) en “Pages”. En esta sección se cambia de “Branch” a “gh-pages” y se da click en “Save”.</p>
+<p>Para habilitar en el repositorio hay que ir a la parte de “Settings” del repositorio y en el menú (Izquierda) en “Pages”. En esta sección se cambia de “Branch” a “gh-pages” y se da click en “Save”. Es posible que la opción “gh-pages” no se encuentre habilitada, es necesario que se haya hecho bien el primer commit pues los flojos de trabajo dentro de github son los que realizan la generación del “branch” de documentación de gh-pages.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./Images_tem/nbdev_prueba_pages.png" class="img-fluid figure-img"></p>
@@ -337,7 +341,7 @@ Note
 </figure>
 </div>
 <p>La página se encuentra alojada en una dirección similar a <code>https://%nombreusuario.github.io/nbdev_prueba/</code>. Pero ésta primero debe ser generada por Github.</p>
-<p>UUna de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.</p>
+<p>Una de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.</p>
 <p>Cuando nuestra página de documentación se encuentre disponible en la pestaña de “Actions” del repositorio podremos ver (✅) en “pages build and deployment”. En caso de que se vea (❌) significa que algo ha salido mal.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -643,8 +647,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // default icon
-          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

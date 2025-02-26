@@ -73,7 +73,7 @@ $ git push
 Si vamos a nuestro repositorio dentro de Github podemos observar que ya tenemos los archivos y los subdirectorios en Github igual que lo tenemos dentro de nuestros archivos locales Ver @fig-nbd-modificado. 
 
 
-![Nuevo repositorio](./Images_tem/nbdev_prueba_modificado.png){width=300,#fig-nbd-modificado}
+![Nuevo repositorio](./Images_tem/nbdev_prueba_modificado.png){#fig-nbd-modificado}
 
 
 
@@ -86,14 +86,14 @@ Una de cosa que nos promete **nbdev** es la generación de documentación, pero 
 Aunque **nbdev** tiene por defecto el uso de Github Pages esto puede ser modificado y tener alojada la documentación en otra parte. 
 :::
 
-Para habilitar en el repositorio hay que ir a la parte de “Settings” del repositorio y en el menú (Izquierda) en “Pages”. En esta sección se cambia de “Branch” a “gh-pages” y se da click en “Save”. 
+Para habilitar en el repositorio hay que ir a la parte de “Settings” del repositorio y en el menú (Izquierda) en “Pages”. En esta sección se cambia de “Branch” a “gh-pages” y se da click en “Save”. Es posible que la opción "gh-pages" no se encuentre habilitada, es necesario que se haya hecho bien el primer commit pues los flojos de trabajo dentro de github son los que realizan la generación del "branch" de documentación de gh-pages. 
 
 
 ![Nuevo repositorio](./Images_tem/nbdev_prueba_pages.png){width=500,#fig-nbd-prueba}
 
 La página se encuentra alojada en una dirección similar a  `https://%nombreusuario.github.io/nbdev_prueba/`. Pero ésta primero debe ser generada por Github.
 
-UUna de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.
+Una de las características de Github es que podemos generar ciertas acciones y flujos de trabajo de forma automatizada dentro del repositorio. Estas acciones nos permiten verificar que tanto el código del paquete funcione de manera adecuada, como el despliegue de nuestra documentación se haga de forma correcta. Integrando esto evitamos el desgaste de hacerlo de forma manual.
 
 Cuando nuestra página de documentación se encuentre disponible en la pestaña de “Actions” del repositorio podremos ver (✅) en “pages build and deployment”. En caso de que se vea (❌) significa que algo ha salido mal.
 

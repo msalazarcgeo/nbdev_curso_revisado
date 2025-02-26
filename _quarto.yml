@@ -40,7 +40,7 @@ website:
     background: primary
   page-footer:
     background: light
-    left: "Copyright 2024, CentroGeo" 
+    left: "Copyright 2025, CentroGeo" 
 
 
 
@@ -50,13 +50,13 @@ csl: references/chicago-author-date.csl
 
 format:
   html:
-    author: Dr. [J. Miguel Salazar](#)
+    author: Dr. J. Miguel Salazar
     author-meta: Dr. J. Miguel Salazar
     date-format: "DD MMMM YYYY"
 
     email-obfuscation: javascript
-    link-external-newwindow: true
-    link-external-icon: true
+    link-external-newwindow: false
+    link-external-icon: false
     link-external-filter: ^(?:http:|https:)\/\/(?:lse-dsi\.github\.io\/|localhost)
 
     theme:

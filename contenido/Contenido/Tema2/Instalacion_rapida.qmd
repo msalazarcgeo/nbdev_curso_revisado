@@ -30,21 +30,21 @@ Para la instalación de conda lo más sencillo es seguir el este [manual](https:
 1. Bajar el instalador:
     * [Anaconda](https://www.anaconda.com/download/) para windows.
 
-2. Verificar que se ha bajano correctamente ([ver](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#hash-verification) ).
+2. Verificar que se ha bajado correctamente ([ver](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#hash-verification) ).
 
 3.  Hacer doble click en el archivo `.exe` (similar a `Anaconda3-######-Windows-x86_64.exe`). Para la instalación en Linux o Mac se debe de bajar el archivo `Anaconda3-####-Linux-###.sh` o bien el `Anaconda3-####-MACOSX-###.sh` y ejecutar el archivo  usando la terminal. 
 
 
 4. Seguir las instrucciones en la pantalla en caso de windows. Y seguir las instrucciones que aparecerán en caso del uso de la terminal.
 
-5. Para probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando conda list. Una lista de paquetes aparecerá si se instaló de forma correcta.
+5. Para probar la instalación abra la terminal de windows (cmd) o el anaconda prompt y corra el comando `conda list`. Una lista de paquetes aparecerá si se instaló de forma correcta.
 
 
 ### Hacer un ambiente virtual 
 
 Para generar un ambiente virtual usando anaconda se puede hacer a través de la terminal. En caso de windows se puede hacer llamando a **Anaconda Prompt**. 
 
-Dentro de la terminal se puede observar que antes del símbolo del sistema aparece la leyenda `(base)` esta no indica que estamos usando el ambiente virtual base. 
+Dentro de la terminal se puede observar que antes del símbolo del sistema aparece la leyenda `(base)` esta nos indica que estamos usando el ambiente virtual base. 
 
 Para crear un nuevo ambiente virtual se ejecuta la siguiente linea en la linea de comandos. 
 
@@ -185,7 +185,7 @@ Para hacer listas en Markdown es muy fácil pues esto se puede hacer usando un s
 
 #### Secciones 
 
-Markdown nos permite tener mantener un orden dentro del documento haciendo uso de `#`, este funciona para indicar un encabezado e inicio de la sección. Markdown nos permite hacer subsecciones a partir del uso consecutivo de `#`. 
+Markdown nos permite mantener un orden dentro del documento haciendo uso de `#`, este funciona para indicar un encabezado e inicio de la sección. Markdown nos permite hacer subsecciones a partir del uso consecutivo de `#`. 
 
 
 ```
@@ -303,13 +303,6 @@ nbdev_install_quarto
 
 Si se desea se puede instalar siguiendo los siguientes [pasos](https://quarto.org/docs/get-started/) para usar con el IDE de preferencia. Esta instalación tendra disponible Quarto en todo el sistema y no sólo para el ambiente de desarrollo. Aunque es posible hacer la instalación dentro de un ambiente de desarrollo, esto queda fuera de de una explicación básica. 
 
-### Otras cosas 
-
-Es recomendable instalar ciertos plug-ins para hacernos la vida más fácil estos se hace ejecutando, 
-
-```bash
-nbdev_install_hooks
-```
 
 
 
